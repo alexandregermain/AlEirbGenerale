@@ -5,6 +5,7 @@ include "taxonomy.diaspec";
 controller AlarmActivitedController {
   when provided InsideContext
     do ScheduleTimer on Timer,
+<<<<<<< HEAD
        On on Light,// action sur la lampe pas justement --> clignotage ????
        SendNonCriticalNotification on Notifier;
 }
@@ -24,6 +25,21 @@ controller LampAlarmSuccessController{
     do Success on LightAlarm;
     do cancel on Timer1;
   //do ResetAlarmController; Est ce possible ?
+=======
+       SendNonCriticalNotification on Notifier;  
+}
+controller LampAlarmSuccessController{
+  when provided LunchAlarmContext
+    do ScheduleTimer on Timer;
+}
+controller LampSuccessController{
+  when provided LunchAlarmContext
+    do On on Light, 
+       Off on Light;
+  when provided InsideContext
+  	do On on Light,
+  	   Off on Light;
+>>>>>>> 3b146e1d6201aa4ef163a0625ecd94d6ea2801d6
 }
 
 // A regrouper avec LampAlarmSuccess ?
@@ -60,7 +76,7 @@ context LunchAlarmContext as Boolean {
 
 context Password as Boolean {
     when provided on from Appliance
-    get on from Appliance
+    get on from Appliance, contact from ContactSensor
     always publish;
 }
 
