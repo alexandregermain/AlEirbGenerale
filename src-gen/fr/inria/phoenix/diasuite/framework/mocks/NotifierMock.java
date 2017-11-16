@@ -2,9 +2,9 @@ package fr.inria.phoenix.diasuite.framework.mocks;
 
 import fr.inria.diagen.core.ServiceConfiguration;
 import fr.inria.phoenix.diasuite.framework.device.notifier.AbstractNotifier;
-import fr.inria.phoenix.diasuite.framework.device.notifier.ReplyIndices;
-import fr.inria.phoenix.diasuite.framework.device.notifier.CancelledIndices;
 import fr.inria.phoenix.diasuite.framework.device.notifier.ExpiredIndices;
+import fr.inria.phoenix.diasuite.framework.device.notifier.CancelledIndices;
+import fr.inria.phoenix.diasuite.framework.device.notifier.ReplyIndices;
 
 // @internal
 public final class NotifierMock {
