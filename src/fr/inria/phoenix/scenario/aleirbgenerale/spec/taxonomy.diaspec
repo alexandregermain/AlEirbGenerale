@@ -1,0 +1,590 @@
+
+//------------------------------------------------------------
+// 							Utils							||
+//------------------------------------------------------------
+structure Date {
+	day as Integer;
+	month as Integer;
+	year as Integer;
+	hour as Integer;
+	minute as Integer;
+	second as Integer;
+}
+
+enumeration Day {
+	MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+enumeration FileType {
+	DIRECTORY, IMAGE, SOUND, RAW_AUDIO, VIDEO, TEXT, OTHER
+}
+
+structure File {
+	name as String;
+	type as FileType;
+	size as Integer;
+	content as Binary;
+}
+
+//------------------------------------------------------------
+// 							Devices							||
+//------------------------------------------------------------
+device Device {
+	attribute id as String;
+	source isAlive as Boolean;
+}
+
+//------------------------------------------------------------
+// 						Physical Devices					||
+//------------------------------------------------------------
+device PhysicalDevice extends Device {
+	attribute location as String;
+	attribute user as String;
+}
+
+//------------------------------------------------------------
+// 							Appliances						||
+//------------------------------------------------------------
+device Appliance extends PhysicalDevice {
+	source on as Boolean;
+	action On;
+	action Off;
+}
+
+action On {
+	on();
+}
+
+action Off {
+	off();
+}
+
+//------------------
+// Cooking Appliance
+//------------------
+device Cooker extends Appliance , ElectricMeter {
+}
+
+//------
+// Light
+//------
+device Light extends Appliance {
+}
+
+//------------------------------------------------------------
+// 							Services						||
+//------------------------------------------------------------
+device Service extends Device {
+}
+
+device Clock extends Service {
+	source tickSecond as Integer;
+	source tickMinute as Integer;
+	source tickHour as Integer;
+}
+
+//------
+// Timer
+//------
+device Timer extends Service {
+	source timerTriggered as String indexed by timerId as String;
+	action ScheduleTimer;
+}
+
+action ScheduleTimer {
+	schedule(id as String, delayMs as Integer);
+	periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
+	cancel(id as String);
+}
+
+//--------
+// Storage
+//--------
+device Storage extends Service {
+	source data as String indexed by key as String;
+	action PutStringData;
+}
+
+action PutStringData {
+	put(pKey as String, pData as String);
+}
+
+//-------
+// Input
+//-------
+device Input extends PhysicalDevice {
+	source message as String;
+	action SetInput;
+}
+
+action SetInput {
+	setInput(message as String);
+}
+
+//------------------------------------------------------------
+// 					Communication Service					||
+//------------------------------------------------------------
+device CommunicationService extends Service {
+}
+
+//------------------------------------------------------------
+// 							Contact						||
+//------------------------------------------------------------
+structure Contact {
+	name as String;
+	emailAddress as String;
+	phone as String;
+	iconUrl as String;
+	groups as String [];
+}
+
+structure Message {
+	to as Contact;
+	title as String;
+	content as String;
+	attachments as File [];
+}
+
+device Messenger extends CommunicationService {
+	source lastMessage as Message;
+	action SendMessage;
+}
+
+action SendMessage {
+	sendMessage(message as Message);
+}
+
+device Mailer extends Messenger {
+	source unreadEmailCount as Integer;
+}
+
+device SMSSender extends Messenger {
+}
+
+//------------------------------------------------------------
+// 							HomeService						||
+//------------------------------------------------------------
+device HomeService extends Service {
+}
+
+structure AgendaEvent {
+	title as String;
+	description as String;
+	startTime as Date;
+	endTime as Date;
+	place as String;
+	calendar as String;
+	remindersInMinutes as Integer []; // AR (19/07/17)
+
+}
+
+device Agenda extends HomeService {
+	attribute owner as String;
+	source currentEvents as AgendaEvent [];
+	source nextEvent as AgendaEvent;
+	source nextEvents as AgendaEvent [];
+	source events as AgendaEvent [] indexed by filter as AgendaEvent;
+	action AgendaEventAction;
+}
+
+action AgendaEventAction {
+	addEvent(event as AgendaEvent);
+	replaceEvent(oldEvent as AgendaEvent, newEvent as AgendaEvent);
+	removeEvent(event as AgendaEvent);
+}
+
+structure CriticalNotification {
+	id as String;
+	title as String;
+	text as String;
+	answers as String [];
+}
+
+structure NonCriticalNotification {
+	id as String;
+	title as String;
+	text as String;
+	answers as String [];
+	silent as Boolean;
+}
+
+device Notifier extends HomeService {
+	source cancelled as Boolean indexed by id as String;
+	source expired as Boolean indexed by id as String;
+	source reply as Integer indexed by id as String;
+	action SendCriticalNotification;
+	action SendNonCriticalNotification;
+}
+
+action SendCriticalNotification {
+	sendCriticalNotification(notification as CriticalNotification);
+	registerCriticalNotification(notification as CriticalNotification, displayDate as Date);
+	cancelCriticalNotification(id as String);
+}
+
+action SendNonCriticalNotification {
+	sendNonCriticalNotification(notification as NonCriticalNotification);
+	registerNonCriticalNotification(notification as NonCriticalNotification, displayDate as Date, expirationDate as Date);
+	cancelNonCriticalNotification(id as String);
+}
+
+//------------------------------------------------------------
+// 							Sensor							||
+//------------------------------------------------------------
+device Sensor extends PhysicalDevice {
+}
+
+device MotionDetector extends Sensor {
+	source motion as Boolean;
+}
+
+enumeration DoorState {
+// AR (19/07/17)
+	OPEN, CLOSE
+}
+
+device ContactSensor extends Sensor {
+	source contact as Boolean;
+}
+
+device LightSensor extends Sensor {
+	source lightLevel as Float;
+}
+
+enumeration TemperatureUnit {
+	CELSIUS, FAHRENHEIT, KELVIN
+}
+
+device TemperatureSensor extends Sensor {
+	source temperature as Float indexed by unit as TemperatureUnit;
+}
+
+//-------------
+// Energy Meter
+//-------------
+device EnergyMeter extends Sensor {
+}
+
+device ElectricMeter extends EnergyMeter {
+	source consumption as Float;
+}
+
+//------------------------------------------------------------
+// 						SoftwareSensor						||
+//------------------------------------------------------------
+device SoftwareSensor extends Service {
+}
+
+//------------------------------------------------------------
+// 						ActivityNotifier					||
+//------------------------------------------------------------
+device ActivityNotifier extends SoftwareSensor {
+	source dailyActivity as DailyActivity;
+	source periodActivity as PeriodActivity;
+	action NotifyActivity;
+}
+
+enumeration DailyActivityName {
+	WAKEUP, BREAKFAST, LUNCH, DINNER, GOTOBED, SLEEP, SHOWER
+}
+
+enumeration PeriodActivityName {
+	EXIT, TOILET
+}
+
+structure DailyActivity {
+	name as DailyActivityName;
+	score as Float;
+	success as Boolean;
+	date as Date;
+}
+
+structure DailyActivityStats {
+	activity as DailyActivityName;
+	successes as Integer;
+	failures as Integer;
+	meanScore as Float;
+}
+
+structure Period {
+// AR (21/06/17)
+	beginning as Date;
+	end as Date;
+}
+
+structure PeriodActivity {
+	name as PeriodActivityName;
+	period as Period;
+}
+
+structure PeriodActivityStats {
+	activity as PeriodActivityName;
+	occurences as Integer;
+	dailyMean as Float;
+	durationMean as Float;
+}
+
+action NotifyActivity {
+	notifyDailyActivity(activity as DailyActivity);
+	notifyPeriodActivity(activity as PeriodActivity);
+}
+
+//------------------------------------------------------------
+// 						ActivityReporter					||
+//------------------------------------------------------------
+structure DailyReport {
+	date as Date;
+	dailyActivities as DailyActivity [];
+	toiletPassings as Period [];
+	outdoorPeriods as Period [];
+}
+
+structure StatisticReport {
+	period as Period;
+	dailyActivityStats as DailyActivityStats [];
+	periodActivityStats as PeriodActivityStats [];
+}
+
+device ActivityReporter extends Service {
+	source dailyReport as DailyReport;
+	source statisticReport as StatisticReport;
+	source dailyActivityStats as DailyActivityStats indexed by activity as DailyActivityName;
+	source periodActivityStats as PeriodActivityStats indexed by activity as PeriodActivityName;
+	action UpdateCurrentReport;
+}
+
+action UpdateCurrentReport {
+	addDailyActivityToCurrentReport(dailyActivity as DailyActivity);
+	addPeriodActivityToCurrentReport(periodActivity as PeriodActivity);
+	saveCurrentReport();
+}
+
+//------------------------------------------------------------
+// 						RoutineScheduler					||
+//------------------------------------------------------------
+// AR (25/09/17)
+enumeration DayTime {
+	DAY, NIGHT
+}
+
+device RoutineScheduler extends Service {
+	source currentTime as DayTime;
+	source startMonitoring as DailyActivityName;
+	source stopMonitoring as DailyActivityName;
+	action UpdateDayTime;
+	action UpdateRoutines;
+}
+
+action UpdateDayTime {
+	updateDayTime(currentTime as DayTime);
+}
+
+action UpdateRoutines {
+	startMonitoring(activity as DailyActivityName);
+	stopMonitoring(activity as DailyActivityName);
+}
+
+//------------------------------------------------------------
+// 						Presence Detector					||
+//------------------------------------------------------------
+//enumeration Room {
+//	ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
+//}
+//
+//device IndoorLocationDetector extends SoftwareSensor {
+//// AR (14/02/17)
+//	source currentRoom as Room;
+//	action SetLocation;
+//}
+//
+//action SetLocation {
+//	setLocation(location as Room);
+//	resetLocation();
+//}
+
+//------------------------------------------------------------
+// 						InactivitySensor					||
+//------------------------------------------------------------
+// AR (01/08/17)
+device InactivitySensor extends SoftwareSensor {
+	source inactivityLevel as Float;
+	source lastInteraction as Interaction;
+	action UpdateInactivityLevel;
+}
+
+structure Interaction {
+	actionType as InteractionType;
+	deviceId as String;
+	date as Date;
+}
+
+enumeration InteractionType {
+	MOTION, OPENNING, CLOSURE, ELEC_CONSUMPTION, NOTIFICATION_REPLY, RESET_INACTIVITY
+}
+
+action UpdateInactivityLevel {
+	updateInactivityLevel(level as Float);
+	updateLastInteraction(lastInteraction as Interaction);
+}
+
+//------------------------------------------------------------
+// 							Android							||
+//------------------------------------------------------------
+structure Battery {
+	level as Integer;
+	charging as Boolean;
+}
+
+structure AndroidApp {
+	packageName as String;
+	versionCode as Integer;
+}
+
+structure SoundLevel {
+	name as String;
+	level as Integer;
+}
+
+structure AndroidIntent {
+	packageName as String;
+	data as String;
+	className as String;
+	action as String;
+	extras as AndroidExtraString [];
+}
+
+structure AndroidExtraString {
+	key as String;
+	value as String;
+}
+
+action ScreenAction {
+	setScreenStatus(turnOn as Boolean);
+}
+
+action SoundAction {
+	setSoundLevel(level as Integer);
+}
+
+action ActivityAction {
+	startActivity(intent as AndroidIntent);
+}
+
+device Android extends Device {
+	attribute type as String;
+	attribute version as Integer;
+	source battery as Battery;
+	source soundLevels as SoundLevel [];
+	source screenOn as Boolean;
+	source apps as AndroidApp [];
+	action ScreenAction;
+	action SoundAction;
+	action ActivityAction;
+}
+
+//------------------------------------------------------------
+// 							Fitbit							||
+//------------------------------------------------------------
+device Fitbit extends Device {
+//pulses
+	source dailyPulses as PulseRecord [] indexed by day as Date;
+	source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
+	// steps
+	source dailySteps as Integer indexed by day as Date;
+	source stepsBetween as Integer indexed by startDate as Date, endDate as Date;
+	//activities
+	source dailyActivities as FitbitActivity [] indexed by day as Date;
+	source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
+	//sleep
+	source dailySleepPeriods as SleepPeriod [] indexed by day as Date;
+	source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
+	//alarm
+	source alarm as FitbitAlarm indexed by alarmId as String;
+	action ScheduleAlarm;
+}
+
+structure PulseRecord {
+	pulse as Integer;
+	time as Date;
+}
+
+structure FitbitActivity {
+	activityId as Integer;
+	calories as Float;
+	name as DailyActivityName;
+	startTime as Date;
+	duration as Integer;
+	description as String;
+}
+
+structure SleepPeriod {
+	efficiency as Float;
+	duration as Integer;
+	timeToFallAsleep as Integer;
+	timeAsleep as Integer;
+	timeAwake as Integer;
+	timeAfterWakeup as Integer;
+	timeInBed as Integer;
+}
+
+structure FitbitAlarm {
+	alarmId as String;
+	date as Date;
+	recurring as Boolean;
+	reminders as Integer;
+	remindInterval as Integer;
+	weekDays as Day;
+}
+
+action ScheduleAlarm {
+	addAlarm(alarm as FitbitAlarm);
+	removeAlarm(alarmId as String);
+}
+
+//------------------------------------------------------------
+// 							WhoCares						||
+//------------------------------------------------------------
+device WhoCares {
+// Utils
+	attribute date as Date;
+	attribute day as Day;
+	attribute fileType as FileType;
+	attribute file as File;
+	// Messengers
+	attribute contact as Contact;
+	attribute message as Message;
+	// Home Service
+	attribute agendatEvent as AgendaEvent;
+	attribute notification as NonCriticalNotification;
+	attribute criticalNotification as CriticalNotification;
+	// Sensors
+	attribute doorState as DoorState;
+	attribute temperatureUnit as TemperatureUnit;
+	// Activity Notifier
+	attribute dailyActivityName as DailyActivityName;
+	attribute periodActivityName as PeriodActivityName;
+	attribute dailyActivity as DailyActivity;
+	attribute period as Period;
+	attribute periodActivity as PeriodActivity;
+	attribute dailyReport as DailyReport;
+	attribute statisticReport as StatisticReport;
+	attribute periodActivityStats as PeriodActivityStats;
+	attribute dailyActivityStats as DailyActivityStats;
+	// Presence Detector
+	//	attribute room as Room;
+	// Inactivity Sensor
+	attribute action as Interaction;
+	attribute actionType as InteractionType;
+	attribute dayTime as DayTime;
+	// Android
+	attribute battery as Battery;
+	attribute androidApp as AndroidApp;
+	attribute soundLevel as SoundLevel;
+	attribute androidIntent as AndroidIntent;
+	attribute androidExtraString as AndroidExtraString;
+	// Fitbit
+	attribute pulseRecord as PulseRecord;
+	attribute fitibitActivity as FitbitActivity;
+	attribute sleepPeriod as SleepPeriod;
+	attribute fitbitAlarm as FitbitAlarm;
+}

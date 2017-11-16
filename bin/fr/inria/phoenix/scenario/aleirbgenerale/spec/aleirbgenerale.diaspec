@@ -1,7 +1,60 @@
-// AlEirbGenerale context
-context AlEirbGeneraleContext as Boolean {
+include "taxonomy.diaspec";
+
+controller AlarmActivitedController {
+  when provided InsideContext
+    do cancel on Timer1;
+    do schedule on Timer1;
+    do AlarmActivited on LightAlarm;
+}
+controller LampAlarmSuccessController{
+  when provided LunchAlarmContext
+    do Success on LightAlarm;
+    do cancel on Timer1;
+  //do ResetAlarmController; Est ce possible ?
 }
 
-// AlEirbGenerale controller
-controller AlEirbGeneraleController {
+// A regrouper avec LampAlarmSuccess ?
+controller LunchAlarmController{
+  when provided LunchAlarmController
+    do SendMessage on SMS
+    do On on Alarm
+    do cancel on Timer1;
+    do cancel on Timer2;
+    do schedule on Timer2;
+}
+controller ResetAlarmController;{
+  when provided TimeOver
+    do Off on Alarm
+    do cancel on Timer2;
+}
+
+//------------------------------------------------------
+//                    CONTEXT
+//------------------------------------------------------
+//Permet de savoir si on est INSIDE ou OUTSIDE
+context InsideContext as Boolean {
+  when provided inactivityLevel, lastInteraction from InactivitySensorAlarm
+  get inactivityLevel, lastInteraction from InactivitySensorAlarm
+  maybe publish;
+}
+
+//A voir si on doit séparer
+context LunchAlarmContext as Boolean {
+  when provided Password // =true
+  always publish;
+
+  when provided timerTriggered as String indexed by timerId as String from Timer1
+  get timerTriggered from Timer1
+  maybe publish;
+}
+
+context Password as Boolean {
+    // TODO
+    //Recuperer tout les sensor du password
+}
+
+context TimeOver as Boolean {
+  when provided timerTriggered as String indexed by timerId as String from Timer2
+  get timerTriggered from Timer2
+  maybe publish;
 }
