@@ -1,4 +1,17 @@
 include "taxonomy.diaspec";
+//------------------------------------------------------
+//                   CONTROLLER
+//------------------------------------------------------
+controller AlarmActivitedController {
+  when provided InsideContext
+    do ScheduleTimer on Timer,
+       On on Light,// action sur la lampe pas justement --> clignotage ????
+       SendNonCriticalNotification on Notifier;
+}
+controller LampAlarmSuccessController{
+  when provided LunchAlarmContext
+    do On on Light,
+    ScheduleTimer on Timer;
 
 controller AlarmActivitedController {
   when provided InsideContext
@@ -15,17 +28,15 @@ controller LampAlarmSuccessController{
 
 // A regrouper avec LampAlarmSuccess ?
 controller LunchAlarmController{
-  when provided LunchAlarmController
-    do SendMessage on SMS
-    do On on Alarm
-    do cancel on Timer1;
-    do cancel on Timer2;
-    do schedule on Timer2;
+  when provided LunchAlarmContext
+    do SendMessage on Messenger,
+    	   SendCriticalNotification on Notifier,//Remplace activation de l'alarme
+    	   ScheduleTimer on Timer;
 }
-controller ResetAlarmController;{
+controller ResetAlarmController{
   when provided TimeOver
-    do Off on Alarm
-    do cancel on Timer2;
+    do SendNonCriticalNotification on Notifier,
+       ScheduleTimer on Timer;
 }
 
 //------------------------------------------------------
@@ -33,28 +44,50 @@ controller ResetAlarmController;{
 //------------------------------------------------------
 //Permet de savoir si on est INSIDE ou OUTSIDE
 context InsideContext as Boolean {
-  when provided inactivityLevel, lastInteraction from InactivitySensorAlarm
-  get inactivityLevel, lastInteraction from InactivitySensorAlarm
+  when provided inactivityLevel from InactivitySensor
+  get lastInteraction from InactivitySensor
   maybe publish;
 }
 
-//A voir si on doit séparer
 context LunchAlarmContext as Boolean {
   when provided Password // =true
   always publish;
 
-  when provided timerTriggered as String indexed by timerId as String from Timer1
-  get timerTriggered from Timer1
+  when provided timerTriggered from Timer
+  get timerTriggered from Timer
   maybe publish;
 }
 
 context Password as Boolean {
-    // TODO
-    //Recuperer tout les sensor du password
+    when provided on from Appliance
+    get on from Appliance
+    always publish;
 }
 
 context TimeOver as Boolean {
-  when provided timerTriggered as String indexed by timerId as String from Timer2
-  get timerTriggered from Timer2
+  when provided timerTriggered from Timer
+  get timerTriggered from Timer
   maybe publish;
 }
+
+//------------------------------------------------------
+//                    DEVICES
+//------------------------------------------------------
+//device InactivitySensorAlarm extends InactivitySensor{
+//}
+
+//device Timer1 extends Timer {}
+//device Timer2 extends Timer {}
+
+//device LightAlarm extends Light{
+//   action Success;
+//   action AlarmActivited;
+//   action Failure;
+/*}
+
+device SMS extends SMSSender{
+}
+
+device Alarm extends Appliances{
+}
+ */
