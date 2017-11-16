@@ -1,0 +1,7 @@
+// AlEirbGenerale context
+context AlEirbGeneraleContext as Boolean {
+}
+
+// AlEirbGenerale controller
+controller AlEirbGeneraleController {
+}
