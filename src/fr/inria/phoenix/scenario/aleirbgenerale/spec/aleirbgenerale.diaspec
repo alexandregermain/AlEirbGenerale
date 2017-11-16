@@ -48,8 +48,9 @@ context LunchAlarmContext as Boolean {
 }
 
 context Password as Boolean {
-    // TODO
-    //Recuperer tout les sensor du password
+    when provided on from Appliance
+    get on from Appliance
+    always publish;
 }
 
 context TimeOver as Boolean {
