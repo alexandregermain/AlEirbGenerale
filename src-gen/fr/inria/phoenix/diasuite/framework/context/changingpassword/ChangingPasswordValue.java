@@ -1,33 +1,42 @@
-package fr.inria.phoenix.diasuite.framework.context.password;
+package fr.inria.phoenix.diasuite.framework.context.changingpassword;
 
 import java.io.Serializable;
 
 /**
- * An object to store a value published by the context <code>Password</code>.
+ * An object to store a value published by the context <code>ChangingPassword</code>.
+ * <p>
+ * ------------------------------------------------------
+ * CONTEXT
+ * ------------------------------------------------------
  *
  * <pre>
- * context Password as Boolean {
+ * context ChangingPassword as Boolean {
  *     when provided on from Appliance
  *     get on from Appliance, contact from ContactSensor
  *     always publish;
  * }
  * </pre>
  */
-public final class PasswordValue implements Serializable {
+public final class ChangingPasswordValue implements Serializable {
     private static final long serialVersionUID = 0;
     
     private java.lang.Boolean value;
     
     /**
-     * Get the value of the context <code>Password</code>
+     * Get the value of the context <code>ChangingPassword</code>
      * 
-     * @return the value of the context <code>Password</code>
+     * <p>
+     * ------------------------------------------------------
+     * CONTEXT
+     * ------------------------------------------------------
+     * 
+     * @return the value of the context <code>ChangingPassword</code>
      */
     public java.lang.Boolean value() {
         return value;
     }
     
-    public PasswordValue(java.lang.Boolean value) {
+    public ChangingPasswordValue(java.lang.Boolean value) {
         this.value = value;
     }
     
@@ -47,7 +56,7 @@ public final class PasswordValue implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        PasswordValue other = (PasswordValue) obj;
+        ChangingPasswordValue other = (ChangingPasswordValue) obj;
         if (value == null) {
             if (other.value != null)
                 return false;

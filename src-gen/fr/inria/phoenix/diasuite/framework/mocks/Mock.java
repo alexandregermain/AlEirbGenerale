@@ -10,6 +10,7 @@ import fr.inria.phoenix.diasuite.framework.controller.lampsuccesscontroller.Abst
 import fr.inria.phoenix.diasuite.framework.controller.lunchalarmcontroller.AbstractLunchAlarmController;
 import fr.inria.phoenix.diasuite.framework.controller.resetalarmcontroller.AbstractResetAlarmController;
 import fr.inria.phoenix.diasuite.framework.context.actionvalidation.AbstractActionValidation;
+import fr.inria.phoenix.diasuite.framework.context.changingpassword.AbstractChangingPassword;
 import fr.inria.phoenix.diasuite.framework.context.insidecontext.AbstractInsideContext;
 import fr.inria.phoenix.diasuite.framework.context.lunchalarmcontext.AbstractLunchAlarmContext;
 import fr.inria.phoenix.diasuite.framework.context.password.AbstractPassword;
@@ -122,6 +123,9 @@ public final class Mock extends AppComponentBinder {
     }
     public Class<? extends AbstractActionValidation> getActionValidationClass() {
         return delegate.getActionValidationClass();
+    }
+    public Class<? extends AbstractChangingPassword> getChangingPasswordClass() {
+        return delegate.getChangingPasswordClass();
     }
     public Class<? extends AbstractInsideContext> getInsideContextClass() {
         return delegate.getInsideContextClass();

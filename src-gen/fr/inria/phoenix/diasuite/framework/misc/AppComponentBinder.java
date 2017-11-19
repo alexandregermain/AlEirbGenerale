@@ -3,6 +3,7 @@ package fr.inria.phoenix.diasuite.framework.misc;
 import fr.inria.diagen.core.deploy.AbstractDeploy;
 
 import fr.inria.phoenix.diasuite.framework.context.actionvalidation.AbstractActionValidation;
+import fr.inria.phoenix.diasuite.framework.context.changingpassword.AbstractChangingPassword;
 import fr.inria.phoenix.diasuite.framework.context.insidecontext.AbstractInsideContext;
 import fr.inria.phoenix.diasuite.framework.context.lunchalarmcontext.AbstractLunchAlarmContext;
 import fr.inria.phoenix.diasuite.framework.context.password.AbstractPassword;
@@ -23,6 +24,7 @@ public abstract class AppComponentBinder extends AbstractDeploy {
 
     // Context instances
     private AbstractActionValidation actionValidationInstance = null;
+    private AbstractChangingPassword changingPasswordInstance = null;
     private AbstractInsideContext insideContextInstance = null;
     private AbstractLunchAlarmContext lunchAlarmContextInstance = null;
     private AbstractPassword passwordInstance = null;
@@ -42,6 +44,8 @@ public abstract class AppComponentBinder extends AbstractDeploy {
         // Initialization of contexts
         if (actionValidationInstance == null)
             actionValidationInstance = getInstance(getActionValidationClass());
+        if (changingPasswordInstance == null)
+            changingPasswordInstance = getInstance(getChangingPasswordClass());
         if (insideContextInstance == null)
             insideContextInstance = getInstance(getInsideContextClass());
         if (lunchAlarmContextInstance == null)
@@ -67,6 +71,7 @@ public abstract class AppComponentBinder extends AbstractDeploy {
             resetAlarmControllerInstance = getInstance(getResetAlarmControllerClass());
         // Deploying contexts
         deploy(actionValidationInstance);
+        deploy(changingPasswordInstance);
         deploy(insideContextInstance);
         deploy(lunchAlarmContextInstance);
         deploy(passwordInstance);
@@ -85,6 +90,7 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     public void undeployAll() {
         // Undeploying contexts
         undeploy(actionValidationInstance);
+        undeploy(changingPasswordInstance);
         undeploy(insideContextInstance);
         undeploy(lunchAlarmContextInstance);
         undeploy(passwordInstance);
@@ -115,6 +121,24 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     @return a class object of a derivation of {@link AbstractActionValidation} that implements the <code>ActionValidation</code> context
      */
     public abstract Class<? extends AbstractActionValidation> getActionValidationClass();
+    
+    /**
+     * Overrides this method to provide the implementation class of the <code>ChangingPassword</code> context
+    <p>
+    ------------------------------------------------------
+    CONTEXT
+    ------------------------------------------------------
+    
+    <pre>
+    context ChangingPassword as Boolean {
+        when provided on from Appliance
+        get on from Appliance, contact from ContactSensor
+        always publish;
+    }
+    </pre>
+    @return a class object of a derivation of {@link AbstractChangingPassword} that implements the <code>ChangingPassword</code> context
+     */
+    public abstract Class<? extends AbstractChangingPassword> getChangingPasswordClass();
     
     /**
      * Overrides this method to provide the implementation class of the <code>InsideContext</code> context
@@ -218,8 +242,8 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     
     <pre>
     controller ChangePassword {
-    	when provided Password
-    		do ScheduleTimer on Timer, On on Light;
+    	when provided ChangingPassword
+    	do ScheduleTimer on Timer, On on Light;
     	when provided ActionValidation
     		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm;
     }

@@ -1,4 +1,4 @@
-package fr.inria.phoenix.diasuite.framework.context.password;
+package fr.inria.phoenix.diasuite.framework.context.changingpassword;
 
 import fr.inria.diagen.core.ServiceConfiguration;
 import fr.inria.diagen.core.exception.InvocationException;
@@ -10,19 +10,23 @@ import fr.inria.diagen.core.service.proxy.Proxy;
 import fr.inria.phoenix.diasuite.framework.device.appliance.OnFromAppliance;
 
 /**
- * <pre>
-context Password as Boolean {
- *     when provided on from Appliance
- *     get on from Appliance, contact from ContactSensor
- *     always publish;
- * }
+ * ------------------------------------------------------
+CONTEXT
+------------------------------------------------------
+
+<pre>
+context ChangingPassword as Boolean {
+    when provided on from Appliance
+    get on from Appliance, contact from ContactSensor
+    always publish;
+}
 </pre>
  */
 @SuppressWarnings("all")
-public abstract class AbstractPassword extends Service {
+public abstract class AbstractChangingPassword extends Service {
     
-    public AbstractPassword(ServiceConfiguration serviceConfiguration) {
-        super("/Context/Password/", serviceConfiguration);
+    public AbstractChangingPassword(ServiceConfiguration serviceConfiguration) {
+        super("/Context/ChangingPassword/", serviceConfiguration);
     }
     
     // Methods from the Service class
@@ -42,14 +46,14 @@ public abstract class AbstractPassword extends Service {
         if (eventName.equals("on") && source.isCompatible("/Device/Device/PhysicalDevice/Appliance/")) {
             OnFromAppliance onFromAppliance = new OnFromAppliance(this, source, (java.lang.Boolean) value);
             
-            setPassword(onOnFromAppliance(onFromAppliance, new DiscoverForOnFromAppliance()));
+            setChangingPassword(onOnFromAppliance(onFromAppliance, new DiscoverForOnFromAppliance()));
         }
     }
     
     @Override
     public final Object getValueCalled(java.util.Map<String, Object> properties, RemoteServiceInfo source, String valueName,
             Object... indexes) throws Exception {
-        if (valueName.equals("password")) {
+        if (valueName.equals("changingPassword")) {
             return getLastValue();
         }
         throw new InvocationException("Unsupported method call: " + valueName);
@@ -59,9 +63,9 @@ public abstract class AbstractPassword extends Service {
     // Code relative to the return value of the context
     private java.lang.Boolean contextValue;
     
-    private void setPassword(java.lang.Boolean newContextValue) {
+    private void setChangingPassword(java.lang.Boolean newContextValue) {
         contextValue = newContextValue;
-        getProcessor().publishValue(getOutProperties(), "password", newContextValue);
+        getProcessor().publishValue(getOutProperties(), "changingPassword", newContextValue);
     }
     
     /**
@@ -80,8 +84,8 @@ public abstract class AbstractPassword extends Service {
     
     <pre>
     when provided on from Appliance
-     *     get on from Appliance, contact from ContactSensor
-     *     always publish;
+        get on from Appliance, contact from ContactSensor
+        always publish;
     </pre>
      * 
      * @param onFromAppliance the value of the <code>on</code> source and the <code>Appliance</code> device that published the value.
@@ -333,8 +337,8 @@ public abstract class AbstractPassword extends Service {
      * </code>
      */
     protected final class DiscoverForOnFromAppliance {
-        private final ApplianceDiscovererForOnFromAppliance applianceDiscoverer = new ApplianceDiscovererForOnFromAppliance(AbstractPassword.this);
-        private final ContactSensorDiscovererForOnFromAppliance contactSensorDiscoverer = new ContactSensorDiscovererForOnFromAppliance(AbstractPassword.this);
+        private final ApplianceDiscovererForOnFromAppliance applianceDiscoverer = new ApplianceDiscovererForOnFromAppliance(AbstractChangingPassword.this);
+        private final ContactSensorDiscovererForOnFromAppliance contactSensorDiscoverer = new ContactSensorDiscovererForOnFromAppliance(AbstractChangingPassword.this);
         
         /**
          * @return a {@link ApplianceDiscovererForOnFromAppliance} object to discover <code>Appliance</code> devices

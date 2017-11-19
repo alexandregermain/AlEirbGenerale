@@ -8,13 +8,13 @@ import fr.inria.diagen.core.service.local.Service;
 import fr.inria.diagen.core.service.proxy.Proxy;
 
 import fr.inria.phoenix.diasuite.framework.context.actionvalidation.ActionValidationValue;
-import fr.inria.phoenix.diasuite.framework.context.password.PasswordValue;
+import fr.inria.phoenix.diasuite.framework.context.changingpassword.ChangingPasswordValue;
 
 /**
  * <pre>
 controller ChangePassword {
-	when provided Password
-		do ScheduleTimer on Timer, On on Light;
+	when provided ChangingPassword
+	do ScheduleTimer on Timer, On on Light;
 	when provided ActionValidation
 		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm;
 }
@@ -31,7 +31,7 @@ public abstract class AbstractChangePassword extends Service {
     @Override
     protected final void internalPostInitialize() {
         subscribeValue("actionValidation", "/Context/ActionValidation/"); // subscribe to ActionValidation context
-        subscribeValue("password", "/Context/Password/"); // subscribe to Password context
+        subscribeValue("changingPassword", "/Context/ChangingPassword/"); // subscribe to ChangingPassword context
         postInitialize();
     }
     
@@ -42,27 +42,27 @@ public abstract class AbstractChangePassword extends Service {
             
             onActionValidation(actionValidationValue, new DiscoverForActionValidation());
         }
-        if (eventName.equals("password") && source.isCompatible("/Context/Password/")) {
-            PasswordValue passwordValue = new PasswordValue((java.lang.Boolean) value);
+        if (eventName.equals("changingPassword") && source.isCompatible("/Context/ChangingPassword/")) {
+            ChangingPasswordValue changingPasswordValue = new ChangingPasswordValue((java.lang.Boolean) value);
             
-            onPassword(passwordValue, new DiscoverForPassword());
+            onChangingPassword(changingPasswordValue, new DiscoverForChangingPassword());
         }
     }
     // End of methods from the Service class
     
     // Interaction contract implementation
     /**
-     * This method is called when the <code>Password</code> context publishes a value.
+     * This method is called when the <code>ChangingPassword</code> context publishes a value.
      * 
      * <pre>
-     * when provided Password
-     * 		do ScheduleTimer on Timer, On on Light;
+     * when provided ChangingPassword
+     * 	do ScheduleTimer on Timer, On on Light;
      * </pre>
      * 
-     * @param password the value of the <code>Password</code> context.
+     * @param changingPassword the value of the <code>ChangingPassword</code> context.
      * @param discover a discover object to get context values and action methods
      */
-    protected abstract void onPassword(PasswordValue password, DiscoverForPassword discover);
+    protected abstract void onChangingPassword(ChangingPasswordValue changingPassword, DiscoverForChangingPassword discover);
     
     /**
      * This method is called when the <code>ActionValidation</code> context publishes a value.
@@ -79,37 +79,37 @@ public abstract class AbstractChangePassword extends Service {
     
     // End of interaction contract implementation
     
-    // Discover object for Password
+    // Discover object for ChangingPassword
     /**
      * An object to discover devices and contexts for the following interaction contract:
      * 
      * <code>
-     * when provided Password
-     * 		do ScheduleTimer on Timer, On on Light;
+     * when provided ChangingPassword
+     * 	do ScheduleTimer on Timer, On on Light;
      * </code>
      */
-    protected final class DiscoverForPassword {
-        private final TimerDiscovererForPassword timerDiscoverer = new TimerDiscovererForPassword(AbstractChangePassword.this);
-        private final LightDiscovererForPassword lightDiscoverer = new LightDiscovererForPassword(AbstractChangePassword.this);
+    protected final class DiscoverForChangingPassword {
+        private final TimerDiscovererForChangingPassword timerDiscoverer = new TimerDiscovererForChangingPassword(AbstractChangePassword.this);
+        private final LightDiscovererForChangingPassword lightDiscoverer = new LightDiscovererForChangingPassword(AbstractChangePassword.this);
         
         /**
-         * @return a {@link TimerDiscovererForPassword} object to discover <code>Timer</code> devices
+         * @return a {@link TimerDiscovererForChangingPassword} object to discover <code>Timer</code> devices
          */
-        public TimerDiscovererForPassword timers() {
+        public TimerDiscovererForChangingPassword timers() {
             return timerDiscoverer;
         }
         
         /**
-         * @return a {@link LightDiscovererForPassword} object to discover <code>Light</code> devices
+         * @return a {@link LightDiscovererForChangingPassword} object to discover <code>Light</code> devices
          */
-        public LightDiscovererForPassword lights() {
+        public LightDiscovererForChangingPassword lights() {
             return lightDiscoverer;
         }
     }
     
     /**
      * Discover object that will exposes the <code>Timer</code> devices to execute action on for the
-     * <code>when provided Password</code> interaction contract.
+     * <code>when provided ChangingPassword</code> interaction contract.
     <p>
     ------
     Timer
@@ -122,33 +122,33 @@ public abstract class AbstractChangePassword extends Service {
      * }
     </pre>
      */
-    protected final static class TimerDiscovererForPassword {
+    protected final static class TimerDiscovererForChangingPassword {
         private Service serviceParent;
         
-        private TimerDiscovererForPassword(Service serviceParent) {
+        private TimerDiscovererForChangingPassword(Service serviceParent) {
             super();
             this.serviceParent = serviceParent;
         }
         
-        private TimerCompositeForPassword instantiateComposite() {
-            return new TimerCompositeForPassword(serviceParent);
+        private TimerCompositeForChangingPassword instantiateComposite() {
+            return new TimerCompositeForChangingPassword(serviceParent);
         }
         
         /**
          * Returns a composite of all accessible <code>Timer</code> devices
          * 
-         * @return a {@link TimerCompositeForPassword} object composed of all discoverable <code>Timer</code>
+         * @return a {@link TimerCompositeForChangingPassword} object composed of all discoverable <code>Timer</code>
          */
-        public TimerCompositeForPassword all() {
+        public TimerCompositeForChangingPassword all() {
             return instantiateComposite();
         }
         
         /**
          * Returns a proxy to one out of all accessible <code>Timer</code> devices
          * 
-         * @return a {@link TimerProxyForPassword} object pointing to a random discoverable <code>Timer</code> device
+         * @return a {@link TimerProxyForChangingPassword} object pointing to a random discoverable <code>Timer</code> device
          */
-        public TimerProxyForPassword anyOne() {
+        public TimerProxyForChangingPassword anyOne() {
             return all().anyOne();
         }
         
@@ -156,16 +156,16 @@ public abstract class AbstractChangePassword extends Service {
          * Returns a composite of all accessible <code>Timer</code> devices whose attribute <code>id</code> matches a given value.
          * 
          * @param id The <code>id<code> attribute value to match.
-         * @return a {@link TimerCompositeForPassword} object composed of all matching <code>Timer</code> devices
+         * @return a {@link TimerCompositeForChangingPassword} object composed of all matching <code>Timer</code> devices
          */
-        public TimerCompositeForPassword whereId(java.lang.String id) throws CompositeException {
+        public TimerCompositeForChangingPassword whereId(java.lang.String id) throws CompositeException {
             return instantiateComposite().andId(id);
         }
     }
     
     /**
      * A composite of several <code>Timer</code> devices to execute action on for the
-     * <code>when provided Password</code> interaction contract.
+     * <code>when provided ChangingPassword</code> interaction contract.
     <p>
     ------
     Timer
@@ -178,23 +178,23 @@ public abstract class AbstractChangePassword extends Service {
      * }
     </pre>
      */
-    protected final static class TimerCompositeForPassword extends fr.inria.diagen.core.service.composite.Composite<TimerProxyForPassword> {
-        private TimerCompositeForPassword(Service serviceParent) {
+    protected final static class TimerCompositeForChangingPassword extends fr.inria.diagen.core.service.composite.Composite<TimerProxyForChangingPassword> {
+        private TimerCompositeForChangingPassword(Service serviceParent) {
             super(serviceParent, "/Device/Device/Service/Timer/");
         }
         
         @Override
-        protected TimerProxyForPassword instantiateProxy(RemoteServiceInfo rsi) {
-            return new TimerProxyForPassword(service, rsi);
+        protected TimerProxyForChangingPassword instantiateProxy(RemoteServiceInfo rsi) {
+            return new TimerProxyForChangingPassword(service, rsi);
         }
         
         /**
          * Returns this composite in which a filter was set to the attribute <code>id</code>.
          * 
          * @param id The <code>id<code> attribute value to match.
-         * @return this {@link TimerCompositeForPassword}, filtered using the attribute <code>id</code>.
+         * @return this {@link TimerCompositeForChangingPassword}, filtered using the attribute <code>id</code>.
          */
-        public TimerCompositeForPassword andId(java.lang.String id) throws CompositeException {
+        public TimerCompositeForChangingPassword andId(java.lang.String id) throws CompositeException {
             filterByAttribute("id", id);
             return this;
         }
@@ -208,7 +208,7 @@ public abstract class AbstractChangePassword extends Service {
         public void schedule(java.lang.String id,
                 java.lang.Integer delayMs) throws InvocationException {
             launchDiscovering();
-            for (TimerProxyForPassword proxy : proxies) {
+            for (TimerProxyForChangingPassword proxy : proxies) {
                 proxy.schedule(id, delayMs);
             }
         }
@@ -224,7 +224,7 @@ public abstract class AbstractChangePassword extends Service {
                 java.lang.Integer delayMs,
                 java.lang.Integer periodMs) throws InvocationException {
             launchDiscovering();
-            for (TimerProxyForPassword proxy : proxies) {
+            for (TimerProxyForChangingPassword proxy : proxies) {
                 proxy.periodicSchedule(id, delayMs, periodMs);
             }
         }
@@ -236,7 +236,7 @@ public abstract class AbstractChangePassword extends Service {
          */
         public void cancel(java.lang.String id) throws InvocationException {
             launchDiscovering();
-            for (TimerProxyForPassword proxy : proxies) {
+            for (TimerProxyForChangingPassword proxy : proxies) {
                 proxy.cancel(id);
             }
         }
@@ -244,7 +244,7 @@ public abstract class AbstractChangePassword extends Service {
     
     /**
      * A proxy to one <code>Timer</code> device to execute action on for the
-     * <code>when provided Password</code> interaction contract.
+     * <code>when provided ChangingPassword</code> interaction contract.
     <p>
     ------
     Timer
@@ -257,8 +257,8 @@ public abstract class AbstractChangePassword extends Service {
      * }
     </pre>
      */
-    protected final static class TimerProxyForPassword extends Proxy {
-        private TimerProxyForPassword(Service service, RemoteServiceInfo remoteServiceInfo) {
+    protected final static class TimerProxyForChangingPassword extends Proxy {
+        private TimerProxyForChangingPassword(Service service, RemoteServiceInfo remoteServiceInfo) {
             super(service, remoteServiceInfo);
         }
         
@@ -305,7 +305,7 @@ public abstract class AbstractChangePassword extends Service {
     
     /**
      * Discover object that will exposes the <code>Light</code> devices to execute action on for the
-     * <code>when provided Password</code> interaction contract.
+     * <code>when provided ChangingPassword</code> interaction contract.
     <p>
     ------
     Light
@@ -316,33 +316,33 @@ public abstract class AbstractChangePassword extends Service {
      * }
     </pre>
      */
-    protected final static class LightDiscovererForPassword {
+    protected final static class LightDiscovererForChangingPassword {
         private Service serviceParent;
         
-        private LightDiscovererForPassword(Service serviceParent) {
+        private LightDiscovererForChangingPassword(Service serviceParent) {
             super();
             this.serviceParent = serviceParent;
         }
         
-        private LightCompositeForPassword instantiateComposite() {
-            return new LightCompositeForPassword(serviceParent);
+        private LightCompositeForChangingPassword instantiateComposite() {
+            return new LightCompositeForChangingPassword(serviceParent);
         }
         
         /**
          * Returns a composite of all accessible <code>Light</code> devices
          * 
-         * @return a {@link LightCompositeForPassword} object composed of all discoverable <code>Light</code>
+         * @return a {@link LightCompositeForChangingPassword} object composed of all discoverable <code>Light</code>
          */
-        public LightCompositeForPassword all() {
+        public LightCompositeForChangingPassword all() {
             return instantiateComposite();
         }
         
         /**
          * Returns a proxy to one out of all accessible <code>Light</code> devices
          * 
-         * @return a {@link LightProxyForPassword} object pointing to a random discoverable <code>Light</code> device
+         * @return a {@link LightProxyForChangingPassword} object pointing to a random discoverable <code>Light</code> device
          */
-        public LightProxyForPassword anyOne() {
+        public LightProxyForChangingPassword anyOne() {
             return all().anyOne();
         }
         
@@ -350,9 +350,9 @@ public abstract class AbstractChangePassword extends Service {
          * Returns a composite of all accessible <code>Light</code> devices whose attribute <code>id</code> matches a given value.
          * 
          * @param id The <code>id<code> attribute value to match.
-         * @return a {@link LightCompositeForPassword} object composed of all matching <code>Light</code> devices
+         * @return a {@link LightCompositeForChangingPassword} object composed of all matching <code>Light</code> devices
          */
-        public LightCompositeForPassword whereId(java.lang.String id) throws CompositeException {
+        public LightCompositeForChangingPassword whereId(java.lang.String id) throws CompositeException {
             return instantiateComposite().andId(id);
         }
         
@@ -360,9 +360,9 @@ public abstract class AbstractChangePassword extends Service {
          * Returns a composite of all accessible <code>Light</code> devices whose attribute <code>location</code> matches a given value.
          * 
          * @param location The <code>location<code> attribute value to match.
-         * @return a {@link LightCompositeForPassword} object composed of all matching <code>Light</code> devices
+         * @return a {@link LightCompositeForChangingPassword} object composed of all matching <code>Light</code> devices
          */
-        public LightCompositeForPassword whereLocation(java.lang.String location) throws CompositeException {
+        public LightCompositeForChangingPassword whereLocation(java.lang.String location) throws CompositeException {
             return instantiateComposite().andLocation(location);
         }
         
@@ -370,16 +370,16 @@ public abstract class AbstractChangePassword extends Service {
          * Returns a composite of all accessible <code>Light</code> devices whose attribute <code>user</code> matches a given value.
          * 
          * @param user The <code>user<code> attribute value to match.
-         * @return a {@link LightCompositeForPassword} object composed of all matching <code>Light</code> devices
+         * @return a {@link LightCompositeForChangingPassword} object composed of all matching <code>Light</code> devices
          */
-        public LightCompositeForPassword whereUser(java.lang.String user) throws CompositeException {
+        public LightCompositeForChangingPassword whereUser(java.lang.String user) throws CompositeException {
             return instantiateComposite().andUser(user);
         }
     }
     
     /**
      * A composite of several <code>Light</code> devices to execute action on for the
-     * <code>when provided Password</code> interaction contract.
+     * <code>when provided ChangingPassword</code> interaction contract.
     <p>
     ------
     Light
@@ -390,23 +390,23 @@ public abstract class AbstractChangePassword extends Service {
      * }
     </pre>
      */
-    protected final static class LightCompositeForPassword extends fr.inria.diagen.core.service.composite.Composite<LightProxyForPassword> {
-        private LightCompositeForPassword(Service serviceParent) {
+    protected final static class LightCompositeForChangingPassword extends fr.inria.diagen.core.service.composite.Composite<LightProxyForChangingPassword> {
+        private LightCompositeForChangingPassword(Service serviceParent) {
             super(serviceParent, "/Device/Device/PhysicalDevice/Appliance/Light/");
         }
         
         @Override
-        protected LightProxyForPassword instantiateProxy(RemoteServiceInfo rsi) {
-            return new LightProxyForPassword(service, rsi);
+        protected LightProxyForChangingPassword instantiateProxy(RemoteServiceInfo rsi) {
+            return new LightProxyForChangingPassword(service, rsi);
         }
         
         /**
          * Returns this composite in which a filter was set to the attribute <code>id</code>.
          * 
          * @param id The <code>id<code> attribute value to match.
-         * @return this {@link LightCompositeForPassword}, filtered using the attribute <code>id</code>.
+         * @return this {@link LightCompositeForChangingPassword}, filtered using the attribute <code>id</code>.
          */
-        public LightCompositeForPassword andId(java.lang.String id) throws CompositeException {
+        public LightCompositeForChangingPassword andId(java.lang.String id) throws CompositeException {
             filterByAttribute("id", id);
             return this;
         }
@@ -415,9 +415,9 @@ public abstract class AbstractChangePassword extends Service {
          * Returns this composite in which a filter was set to the attribute <code>location</code>.
          * 
          * @param location The <code>location<code> attribute value to match.
-         * @return this {@link LightCompositeForPassword}, filtered using the attribute <code>location</code>.
+         * @return this {@link LightCompositeForChangingPassword}, filtered using the attribute <code>location</code>.
          */
-        public LightCompositeForPassword andLocation(java.lang.String location) throws CompositeException {
+        public LightCompositeForChangingPassword andLocation(java.lang.String location) throws CompositeException {
             filterByAttribute("location", location);
             return this;
         }
@@ -426,9 +426,9 @@ public abstract class AbstractChangePassword extends Service {
          * Returns this composite in which a filter was set to the attribute <code>user</code>.
          * 
          * @param user The <code>user<code> attribute value to match.
-         * @return this {@link LightCompositeForPassword}, filtered using the attribute <code>user</code>.
+         * @return this {@link LightCompositeForChangingPassword}, filtered using the attribute <code>user</code>.
          */
-        public LightCompositeForPassword andUser(java.lang.String user) throws CompositeException {
+        public LightCompositeForChangingPassword andUser(java.lang.String user) throws CompositeException {
             filterByAttribute("user", user);
             return this;
         }
@@ -438,7 +438,7 @@ public abstract class AbstractChangePassword extends Service {
          */
         public void on() throws InvocationException {
             launchDiscovering();
-            for (LightProxyForPassword proxy : proxies) {
+            for (LightProxyForChangingPassword proxy : proxies) {
                 proxy.on();
             }
         }
@@ -446,7 +446,7 @@ public abstract class AbstractChangePassword extends Service {
     
     /**
      * A proxy to one <code>Light</code> device to execute action on for the
-     * <code>when provided Password</code> interaction contract.
+     * <code>when provided ChangingPassword</code> interaction contract.
     <p>
     ------
     Light
@@ -457,8 +457,8 @@ public abstract class AbstractChangePassword extends Service {
      * }
     </pre>
      */
-    protected final static class LightProxyForPassword extends Proxy {
-        private LightProxyForPassword(Service service, RemoteServiceInfo remoteServiceInfo) {
+    protected final static class LightProxyForChangingPassword extends Proxy {
+        private LightProxyForChangingPassword(Service service, RemoteServiceInfo remoteServiceInfo) {
             super(service, remoteServiceInfo);
         }
         
@@ -490,7 +490,7 @@ public abstract class AbstractChangePassword extends Service {
             return (java.lang.String) callGetValue("user");
         }
     }
-    // End of discover object for Password
+    // End of discover object for ChangingPassword
     
     // Discover object for ActionValidation
     /**

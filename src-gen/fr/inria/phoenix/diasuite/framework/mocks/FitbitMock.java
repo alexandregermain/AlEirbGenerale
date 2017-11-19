@@ -2,15 +2,15 @@ package fr.inria.phoenix.diasuite.framework.mocks;
 
 import fr.inria.diagen.core.ServiceConfiguration;
 import fr.inria.phoenix.diasuite.framework.device.fitbit.AbstractFitbit;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyActivitiesIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.StepsBetweenIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyPulsesIndices;
 import fr.inria.phoenix.diasuite.framework.device.fitbit.PulsesBetweenIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.SleepPeriodsBetweenIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.DailySleepPeriodsIndices;
 import fr.inria.phoenix.diasuite.framework.device.fitbit.ActivitiesBetweenIndices;
 import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyStepsIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.StepsBetweenIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.SleepPeriodsBetweenIndices;
 import fr.inria.phoenix.diasuite.framework.device.fitbit.AlarmIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyActivitiesIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.DailySleepPeriodsIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyPulsesIndices;
 
 // @internal
 public final class FitbitMock {
