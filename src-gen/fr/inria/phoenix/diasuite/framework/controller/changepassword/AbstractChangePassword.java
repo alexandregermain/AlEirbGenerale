@@ -16,7 +16,9 @@ controller ChangePassword {
 	when provided ChangingPassword
 	do ScheduleTimer on Timer, On on Light;
 	when provided ActionValidation
-		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm;
+		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm,
+		   SendMessage on Messenger,
+    	   SendCriticalNotification on Notifier;
 }
 </pre>
  */
@@ -69,7 +71,9 @@ public abstract class AbstractChangePassword extends Service {
      * 
      * <pre>
      * when provided ActionValidation
-     * 		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm;
+     * 		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm,
+     * 		   SendMessage on Messenger,
+     *     	   SendCriticalNotification on Notifier;
      * </pre>
      * 
      * @param actionValidation the value of the <code>ActionValidation</code> context.
@@ -498,13 +502,17 @@ public abstract class AbstractChangePassword extends Service {
      * 
      * <code>
      * when provided ActionValidation
-     * 		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm;
+     * 		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm,
+     * 		   SendMessage on Messenger,
+     *     	   SendCriticalNotification on Notifier;
      * </code>
      */
     protected final class DiscoverForActionValidation {
         private final TimerDiscovererForActionValidation timerDiscoverer = new TimerDiscovererForActionValidation(AbstractChangePassword.this);
         private final LightDiscovererForActionValidation lightDiscoverer = new LightDiscovererForActionValidation(AbstractChangePassword.this);
         private final AlarmDiscovererForActionValidation alarmDiscoverer = new AlarmDiscovererForActionValidation(AbstractChangePassword.this);
+        private final MessengerDiscovererForActionValidation messengerDiscoverer = new MessengerDiscovererForActionValidation(AbstractChangePassword.this);
+        private final NotifierDiscovererForActionValidation notifierDiscoverer = new NotifierDiscovererForActionValidation(AbstractChangePassword.this);
         
         /**
          * @return a {@link TimerDiscovererForActionValidation} object to discover <code>Timer</code> devices
@@ -525,6 +533,20 @@ public abstract class AbstractChangePassword extends Service {
          */
         public AlarmDiscovererForActionValidation alarms() {
             return alarmDiscoverer;
+        }
+        
+        /**
+         * @return a {@link MessengerDiscovererForActionValidation} object to discover <code>Messenger</code> devices
+         */
+        public MessengerDiscovererForActionValidation messengers() {
+            return messengerDiscoverer;
+        }
+        
+        /**
+         * @return a {@link NotifierDiscovererForActionValidation} object to discover <code>Notifier</code> devices
+         */
+        public NotifierDiscovererForActionValidation notifiers() {
+            return notifierDiscoverer;
         }
     }
     
@@ -1031,6 +1053,321 @@ public abstract class AbstractChangePassword extends Service {
          */
         public void on() throws InvocationException {
             callOrder("on");
+        }
+        
+        /**
+         * @return the value of the <code>id</code> attribute
+         */
+        public java.lang.String id() {
+            return (java.lang.String) callGetValue("id");
+        }
+    }
+    
+    /**
+     * Discover object that will exposes the <code>Messenger</code> devices to execute action on for the
+     * <code>when provided ActionValidation</code> interaction contract.
+    
+    <pre>
+    device Messenger extends CommunicationService {
+     * 	source lastMessage as Message;
+     * 	action SendMessage;
+     * }
+    </pre>
+     */
+    protected final static class MessengerDiscovererForActionValidation {
+        private Service serviceParent;
+        
+        private MessengerDiscovererForActionValidation(Service serviceParent) {
+            super();
+            this.serviceParent = serviceParent;
+        }
+        
+        private MessengerCompositeForActionValidation instantiateComposite() {
+            return new MessengerCompositeForActionValidation(serviceParent);
+        }
+        
+        /**
+         * Returns a composite of all accessible <code>Messenger</code> devices
+         * 
+         * @return a {@link MessengerCompositeForActionValidation} object composed of all discoverable <code>Messenger</code>
+         */
+        public MessengerCompositeForActionValidation all() {
+            return instantiateComposite();
+        }
+        
+        /**
+         * Returns a proxy to one out of all accessible <code>Messenger</code> devices
+         * 
+         * @return a {@link MessengerProxyForActionValidation} object pointing to a random discoverable <code>Messenger</code> device
+         */
+        public MessengerProxyForActionValidation anyOne() {
+            return all().anyOne();
+        }
+        
+        /**
+         * Returns a composite of all accessible <code>Messenger</code> devices whose attribute <code>id</code> matches a given value.
+         * 
+         * @param id The <code>id<code> attribute value to match.
+         * @return a {@link MessengerCompositeForActionValidation} object composed of all matching <code>Messenger</code> devices
+         */
+        public MessengerCompositeForActionValidation whereId(java.lang.String id) throws CompositeException {
+            return instantiateComposite().andId(id);
+        }
+    }
+    
+    /**
+     * A composite of several <code>Messenger</code> devices to execute action on for the
+     * <code>when provided ActionValidation</code> interaction contract.
+    
+    <pre>
+    device Messenger extends CommunicationService {
+     * 	source lastMessage as Message;
+     * 	action SendMessage;
+     * }
+    </pre>
+     */
+    protected final static class MessengerCompositeForActionValidation extends fr.inria.diagen.core.service.composite.Composite<MessengerProxyForActionValidation> {
+        private MessengerCompositeForActionValidation(Service serviceParent) {
+            super(serviceParent, "/Device/Device/Service/CommunicationService/Messenger/");
+        }
+        
+        @Override
+        protected MessengerProxyForActionValidation instantiateProxy(RemoteServiceInfo rsi) {
+            return new MessengerProxyForActionValidation(service, rsi);
+        }
+        
+        /**
+         * Returns this composite in which a filter was set to the attribute <code>id</code>.
+         * 
+         * @param id The <code>id<code> attribute value to match.
+         * @return this {@link MessengerCompositeForActionValidation}, filtered using the attribute <code>id</code>.
+         */
+        public MessengerCompositeForActionValidation andId(java.lang.String id) throws CompositeException {
+            filterByAttribute("id", id);
+            return this;
+        }
+        
+        /**
+         * Executes the <code>sendMessage(message as Message)</code> action's method on all devices of this composite.
+         * 
+         * @param message the <code>message</code> parameter of the <code>sendMessage(message as Message)</code> method.
+         */
+        public void sendMessage(fr.inria.phoenix.diasuite.framework.datatype.message.Message message) throws InvocationException {
+            launchDiscovering();
+            for (MessengerProxyForActionValidation proxy : proxies) {
+                proxy.sendMessage(message);
+            }
+        }
+    }
+    
+    /**
+     * A proxy to one <code>Messenger</code> device to execute action on for the
+     * <code>when provided ActionValidation</code> interaction contract.
+    
+    <pre>
+    device Messenger extends CommunicationService {
+     * 	source lastMessage as Message;
+     * 	action SendMessage;
+     * }
+    </pre>
+     */
+    protected final static class MessengerProxyForActionValidation extends Proxy {
+        private MessengerProxyForActionValidation(Service service, RemoteServiceInfo remoteServiceInfo) {
+            super(service, remoteServiceInfo);
+        }
+        
+        /**
+         * Executes the <code>sendMessage(message as Message)</code> action's method on this device.
+         * 
+         * @param message the <code>message</code> parameter of the <code>sendMessage(message as Message)</code> method.
+         */
+        public void sendMessage(fr.inria.phoenix.diasuite.framework.datatype.message.Message message) throws InvocationException {
+            callOrder("sendMessage", message);
+        }
+        
+        /**
+         * @return the value of the <code>id</code> attribute
+         */
+        public java.lang.String id() {
+            return (java.lang.String) callGetValue("id");
+        }
+    }
+    
+    /**
+     * Discover object that will exposes the <code>Notifier</code> devices to execute action on for the
+     * <code>when provided ActionValidation</code> interaction contract.
+    
+    <pre>
+    device Notifier extends HomeService {
+     * 	source cancelled as Boolean indexed by id as String;
+     * 	source expired as Boolean indexed by id as String;
+     * 	source reply as Integer indexed by id as String;
+     * 	action SendCriticalNotification;
+     * 	action SendNonCriticalNotification;
+     * }
+    </pre>
+     */
+    protected final static class NotifierDiscovererForActionValidation {
+        private Service serviceParent;
+        
+        private NotifierDiscovererForActionValidation(Service serviceParent) {
+            super();
+            this.serviceParent = serviceParent;
+        }
+        
+        private NotifierCompositeForActionValidation instantiateComposite() {
+            return new NotifierCompositeForActionValidation(serviceParent);
+        }
+        
+        /**
+         * Returns a composite of all accessible <code>Notifier</code> devices
+         * 
+         * @return a {@link NotifierCompositeForActionValidation} object composed of all discoverable <code>Notifier</code>
+         */
+        public NotifierCompositeForActionValidation all() {
+            return instantiateComposite();
+        }
+        
+        /**
+         * Returns a proxy to one out of all accessible <code>Notifier</code> devices
+         * 
+         * @return a {@link NotifierProxyForActionValidation} object pointing to a random discoverable <code>Notifier</code> device
+         */
+        public NotifierProxyForActionValidation anyOne() {
+            return all().anyOne();
+        }
+        
+        /**
+         * Returns a composite of all accessible <code>Notifier</code> devices whose attribute <code>id</code> matches a given value.
+         * 
+         * @param id The <code>id<code> attribute value to match.
+         * @return a {@link NotifierCompositeForActionValidation} object composed of all matching <code>Notifier</code> devices
+         */
+        public NotifierCompositeForActionValidation whereId(java.lang.String id) throws CompositeException {
+            return instantiateComposite().andId(id);
+        }
+    }
+    
+    /**
+     * A composite of several <code>Notifier</code> devices to execute action on for the
+     * <code>when provided ActionValidation</code> interaction contract.
+    
+    <pre>
+    device Notifier extends HomeService {
+     * 	source cancelled as Boolean indexed by id as String;
+     * 	source expired as Boolean indexed by id as String;
+     * 	source reply as Integer indexed by id as String;
+     * 	action SendCriticalNotification;
+     * 	action SendNonCriticalNotification;
+     * }
+    </pre>
+     */
+    protected final static class NotifierCompositeForActionValidation extends fr.inria.diagen.core.service.composite.Composite<NotifierProxyForActionValidation> {
+        private NotifierCompositeForActionValidation(Service serviceParent) {
+            super(serviceParent, "/Device/Device/Service/HomeService/Notifier/");
+        }
+        
+        @Override
+        protected NotifierProxyForActionValidation instantiateProxy(RemoteServiceInfo rsi) {
+            return new NotifierProxyForActionValidation(service, rsi);
+        }
+        
+        /**
+         * Returns this composite in which a filter was set to the attribute <code>id</code>.
+         * 
+         * @param id The <code>id<code> attribute value to match.
+         * @return this {@link NotifierCompositeForActionValidation}, filtered using the attribute <code>id</code>.
+         */
+        public NotifierCompositeForActionValidation andId(java.lang.String id) throws CompositeException {
+            filterByAttribute("id", id);
+            return this;
+        }
+        
+        /**
+         * Executes the <code>sendCriticalNotification(notification as CriticalNotification)</code> action's method on all devices of this composite.
+         * 
+         * @param notification the <code>notification</code> parameter of the <code>sendCriticalNotification(notification as CriticalNotification)</code> method.
+         */
+        public void sendCriticalNotification(fr.inria.phoenix.diasuite.framework.datatype.criticalnotification.CriticalNotification notification) throws InvocationException {
+            launchDiscovering();
+            for (NotifierProxyForActionValidation proxy : proxies) {
+                proxy.sendCriticalNotification(notification);
+            }
+        }
+        
+        /**
+         * Executes the <code>registerCriticalNotification(notification as CriticalNotification, displayDate as Date)</code> action's method on all devices of this composite.
+         * 
+         * @param notification the <code>notification</code> parameter of the <code>registerCriticalNotification(notification as CriticalNotification, displayDate as Date)</code> method.
+         * @param displayDate the <code>displayDate</code> parameter of the <code>registerCriticalNotification(notification as CriticalNotification, displayDate as Date)</code> method.
+         */
+        public void registerCriticalNotification(fr.inria.phoenix.diasuite.framework.datatype.criticalnotification.CriticalNotification notification,
+                fr.inria.phoenix.diasuite.framework.datatype.date.Date displayDate) throws InvocationException {
+            launchDiscovering();
+            for (NotifierProxyForActionValidation proxy : proxies) {
+                proxy.registerCriticalNotification(notification, displayDate);
+            }
+        }
+        
+        /**
+         * Executes the <code>cancelCriticalNotification(id as String)</code> action's method on all devices of this composite.
+         * 
+         * @param id the <code>id</code> parameter of the <code>cancelCriticalNotification(id as String)</code> method.
+         */
+        public void cancelCriticalNotification(java.lang.String id) throws InvocationException {
+            launchDiscovering();
+            for (NotifierProxyForActionValidation proxy : proxies) {
+                proxy.cancelCriticalNotification(id);
+            }
+        }
+    }
+    
+    /**
+     * A proxy to one <code>Notifier</code> device to execute action on for the
+     * <code>when provided ActionValidation</code> interaction contract.
+    
+    <pre>
+    device Notifier extends HomeService {
+     * 	source cancelled as Boolean indexed by id as String;
+     * 	source expired as Boolean indexed by id as String;
+     * 	source reply as Integer indexed by id as String;
+     * 	action SendCriticalNotification;
+     * 	action SendNonCriticalNotification;
+     * }
+    </pre>
+     */
+    protected final static class NotifierProxyForActionValidation extends Proxy {
+        private NotifierProxyForActionValidation(Service service, RemoteServiceInfo remoteServiceInfo) {
+            super(service, remoteServiceInfo);
+        }
+        
+        /**
+         * Executes the <code>sendCriticalNotification(notification as CriticalNotification)</code> action's method on this device.
+         * 
+         * @param notification the <code>notification</code> parameter of the <code>sendCriticalNotification(notification as CriticalNotification)</code> method.
+         */
+        public void sendCriticalNotification(fr.inria.phoenix.diasuite.framework.datatype.criticalnotification.CriticalNotification notification) throws InvocationException {
+            callOrder("sendCriticalNotification", notification);
+        }
+        
+        /**
+         * Executes the <code>registerCriticalNotification(notification as CriticalNotification, displayDate as Date)</code> action's method on this device.
+         * 
+         * @param notification the <code>notification</code> parameter of the <code>registerCriticalNotification(notification as CriticalNotification, displayDate as Date)</code> method.
+         * @param displayDate the <code>displayDate</code> parameter of the <code>registerCriticalNotification(notification as CriticalNotification, displayDate as Date)</code> method.
+         */
+        public void registerCriticalNotification(fr.inria.phoenix.diasuite.framework.datatype.criticalnotification.CriticalNotification notification,
+                fr.inria.phoenix.diasuite.framework.datatype.date.Date displayDate) throws InvocationException {
+            callOrder("registerCriticalNotification", notification, displayDate);
+        }
+        
+        /**
+         * Executes the <code>cancelCriticalNotification(id as String)</code> action's method on this device.
+         * 
+         * @param id the <code>id</code> parameter of the <code>cancelCriticalNotification(id as String)</code> method.
+         */
+        public void cancelCriticalNotification(java.lang.String id) throws InvocationException {
+            callOrder("cancelCriticalNotification", id);
         }
         
         /**

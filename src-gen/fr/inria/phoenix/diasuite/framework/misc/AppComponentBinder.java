@@ -245,7 +245,9 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     	when provided ChangingPassword
     	do ScheduleTimer on Timer, On on Light;
     	when provided ActionValidation
-    		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm;
+    		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm,
+    		   SendMessage on Messenger,
+        	   SendCriticalNotification on Notifier;
     }
     </pre>
     @return a class object of a derivation of {@link AbstractChangePassword} that implements the <code>ChangePassword</code> controller
