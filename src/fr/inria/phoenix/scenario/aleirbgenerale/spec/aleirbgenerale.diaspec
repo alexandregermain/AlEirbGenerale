@@ -64,24 +64,4 @@ context TimeOver as Boolean {
   maybe publish;
 }
 
-//------------------------------------------------------
-//                    DEVICES
-//------------------------------------------------------
-//device InactivitySensorAlarm extends InactivitySensor{
-//}
 
-//device Timer1 extends Timer {}
-//device Timer2 extends Timer {}
-
-//device LightAlarm extends Light{
-//   action Success;
-//   action AlarmActivited;
-//   action Failure;
-/*}
-
-device SMS extends SMSSender{
-}
-
-device Alarm extends Appliances{
-}
- */
