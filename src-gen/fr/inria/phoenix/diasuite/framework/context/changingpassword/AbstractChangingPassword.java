@@ -10,16 +10,12 @@ import fr.inria.diagen.core.service.proxy.Proxy;
 import fr.inria.phoenix.diasuite.framework.device.appliance.OnFromAppliance;
 
 /**
- * ------------------------------------------------------
-CONTEXT
-------------------------------------------------------
-
-<pre>
+ * <pre>
 context ChangingPassword as Boolean {
-    when provided on from Appliance
-    get on from Appliance, contact from ContactSensor
-    always publish;
-}
+ *     when provided on from Appliance
+ *     get on from Appliance, contact from ContactSensor
+ *     always publish;
+ * }
 </pre>
  */
 @SuppressWarnings("all")
@@ -84,8 +80,8 @@ public abstract class AbstractChangingPassword extends Service {
     
     <pre>
     when provided on from Appliance
-        get on from Appliance, contact from ContactSensor
-        always publish;
+     *     get on from Appliance, contact from ContactSensor
+     *     always publish;
     </pre>
      * 
      * @param onFromAppliance the value of the <code>on</code> source and the <code>Appliance</code> device that published the value.

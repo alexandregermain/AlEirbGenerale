@@ -13,12 +13,12 @@ import fr.inria.phoenix.diasuite.framework.device.timer.TimerTriggeredFromTimer;
 /**
  * <pre>
 context ActionValidation as Boolean {
-	when provided timerTriggered from Timer
-	maybe publish;
-	when provided contact from ContactSensor
-	get timerTriggered from Timer
-	maybe publish;
-}
+ * 	when provided timerTriggered from Timer
+ * 	maybe publish;
+ * 	when provided contact from ContactSensor
+ * 	get timerTriggered from Timer
+ * 	maybe publish;
+ * }
 </pre>
  */
 @SuppressWarnings("all")
@@ -145,7 +145,7 @@ public abstract class AbstractActionValidation extends Service {
     
     <pre>
     when provided timerTriggered from Timer
-    	maybe publish;
+     * 	maybe publish;
     </pre>
      * 
      * @param timerTriggeredFromTimer the value of the <code>timerTriggered</code> source and the <code>Timer</code> device that published the value.
@@ -158,8 +158,8 @@ public abstract class AbstractActionValidation extends Service {
     
     <pre>
     when provided contact from ContactSensor
-    	get timerTriggered from Timer
-    	maybe publish;
+     * 	get timerTriggered from Timer
+     * 	maybe publish;
     </pre>
      * 
      * @param contactFromContactSensor the value of the <code>contact</code> source and the <code>ContactSensor</code> device that published the value.

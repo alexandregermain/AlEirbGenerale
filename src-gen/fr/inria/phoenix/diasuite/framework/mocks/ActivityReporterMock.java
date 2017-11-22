@@ -2,8 +2,8 @@ package fr.inria.phoenix.diasuite.framework.mocks;
 
 import fr.inria.diagen.core.ServiceConfiguration;
 import fr.inria.phoenix.diasuite.framework.device.activityreporter.AbstractActivityReporter;
-import fr.inria.phoenix.diasuite.framework.device.activityreporter.PeriodActivityStatsIndices;
 import fr.inria.phoenix.diasuite.framework.device.activityreporter.DailyActivityStatsIndices;
+import fr.inria.phoenix.diasuite.framework.device.activityreporter.PeriodActivityStatsIndices;
 
 // @internal
 public final class ActivityReporterMock {

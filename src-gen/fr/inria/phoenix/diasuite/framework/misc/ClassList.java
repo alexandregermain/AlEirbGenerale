@@ -32,7 +32,6 @@ public class ClassList implements fr.inria.diagen.core.deploy.DeviceLister {
         deviceList.put("/Device/Device/PhysicalDevice/Sensor/TemperatureSensor/", fr.inria.phoenix.diasuite.framework.device.temperaturesensor.AbstractTemperatureSensor.class);
         deviceList.put("/Device/Device/Service/", fr.inria.phoenix.diasuite.framework.device.service.AbstractService.class);
         deviceList.put("/Device/Device/Service/ActivityReporter/", fr.inria.phoenix.diasuite.framework.device.activityreporter.AbstractActivityReporter.class);
-        deviceList.put("/Device/Device/Service/Alarm/", fr.inria.phoenix.diasuite.framework.device.alarm.AbstractAlarm.class);
         deviceList.put("/Device/Device/Service/Clock/", fr.inria.phoenix.diasuite.framework.device.clock.AbstractClock.class);
         deviceList.put("/Device/Device/Service/CommunicationService/", fr.inria.phoenix.diasuite.framework.device.communicationservice.AbstractCommunicationService.class);
         deviceList.put("/Device/Device/Service/CommunicationService/Messenger/", fr.inria.phoenix.diasuite.framework.device.messenger.AbstractMessenger.class);

@@ -7,10 +7,14 @@ controller AlarmActivitedController {
     do ScheduleTimer on Timer,
        SendNonCriticalNotification on Notifier;  
 }
-controller LampAlarmSuccessController{
+
+controller LunchAlarmController{
   when provided LunchAlarmContext
-    do ScheduleTimer on Timer;
+    do ScheduleTimer on Timer,
+       SendMessage on Messenger,
+	   SendCriticalNotification on Notifier;
 }
+
 controller LampSuccessController{
   when provided LunchAlarmContext
     do On on Light, 
@@ -20,18 +24,16 @@ controller LampSuccessController{
   	   Off on Light;
 }
 
-// A regrouper avec LampAlarmSuccess ?
-controller LunchAlarmController{
-  when provided LunchAlarmContext
-    do SendMessage on Messenger,
-    	   SendCriticalNotification on Notifier,//Remplace activation de l'alarme
-    	   ScheduleTimer on Timer;
+controller ChangePassword {
+	when provided ChangingPassword
+	do ScheduleTimer on Timer, On on Light;
+		
+	//Si on a bien fait le mot de passe ou si le timer est écoulé
+	when provided ActionValidation
+		do ScheduleTimer on Timer, On on Light,
+    	   SendCriticalNotification on Notifier;
 }
-controller ResetAlarmController{
-  when provided TimeOver
-    do SendNonCriticalNotification on Notifier,
-       ScheduleTimer on Timer;
-}
+
 
 //------------------------------------------------------
 //                    CONTEXT
@@ -58,30 +60,19 @@ context Password as Boolean {
     always publish;
 }
 
-context TimeOver as Boolean {
-  when provided timerTriggered from Timer
-  get timerTriggered from Timer
-  maybe publish;
+
+
+context ChangingPassword as Boolean {
+    when provided on from Appliance
+    get on from Appliance, contact from ContactSensor
+    always publish;
 }
 
-//------------------------------------------------------
-//                    DEVICES
-//------------------------------------------------------
-//device InactivitySensorAlarm extends InactivitySensor{
-//}
-
-//device Timer1 extends Timer {}
-//device Timer2 extends Timer {}
-
-//device LightAlarm extends Light{
-//   action Success;
-//   action AlarmActivited;
-//   action Failure;
-/*}
-
-device SMS extends SMSSender{
+context ActionValidation as Boolean {
+	when provided timerTriggered from Timer
+	maybe publish;
+	
+	when provided contact from ContactSensor
+	get timerTriggered from Timer
+	maybe publish;
 }
-
-device Alarm extends Appliances{
-}
- */

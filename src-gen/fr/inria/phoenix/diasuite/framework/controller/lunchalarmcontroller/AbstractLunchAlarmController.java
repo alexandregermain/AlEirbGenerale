@@ -10,14 +10,12 @@ import fr.inria.diagen.core.service.proxy.Proxy;
 import fr.inria.phoenix.diasuite.framework.context.lunchalarmcontext.LunchAlarmContextValue;
 
 /**
- * A regrouper avec LampAlarmSuccess ?
-
-<pre>
+ * <pre>
 controller LunchAlarmController{
  *   when provided LunchAlarmContext
- *     do SendMessage on Messenger,
- *     	   SendCriticalNotification on Notifier,
- *     	   ScheduleTimer on Timer;
+ *     do ScheduleTimer on Timer,
+ *        SendMessage on Messenger,
+ * 	   SendCriticalNotification on Notifier;
  * }
 </pre>
  */
@@ -51,9 +49,9 @@ public abstract class AbstractLunchAlarmController extends Service {
      * 
      * <pre>
      * when provided LunchAlarmContext
-     *     do SendMessage on Messenger,
-     *     	   SendCriticalNotification on Notifier,
-     *     	   ScheduleTimer on Timer;
+     *     do ScheduleTimer on Timer,
+     *        SendMessage on Messenger,
+     * 	   SendCriticalNotification on Notifier;
      * </pre>
      * 
      * @param lunchAlarmContext the value of the <code>LunchAlarmContext</code> context.
@@ -69,15 +67,22 @@ public abstract class AbstractLunchAlarmController extends Service {
      * 
      * <code>
      * when provided LunchAlarmContext
-     *     do SendMessage on Messenger,
-     *     	   SendCriticalNotification on Notifier,
-     *     	   ScheduleTimer on Timer;
+     *     do ScheduleTimer on Timer,
+     *        SendMessage on Messenger,
+     * 	   SendCriticalNotification on Notifier;
      * </code>
      */
     protected final class DiscoverForLunchAlarmContext {
+        private final TimerDiscovererForLunchAlarmContext timerDiscoverer = new TimerDiscovererForLunchAlarmContext(AbstractLunchAlarmController.this);
         private final MessengerDiscovererForLunchAlarmContext messengerDiscoverer = new MessengerDiscovererForLunchAlarmContext(AbstractLunchAlarmController.this);
         private final NotifierDiscovererForLunchAlarmContext notifierDiscoverer = new NotifierDiscovererForLunchAlarmContext(AbstractLunchAlarmController.this);
-        private final TimerDiscovererForLunchAlarmContext timerDiscoverer = new TimerDiscovererForLunchAlarmContext(AbstractLunchAlarmController.this);
+        
+        /**
+         * @return a {@link TimerDiscovererForLunchAlarmContext} object to discover <code>Timer</code> devices
+         */
+        public TimerDiscovererForLunchAlarmContext timers() {
+            return timerDiscoverer;
+        }
         
         /**
          * @return a {@link MessengerDiscovererForLunchAlarmContext} object to discover <code>Messenger</code> devices
@@ -92,12 +97,201 @@ public abstract class AbstractLunchAlarmController extends Service {
         public NotifierDiscovererForLunchAlarmContext notifiers() {
             return notifierDiscoverer;
         }
+    }
+    
+    /**
+     * Discover object that will exposes the <code>Timer</code> devices to execute action on for the
+     * <code>when provided LunchAlarmContext</code> interaction contract.
+    <p>
+    ------
+    Timer
+    ------
+    
+    <pre>
+    device Timer extends Service {
+     * 	source timerTriggered as String indexed by timerId as String;
+     * 	action ScheduleTimer;
+     * }
+    </pre>
+     */
+    protected final static class TimerDiscovererForLunchAlarmContext {
+        private Service serviceParent;
+        
+        private TimerDiscovererForLunchAlarmContext(Service serviceParent) {
+            super();
+            this.serviceParent = serviceParent;
+        }
+        
+        private TimerCompositeForLunchAlarmContext instantiateComposite() {
+            return new TimerCompositeForLunchAlarmContext(serviceParent);
+        }
         
         /**
-         * @return a {@link TimerDiscovererForLunchAlarmContext} object to discover <code>Timer</code> devices
+         * Returns a composite of all accessible <code>Timer</code> devices
+         * 
+         * @return a {@link TimerCompositeForLunchAlarmContext} object composed of all discoverable <code>Timer</code>
          */
-        public TimerDiscovererForLunchAlarmContext timers() {
-            return timerDiscoverer;
+        public TimerCompositeForLunchAlarmContext all() {
+            return instantiateComposite();
+        }
+        
+        /**
+         * Returns a proxy to one out of all accessible <code>Timer</code> devices
+         * 
+         * @return a {@link TimerProxyForLunchAlarmContext} object pointing to a random discoverable <code>Timer</code> device
+         */
+        public TimerProxyForLunchAlarmContext anyOne() {
+            return all().anyOne();
+        }
+        
+        /**
+         * Returns a composite of all accessible <code>Timer</code> devices whose attribute <code>id</code> matches a given value.
+         * 
+         * @param id The <code>id<code> attribute value to match.
+         * @return a {@link TimerCompositeForLunchAlarmContext} object composed of all matching <code>Timer</code> devices
+         */
+        public TimerCompositeForLunchAlarmContext whereId(java.lang.String id) throws CompositeException {
+            return instantiateComposite().andId(id);
+        }
+    }
+    
+    /**
+     * A composite of several <code>Timer</code> devices to execute action on for the
+     * <code>when provided LunchAlarmContext</code> interaction contract.
+    <p>
+    ------
+    Timer
+    ------
+    
+    <pre>
+    device Timer extends Service {
+     * 	source timerTriggered as String indexed by timerId as String;
+     * 	action ScheduleTimer;
+     * }
+    </pre>
+     */
+    protected final static class TimerCompositeForLunchAlarmContext extends fr.inria.diagen.core.service.composite.Composite<TimerProxyForLunchAlarmContext> {
+        private TimerCompositeForLunchAlarmContext(Service serviceParent) {
+            super(serviceParent, "/Device/Device/Service/Timer/");
+        }
+        
+        @Override
+        protected TimerProxyForLunchAlarmContext instantiateProxy(RemoteServiceInfo rsi) {
+            return new TimerProxyForLunchAlarmContext(service, rsi);
+        }
+        
+        /**
+         * Returns this composite in which a filter was set to the attribute <code>id</code>.
+         * 
+         * @param id The <code>id<code> attribute value to match.
+         * @return this {@link TimerCompositeForLunchAlarmContext}, filtered using the attribute <code>id</code>.
+         */
+        public TimerCompositeForLunchAlarmContext andId(java.lang.String id) throws CompositeException {
+            filterByAttribute("id", id);
+            return this;
+        }
+        
+        /**
+         * Executes the <code>schedule(id as String, delayMs as Integer)</code> action's method on all devices of this composite.
+         * 
+         * @param id the <code>id</code> parameter of the <code>schedule(id as String, delayMs as Integer)</code> method.
+         * @param delayMs the <code>delayMs</code> parameter of the <code>schedule(id as String, delayMs as Integer)</code> method.
+         */
+        public void schedule(java.lang.String id,
+                java.lang.Integer delayMs) throws InvocationException {
+            launchDiscovering();
+            for (TimerProxyForLunchAlarmContext proxy : proxies) {
+                proxy.schedule(id, delayMs);
+            }
+        }
+        
+        /**
+         * Executes the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> action's method on all devices of this composite.
+         * 
+         * @param id the <code>id</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
+         * @param delayMs the <code>delayMs</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
+         * @param periodMs the <code>periodMs</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
+         */
+        public void periodicSchedule(java.lang.String id,
+                java.lang.Integer delayMs,
+                java.lang.Integer periodMs) throws InvocationException {
+            launchDiscovering();
+            for (TimerProxyForLunchAlarmContext proxy : proxies) {
+                proxy.periodicSchedule(id, delayMs, periodMs);
+            }
+        }
+        
+        /**
+         * Executes the <code>cancel(id as String)</code> action's method on all devices of this composite.
+         * 
+         * @param id the <code>id</code> parameter of the <code>cancel(id as String)</code> method.
+         */
+        public void cancel(java.lang.String id) throws InvocationException {
+            launchDiscovering();
+            for (TimerProxyForLunchAlarmContext proxy : proxies) {
+                proxy.cancel(id);
+            }
+        }
+    }
+    
+    /**
+     * A proxy to one <code>Timer</code> device to execute action on for the
+     * <code>when provided LunchAlarmContext</code> interaction contract.
+    <p>
+    ------
+    Timer
+    ------
+    
+    <pre>
+    device Timer extends Service {
+     * 	source timerTriggered as String indexed by timerId as String;
+     * 	action ScheduleTimer;
+     * }
+    </pre>
+     */
+    protected final static class TimerProxyForLunchAlarmContext extends Proxy {
+        private TimerProxyForLunchAlarmContext(Service service, RemoteServiceInfo remoteServiceInfo) {
+            super(service, remoteServiceInfo);
+        }
+        
+        /**
+         * Executes the <code>schedule(id as String, delayMs as Integer)</code> action's method on this device.
+         * 
+         * @param id the <code>id</code> parameter of the <code>schedule(id as String, delayMs as Integer)</code> method.
+         * @param delayMs the <code>delayMs</code> parameter of the <code>schedule(id as String, delayMs as Integer)</code> method.
+         */
+        public void schedule(java.lang.String id,
+                java.lang.Integer delayMs) throws InvocationException {
+            callOrder("schedule", id, delayMs);
+        }
+        
+        /**
+         * Executes the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> action's method on this device.
+         * 
+         * @param id the <code>id</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
+         * @param delayMs the <code>delayMs</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
+         * @param periodMs the <code>periodMs</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
+         */
+        public void periodicSchedule(java.lang.String id,
+                java.lang.Integer delayMs,
+                java.lang.Integer periodMs) throws InvocationException {
+            callOrder("periodicSchedule", id, delayMs, periodMs);
+        }
+        
+        /**
+         * Executes the <code>cancel(id as String)</code> action's method on this device.
+         * 
+         * @param id the <code>id</code> parameter of the <code>cancel(id as String)</code> method.
+         */
+        public void cancel(java.lang.String id) throws InvocationException {
+            callOrder("cancel", id);
+        }
+        
+        /**
+         * @return the value of the <code>id</code> attribute
+         */
+        public java.lang.String id() {
+            return (java.lang.String) callGetValue("id");
         }
     }
     
@@ -406,202 +600,6 @@ public abstract class AbstractLunchAlarmController extends Service {
          */
         public void cancelCriticalNotification(java.lang.String id) throws InvocationException {
             callOrder("cancelCriticalNotification", id);
-        }
-        
-        /**
-         * @return the value of the <code>id</code> attribute
-         */
-        public java.lang.String id() {
-            return (java.lang.String) callGetValue("id");
-        }
-    }
-    
-    /**
-     * Discover object that will exposes the <code>Timer</code> devices to execute action on for the
-     * <code>when provided LunchAlarmContext</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
-     * 	source timerTriggered as String indexed by timerId as String;
-     * 	action ScheduleTimer;
-     * }
-    </pre>
-     */
-    protected final static class TimerDiscovererForLunchAlarmContext {
-        private Service serviceParent;
-        
-        private TimerDiscovererForLunchAlarmContext(Service serviceParent) {
-            super();
-            this.serviceParent = serviceParent;
-        }
-        
-        private TimerCompositeForLunchAlarmContext instantiateComposite() {
-            return new TimerCompositeForLunchAlarmContext(serviceParent);
-        }
-        
-        /**
-         * Returns a composite of all accessible <code>Timer</code> devices
-         * 
-         * @return a {@link TimerCompositeForLunchAlarmContext} object composed of all discoverable <code>Timer</code>
-         */
-        public TimerCompositeForLunchAlarmContext all() {
-            return instantiateComposite();
-        }
-        
-        /**
-         * Returns a proxy to one out of all accessible <code>Timer</code> devices
-         * 
-         * @return a {@link TimerProxyForLunchAlarmContext} object pointing to a random discoverable <code>Timer</code> device
-         */
-        public TimerProxyForLunchAlarmContext anyOne() {
-            return all().anyOne();
-        }
-        
-        /**
-         * Returns a composite of all accessible <code>Timer</code> devices whose attribute <code>id</code> matches a given value.
-         * 
-         * @param id The <code>id<code> attribute value to match.
-         * @return a {@link TimerCompositeForLunchAlarmContext} object composed of all matching <code>Timer</code> devices
-         */
-        public TimerCompositeForLunchAlarmContext whereId(java.lang.String id) throws CompositeException {
-            return instantiateComposite().andId(id);
-        }
-    }
-    
-    /**
-     * A composite of several <code>Timer</code> devices to execute action on for the
-     * <code>when provided LunchAlarmContext</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
-     * 	source timerTriggered as String indexed by timerId as String;
-     * 	action ScheduleTimer;
-     * }
-    </pre>
-     */
-    protected final static class TimerCompositeForLunchAlarmContext extends fr.inria.diagen.core.service.composite.Composite<TimerProxyForLunchAlarmContext> {
-        private TimerCompositeForLunchAlarmContext(Service serviceParent) {
-            super(serviceParent, "/Device/Device/Service/Timer/");
-        }
-        
-        @Override
-        protected TimerProxyForLunchAlarmContext instantiateProxy(RemoteServiceInfo rsi) {
-            return new TimerProxyForLunchAlarmContext(service, rsi);
-        }
-        
-        /**
-         * Returns this composite in which a filter was set to the attribute <code>id</code>.
-         * 
-         * @param id The <code>id<code> attribute value to match.
-         * @return this {@link TimerCompositeForLunchAlarmContext}, filtered using the attribute <code>id</code>.
-         */
-        public TimerCompositeForLunchAlarmContext andId(java.lang.String id) throws CompositeException {
-            filterByAttribute("id", id);
-            return this;
-        }
-        
-        /**
-         * Executes the <code>schedule(id as String, delayMs as Integer)</code> action's method on all devices of this composite.
-         * 
-         * @param id the <code>id</code> parameter of the <code>schedule(id as String, delayMs as Integer)</code> method.
-         * @param delayMs the <code>delayMs</code> parameter of the <code>schedule(id as String, delayMs as Integer)</code> method.
-         */
-        public void schedule(java.lang.String id,
-                java.lang.Integer delayMs) throws InvocationException {
-            launchDiscovering();
-            for (TimerProxyForLunchAlarmContext proxy : proxies) {
-                proxy.schedule(id, delayMs);
-            }
-        }
-        
-        /**
-         * Executes the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> action's method on all devices of this composite.
-         * 
-         * @param id the <code>id</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
-         * @param delayMs the <code>delayMs</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
-         * @param periodMs the <code>periodMs</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
-         */
-        public void periodicSchedule(java.lang.String id,
-                java.lang.Integer delayMs,
-                java.lang.Integer periodMs) throws InvocationException {
-            launchDiscovering();
-            for (TimerProxyForLunchAlarmContext proxy : proxies) {
-                proxy.periodicSchedule(id, delayMs, periodMs);
-            }
-        }
-        
-        /**
-         * Executes the <code>cancel(id as String)</code> action's method on all devices of this composite.
-         * 
-         * @param id the <code>id</code> parameter of the <code>cancel(id as String)</code> method.
-         */
-        public void cancel(java.lang.String id) throws InvocationException {
-            launchDiscovering();
-            for (TimerProxyForLunchAlarmContext proxy : proxies) {
-                proxy.cancel(id);
-            }
-        }
-    }
-    
-    /**
-     * A proxy to one <code>Timer</code> device to execute action on for the
-     * <code>when provided LunchAlarmContext</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
-     * 	source timerTriggered as String indexed by timerId as String;
-     * 	action ScheduleTimer;
-     * }
-    </pre>
-     */
-    protected final static class TimerProxyForLunchAlarmContext extends Proxy {
-        private TimerProxyForLunchAlarmContext(Service service, RemoteServiceInfo remoteServiceInfo) {
-            super(service, remoteServiceInfo);
-        }
-        
-        /**
-         * Executes the <code>schedule(id as String, delayMs as Integer)</code> action's method on this device.
-         * 
-         * @param id the <code>id</code> parameter of the <code>schedule(id as String, delayMs as Integer)</code> method.
-         * @param delayMs the <code>delayMs</code> parameter of the <code>schedule(id as String, delayMs as Integer)</code> method.
-         */
-        public void schedule(java.lang.String id,
-                java.lang.Integer delayMs) throws InvocationException {
-            callOrder("schedule", id, delayMs);
-        }
-        
-        /**
-         * Executes the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> action's method on this device.
-         * 
-         * @param id the <code>id</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
-         * @param delayMs the <code>delayMs</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
-         * @param periodMs the <code>periodMs</code> parameter of the <code>periodicSchedule(id as String, delayMs as Integer, periodMs as Integer)</code> method.
-         */
-        public void periodicSchedule(java.lang.String id,
-                java.lang.Integer delayMs,
-                java.lang.Integer periodMs) throws InvocationException {
-            callOrder("periodicSchedule", id, delayMs, periodMs);
-        }
-        
-        /**
-         * Executes the <code>cancel(id as String)</code> action's method on this device.
-         * 
-         * @param id the <code>id</code> parameter of the <code>cancel(id as String)</code> method.
-         */
-        public void cancel(java.lang.String id) throws InvocationException {
-            callOrder("cancel", id);
         }
         
         /**

@@ -4,10 +4,6 @@ import java.io.Serializable;
 
 /**
  * An object to store a value published by the context <code>ChangingPassword</code>.
- * <p>
- * ------------------------------------------------------
- * CONTEXT
- * ------------------------------------------------------
  *
  * <pre>
  * context ChangingPassword as Boolean {
@@ -24,11 +20,6 @@ public final class ChangingPasswordValue implements Serializable {
     
     /**
      * Get the value of the context <code>ChangingPassword</code>
-     * 
-     * <p>
-     * ------------------------------------------------------
-     * CONTEXT
-     * ------------------------------------------------------
      * 
      * @return the value of the context <code>ChangingPassword</code>
      */

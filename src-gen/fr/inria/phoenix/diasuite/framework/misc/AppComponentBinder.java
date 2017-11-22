@@ -7,15 +7,12 @@ import fr.inria.phoenix.diasuite.framework.context.changingpassword.AbstractChan
 import fr.inria.phoenix.diasuite.framework.context.insidecontext.AbstractInsideContext;
 import fr.inria.phoenix.diasuite.framework.context.lunchalarmcontext.AbstractLunchAlarmContext;
 import fr.inria.phoenix.diasuite.framework.context.password.AbstractPassword;
-import fr.inria.phoenix.diasuite.framework.context.timeover.AbstractTimeOver;
 
 import fr.inria.phoenix.diasuite.framework.controller.alarmactivitedcontroller.AbstractAlarmActivitedController;
 import fr.inria.phoenix.diasuite.framework.controller.alarmdesactivatedcontroller.AbstractAlarmDesactivatedController;
 import fr.inria.phoenix.diasuite.framework.controller.changepassword.AbstractChangePassword;
-import fr.inria.phoenix.diasuite.framework.controller.lampalarmsuccesscontroller.AbstractLampAlarmSuccessController;
 import fr.inria.phoenix.diasuite.framework.controller.lampsuccesscontroller.AbstractLampSuccessController;
 import fr.inria.phoenix.diasuite.framework.controller.lunchalarmcontroller.AbstractLunchAlarmController;
-import fr.inria.phoenix.diasuite.framework.controller.resetalarmcontroller.AbstractResetAlarmController;
 
 /**
  * This class should be implemented to bind the implementation of the various components
@@ -28,16 +25,13 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     private AbstractInsideContext insideContextInstance = null;
     private AbstractLunchAlarmContext lunchAlarmContextInstance = null;
     private AbstractPassword passwordInstance = null;
-    private AbstractTimeOver timeOverInstance = null;
 
     // Controller instances
     private AbstractAlarmActivitedController alarmActivitedControllerInstance = null;
     private AbstractAlarmDesactivatedController alarmDesactivatedControllerInstance = null;
     private AbstractChangePassword changePasswordInstance = null;
-    private AbstractLampAlarmSuccessController lampAlarmSuccessControllerInstance = null;
     private AbstractLampSuccessController lampSuccessControllerInstance = null;
     private AbstractLunchAlarmController lunchAlarmControllerInstance = null;
-    private AbstractResetAlarmController resetAlarmControllerInstance = null;
     
     @Override
     public void deployAll() {
@@ -52,8 +46,6 @@ public abstract class AppComponentBinder extends AbstractDeploy {
             lunchAlarmContextInstance = getInstance(getLunchAlarmContextClass());
         if (passwordInstance == null)
             passwordInstance = getInstance(getPasswordClass());
-        if (timeOverInstance == null)
-            timeOverInstance = getInstance(getTimeOverClass());
         // Intialization of controllers
         if (alarmActivitedControllerInstance == null)
             alarmActivitedControllerInstance = getInstance(getAlarmActivitedControllerClass());
@@ -61,29 +53,22 @@ public abstract class AppComponentBinder extends AbstractDeploy {
             alarmDesactivatedControllerInstance = getInstance(getAlarmDesactivatedControllerClass());
         if (changePasswordInstance == null)
             changePasswordInstance = getInstance(getChangePasswordClass());
-        if (lampAlarmSuccessControllerInstance == null)
-            lampAlarmSuccessControllerInstance = getInstance(getLampAlarmSuccessControllerClass());
         if (lampSuccessControllerInstance == null)
             lampSuccessControllerInstance = getInstance(getLampSuccessControllerClass());
         if (lunchAlarmControllerInstance == null)
             lunchAlarmControllerInstance = getInstance(getLunchAlarmControllerClass());
-        if (resetAlarmControllerInstance == null)
-            resetAlarmControllerInstance = getInstance(getResetAlarmControllerClass());
         // Deploying contexts
         deploy(actionValidationInstance);
         deploy(changingPasswordInstance);
         deploy(insideContextInstance);
         deploy(lunchAlarmContextInstance);
         deploy(passwordInstance);
-        deploy(timeOverInstance);
         // Deploying controllers
         deploy(alarmActivitedControllerInstance);
         deploy(alarmDesactivatedControllerInstance);
         deploy(changePasswordInstance);
-        deploy(lampAlarmSuccessControllerInstance);
         deploy(lampSuccessControllerInstance);
         deploy(lunchAlarmControllerInstance);
-        deploy(resetAlarmControllerInstance);
     }
     
     @Override
@@ -94,15 +79,12 @@ public abstract class AppComponentBinder extends AbstractDeploy {
         undeploy(insideContextInstance);
         undeploy(lunchAlarmContextInstance);
         undeploy(passwordInstance);
-        undeploy(timeOverInstance);
         // Undeploying controllers
         undeploy(alarmActivitedControllerInstance);
         undeploy(alarmDesactivatedControllerInstance);
         undeploy(changePasswordInstance);
-        undeploy(lampAlarmSuccessControllerInstance);
         undeploy(lampSuccessControllerInstance);
         undeploy(lunchAlarmControllerInstance);
-        undeploy(resetAlarmControllerInstance);
     }
     
     // Abstract binding methods for contexts
@@ -111,12 +93,12 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     
     <pre>
     context ActionValidation as Boolean {
-    	when provided timerTriggered from Timer
-    	maybe publish;
-    	when provided contact from ContactSensor
-    	get timerTriggered from Timer
-    	maybe publish;
-    }
+     * 	when provided timerTriggered from Timer
+     * 	maybe publish;
+     * 	when provided contact from ContactSensor
+     * 	get timerTriggered from Timer
+     * 	maybe publish;
+     * }
     </pre>
     @return a class object of a derivation of {@link AbstractActionValidation} that implements the <code>ActionValidation</code> context
      */
@@ -189,20 +171,6 @@ public abstract class AppComponentBinder extends AbstractDeploy {
      */
     public abstract Class<? extends AbstractPassword> getPasswordClass();
     
-    /**
-     * Overrides this method to provide the implementation class of the <code>TimeOver</code> context
-    
-    <pre>
-    context TimeOver as Boolean {
-     *   when provided timerTriggered from Timer
-     *   get timerTriggered from Timer
-     *   maybe publish;
-     * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractTimeOver} that implements the <code>TimeOver</code> context
-     */
-    public abstract Class<? extends AbstractTimeOver> getTimeOverClass();
-    
     // End of abstract binding methods for contexts
     
     // Abstract binding methods for controllers
@@ -242,30 +210,16 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     
     <pre>
     controller ChangePassword {
-    	when provided ChangingPassword
-    	do ScheduleTimer on Timer, On on Light;
-    	when provided ActionValidation
-    		do ScheduleTimer on Timer, On on Light, DesactiverAlarm on Alarm,
-    		   SendMessage on Messenger,
-        	   SendCriticalNotification on Notifier;
-    }
+     * 	when provided ChangingPassword
+     * 	do ScheduleTimer on Timer, On on Light;
+     * 	when provided ActionValidation
+     * 		do ScheduleTimer on Timer, On on Light,
+     *     	   SendCriticalNotification on Notifier;
+     * }
     </pre>
     @return a class object of a derivation of {@link AbstractChangePassword} that implements the <code>ChangePassword</code> controller
      */
     public abstract Class<? extends AbstractChangePassword> getChangePasswordClass();
-    
-    /**
-     * Overrides this method to provide the implementation class of the <code>LampAlarmSuccessController</code> controller
-    
-    <pre>
-    controller LampAlarmSuccessController{
-     *   when provided LunchAlarmContext
-     *     do ScheduleTimer on Timer;
-     * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractLampAlarmSuccessController} that implements the <code>LampAlarmSuccessController</code> controller
-     */
-    public abstract Class<? extends AbstractLampAlarmSuccessController> getLampAlarmSuccessControllerClass();
     
     /**
      * Overrides this method to provide the implementation class of the <code>LampSuccessController</code> controller
@@ -286,34 +240,18 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     
     /**
      * Overrides this method to provide the implementation class of the <code>LunchAlarmController</code> controller
-    <p>
-    A regrouper avec LampAlarmSuccess ?
     
     <pre>
     controller LunchAlarmController{
      *   when provided LunchAlarmContext
-     *     do SendMessage on Messenger,
-     *     	   SendCriticalNotification on Notifier,
-     *     	   ScheduleTimer on Timer;
+     *     do ScheduleTimer on Timer,
+     *        SendMessage on Messenger,
+     * 	   SendCriticalNotification on Notifier;
      * }
     </pre>
     @return a class object of a derivation of {@link AbstractLunchAlarmController} that implements the <code>LunchAlarmController</code> controller
      */
     public abstract Class<? extends AbstractLunchAlarmController> getLunchAlarmControllerClass();
-    
-    /**
-     * Overrides this method to provide the implementation class of the <code>ResetAlarmController</code> controller
-    
-    <pre>
-    controller ResetAlarmController{
-     *   when provided TimeOver
-     *     do SendNonCriticalNotification on Notifier,
-     *        ScheduleTimer on Timer;
-     * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractResetAlarmController} that implements the <code>ResetAlarmController</code> controller
-     */
-    public abstract Class<? extends AbstractResetAlarmController> getResetAlarmControllerClass();
     
     // End of abstract binding methods for controllers
 }

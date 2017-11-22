@@ -5,16 +5,13 @@ import fr.inria.phoenix.diasuite.framework.misc.AppComponentBinder;
 import fr.inria.phoenix.diasuite.framework.controller.alarmactivitedcontroller.AbstractAlarmActivitedController;
 import fr.inria.phoenix.diasuite.framework.controller.alarmdesactivatedcontroller.AbstractAlarmDesactivatedController;
 import fr.inria.phoenix.diasuite.framework.controller.changepassword.AbstractChangePassword;
-import fr.inria.phoenix.diasuite.framework.controller.lampalarmsuccesscontroller.AbstractLampAlarmSuccessController;
 import fr.inria.phoenix.diasuite.framework.controller.lampsuccesscontroller.AbstractLampSuccessController;
 import fr.inria.phoenix.diasuite.framework.controller.lunchalarmcontroller.AbstractLunchAlarmController;
-import fr.inria.phoenix.diasuite.framework.controller.resetalarmcontroller.AbstractResetAlarmController;
 import fr.inria.phoenix.diasuite.framework.context.actionvalidation.AbstractActionValidation;
 import fr.inria.phoenix.diasuite.framework.context.changingpassword.AbstractChangingPassword;
 import fr.inria.phoenix.diasuite.framework.context.insidecontext.AbstractInsideContext;
 import fr.inria.phoenix.diasuite.framework.context.lunchalarmcontext.AbstractLunchAlarmContext;
 import fr.inria.phoenix.diasuite.framework.context.password.AbstractPassword;
-import fr.inria.phoenix.diasuite.framework.context.timeover.AbstractTimeOver;
 
 /**
  * Use this class to test your DiaSuite application.
@@ -109,17 +106,11 @@ public final class Mock extends AppComponentBinder {
     public Class<? extends AbstractChangePassword> getChangePasswordClass() {
         return delegate.getChangePasswordClass();
     }
-    public Class<? extends AbstractLampAlarmSuccessController> getLampAlarmSuccessControllerClass() {
-        return delegate.getLampAlarmSuccessControllerClass();
-    }
     public Class<? extends AbstractLampSuccessController> getLampSuccessControllerClass() {
         return delegate.getLampSuccessControllerClass();
     }
     public Class<? extends AbstractLunchAlarmController> getLunchAlarmControllerClass() {
         return delegate.getLunchAlarmControllerClass();
-    }
-    public Class<? extends AbstractResetAlarmController> getResetAlarmControllerClass() {
-        return delegate.getResetAlarmControllerClass();
     }
     public Class<? extends AbstractActionValidation> getActionValidationClass() {
         return delegate.getActionValidationClass();
@@ -135,9 +126,6 @@ public final class Mock extends AppComponentBinder {
     }
     public Class<? extends AbstractPassword> getPasswordClass() {
         return delegate.getPasswordClass();
-    }
-    public Class<? extends AbstractTimeOver> getTimeOverClass() {
-        return delegate.getTimeOverClass();
     }
     
     // Mocks constructor for all devices
@@ -943,44 +931,6 @@ public final class Mock extends AppComponentBinder {
         if(mocker == null)
             throw new RuntimeException("Mock is not initialized");
         return mocker.activityReporter(id);
-    }
-    
-    /**
-     * Returns a mock of the device <code>Alarm</code>.
-    <p>
-    Device
-    
-    <pre>
-    device Alarm extends Service{
-    	action DesactiverAlarm;
-    }
-    </pre>
-    @param id the value of the <code>id</code> attribute
-    @return a mock of the device <code>Alarm</code>.
-     */
-    public AlarmMock alarm(java.lang.String id) {
-        AlarmMock mock = new AlarmMock(getServiceConfiguration("Alarm" + randomId()), id);
-        deploy(mock.proxy);
-        return mock;
-    }
-    
-    /**
-     * Returns a mock of the device <code>Alarm</code>.
-    <p>
-    Device
-    
-    <pre>
-    device Alarm extends Service{
-    	action DesactiverAlarm;
-    }
-    </pre>
-    @param id the value of the <code>id</code> attribute
-    @return a mock of the device <code>Alarm</code>.
-     */
-    public static AlarmMock mockAlarm(java.lang.String id) {
-        if(mocker == null)
-            throw new RuntimeException("Mock is not initialized");
-        return mocker.alarm(id);
     }
     
     /**
