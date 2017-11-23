@@ -3,7 +3,6 @@ package fr.inria.phoenix.diasuite.framework.mocks;
 import fr.inria.diagen.core.ServiceConfiguration;
 import fr.inria.phoenix.diasuite.framework.misc.AppComponentBinder;
 import fr.inria.phoenix.diasuite.framework.controller.alarmactivitedcontroller.AbstractAlarmActivitedController;
-import fr.inria.phoenix.diasuite.framework.controller.alarmdesactivatedcontroller.AbstractAlarmDesactivatedController;
 import fr.inria.phoenix.diasuite.framework.controller.changepassword.AbstractChangePassword;
 import fr.inria.phoenix.diasuite.framework.controller.lampsuccesscontroller.AbstractLampSuccessController;
 import fr.inria.phoenix.diasuite.framework.controller.lunchalarmcontroller.AbstractLunchAlarmController;
@@ -99,9 +98,6 @@ public final class Mock extends AppComponentBinder {
     // Delegation part
     public Class<? extends AbstractAlarmActivitedController> getAlarmActivitedControllerClass() {
         return delegate.getAlarmActivitedControllerClass();
-    }
-    public Class<? extends AbstractAlarmDesactivatedController> getAlarmDesactivatedControllerClass() {
-        return delegate.getAlarmDesactivatedControllerClass();
     }
     public Class<? extends AbstractChangePassword> getChangePasswordClass() {
         return delegate.getChangePasswordClass();

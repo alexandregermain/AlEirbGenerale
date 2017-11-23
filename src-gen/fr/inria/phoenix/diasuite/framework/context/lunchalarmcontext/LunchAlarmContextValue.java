@@ -7,7 +7,7 @@ import java.io.Serializable;
  *
  * <pre>
  * context LunchAlarmContext as Boolean {
- *   when provided Password 
+ *   when provided Password
  *   always publish;
  *   when provided timerTriggered from Timer
  *   get timerTriggered from Timer

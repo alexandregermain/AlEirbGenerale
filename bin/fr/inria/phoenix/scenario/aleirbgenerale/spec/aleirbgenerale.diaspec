@@ -5,7 +5,7 @@ include "taxonomy.diaspec";
 controller AlarmActivitedController {
   when provided InsideContext
     do ScheduleTimer on Timer,
-       SendNonCriticalNotification on Notifier;
+       SendNonCriticalNotification on Notifier;  
 }
 
 controller LunchAlarmController{
@@ -17,18 +17,15 @@ controller LunchAlarmController{
 
 controller LampSuccessController{
   when provided LunchAlarmContext
-    do On on Light,
+    do On on Light, 
        Off on Light;
-  when provided InsideContext
-  	do On on Light,
-  	   Off on Light;
 }
 
 controller ChangePassword {
 	when provided ChangingPassword
 	do ScheduleTimer on Timer, On on Light;
-
-	//Si on a bien fait le mot de passe ou si le timer est ï¿½coulï¿½
+		
+	//Si on a bien fait le mot de passe ou si le timer est écoulé
 	when provided ActionValidation
 		do ScheduleTimer on Timer, On on Light,
     	   SendCriticalNotification on Notifier;
@@ -46,7 +43,7 @@ context InsideContext as Boolean {
 }
 
 context LunchAlarmContext as Boolean {
-  when provided Password // =true
+  when provided Password
   always publish;
 
   when provided timerTriggered from Timer
@@ -71,7 +68,7 @@ context ChangingPassword as Boolean {
 context ActionValidation as Boolean {
 	when provided timerTriggered from Timer
 	maybe publish;
-
+	
 	when provided contact from ContactSensor
 	get timerTriggered from Timer
 	maybe publish;

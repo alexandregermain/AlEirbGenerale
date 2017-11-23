@@ -19,9 +19,6 @@ controller LampSuccessController{
   when provided LunchAlarmContext
     do On on Light, 
        Off on Light;
-  when provided InsideContext
-  	do On on Light,
-  	   Off on Light;
 }
 
 controller ChangePassword {
@@ -46,7 +43,7 @@ context InsideContext as Boolean {
 }
 
 context LunchAlarmContext as Boolean {
-  when provided Password // =true
+  when provided Password
   always publish;
 
   when provided timerTriggered from Timer

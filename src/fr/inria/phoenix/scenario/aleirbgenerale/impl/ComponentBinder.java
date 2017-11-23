@@ -6,7 +6,6 @@ import fr.inria.phoenix.diasuite.framework.context.insidecontext.AbstractInsideC
 import fr.inria.phoenix.diasuite.framework.context.lunchalarmcontext.AbstractLunchAlarmContext;
 import fr.inria.phoenix.diasuite.framework.context.password.AbstractPassword;
 import fr.inria.phoenix.diasuite.framework.controller.alarmactivitedcontroller.AbstractAlarmActivitedController;
-import fr.inria.phoenix.diasuite.framework.controller.alarmdesactivatedcontroller.AbstractAlarmDesactivatedController;
 import fr.inria.phoenix.diasuite.framework.controller.changepassword.AbstractChangePassword;
 import fr.inria.phoenix.diasuite.framework.controller.lampsuccesscontroller.AbstractLampSuccessController;
 import fr.inria.phoenix.diasuite.framework.controller.lunchalarmcontroller.AbstractLunchAlarmController;
@@ -17,7 +16,6 @@ import fr.inria.phoenix.scenario.aleirbgenerale.context.InsideContext;
 import fr.inria.phoenix.scenario.aleirbgenerale.context.LunchAlarmContext;
 import fr.inria.phoenix.scenario.aleirbgenerale.context.Password;
 import fr.inria.phoenix.scenario.aleirbgenerale.controller.AlarmActivitedController;
-import fr.inria.phoenix.scenario.aleirbgenerale.controller.AlarmDesactivatedController;
 import fr.inria.phoenix.scenario.aleirbgenerale.controller.ChangePassword;
 import fr.inria.phoenix.scenario.aleirbgenerale.controller.LampSuccessController;
 import fr.inria.phoenix.scenario.aleirbgenerale.controller.LunchAlarmController;
@@ -68,13 +66,7 @@ public class ComponentBinder extends AppComponentBinder {
 		// TODO Auto-generated method stub
 		return ChangingPassword.class;
 	}
-
-	@Override
-	public Class<? extends AbstractAlarmDesactivatedController> getAlarmDesactivatedControllerClass() {
-		// TODO Auto-generated method stub
-		return AlarmDesactivatedController.class;
-	}
-
+ 
 	@Override
 	public Class<? extends AbstractChangePassword> getChangePasswordClass() {
 		// TODO Auto-generated method stub

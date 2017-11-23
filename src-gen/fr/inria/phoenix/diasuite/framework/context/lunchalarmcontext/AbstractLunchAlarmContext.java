@@ -13,7 +13,7 @@ import fr.inria.phoenix.diasuite.framework.context.password.PasswordValue;
 /**
  * <pre>
 context LunchAlarmContext as Boolean {
- *   when provided Password 
+ *   when provided Password
  *   always publish;
  *   when provided timerTriggered from Timer
  *   get timerTriggered from Timer
@@ -139,11 +139,9 @@ public abstract class AbstractLunchAlarmContext extends Service {
     // Interaction contract implementation
     /**
      * This method is called when the <code>Password</code> context publishes a value.
-    <p>
-    =true
     
     <pre>
-    when provided Password 
+    when provided Password
      *   always publish;
     </pre>
      * 

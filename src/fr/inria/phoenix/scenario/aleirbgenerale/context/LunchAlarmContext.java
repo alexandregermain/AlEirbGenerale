@@ -7,6 +7,8 @@ import fr.inria.phoenix.diasuite.framework.device.timer.TimerTriggeredFromTimer;
 
 public class LunchAlarmContext extends AbstractLunchAlarmContext {
 
+	public Boolean password = false;
+
 	public LunchAlarmContext(ServiceConfiguration serviceConfiguration) {
 		super(serviceConfiguration);
 		// TODO Auto-generated constructor stub
@@ -14,15 +16,22 @@ public class LunchAlarmContext extends AbstractLunchAlarmContext {
 
 	@Override
 	protected Boolean onPassword(PasswordValue passwordValue) {
-		// TODO Auto-generated method stub
-		return null;
+		password = passwordValue.value();
+		return password;
 	}
 
 	@Override
 	protected LunchAlarmContextValuePublishable onTimerTriggeredFromTimer(
 			TimerTriggeredFromTimer timerTriggeredFromTimer, DiscoverForTimerTriggeredFromTimer discover) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		int valeurTimer = Integer.parseInt(timerTriggeredFromTimer.value());
+		if(password){
+			return new LunchAlarmContextValuePublishable(false, true);
+		}
+		else if(valeurTimer >= 2*1000 && !password){
+			return new LunchAlarmContextValuePublishable(true, true);
+		}
+		return new LunchAlarmContextValuePublishable(false, false);
 	}
 
 }
