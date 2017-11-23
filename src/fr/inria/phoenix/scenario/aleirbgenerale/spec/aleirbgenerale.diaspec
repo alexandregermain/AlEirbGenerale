@@ -23,12 +23,9 @@ controller LampSuccessController{
 
 controller ChangePassword {
 	when provided ChangingPassword
-	do ScheduleTimer on Timer, On on Light;
+	do ScheduleTimer on Timer, 
+	   SendNonCriticalNotification on Notifier;
 		
-	//Si on a bien fait le mot de passe ou si le timer est écoulé
-	when provided ActionValidation
-		do ScheduleTimer on Timer, On on Light,
-    	   SendCriticalNotification on Notifier;
 }
 
 
@@ -54,15 +51,15 @@ context LunchAlarmContext as Boolean {
 context Password as Boolean {
     when provided on from Appliance
     get on from Appliance, contact from ContactSensor
-    always publish;
+    maybe publish;
 }
 
 
 
-context ChangingPassword as Boolean {
+context ChangingPassword as String {
     when provided on from Appliance
     get on from Appliance, contact from ContactSensor
-    always publish;
+    maybe publish;
 }
 
 context ActionValidation as Boolean {
