@@ -26,7 +26,7 @@ public class LunchAlarmController extends AbstractLunchAlarmController {
 			DiscoverForLunchAlarmContext discover) {
 		if(lunchAlarmContext.value()){
 			java.util.List<fr.inria.phoenix.diasuite.framework.datatype.file.File> attachement =  Arrays.asList(
-					new File());
+					new File()); 
 			Message message = new Message(Contact, Title, Message, attachement);
 			discover.messengers().anyOne().sendMessage(message );
 			

@@ -7,6 +7,8 @@ import fr.inria.phoenix.diasuite.framework.datatype.noncriticalnotification.NonC
 
 public class AlarmActivitedController extends AbstractAlarmActivitedController{
 
+	public static boolean activated = false;
+	
 	public AlarmActivitedController(ServiceConfiguration serviceConfiguration) {
 		super(serviceConfiguration);
 		// TODO Auto-generated constructor stub
@@ -14,10 +16,12 @@ public class AlarmActivitedController extends AbstractAlarmActivitedController{
 
 	@Override
 	protected void onInsideContext(InsideContextValue insideContext, DiscoverForInsideContext discover) {
+		System.out.println("SALUT");
 		if(insideContext.value()){
-			String timer1 = "Timer1";
-			TimerProxyForInsideContext timerAlarm = discover.timers().whereId(timer1).anyOne();
-			timerAlarm.schedule(timer1, 1000);
+			activated = true;
+			String timer1 = "timer1";
+			TimerProxyForInsideContext timerAlarm = discover.timers().anyOne();
+			timerAlarm.schedule(timer1, 1000);;
 			
 			NotifierCompositeForInsideContext notifier = discover.notifiers().all();
 			NonCriticalNotification notification = new NonCriticalNotification("id", "title", "text", null, false);

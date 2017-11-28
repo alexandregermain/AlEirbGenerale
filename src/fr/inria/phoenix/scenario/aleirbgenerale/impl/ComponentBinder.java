@@ -12,7 +12,7 @@ import fr.inria.phoenix.diasuite.framework.controller.lunchalarmcontroller.Abstr
 import fr.inria.phoenix.diasuite.framework.misc.AppComponentBinder;
 import fr.inria.phoenix.scenario.aleirbgenerale.context.ActionValidation;
 import fr.inria.phoenix.scenario.aleirbgenerale.context.ChangingPassword;
-import fr.inria.phoenix.scenario.aleirbgenerale.context.InsideContext;
+import fr.inria.phoenix.scenario.aleirbgenerale.context.IsInside;
 import fr.inria.phoenix.scenario.aleirbgenerale.context.LunchAlarmContext;
 import fr.inria.phoenix.scenario.aleirbgenerale.context.Password;
 import fr.inria.phoenix.scenario.aleirbgenerale.controller.AlarmActivitedController;
@@ -29,7 +29,7 @@ public class ComponentBinder extends AppComponentBinder {
 	@Override
 	public Class<? extends AbstractInsideContext> getInsideContextClass() {
 		// TODO Auto-generated method stub
-		return InsideContext.class;
+		return IsInside.class;
 	}
 
 	@Override

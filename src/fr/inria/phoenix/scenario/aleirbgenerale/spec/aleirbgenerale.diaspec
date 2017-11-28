@@ -36,14 +36,14 @@ controller ChangePassword {
 //                    CONTEXT
 //------------------------------------------------------
 //Permet de savoir si on est INSIDE ou OUTSIDE
-context InsideContext as Boolean {
+context IsInside as Boolean {
   when provided inactivityLevel from InactivitySensor
   get lastInteraction from InactivitySensor
   maybe publish;
 }
 
-context LunchAlarmContext as Boolean {
-  when provided Password
+context HandlePassword as Boolean {
+  when provided UpdatePassword
   always publish;
 
   when provided timerTriggered from Timer
@@ -51,7 +51,7 @@ context LunchAlarmContext as Boolean {
   maybe publish;
 }
 
-context Password as Boolean {
+context UpdatePassword as Boolean {
     when provided on from Appliance
     get on from Appliance, contact from ContactSensor
     always publish;
