@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure Period {
+ * structure Period {
  * 	beginning as Date;
  * 	end as Date;
  * }
-</pre>
+ * </pre>
  */
 public class Period implements Serializable {
     private static final long serialVersionUID = 0;
@@ -18,13 +18,13 @@ public class Period implements Serializable {
     
     /**
      * Returns the value of the beginning field.
-    <p>
-    AR (21/06/17)
-    
-    <pre>
-    beginning as Date
-    </pre>
-    @return the value of beginning
+     * <p>
+     * AR (21/06/17)
+     * 
+     * <pre>
+     * beginning as Date
+     * </pre>
+     * @return the value of beginning
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getBeginning() {
         return beginning;
@@ -32,13 +32,13 @@ public class Period implements Serializable {
     
     /**
      * Set the value of the beginning field.
-    <p>
-    AR (21/06/17)
-    
-    <pre>
-    beginning as Date
-    </pre>
-    @param beginning the new value of beginning
+     * <p>
+     * AR (21/06/17)
+     * 
+     * <pre>
+     * beginning as Date
+     * </pre>
+     * @param beginning the new value of beginning
      */
     public void setBeginning(fr.inria.phoenix.diasuite.framework.datatype.date.Date beginning) {
         this.beginning = beginning;
@@ -50,11 +50,11 @@ public class Period implements Serializable {
     
     /**
      * Returns the value of the end field.
-    
-    <pre>
-    end as Date
-    </pre>
-    @return the value of end
+     * 
+     * <pre>
+     * end as Date
+     * </pre>
+     * @return the value of end
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getEnd() {
         return end;
@@ -62,11 +62,11 @@ public class Period implements Serializable {
     
     /**
      * Set the value of the end field.
-    
-    <pre>
-    end as Date
-    </pre>
-    @param end the new value of end
+     * 
+     * <pre>
+     * end as Date
+     * </pre>
+     * @param end the new value of end
      */
     public void setEnd(fr.inria.phoenix.diasuite.framework.datatype.date.Date end) {
         this.end = end;

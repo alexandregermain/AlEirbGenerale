@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 /**
  * AR (19/07/17)
-
-<pre>
-enumeration DoorState {
+ * 
+ * <pre>
+ * enumeration DoorState {
  * 	OPEN, CLOSE
  * }
-</pre>
+ * </pre>
  */
 public enum DoorState implements Serializable {
     OPEN,CLOSE

@@ -7,10 +7,10 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * <pre>
-device TemperatureSensor extends Sensor {
+ * device TemperatureSensor extends Sensor {
  * 	source temperature as Float indexed by unit as TemperatureUnit;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractTemperatureSensor extends Service {
     
@@ -71,11 +71,11 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -86,11 +86,11 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -102,11 +102,11 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Set the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @param newLocationValue the new value of <code>location</code>
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @param newLocationValue the new value of <code>location</code>
      */
     protected void updateLocation(java.lang.String newLocationValue) {
         if (_location != newLocationValue) {
@@ -117,11 +117,11 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Returns the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @return the value of <code>location</code>
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @return the value of <code>location</code>
      */
     public java.lang.String getLocation() {
         return _location;
@@ -133,11 +133,11 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Set the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @param newUserValue the new value of <code>user</code>
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @param newUserValue the new value of <code>user</code>
      */
     protected void updateUser(java.lang.String newUserValue) {
         if (_user != newUserValue) {
@@ -148,11 +148,11 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Returns the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @return the value of <code>user</code>
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @return the value of <code>user</code>
      */
     public java.lang.String getUser() {
         return _user;
@@ -164,11 +164,11 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -177,11 +177,11 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -193,12 +193,12 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Publish the value of source <code>temperature</code> from device <code>TemperatureSensor</code>.
-    
-    <pre>
-    source temperature as Float indexed by unit as TemperatureUnit;
-    </pre>
-    @param newTemperatureValue the new value for the source <code>temperature</code>
-    @param unit the value of the index <code>unit</code>
+     * 
+     * <pre>
+     * source temperature as Float indexed by unit as TemperatureUnit;
+     * </pre>
+     * @param newTemperatureValue the new value for the source <code>temperature</code>
+     * @param unit the value of the index <code>unit</code>
      */
     protected void publishTemperature(java.lang.Float newTemperatureValue,
             fr.inria.phoenix.diasuite.framework.datatype.temperatureunit.TemperatureUnit unit) {
@@ -209,12 +209,12 @@ public abstract class AbstractTemperatureSensor extends Service {
     
     /**
      * Returns the value of source <code>temperature</code> from device <code>TemperatureSensor</code>.
-    
-    <pre>
-    source temperature as Float indexed by unit as TemperatureUnit;
-    </pre>
-    @param unit the value of the index <code>unit</code>
-    @return the value of the source <code>temperature</code>
+     * 
+     * <pre>
+     * source temperature as Float indexed by unit as TemperatureUnit;
+     * </pre>
+     * @param unit the value of the index <code>unit</code>
+     * @return the value of the source <code>temperature</code>
      */
     protected java.lang.Float getTemperature(fr.inria.phoenix.diasuite.framework.datatype.temperatureunit.TemperatureUnit unit) throws Exception {
         return _temperature.get(new TemperatureIndices(unit));

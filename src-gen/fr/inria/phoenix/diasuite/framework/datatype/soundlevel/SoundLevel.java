@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure SoundLevel {
+ * structure SoundLevel {
  * 	name as String;
  * 	level as Integer;
  * }
-</pre>
+ * </pre>
  */
 public class SoundLevel implements Serializable {
     private static final long serialVersionUID = 0;
@@ -18,11 +18,11 @@ public class SoundLevel implements Serializable {
     
     /**
      * Returns the value of the name field.
-    
-    <pre>
-    name as String
-    </pre>
-    @return the value of name
+     * 
+     * <pre>
+     * name as String
+     * </pre>
+     * @return the value of name
      */
     public java.lang.String getName() {
         return name;
@@ -30,11 +30,11 @@ public class SoundLevel implements Serializable {
     
     /**
      * Set the value of the name field.
-    
-    <pre>
-    name as String
-    </pre>
-    @param name the new value of name
+     * 
+     * <pre>
+     * name as String
+     * </pre>
+     * @param name the new value of name
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -46,11 +46,11 @@ public class SoundLevel implements Serializable {
     
     /**
      * Returns the value of the level field.
-    
-    <pre>
-    level as Integer
-    </pre>
-    @return the value of level
+     * 
+     * <pre>
+     * level as Integer
+     * </pre>
+     * @return the value of level
      */
     public java.lang.Integer getLevel() {
         return level;
@@ -58,11 +58,11 @@ public class SoundLevel implements Serializable {
     
     /**
      * Set the value of the level field.
-    
-    <pre>
-    level as Integer
-    </pre>
-    @param level the new value of level
+     * 
+     * <pre>
+     * level as Integer
+     * </pre>
+     * @param level the new value of level
      */
     public void setLevel(java.lang.Integer level) {
         this.level = level;

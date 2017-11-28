@@ -77,12 +77,12 @@ public final class InputMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public InputMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -93,12 +93,12 @@ public final class InputMock {
     // Code for the attribute location from device PhysicalDevice
     /**
      * Set the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @param newLocationValue the new value of <code>location</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @param newLocationValue the new value of <code>location</code>
+     * @return this for fluent interface
      */
     public InputMock location(java.lang.String newLocationValue) {
         proxy._updateLocation(newLocationValue);
@@ -109,12 +109,12 @@ public final class InputMock {
     // Code for the attribute user from device PhysicalDevice
     /**
      * Set the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @param newUserValue the new value of <code>user</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @param newUserValue the new value of <code>user</code>
+     * @return this for fluent interface
      */
     public InputMock user(java.lang.String newUserValue) {
         proxy._updateUser(newUserValue);
@@ -125,12 +125,12 @@ public final class InputMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public InputMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -140,12 +140,12 @@ public final class InputMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public InputMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -156,12 +156,12 @@ public final class InputMock {
     // Code for source message from device Input
     /**
      * Publish the value of source <code>message</code> from device <code>Input</code>.
-    
-    <pre>
-    source message as String;
-    </pre>
-    @param newMessageValue the new value for the source <code>message</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source message as String;
+     * </pre>
+     * @param newMessageValue the new value for the source <code>message</code>
+     * @return this for fluent interface
      */
     public InputMock message(java.lang.String newMessageValue) {
         proxy._publishMessage(newMessageValue);
@@ -171,12 +171,12 @@ public final class InputMock {
     private java.lang.String __message = null;
     /**
      * Set the value (without publication) of source <code>message</code> from device <code>Input</code>.
-    
-    <pre>
-    source message as String;
-    </pre>
-    @param newMessageValue the new value for the source <code>message</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source message as String;
+     * </pre>
+     * @param newMessageValue the new value for the source <code>message</code>
+     * @return this for fluent interface
      */
     public InputMock setMessage(java.lang.String newMessageValue) {
         __message = newMessageValue;
@@ -190,10 +190,10 @@ public final class InputMock {
      * Check that the <code>setInput</code> order from the <code>SetInput</code> action
      * defined in device Input was called.
      * 
-    
-    <pre>
-    setInput(message as String);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * setInput(message as String);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectSetInput() {
         try {
@@ -217,10 +217,10 @@ public final class InputMock {
      * Check that the <code>setInput</code> order from the <code>SetInput</code> action
      * defined in device Input was called.
      * 
-    
-    <pre>
-    setInput(message as String);
-    </pre>
+     * 
+     * <pre>
+     * setInput(message as String);
+     * </pre>
      * @param message parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */

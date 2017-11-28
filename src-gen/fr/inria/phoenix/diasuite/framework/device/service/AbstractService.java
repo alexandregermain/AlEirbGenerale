@@ -7,13 +7,13 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * ------------------------------------------------------------
-Services						||
-------------------------------------------------------------
-
-<pre>
-device Service extends Device {
+ * Services						||
+ * ------------------------------------------------------------
+ * 
+ * <pre>
+ * device Service extends Device {
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractService extends Service {
     
@@ -59,11 +59,11 @@ public abstract class AbstractService extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -74,11 +74,11 @@ public abstract class AbstractService extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -90,11 +90,11 @@ public abstract class AbstractService extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -103,11 +103,11 @@ public abstract class AbstractService extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;

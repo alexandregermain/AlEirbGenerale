@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>timerTriggered</code> from device <code>Timer</code>.
-
-<pre>
-source timerTriggered as String indexed by timerId as String;
-</pre>
+ * 
+ * <pre>
+ * source timerTriggered as String indexed by timerId as String;
+ * </pre>
  */
 public final class TimerTriggeredIndices implements Serializable {
     private static final long serialVersionUID = 0;

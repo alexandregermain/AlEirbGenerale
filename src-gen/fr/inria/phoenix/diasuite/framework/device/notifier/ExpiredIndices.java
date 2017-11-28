@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>expired</code> from device <code>Notifier</code>.
-
-<pre>
-source expired as Boolean indexed by id as String;
-</pre>
+ * 
+ * <pre>
+ * source expired as Boolean indexed by id as String;
+ * </pre>
  */
 public final class ExpiredIndices implements Serializable {
     private static final long serialVersionUID = 0;

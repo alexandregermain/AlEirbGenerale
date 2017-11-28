@@ -7,12 +7,12 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * <pre>
-device Clock extends Service {
+ * device Clock extends Service {
  * 	source tickSecond as Integer;
  * 	source tickMinute as Integer;
  * 	source tickHour as Integer;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractClock extends Service {
     
@@ -67,11 +67,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -82,11 +82,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -98,11 +98,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -111,11 +111,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -127,11 +127,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Publish the value of source <code>tickHour</code> from device <code>Clock</code>.
-    
-    <pre>
-    source tickHour as Integer;
-    </pre>
-    @param newTickHourValue the new value for the source <code>tickHour</code>
+     * 
+     * <pre>
+     * source tickHour as Integer;
+     * </pre>
+     * @param newTickHourValue the new value for the source <code>tickHour</code>
      */
     protected void publishTickHour(java.lang.Integer newTickHourValue) {
         _tickHour = newTickHourValue;
@@ -140,11 +140,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Returns the value of source <code>tickHour</code> from device <code>Clock</code>.
-    
-    <pre>
-    source tickHour as Integer;
-    </pre>
-    @return the value of the source <code>tickHour</code>
+     * 
+     * <pre>
+     * source tickHour as Integer;
+     * </pre>
+     * @return the value of the source <code>tickHour</code>
      */
     protected java.lang.Integer getTickHour() throws Exception {
         return _tickHour;
@@ -156,11 +156,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Publish the value of source <code>tickMinute</code> from device <code>Clock</code>.
-    
-    <pre>
-    source tickMinute as Integer;
-    </pre>
-    @param newTickMinuteValue the new value for the source <code>tickMinute</code>
+     * 
+     * <pre>
+     * source tickMinute as Integer;
+     * </pre>
+     * @param newTickMinuteValue the new value for the source <code>tickMinute</code>
      */
     protected void publishTickMinute(java.lang.Integer newTickMinuteValue) {
         _tickMinute = newTickMinuteValue;
@@ -169,11 +169,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Returns the value of source <code>tickMinute</code> from device <code>Clock</code>.
-    
-    <pre>
-    source tickMinute as Integer;
-    </pre>
-    @return the value of the source <code>tickMinute</code>
+     * 
+     * <pre>
+     * source tickMinute as Integer;
+     * </pre>
+     * @return the value of the source <code>tickMinute</code>
      */
     protected java.lang.Integer getTickMinute() throws Exception {
         return _tickMinute;
@@ -185,11 +185,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Publish the value of source <code>tickSecond</code> from device <code>Clock</code>.
-    
-    <pre>
-    source tickSecond as Integer;
-    </pre>
-    @param newTickSecondValue the new value for the source <code>tickSecond</code>
+     * 
+     * <pre>
+     * source tickSecond as Integer;
+     * </pre>
+     * @param newTickSecondValue the new value for the source <code>tickSecond</code>
      */
     protected void publishTickSecond(java.lang.Integer newTickSecondValue) {
         _tickSecond = newTickSecondValue;
@@ -198,11 +198,11 @@ public abstract class AbstractClock extends Service {
     
     /**
      * Returns the value of source <code>tickSecond</code> from device <code>Clock</code>.
-    
-    <pre>
-    source tickSecond as Integer;
-    </pre>
-    @return the value of the source <code>tickSecond</code>
+     * 
+     * <pre>
+     * source tickSecond as Integer;
+     * </pre>
+     * @return the value of the source <code>tickSecond</code>
      */
     protected java.lang.Integer getTickSecond() throws Exception {
         return _tickSecond;

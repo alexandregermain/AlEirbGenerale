@@ -9,7 +9,7 @@ import java.io.Serializable;
  * context Password as Boolean {
  *     when provided on from Appliance
  *     get on from Appliance, contact from ContactSensor
- *     always publish;
+ *     maybe publish;
  * }
  * </pre>
  */

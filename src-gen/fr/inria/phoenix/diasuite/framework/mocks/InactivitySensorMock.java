@@ -86,12 +86,12 @@ public final class InactivitySensorMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public InactivitySensorMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -102,12 +102,12 @@ public final class InactivitySensorMock {
     // Code for source inactivityLevel from device InactivitySensor
     /**
      * Publish the value of source <code>inactivityLevel</code> from device <code>InactivitySensor</code>.
-    
-    <pre>
-    source inactivityLevel as Float;
-    </pre>
-    @param newInactivityLevelValue the new value for the source <code>inactivityLevel</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source inactivityLevel as Float;
+     * </pre>
+     * @param newInactivityLevelValue the new value for the source <code>inactivityLevel</code>
+     * @return this for fluent interface
      */
     public InactivitySensorMock inactivityLevel(java.lang.Float newInactivityLevelValue) {
         proxy._publishInactivityLevel(newInactivityLevelValue);
@@ -117,12 +117,12 @@ public final class InactivitySensorMock {
     private java.lang.Float __inactivityLevel = null;
     /**
      * Set the value (without publication) of source <code>inactivityLevel</code> from device <code>InactivitySensor</code>.
-    
-    <pre>
-    source inactivityLevel as Float;
-    </pre>
-    @param newInactivityLevelValue the new value for the source <code>inactivityLevel</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source inactivityLevel as Float;
+     * </pre>
+     * @param newInactivityLevelValue the new value for the source <code>inactivityLevel</code>
+     * @return this for fluent interface
      */
     public InactivitySensorMock setInactivityLevel(java.lang.Float newInactivityLevelValue) {
         __inactivityLevel = newInactivityLevelValue;
@@ -133,12 +133,12 @@ public final class InactivitySensorMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public InactivitySensorMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -148,12 +148,12 @@ public final class InactivitySensorMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public InactivitySensorMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -164,12 +164,12 @@ public final class InactivitySensorMock {
     // Code for source lastInteraction from device InactivitySensor
     /**
      * Publish the value of source <code>lastInteraction</code> from device <code>InactivitySensor</code>.
-    
-    <pre>
-    source lastInteraction as Interaction;
-    </pre>
-    @param newLastInteractionValue the new value for the source <code>lastInteraction</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source lastInteraction as Interaction;
+     * </pre>
+     * @param newLastInteractionValue the new value for the source <code>lastInteraction</code>
+     * @return this for fluent interface
      */
     public InactivitySensorMock lastInteraction(fr.inria.phoenix.diasuite.framework.datatype.interaction.Interaction newLastInteractionValue) {
         proxy._publishLastInteraction(newLastInteractionValue);
@@ -179,12 +179,12 @@ public final class InactivitySensorMock {
     private fr.inria.phoenix.diasuite.framework.datatype.interaction.Interaction __lastInteraction = null;
     /**
      * Set the value (without publication) of source <code>lastInteraction</code> from device <code>InactivitySensor</code>.
-    
-    <pre>
-    source lastInteraction as Interaction;
-    </pre>
-    @param newLastInteractionValue the new value for the source <code>lastInteraction</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source lastInteraction as Interaction;
+     * </pre>
+     * @param newLastInteractionValue the new value for the source <code>lastInteraction</code>
+     * @return this for fluent interface
      */
     public InactivitySensorMock setLastInteraction(fr.inria.phoenix.diasuite.framework.datatype.interaction.Interaction newLastInteractionValue) {
         __lastInteraction = newLastInteractionValue;
@@ -198,10 +198,10 @@ public final class InactivitySensorMock {
      * Check that the <code>updateInactivityLevel</code> order from the <code>UpdateInactivityLevel</code> action
      * defined in device InactivitySensor was called.
      * 
-    
-    <pre>
-    updateInactivityLevel(level as Float);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * updateInactivityLevel(level as Float);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectUpdateInactivityLevel() {
         try {
@@ -225,10 +225,10 @@ public final class InactivitySensorMock {
      * Check that the <code>updateInactivityLevel</code> order from the <code>UpdateInactivityLevel</code> action
      * defined in device InactivitySensor was called.
      * 
-    
-    <pre>
-    updateInactivityLevel(level as Float);
-    </pre>
+     * 
+     * <pre>
+     * updateInactivityLevel(level as Float);
+     * </pre>
      * @param level parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -257,10 +257,10 @@ public final class InactivitySensorMock {
      * Check that the <code>updateLastInteraction</code> order from the <code>UpdateInactivityLevel</code> action
      * defined in device InactivitySensor was called.
      * 
-    
-    <pre>
-    updateLastInteraction(lastInteraction as Interaction);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * updateLastInteraction(lastInteraction as Interaction);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectUpdateLastInteraction() {
         try {
@@ -284,10 +284,10 @@ public final class InactivitySensorMock {
      * Check that the <code>updateLastInteraction</code> order from the <code>UpdateInactivityLevel</code> action
      * defined in device InactivitySensor was called.
      * 
-    
-    <pre>
-    updateLastInteraction(lastInteraction as Interaction);
-    </pre>
+     * 
+     * <pre>
+     * updateLastInteraction(lastInteraction as Interaction);
+     * </pre>
      * @param lastInteraction parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */

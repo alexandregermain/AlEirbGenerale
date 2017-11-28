@@ -44,12 +44,12 @@ public final class CommunicationServiceMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public CommunicationServiceMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -60,12 +60,12 @@ public final class CommunicationServiceMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public CommunicationServiceMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -75,12 +75,12 @@ public final class CommunicationServiceMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public CommunicationServiceMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;

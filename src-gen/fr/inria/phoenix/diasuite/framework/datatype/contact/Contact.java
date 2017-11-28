@@ -4,18 +4,18 @@ import java.io.Serializable;
 
 /**
  * ------------------------------------------------------------
-Contact						||
-------------------------------------------------------------
-
-<pre>
-structure Contact {
+ * Contact						||
+ * ------------------------------------------------------------
+ * 
+ * <pre>
+ * structure Contact {
  * 	name as String;
  * 	emailAddress as String;
  * 	phone as String;
  * 	iconUrl as String;
  * 	groups as String [];
  * }
-</pre>
+ * </pre>
  */
 public class Contact implements Serializable {
     private static final long serialVersionUID = 0;
@@ -25,11 +25,11 @@ public class Contact implements Serializable {
     
     /**
      * Returns the value of the name field.
-    
-    <pre>
-    name as String
-    </pre>
-    @return the value of name
+     * 
+     * <pre>
+     * name as String
+     * </pre>
+     * @return the value of name
      */
     public java.lang.String getName() {
         return name;
@@ -37,11 +37,11 @@ public class Contact implements Serializable {
     
     /**
      * Set the value of the name field.
-    
-    <pre>
-    name as String
-    </pre>
-    @param name the new value of name
+     * 
+     * <pre>
+     * name as String
+     * </pre>
+     * @param name the new value of name
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -53,11 +53,11 @@ public class Contact implements Serializable {
     
     /**
      * Returns the value of the emailAddress field.
-    
-    <pre>
-    emailAddress as String
-    </pre>
-    @return the value of emailAddress
+     * 
+     * <pre>
+     * emailAddress as String
+     * </pre>
+     * @return the value of emailAddress
      */
     public java.lang.String getEmailAddress() {
         return emailAddress;
@@ -65,11 +65,11 @@ public class Contact implements Serializable {
     
     /**
      * Set the value of the emailAddress field.
-    
-    <pre>
-    emailAddress as String
-    </pre>
-    @param emailAddress the new value of emailAddress
+     * 
+     * <pre>
+     * emailAddress as String
+     * </pre>
+     * @param emailAddress the new value of emailAddress
      */
     public void setEmailAddress(java.lang.String emailAddress) {
         this.emailAddress = emailAddress;
@@ -81,11 +81,11 @@ public class Contact implements Serializable {
     
     /**
      * Returns the value of the phone field.
-    
-    <pre>
-    phone as String
-    </pre>
-    @return the value of phone
+     * 
+     * <pre>
+     * phone as String
+     * </pre>
+     * @return the value of phone
      */
     public java.lang.String getPhone() {
         return phone;
@@ -93,11 +93,11 @@ public class Contact implements Serializable {
     
     /**
      * Set the value of the phone field.
-    
-    <pre>
-    phone as String
-    </pre>
-    @param phone the new value of phone
+     * 
+     * <pre>
+     * phone as String
+     * </pre>
+     * @param phone the new value of phone
      */
     public void setPhone(java.lang.String phone) {
         this.phone = phone;
@@ -109,11 +109,11 @@ public class Contact implements Serializable {
     
     /**
      * Returns the value of the iconUrl field.
-    
-    <pre>
-    iconUrl as String
-    </pre>
-    @return the value of iconUrl
+     * 
+     * <pre>
+     * iconUrl as String
+     * </pre>
+     * @return the value of iconUrl
      */
     public java.lang.String getIconUrl() {
         return iconUrl;
@@ -121,11 +121,11 @@ public class Contact implements Serializable {
     
     /**
      * Set the value of the iconUrl field.
-    
-    <pre>
-    iconUrl as String
-    </pre>
-    @param iconUrl the new value of iconUrl
+     * 
+     * <pre>
+     * iconUrl as String
+     * </pre>
+     * @param iconUrl the new value of iconUrl
      */
     public void setIconUrl(java.lang.String iconUrl) {
         this.iconUrl = iconUrl;
@@ -137,11 +137,11 @@ public class Contact implements Serializable {
     
     /**
      * Returns the value of the groups field.
-    
-    <pre>
-    groups as String []
-    </pre>
-    @return the value of groups
+     * 
+     * <pre>
+     * groups as String []
+     * </pre>
+     * @return the value of groups
      */
     public java.util.List<java.lang.String> getGroups() {
         return groups;
@@ -149,11 +149,11 @@ public class Contact implements Serializable {
     
     /**
      * Set the value of the groups field.
-    
-    <pre>
-    groups as String []
-    </pre>
-    @param groups the new value of groups
+     * 
+     * <pre>
+     * groups as String []
+     * </pre>
+     * @param groups the new value of groups
      */
     public void setGroups(java.util.List<java.lang.String> groups) {
         this.groups = groups;

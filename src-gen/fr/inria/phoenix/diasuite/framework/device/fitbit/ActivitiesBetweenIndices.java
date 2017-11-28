@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>activitiesBetween</code> from device <code>Fitbit</code>.
-
-<pre>
-source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
-</pre>
+ * 
+ * <pre>
+ * source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
+ * </pre>
  */
 public final class ActivitiesBetweenIndices implements Serializable {
     private static final long serialVersionUID = 0;

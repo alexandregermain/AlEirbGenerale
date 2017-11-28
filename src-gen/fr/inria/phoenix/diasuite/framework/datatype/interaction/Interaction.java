@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure Interaction {
+ * structure Interaction {
  * 	actionType as InteractionType;
  * 	deviceId as String;
  * 	date as Date;
  * }
-</pre>
+ * </pre>
  */
 public class Interaction implements Serializable {
     private static final long serialVersionUID = 0;
@@ -19,11 +19,11 @@ public class Interaction implements Serializable {
     
     /**
      * Returns the value of the actionType field.
-    
-    <pre>
-    actionType as InteractionType
-    </pre>
-    @return the value of actionType
+     * 
+     * <pre>
+     * actionType as InteractionType
+     * </pre>
+     * @return the value of actionType
      */
     public fr.inria.phoenix.diasuite.framework.datatype.interactiontype.InteractionType getActionType() {
         return actionType;
@@ -31,11 +31,11 @@ public class Interaction implements Serializable {
     
     /**
      * Set the value of the actionType field.
-    
-    <pre>
-    actionType as InteractionType
-    </pre>
-    @param actionType the new value of actionType
+     * 
+     * <pre>
+     * actionType as InteractionType
+     * </pre>
+     * @param actionType the new value of actionType
      */
     public void setActionType(fr.inria.phoenix.diasuite.framework.datatype.interactiontype.InteractionType actionType) {
         this.actionType = actionType;
@@ -47,11 +47,11 @@ public class Interaction implements Serializable {
     
     /**
      * Returns the value of the deviceId field.
-    
-    <pre>
-    deviceId as String
-    </pre>
-    @return the value of deviceId
+     * 
+     * <pre>
+     * deviceId as String
+     * </pre>
+     * @return the value of deviceId
      */
     public java.lang.String getDeviceId() {
         return deviceId;
@@ -59,11 +59,11 @@ public class Interaction implements Serializable {
     
     /**
      * Set the value of the deviceId field.
-    
-    <pre>
-    deviceId as String
-    </pre>
-    @param deviceId the new value of deviceId
+     * 
+     * <pre>
+     * deviceId as String
+     * </pre>
+     * @param deviceId the new value of deviceId
      */
     public void setDeviceId(java.lang.String deviceId) {
         this.deviceId = deviceId;
@@ -75,11 +75,11 @@ public class Interaction implements Serializable {
     
     /**
      * Returns the value of the date field.
-    
-    <pre>
-    date as Date
-    </pre>
-    @return the value of date
+     * 
+     * <pre>
+     * date as Date
+     * </pre>
+     * @return the value of date
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getDate() {
         return date;
@@ -87,11 +87,11 @@ public class Interaction implements Serializable {
     
     /**
      * Set the value of the date field.
-    
-    <pre>
-    date as Date
-    </pre>
-    @param date the new value of date
+     * 
+     * <pre>
+     * date as Date
+     * </pre>
+     * @param date the new value of date
      */
     public void setDate(fr.inria.phoenix.diasuite.framework.datatype.date.Date date) {
         this.date = date;

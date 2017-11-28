@@ -11,13 +11,13 @@ import fr.inria.phoenix.diasuite.framework.context.lunchalarmcontext.LunchAlarmC
 
 /**
  * <pre>
-controller LunchAlarmController{
+ * controller LunchAlarmController{
  *   when provided LunchAlarmContext
  *     do ScheduleTimer on Timer,
  *        SendMessage on Messenger,
  * 	   SendCriticalNotification on Notifier;
  * }
-</pre>
+ * </pre>
  */
 @SuppressWarnings("all")
 public abstract class AbstractLunchAlarmController extends Service {
@@ -102,17 +102,17 @@ public abstract class AbstractLunchAlarmController extends Service {
     /**
      * Discover object that will exposes the <code>Timer</code> devices to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerDiscovererForLunchAlarmContext {
         private Service serviceParent;
@@ -158,17 +158,17 @@ public abstract class AbstractLunchAlarmController extends Service {
     /**
      * A composite of several <code>Timer</code> devices to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerCompositeForLunchAlarmContext extends fr.inria.diagen.core.service.composite.Composite<TimerProxyForLunchAlarmContext> {
         private TimerCompositeForLunchAlarmContext(Service serviceParent) {
@@ -237,17 +237,17 @@ public abstract class AbstractLunchAlarmController extends Service {
     /**
      * A proxy to one <code>Timer</code> device to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerProxyForLunchAlarmContext extends Proxy {
         private TimerProxyForLunchAlarmContext(Service service, RemoteServiceInfo remoteServiceInfo) {
@@ -298,13 +298,13 @@ public abstract class AbstractLunchAlarmController extends Service {
     /**
      * Discover object that will exposes the <code>Messenger</code> devices to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    
-    <pre>
-    device Messenger extends CommunicationService {
+     * 
+     * <pre>
+     * device Messenger extends CommunicationService {
      * 	source lastMessage as Message;
      * 	action SendMessage;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class MessengerDiscovererForLunchAlarmContext {
         private Service serviceParent;
@@ -350,13 +350,13 @@ public abstract class AbstractLunchAlarmController extends Service {
     /**
      * A composite of several <code>Messenger</code> devices to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    
-    <pre>
-    device Messenger extends CommunicationService {
+     * 
+     * <pre>
+     * device Messenger extends CommunicationService {
      * 	source lastMessage as Message;
      * 	action SendMessage;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class MessengerCompositeForLunchAlarmContext extends fr.inria.diagen.core.service.composite.Composite<MessengerProxyForLunchAlarmContext> {
         private MessengerCompositeForLunchAlarmContext(Service serviceParent) {
@@ -395,13 +395,13 @@ public abstract class AbstractLunchAlarmController extends Service {
     /**
      * A proxy to one <code>Messenger</code> device to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    
-    <pre>
-    device Messenger extends CommunicationService {
+     * 
+     * <pre>
+     * device Messenger extends CommunicationService {
      * 	source lastMessage as Message;
      * 	action SendMessage;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class MessengerProxyForLunchAlarmContext extends Proxy {
         private MessengerProxyForLunchAlarmContext(Service service, RemoteServiceInfo remoteServiceInfo) {
@@ -428,16 +428,16 @@ public abstract class AbstractLunchAlarmController extends Service {
     /**
      * Discover object that will exposes the <code>Notifier</code> devices to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    
-    <pre>
-    device Notifier extends HomeService {
+     * 
+     * <pre>
+     * device Notifier extends HomeService {
      * 	source cancelled as Boolean indexed by id as String;
      * 	source expired as Boolean indexed by id as String;
      * 	source reply as Integer indexed by id as String;
      * 	action SendCriticalNotification;
      * 	action SendNonCriticalNotification;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class NotifierDiscovererForLunchAlarmContext {
         private Service serviceParent;
@@ -483,16 +483,16 @@ public abstract class AbstractLunchAlarmController extends Service {
     /**
      * A composite of several <code>Notifier</code> devices to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    
-    <pre>
-    device Notifier extends HomeService {
+     * 
+     * <pre>
+     * device Notifier extends HomeService {
      * 	source cancelled as Boolean indexed by id as String;
      * 	source expired as Boolean indexed by id as String;
      * 	source reply as Integer indexed by id as String;
      * 	action SendCriticalNotification;
      * 	action SendNonCriticalNotification;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class NotifierCompositeForLunchAlarmContext extends fr.inria.diagen.core.service.composite.Composite<NotifierProxyForLunchAlarmContext> {
         private NotifierCompositeForLunchAlarmContext(Service serviceParent) {
@@ -557,16 +557,16 @@ public abstract class AbstractLunchAlarmController extends Service {
     /**
      * A proxy to one <code>Notifier</code> device to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    
-    <pre>
-    device Notifier extends HomeService {
+     * 
+     * <pre>
+     * device Notifier extends HomeService {
      * 	source cancelled as Boolean indexed by id as String;
      * 	source expired as Boolean indexed by id as String;
      * 	source reply as Integer indexed by id as String;
      * 	action SendCriticalNotification;
      * 	action SendNonCriticalNotification;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class NotifierProxyForLunchAlarmContext extends Proxy {
         private NotifierProxyForLunchAlarmContext(Service service, RemoteServiceInfo remoteServiceInfo) {

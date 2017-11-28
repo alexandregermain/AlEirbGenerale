@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure FitbitActivity {
+ * structure FitbitActivity {
  * 	activityId as Integer;
  * 	calories as Float;
  * 	name as DailyActivityName;
@@ -12,7 +12,7 @@ structure FitbitActivity {
  * 	duration as Integer;
  * 	description as String;
  * }
-</pre>
+ * </pre>
  */
 public class FitbitActivity implements Serializable {
     private static final long serialVersionUID = 0;
@@ -22,11 +22,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Returns the value of the activityId field.
-    
-    <pre>
-    activityId as Integer
-    </pre>
-    @return the value of activityId
+     * 
+     * <pre>
+     * activityId as Integer
+     * </pre>
+     * @return the value of activityId
      */
     public java.lang.Integer getActivityId() {
         return activityId;
@@ -34,11 +34,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Set the value of the activityId field.
-    
-    <pre>
-    activityId as Integer
-    </pre>
-    @param activityId the new value of activityId
+     * 
+     * <pre>
+     * activityId as Integer
+     * </pre>
+     * @param activityId the new value of activityId
      */
     public void setActivityId(java.lang.Integer activityId) {
         this.activityId = activityId;
@@ -50,11 +50,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Returns the value of the calories field.
-    
-    <pre>
-    calories as Float
-    </pre>
-    @return the value of calories
+     * 
+     * <pre>
+     * calories as Float
+     * </pre>
+     * @return the value of calories
      */
     public java.lang.Float getCalories() {
         return calories;
@@ -62,11 +62,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Set the value of the calories field.
-    
-    <pre>
-    calories as Float
-    </pre>
-    @param calories the new value of calories
+     * 
+     * <pre>
+     * calories as Float
+     * </pre>
+     * @param calories the new value of calories
      */
     public void setCalories(java.lang.Float calories) {
         this.calories = calories;
@@ -78,11 +78,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Returns the value of the name field.
-    
-    <pre>
-    name as DailyActivityName
-    </pre>
-    @return the value of name
+     * 
+     * <pre>
+     * name as DailyActivityName
+     * </pre>
+     * @return the value of name
      */
     public fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName getName() {
         return name;
@@ -90,11 +90,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Set the value of the name field.
-    
-    <pre>
-    name as DailyActivityName
-    </pre>
-    @param name the new value of name
+     * 
+     * <pre>
+     * name as DailyActivityName
+     * </pre>
+     * @param name the new value of name
      */
     public void setName(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName name) {
         this.name = name;
@@ -106,11 +106,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Returns the value of the startTime field.
-    
-    <pre>
-    startTime as Date
-    </pre>
-    @return the value of startTime
+     * 
+     * <pre>
+     * startTime as Date
+     * </pre>
+     * @return the value of startTime
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getStartTime() {
         return startTime;
@@ -118,11 +118,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Set the value of the startTime field.
-    
-    <pre>
-    startTime as Date
-    </pre>
-    @param startTime the new value of startTime
+     * 
+     * <pre>
+     * startTime as Date
+     * </pre>
+     * @param startTime the new value of startTime
      */
     public void setStartTime(fr.inria.phoenix.diasuite.framework.datatype.date.Date startTime) {
         this.startTime = startTime;
@@ -134,11 +134,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Returns the value of the duration field.
-    
-    <pre>
-    duration as Integer
-    </pre>
-    @return the value of duration
+     * 
+     * <pre>
+     * duration as Integer
+     * </pre>
+     * @return the value of duration
      */
     public java.lang.Integer getDuration() {
         return duration;
@@ -146,11 +146,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Set the value of the duration field.
-    
-    <pre>
-    duration as Integer
-    </pre>
-    @param duration the new value of duration
+     * 
+     * <pre>
+     * duration as Integer
+     * </pre>
+     * @param duration the new value of duration
      */
     public void setDuration(java.lang.Integer duration) {
         this.duration = duration;
@@ -162,11 +162,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Returns the value of the description field.
-    
-    <pre>
-    description as String
-    </pre>
-    @return the value of description
+     * 
+     * <pre>
+     * description as String
+     * </pre>
+     * @return the value of description
      */
     public java.lang.String getDescription() {
         return description;
@@ -174,11 +174,11 @@ public class FitbitActivity implements Serializable {
     
     /**
      * Set the value of the description field.
-    
-    <pre>
-    description as String
-    </pre>
-    @param description the new value of description
+     * 
+     * <pre>
+     * description as String
+     * </pre>
+     * @param description the new value of description
      */
     public void setDescription(java.lang.String description) {
         this.description = description;

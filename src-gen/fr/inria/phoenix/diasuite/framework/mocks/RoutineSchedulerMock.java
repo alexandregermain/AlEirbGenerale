@@ -107,12 +107,12 @@ public final class RoutineSchedulerMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public RoutineSchedulerMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -123,12 +123,12 @@ public final class RoutineSchedulerMock {
     // Code for source currentTime from device RoutineScheduler
     /**
      * Publish the value of source <code>currentTime</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source currentTime as DayTime;
-    </pre>
-    @param newCurrentTimeValue the new value for the source <code>currentTime</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source currentTime as DayTime;
+     * </pre>
+     * @param newCurrentTimeValue the new value for the source <code>currentTime</code>
+     * @return this for fluent interface
      */
     public RoutineSchedulerMock currentTime(fr.inria.phoenix.diasuite.framework.datatype.daytime.DayTime newCurrentTimeValue) {
         proxy._publishCurrentTime(newCurrentTimeValue);
@@ -138,12 +138,12 @@ public final class RoutineSchedulerMock {
     private fr.inria.phoenix.diasuite.framework.datatype.daytime.DayTime __currentTime = null;
     /**
      * Set the value (without publication) of source <code>currentTime</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source currentTime as DayTime;
-    </pre>
-    @param newCurrentTimeValue the new value for the source <code>currentTime</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source currentTime as DayTime;
+     * </pre>
+     * @param newCurrentTimeValue the new value for the source <code>currentTime</code>
+     * @return this for fluent interface
      */
     public RoutineSchedulerMock setCurrentTime(fr.inria.phoenix.diasuite.framework.datatype.daytime.DayTime newCurrentTimeValue) {
         __currentTime = newCurrentTimeValue;
@@ -154,12 +154,12 @@ public final class RoutineSchedulerMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public RoutineSchedulerMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -169,12 +169,12 @@ public final class RoutineSchedulerMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public RoutineSchedulerMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -185,12 +185,12 @@ public final class RoutineSchedulerMock {
     // Code for source startMonitoring from device RoutineScheduler
     /**
      * Publish the value of source <code>startMonitoring</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source startMonitoring as DailyActivityName;
-    </pre>
-    @param newStartMonitoringValue the new value for the source <code>startMonitoring</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source startMonitoring as DailyActivityName;
+     * </pre>
+     * @param newStartMonitoringValue the new value for the source <code>startMonitoring</code>
+     * @return this for fluent interface
      */
     public RoutineSchedulerMock startMonitoring(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName newStartMonitoringValue) {
         proxy._publishStartMonitoring(newStartMonitoringValue);
@@ -200,12 +200,12 @@ public final class RoutineSchedulerMock {
     private fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName __startMonitoring = null;
     /**
      * Set the value (without publication) of source <code>startMonitoring</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source startMonitoring as DailyActivityName;
-    </pre>
-    @param newStartMonitoringValue the new value for the source <code>startMonitoring</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source startMonitoring as DailyActivityName;
+     * </pre>
+     * @param newStartMonitoringValue the new value for the source <code>startMonitoring</code>
+     * @return this for fluent interface
      */
     public RoutineSchedulerMock setStartMonitoring(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName newStartMonitoringValue) {
         __startMonitoring = newStartMonitoringValue;
@@ -216,12 +216,12 @@ public final class RoutineSchedulerMock {
     // Code for source stopMonitoring from device RoutineScheduler
     /**
      * Publish the value of source <code>stopMonitoring</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source stopMonitoring as DailyActivityName;
-    </pre>
-    @param newStopMonitoringValue the new value for the source <code>stopMonitoring</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source stopMonitoring as DailyActivityName;
+     * </pre>
+     * @param newStopMonitoringValue the new value for the source <code>stopMonitoring</code>
+     * @return this for fluent interface
      */
     public RoutineSchedulerMock stopMonitoring(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName newStopMonitoringValue) {
         proxy._publishStopMonitoring(newStopMonitoringValue);
@@ -231,12 +231,12 @@ public final class RoutineSchedulerMock {
     private fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName __stopMonitoring = null;
     /**
      * Set the value (without publication) of source <code>stopMonitoring</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source stopMonitoring as DailyActivityName;
-    </pre>
-    @param newStopMonitoringValue the new value for the source <code>stopMonitoring</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source stopMonitoring as DailyActivityName;
+     * </pre>
+     * @param newStopMonitoringValue the new value for the source <code>stopMonitoring</code>
+     * @return this for fluent interface
      */
     public RoutineSchedulerMock setStopMonitoring(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName newStopMonitoringValue) {
         __stopMonitoring = newStopMonitoringValue;
@@ -250,10 +250,10 @@ public final class RoutineSchedulerMock {
      * Check that the <code>startMonitoring</code> order from the <code>UpdateRoutines</code> action
      * defined in device RoutineScheduler was called.
      * 
-    
-    <pre>
-    startMonitoring(activity as DailyActivityName);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * startMonitoring(activity as DailyActivityName);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectStartMonitoring() {
         try {
@@ -277,10 +277,10 @@ public final class RoutineSchedulerMock {
      * Check that the <code>startMonitoring</code> order from the <code>UpdateRoutines</code> action
      * defined in device RoutineScheduler was called.
      * 
-    
-    <pre>
-    startMonitoring(activity as DailyActivityName);
-    </pre>
+     * 
+     * <pre>
+     * startMonitoring(activity as DailyActivityName);
+     * </pre>
      * @param activity parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -309,10 +309,10 @@ public final class RoutineSchedulerMock {
      * Check that the <code>stopMonitoring</code> order from the <code>UpdateRoutines</code> action
      * defined in device RoutineScheduler was called.
      * 
-    
-    <pre>
-    stopMonitoring(activity as DailyActivityName);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * stopMonitoring(activity as DailyActivityName);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectStopMonitoring() {
         try {
@@ -336,10 +336,10 @@ public final class RoutineSchedulerMock {
      * Check that the <code>stopMonitoring</code> order from the <code>UpdateRoutines</code> action
      * defined in device RoutineScheduler was called.
      * 
-    
-    <pre>
-    stopMonitoring(activity as DailyActivityName);
-    </pre>
+     * 
+     * <pre>
+     * stopMonitoring(activity as DailyActivityName);
+     * </pre>
      * @param activity parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -368,10 +368,10 @@ public final class RoutineSchedulerMock {
      * Check that the <code>updateDayTime</code> order from the <code>UpdateDayTime</code> action
      * defined in device RoutineScheduler was called.
      * 
-    
-    <pre>
-    updateDayTime(currentTime as DayTime);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * updateDayTime(currentTime as DayTime);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectUpdateDayTime() {
         try {
@@ -395,10 +395,10 @@ public final class RoutineSchedulerMock {
      * Check that the <code>updateDayTime</code> order from the <code>UpdateDayTime</code> action
      * defined in device RoutineScheduler was called.
      * 
-    
-    <pre>
-    updateDayTime(currentTime as DayTime);
-    </pre>
+     * 
+     * <pre>
+     * updateDayTime(currentTime as DayTime);
+     * </pre>
      * @param currentTime parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */

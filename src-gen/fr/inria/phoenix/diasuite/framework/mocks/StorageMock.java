@@ -70,12 +70,12 @@ public final class StorageMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public StorageMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -86,13 +86,13 @@ public final class StorageMock {
     // Code for source data from device Storage
     /**
      * Publish the value of source <code>data</code> from device <code>Storage</code>.
-    
-    <pre>
-    source data as String indexed by key as String;
-    </pre>
-    @param newDataValue the new value for the source <code>data</code>
-    @param key the value of the index <code>key</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source data as String indexed by key as String;
+     * </pre>
+     * @param newDataValue the new value for the source <code>data</code>
+     * @param key the value of the index <code>key</code>
+     * @return this for fluent interface
      */
     public StorageMock data(java.lang.String newDataValue,
             java.lang.String key) {
@@ -104,13 +104,13 @@ public final class StorageMock {
     private java.util.HashMap<DataIndices, java.lang.String> __data = new java.util.HashMap<DataIndices, java.lang.String>();
     /**
      * Set the value (without publication) of source <code>data</code> from device <code>Storage</code>.
-    
-    <pre>
-    source data as String indexed by key as String;
-    </pre>
-    @param newDataValue the new value for the source <code>data</code>
-    @param key the value of the index <code>key</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source data as String indexed by key as String;
+     * </pre>
+     * @param newDataValue the new value for the source <code>data</code>
+     * @param key the value of the index <code>key</code>
+     * @return this for fluent interface
      */
     public StorageMock setData(java.lang.String newDataValue,
             java.lang.String key) {
@@ -123,12 +123,12 @@ public final class StorageMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public StorageMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -138,12 +138,12 @@ public final class StorageMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public StorageMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -157,10 +157,10 @@ public final class StorageMock {
      * Check that the <code>put</code> order from the <code>PutStringData</code> action
      * defined in device Storage was called.
      * 
-    
-    <pre>
-    put(pKey as String, pData as String);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * put(pKey as String, pData as String);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectPut() {
         try {
@@ -184,10 +184,10 @@ public final class StorageMock {
      * Check that the <code>put</code> order from the <code>PutStringData</code> action
      * defined in device Storage was called.
      * 
-    
-    <pre>
-    put(pKey as String, pData as String);
-    </pre>
+     * 
+     * <pre>
+     * put(pKey as String, pData as String);
+     * </pre>
      * @param pKey parameter 1 of the order.
      *     @return true if the action happened with the given parameters, remaining parameters are ignored
      */
@@ -215,10 +215,10 @@ public final class StorageMock {
      * Check that the <code>put</code> order from the <code>PutStringData</code> action
      * defined in device Storage was called.
      * 
-    
-    <pre>
-    put(pKey as String, pData as String);
-    </pre>
+     * 
+     * <pre>
+     * put(pKey as String, pData as String);
+     * </pre>
      * @param pKey parameter 1 of the order.
      * @param pData parameter 2 of the order.
      *     @return true if the action happened with the given parameters

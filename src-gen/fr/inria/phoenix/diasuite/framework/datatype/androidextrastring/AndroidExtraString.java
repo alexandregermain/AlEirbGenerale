@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure AndroidExtraString {
+ * structure AndroidExtraString {
  * 	key as String;
  * 	value as String;
  * }
-</pre>
+ * </pre>
  */
 public class AndroidExtraString implements Serializable {
     private static final long serialVersionUID = 0;
@@ -18,11 +18,11 @@ public class AndroidExtraString implements Serializable {
     
     /**
      * Returns the value of the key field.
-    
-    <pre>
-    key as String
-    </pre>
-    @return the value of key
+     * 
+     * <pre>
+     * key as String
+     * </pre>
+     * @return the value of key
      */
     public java.lang.String getKey() {
         return key;
@@ -30,11 +30,11 @@ public class AndroidExtraString implements Serializable {
     
     /**
      * Set the value of the key field.
-    
-    <pre>
-    key as String
-    </pre>
-    @param key the new value of key
+     * 
+     * <pre>
+     * key as String
+     * </pre>
+     * @param key the new value of key
      */
     public void setKey(java.lang.String key) {
         this.key = key;
@@ -46,11 +46,11 @@ public class AndroidExtraString implements Serializable {
     
     /**
      * Returns the value of the value field.
-    
-    <pre>
-    value as String
-    </pre>
-    @return the value of value
+     * 
+     * <pre>
+     * value as String
+     * </pre>
+     * @return the value of value
      */
     public java.lang.String getValue() {
         return value;
@@ -58,11 +58,11 @@ public class AndroidExtraString implements Serializable {
     
     /**
      * Set the value of the value field.
-    
-    <pre>
-    value as String
-    </pre>
-    @param value the new value of value
+     * 
+     * <pre>
+     * value as String
+     * </pre>
+     * @param value the new value of value
      */
     public void setValue(java.lang.String value) {
         this.value = value;

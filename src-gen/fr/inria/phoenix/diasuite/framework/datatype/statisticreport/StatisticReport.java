@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure StatisticReport {
+ * structure StatisticReport {
  * 	period as Period;
  * 	dailyActivityStats as DailyActivityStats [];
  * 	periodActivityStats as PeriodActivityStats [];
  * }
-</pre>
+ * </pre>
  */
 public class StatisticReport implements Serializable {
     private static final long serialVersionUID = 0;
@@ -19,11 +19,11 @@ public class StatisticReport implements Serializable {
     
     /**
      * Returns the value of the period field.
-    
-    <pre>
-    period as Period
-    </pre>
-    @return the value of period
+     * 
+     * <pre>
+     * period as Period
+     * </pre>
+     * @return the value of period
      */
     public fr.inria.phoenix.diasuite.framework.datatype.period.Period getPeriod() {
         return period;
@@ -31,11 +31,11 @@ public class StatisticReport implements Serializable {
     
     /**
      * Set the value of the period field.
-    
-    <pre>
-    period as Period
-    </pre>
-    @param period the new value of period
+     * 
+     * <pre>
+     * period as Period
+     * </pre>
+     * @param period the new value of period
      */
     public void setPeriod(fr.inria.phoenix.diasuite.framework.datatype.period.Period period) {
         this.period = period;
@@ -47,11 +47,11 @@ public class StatisticReport implements Serializable {
     
     /**
      * Returns the value of the dailyActivityStats field.
-    
-    <pre>
-    dailyActivityStats as DailyActivityStats []
-    </pre>
-    @return the value of dailyActivityStats
+     * 
+     * <pre>
+     * dailyActivityStats as DailyActivityStats []
+     * </pre>
+     * @return the value of dailyActivityStats
      */
     public java.util.List<fr.inria.phoenix.diasuite.framework.datatype.dailyactivitystats.DailyActivityStats> getDailyActivityStats() {
         return dailyActivityStats;
@@ -59,11 +59,11 @@ public class StatisticReport implements Serializable {
     
     /**
      * Set the value of the dailyActivityStats field.
-    
-    <pre>
-    dailyActivityStats as DailyActivityStats []
-    </pre>
-    @param dailyActivityStats the new value of dailyActivityStats
+     * 
+     * <pre>
+     * dailyActivityStats as DailyActivityStats []
+     * </pre>
+     * @param dailyActivityStats the new value of dailyActivityStats
      */
     public void setDailyActivityStats(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.dailyactivitystats.DailyActivityStats> dailyActivityStats) {
         this.dailyActivityStats = dailyActivityStats;
@@ -75,11 +75,11 @@ public class StatisticReport implements Serializable {
     
     /**
      * Returns the value of the periodActivityStats field.
-    
-    <pre>
-    periodActivityStats as PeriodActivityStats []
-    </pre>
-    @return the value of periodActivityStats
+     * 
+     * <pre>
+     * periodActivityStats as PeriodActivityStats []
+     * </pre>
+     * @return the value of periodActivityStats
      */
     public java.util.List<fr.inria.phoenix.diasuite.framework.datatype.periodactivitystats.PeriodActivityStats> getPeriodActivityStats() {
         return periodActivityStats;
@@ -87,11 +87,11 @@ public class StatisticReport implements Serializable {
     
     /**
      * Set the value of the periodActivityStats field.
-    
-    <pre>
-    periodActivityStats as PeriodActivityStats []
-    </pre>
-    @param periodActivityStats the new value of periodActivityStats
+     * 
+     * <pre>
+     * periodActivityStats as PeriodActivityStats []
+     * </pre>
+     * @param periodActivityStats the new value of periodActivityStats
      */
     public void setPeriodActivityStats(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.periodactivitystats.PeriodActivityStats> periodActivityStats) {
         this.periodActivityStats = periodActivityStats;

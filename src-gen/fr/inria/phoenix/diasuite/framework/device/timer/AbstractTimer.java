@@ -7,15 +7,15 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * ------
-Timer
-------
-
-<pre>
-device Timer extends Service {
+ * Timer
+ * ------
+ * 
+ * <pre>
+ * device Timer extends Service {
  * 	source timerTriggered as String indexed by timerId as String;
  * 	action ScheduleTimer;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractTimer extends Service {
     
@@ -79,11 +79,11 @@ public abstract class AbstractTimer extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -94,11 +94,11 @@ public abstract class AbstractTimer extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -110,11 +110,11 @@ public abstract class AbstractTimer extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -123,11 +123,11 @@ public abstract class AbstractTimer extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -139,12 +139,12 @@ public abstract class AbstractTimer extends Service {
     
     /**
      * Publish the value of source <code>timerTriggered</code> from device <code>Timer</code>.
-    
-    <pre>
-    source timerTriggered as String indexed by timerId as String;
-    </pre>
-    @param newTimerTriggeredValue the new value for the source <code>timerTriggered</code>
-    @param timerId the value of the index <code>timerId</code>
+     * 
+     * <pre>
+     * source timerTriggered as String indexed by timerId as String;
+     * </pre>
+     * @param newTimerTriggeredValue the new value for the source <code>timerTriggered</code>
+     * @param timerId the value of the index <code>timerId</code>
      */
     protected void publishTimerTriggered(java.lang.String newTimerTriggeredValue,
             java.lang.String timerId) {
@@ -155,12 +155,12 @@ public abstract class AbstractTimer extends Service {
     
     /**
      * Returns the value of source <code>timerTriggered</code> from device <code>Timer</code>.
-    
-    <pre>
-    source timerTriggered as String indexed by timerId as String;
-    </pre>
-    @param timerId the value of the index <code>timerId</code>
-    @return the value of the source <code>timerTriggered</code>
+     * 
+     * <pre>
+     * source timerTriggered as String indexed by timerId as String;
+     * </pre>
+     * @param timerId the value of the index <code>timerId</code>
+     * @return the value of the source <code>timerTriggered</code>
      */
     protected java.lang.String getTimerTriggered(java.lang.String timerId) throws Exception {
         return _timerTriggered.get(new TimerTriggeredIndices(timerId));
@@ -171,10 +171,10 @@ public abstract class AbstractTimer extends Service {
      * Implement this method to define the <code>cancel</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer.
      * 
-    
-    <pre>
-    cancel(id as String);
-    </pre>
+     * 
+     * <pre>
+     * cancel(id as String);
+     * </pre>
      * @param id parameter 1 of the order.
      */
     protected abstract void cancel(java.lang.String id) throws Exception;
@@ -183,10 +183,10 @@ public abstract class AbstractTimer extends Service {
      * Implement this method to define the <code>periodicSchedule</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer.
      * 
-    
-    <pre>
-    periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
-    </pre>
+     * 
+     * <pre>
+     * periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
+     * </pre>
      * @param id parameter 1 of the order.
      * @param delayMs parameter 2 of the order.
      * @param periodMs parameter 3 of the order.
@@ -199,10 +199,10 @@ public abstract class AbstractTimer extends Service {
      * Implement this method to define the <code>schedule</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer.
      * 
-    
-    <pre>
-    schedule(id as String, delayMs as Integer);
-    </pre>
+     * 
+     * <pre>
+     * schedule(id as String, delayMs as Integer);
+     * </pre>
      * @param id parameter 1 of the order.
      * @param delayMs parameter 2 of the order.
      */

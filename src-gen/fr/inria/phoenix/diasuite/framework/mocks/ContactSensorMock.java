@@ -67,12 +67,12 @@ public final class ContactSensorMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public ContactSensorMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -83,12 +83,12 @@ public final class ContactSensorMock {
     // Code for the attribute location from device PhysicalDevice
     /**
      * Set the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @param newLocationValue the new value of <code>location</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @param newLocationValue the new value of <code>location</code>
+     * @return this for fluent interface
      */
     public ContactSensorMock location(java.lang.String newLocationValue) {
         proxy._updateLocation(newLocationValue);
@@ -99,12 +99,12 @@ public final class ContactSensorMock {
     // Code for the attribute user from device PhysicalDevice
     /**
      * Set the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @param newUserValue the new value of <code>user</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @param newUserValue the new value of <code>user</code>
+     * @return this for fluent interface
      */
     public ContactSensorMock user(java.lang.String newUserValue) {
         proxy._updateUser(newUserValue);
@@ -115,12 +115,12 @@ public final class ContactSensorMock {
     // Code for source contact from device ContactSensor
     /**
      * Publish the value of source <code>contact</code> from device <code>ContactSensor</code>.
-    
-    <pre>
-    source contact as Boolean;
-    </pre>
-    @param newContactValue the new value for the source <code>contact</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source contact as Boolean;
+     * </pre>
+     * @param newContactValue the new value for the source <code>contact</code>
+     * @return this for fluent interface
      */
     public ContactSensorMock contact(java.lang.Boolean newContactValue) {
         proxy._publishContact(newContactValue);
@@ -130,12 +130,12 @@ public final class ContactSensorMock {
     private java.lang.Boolean __contact = null;
     /**
      * Set the value (without publication) of source <code>contact</code> from device <code>ContactSensor</code>.
-    
-    <pre>
-    source contact as Boolean;
-    </pre>
-    @param newContactValue the new value for the source <code>contact</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source contact as Boolean;
+     * </pre>
+     * @param newContactValue the new value for the source <code>contact</code>
+     * @return this for fluent interface
      */
     public ContactSensorMock setContact(java.lang.Boolean newContactValue) {
         __contact = newContactValue;
@@ -146,12 +146,12 @@ public final class ContactSensorMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public ContactSensorMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -161,12 +161,12 @@ public final class ContactSensorMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public ContactSensorMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;

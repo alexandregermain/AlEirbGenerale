@@ -123,12 +123,12 @@ public final class ActivityReporterMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -139,13 +139,13 @@ public final class ActivityReporterMock {
     // Code for source dailyActivityStats from device ActivityReporter
     /**
      * Publish the value of source <code>dailyActivityStats</code> from device <code>ActivityReporter</code>.
-    
-    <pre>
-    source dailyActivityStats as DailyActivityStats indexed by activity as DailyActivityName;
-    </pre>
-    @param newDailyActivityStatsValue the new value for the source <code>dailyActivityStats</code>
-    @param activity the value of the index <code>activity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source dailyActivityStats as DailyActivityStats indexed by activity as DailyActivityName;
+     * </pre>
+     * @param newDailyActivityStatsValue the new value for the source <code>dailyActivityStats</code>
+     * @param activity the value of the index <code>activity</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock dailyActivityStats(fr.inria.phoenix.diasuite.framework.datatype.dailyactivitystats.DailyActivityStats newDailyActivityStatsValue,
             fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName activity) {
@@ -157,13 +157,13 @@ public final class ActivityReporterMock {
     private java.util.HashMap<DailyActivityStatsIndices, fr.inria.phoenix.diasuite.framework.datatype.dailyactivitystats.DailyActivityStats> __dailyActivityStats = new java.util.HashMap<DailyActivityStatsIndices, fr.inria.phoenix.diasuite.framework.datatype.dailyactivitystats.DailyActivityStats>();
     /**
      * Set the value (without publication) of source <code>dailyActivityStats</code> from device <code>ActivityReporter</code>.
-    
-    <pre>
-    source dailyActivityStats as DailyActivityStats indexed by activity as DailyActivityName;
-    </pre>
-    @param newDailyActivityStatsValue the new value for the source <code>dailyActivityStats</code>
-    @param activity the value of the index <code>activity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source dailyActivityStats as DailyActivityStats indexed by activity as DailyActivityName;
+     * </pre>
+     * @param newDailyActivityStatsValue the new value for the source <code>dailyActivityStats</code>
+     * @param activity the value of the index <code>activity</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock setDailyActivityStats(fr.inria.phoenix.diasuite.framework.datatype.dailyactivitystats.DailyActivityStats newDailyActivityStatsValue,
             fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName activity) {
@@ -176,12 +176,12 @@ public final class ActivityReporterMock {
     // Code for source dailyReport from device ActivityReporter
     /**
      * Publish the value of source <code>dailyReport</code> from device <code>ActivityReporter</code>.
-    
-    <pre>
-    source dailyReport as DailyReport;
-    </pre>
-    @param newDailyReportValue the new value for the source <code>dailyReport</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source dailyReport as DailyReport;
+     * </pre>
+     * @param newDailyReportValue the new value for the source <code>dailyReport</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock dailyReport(fr.inria.phoenix.diasuite.framework.datatype.dailyreport.DailyReport newDailyReportValue) {
         proxy._publishDailyReport(newDailyReportValue);
@@ -191,12 +191,12 @@ public final class ActivityReporterMock {
     private fr.inria.phoenix.diasuite.framework.datatype.dailyreport.DailyReport __dailyReport = null;
     /**
      * Set the value (without publication) of source <code>dailyReport</code> from device <code>ActivityReporter</code>.
-    
-    <pre>
-    source dailyReport as DailyReport;
-    </pre>
-    @param newDailyReportValue the new value for the source <code>dailyReport</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source dailyReport as DailyReport;
+     * </pre>
+     * @param newDailyReportValue the new value for the source <code>dailyReport</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock setDailyReport(fr.inria.phoenix.diasuite.framework.datatype.dailyreport.DailyReport newDailyReportValue) {
         __dailyReport = newDailyReportValue;
@@ -207,12 +207,12 @@ public final class ActivityReporterMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -222,12 +222,12 @@ public final class ActivityReporterMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -238,13 +238,13 @@ public final class ActivityReporterMock {
     // Code for source periodActivityStats from device ActivityReporter
     /**
      * Publish the value of source <code>periodActivityStats</code> from device <code>ActivityReporter</code>.
-    
-    <pre>
-    source periodActivityStats as PeriodActivityStats indexed by activity as PeriodActivityName;
-    </pre>
-    @param newPeriodActivityStatsValue the new value for the source <code>periodActivityStats</code>
-    @param activity the value of the index <code>activity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source periodActivityStats as PeriodActivityStats indexed by activity as PeriodActivityName;
+     * </pre>
+     * @param newPeriodActivityStatsValue the new value for the source <code>periodActivityStats</code>
+     * @param activity the value of the index <code>activity</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock periodActivityStats(fr.inria.phoenix.diasuite.framework.datatype.periodactivitystats.PeriodActivityStats newPeriodActivityStatsValue,
             fr.inria.phoenix.diasuite.framework.datatype.periodactivityname.PeriodActivityName activity) {
@@ -256,13 +256,13 @@ public final class ActivityReporterMock {
     private java.util.HashMap<PeriodActivityStatsIndices, fr.inria.phoenix.diasuite.framework.datatype.periodactivitystats.PeriodActivityStats> __periodActivityStats = new java.util.HashMap<PeriodActivityStatsIndices, fr.inria.phoenix.diasuite.framework.datatype.periodactivitystats.PeriodActivityStats>();
     /**
      * Set the value (without publication) of source <code>periodActivityStats</code> from device <code>ActivityReporter</code>.
-    
-    <pre>
-    source periodActivityStats as PeriodActivityStats indexed by activity as PeriodActivityName;
-    </pre>
-    @param newPeriodActivityStatsValue the new value for the source <code>periodActivityStats</code>
-    @param activity the value of the index <code>activity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source periodActivityStats as PeriodActivityStats indexed by activity as PeriodActivityName;
+     * </pre>
+     * @param newPeriodActivityStatsValue the new value for the source <code>periodActivityStats</code>
+     * @param activity the value of the index <code>activity</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock setPeriodActivityStats(fr.inria.phoenix.diasuite.framework.datatype.periodactivitystats.PeriodActivityStats newPeriodActivityStatsValue,
             fr.inria.phoenix.diasuite.framework.datatype.periodactivityname.PeriodActivityName activity) {
@@ -275,12 +275,12 @@ public final class ActivityReporterMock {
     // Code for source statisticReport from device ActivityReporter
     /**
      * Publish the value of source <code>statisticReport</code> from device <code>ActivityReporter</code>.
-    
-    <pre>
-    source statisticReport as StatisticReport;
-    </pre>
-    @param newStatisticReportValue the new value for the source <code>statisticReport</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source statisticReport as StatisticReport;
+     * </pre>
+     * @param newStatisticReportValue the new value for the source <code>statisticReport</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock statisticReport(fr.inria.phoenix.diasuite.framework.datatype.statisticreport.StatisticReport newStatisticReportValue) {
         proxy._publishStatisticReport(newStatisticReportValue);
@@ -290,12 +290,12 @@ public final class ActivityReporterMock {
     private fr.inria.phoenix.diasuite.framework.datatype.statisticreport.StatisticReport __statisticReport = null;
     /**
      * Set the value (without publication) of source <code>statisticReport</code> from device <code>ActivityReporter</code>.
-    
-    <pre>
-    source statisticReport as StatisticReport;
-    </pre>
-    @param newStatisticReportValue the new value for the source <code>statisticReport</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source statisticReport as StatisticReport;
+     * </pre>
+     * @param newStatisticReportValue the new value for the source <code>statisticReport</code>
+     * @return this for fluent interface
      */
     public ActivityReporterMock setStatisticReport(fr.inria.phoenix.diasuite.framework.datatype.statisticreport.StatisticReport newStatisticReportValue) {
         __statisticReport = newStatisticReportValue;
@@ -309,10 +309,10 @@ public final class ActivityReporterMock {
      * Check that the <code>addDailyActivityToCurrentReport</code> order from the <code>UpdateCurrentReport</code> action
      * defined in device ActivityReporter was called.
      * 
-    
-    <pre>
-    addDailyActivityToCurrentReport(dailyActivity as DailyActivity);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * addDailyActivityToCurrentReport(dailyActivity as DailyActivity);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectAddDailyActivityToCurrentReport() {
         try {
@@ -336,10 +336,10 @@ public final class ActivityReporterMock {
      * Check that the <code>addDailyActivityToCurrentReport</code> order from the <code>UpdateCurrentReport</code> action
      * defined in device ActivityReporter was called.
      * 
-    
-    <pre>
-    addDailyActivityToCurrentReport(dailyActivity as DailyActivity);
-    </pre>
+     * 
+     * <pre>
+     * addDailyActivityToCurrentReport(dailyActivity as DailyActivity);
+     * </pre>
      * @param dailyActivity parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -368,10 +368,10 @@ public final class ActivityReporterMock {
      * Check that the <code>addPeriodActivityToCurrentReport</code> order from the <code>UpdateCurrentReport</code> action
      * defined in device ActivityReporter was called.
      * 
-    
-    <pre>
-    addPeriodActivityToCurrentReport(periodActivity as PeriodActivity);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * addPeriodActivityToCurrentReport(periodActivity as PeriodActivity);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectAddPeriodActivityToCurrentReport() {
         try {
@@ -395,10 +395,10 @@ public final class ActivityReporterMock {
      * Check that the <code>addPeriodActivityToCurrentReport</code> order from the <code>UpdateCurrentReport</code> action
      * defined in device ActivityReporter was called.
      * 
-    
-    <pre>
-    addPeriodActivityToCurrentReport(periodActivity as PeriodActivity);
-    </pre>
+     * 
+     * <pre>
+     * addPeriodActivityToCurrentReport(periodActivity as PeriodActivity);
+     * </pre>
      * @param periodActivity parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -427,10 +427,10 @@ public final class ActivityReporterMock {
      * Check that the <code>saveCurrentReport</code> order from the <code>UpdateCurrentReport</code> action
      * defined in device ActivityReporter was called.
      * 
-    
-    <pre>
-    saveCurrentReport();
-    </pre>    @return true if the action happened with the given parameters
+     * 
+     * <pre>
+     * saveCurrentReport();
+     * </pre>    @return true if the action happened with the given parameters
      */
     public boolean expectSaveCurrentReport() {
         try {

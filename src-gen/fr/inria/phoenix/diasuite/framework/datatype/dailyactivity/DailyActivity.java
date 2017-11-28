@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure DailyActivity {
+ * structure DailyActivity {
  * 	name as DailyActivityName;
  * 	score as Float;
  * 	success as Boolean;
  * 	date as Date;
  * }
-</pre>
+ * </pre>
  */
 public class DailyActivity implements Serializable {
     private static final long serialVersionUID = 0;
@@ -20,11 +20,11 @@ public class DailyActivity implements Serializable {
     
     /**
      * Returns the value of the name field.
-    
-    <pre>
-    name as DailyActivityName
-    </pre>
-    @return the value of name
+     * 
+     * <pre>
+     * name as DailyActivityName
+     * </pre>
+     * @return the value of name
      */
     public fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName getName() {
         return name;
@@ -32,11 +32,11 @@ public class DailyActivity implements Serializable {
     
     /**
      * Set the value of the name field.
-    
-    <pre>
-    name as DailyActivityName
-    </pre>
-    @param name the new value of name
+     * 
+     * <pre>
+     * name as DailyActivityName
+     * </pre>
+     * @param name the new value of name
      */
     public void setName(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName name) {
         this.name = name;
@@ -48,11 +48,11 @@ public class DailyActivity implements Serializable {
     
     /**
      * Returns the value of the score field.
-    
-    <pre>
-    score as Float
-    </pre>
-    @return the value of score
+     * 
+     * <pre>
+     * score as Float
+     * </pre>
+     * @return the value of score
      */
     public java.lang.Float getScore() {
         return score;
@@ -60,11 +60,11 @@ public class DailyActivity implements Serializable {
     
     /**
      * Set the value of the score field.
-    
-    <pre>
-    score as Float
-    </pre>
-    @param score the new value of score
+     * 
+     * <pre>
+     * score as Float
+     * </pre>
+     * @param score the new value of score
      */
     public void setScore(java.lang.Float score) {
         this.score = score;
@@ -76,11 +76,11 @@ public class DailyActivity implements Serializable {
     
     /**
      * Returns the value of the success field.
-    
-    <pre>
-    success as Boolean
-    </pre>
-    @return the value of success
+     * 
+     * <pre>
+     * success as Boolean
+     * </pre>
+     * @return the value of success
      */
     public java.lang.Boolean getSuccess() {
         return success;
@@ -88,11 +88,11 @@ public class DailyActivity implements Serializable {
     
     /**
      * Set the value of the success field.
-    
-    <pre>
-    success as Boolean
-    </pre>
-    @param success the new value of success
+     * 
+     * <pre>
+     * success as Boolean
+     * </pre>
+     * @param success the new value of success
      */
     public void setSuccess(java.lang.Boolean success) {
         this.success = success;
@@ -104,11 +104,11 @@ public class DailyActivity implements Serializable {
     
     /**
      * Returns the value of the date field.
-    
-    <pre>
-    date as Date
-    </pre>
-    @return the value of date
+     * 
+     * <pre>
+     * date as Date
+     * </pre>
+     * @return the value of date
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getDate() {
         return date;
@@ -116,11 +116,11 @@ public class DailyActivity implements Serializable {
     
     /**
      * Set the value of the date field.
-    
-    <pre>
-    date as Date
-    </pre>
-    @param date the new value of date
+     * 
+     * <pre>
+     * date as Date
+     * </pre>
+     * @param date the new value of date
      */
     public void setDate(fr.inria.phoenix.diasuite.framework.datatype.date.Date date) {
         this.date = date;

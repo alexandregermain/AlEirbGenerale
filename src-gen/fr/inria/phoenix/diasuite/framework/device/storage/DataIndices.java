@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>data</code> from device <code>Storage</code>.
-
-<pre>
-source data as String indexed by key as String;
-</pre>
+ * 
+ * <pre>
+ * source data as String indexed by key as String;
+ * </pre>
  */
 public final class DataIndices implements Serializable {
     private static final long serialVersionUID = 0;

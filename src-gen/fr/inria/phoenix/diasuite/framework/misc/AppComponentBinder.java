@@ -2,16 +2,14 @@ package fr.inria.phoenix.diasuite.framework.misc;
 
 import fr.inria.diagen.core.deploy.AbstractDeploy;
 
-import fr.inria.phoenix.diasuite.framework.context.actionvalidation.AbstractActionValidation;
-import fr.inria.phoenix.diasuite.framework.context.changingpassword.AbstractChangingPassword;
-import fr.inria.phoenix.diasuite.framework.context.insidecontext.AbstractInsideContext;
-import fr.inria.phoenix.diasuite.framework.context.lunchalarmcontext.AbstractLunchAlarmContext;
-import fr.inria.phoenix.diasuite.framework.context.password.AbstractPassword;
+import fr.inria.phoenix.diasuite.framework.context.elapsedtime.AbstractElapsedTime;
+import fr.inria.phoenix.diasuite.framework.context.isinside.AbstractIsInside;
+import fr.inria.phoenix.diasuite.framework.context.passwordlistener.AbstractPasswordListener;
+import fr.inria.phoenix.diasuite.framework.context.updatepassword.AbstractUpdatePassword;
 
-import fr.inria.phoenix.diasuite.framework.controller.alarmactivitedcontroller.AbstractAlarmActivitedController;
-import fr.inria.phoenix.diasuite.framework.controller.changepassword.AbstractChangePassword;
-import fr.inria.phoenix.diasuite.framework.controller.lampsuccesscontroller.AbstractLampSuccessController;
-import fr.inria.phoenix.diasuite.framework.controller.lunchalarmcontroller.AbstractLunchAlarmController;
+import fr.inria.phoenix.diasuite.framework.controller.handlenotifier.AbstractHandleNotifier;
+import fr.inria.phoenix.diasuite.framework.controller.handlepassword.AbstractHandlePassword;
+import fr.inria.phoenix.diasuite.framework.controller.handletimer.AbstractHandleTimer;
 
 /**
  * This class should be implemented to bind the implementation of the various components
@@ -19,213 +17,174 @@ import fr.inria.phoenix.diasuite.framework.controller.lunchalarmcontroller.Abstr
 public abstract class AppComponentBinder extends AbstractDeploy {
 
     // Context instances
-    private AbstractActionValidation actionValidationInstance = null;
-    private AbstractChangingPassword changingPasswordInstance = null;
-    private AbstractInsideContext insideContextInstance = null;
-    private AbstractLunchAlarmContext lunchAlarmContextInstance = null;
-    private AbstractPassword passwordInstance = null;
+    private AbstractElapsedTime elapsedTimeInstance = null;
+    private AbstractIsInside isInsideInstance = null;
+    private AbstractPasswordListener passwordListenerInstance = null;
+    private AbstractUpdatePassword updatePasswordInstance = null;
 
     // Controller instances
-    private AbstractAlarmActivitedController alarmActivitedControllerInstance = null;
-    private AbstractChangePassword changePasswordInstance = null;
-    private AbstractLampSuccessController lampSuccessControllerInstance = null;
-    private AbstractLunchAlarmController lunchAlarmControllerInstance = null;
+    private AbstractHandleNotifier handleNotifierInstance = null;
+    private AbstractHandlePassword handlePasswordInstance = null;
+    private AbstractHandleTimer handleTimerInstance = null;
     
     @Override
     public void deployAll() {
         // Initialization of contexts
-        if (actionValidationInstance == null)
-            actionValidationInstance = getInstance(getActionValidationClass());
-        if (changingPasswordInstance == null)
-            changingPasswordInstance = getInstance(getChangingPasswordClass());
-        if (insideContextInstance == null)
-            insideContextInstance = getInstance(getInsideContextClass());
-        if (lunchAlarmContextInstance == null)
-            lunchAlarmContextInstance = getInstance(getLunchAlarmContextClass());
-        if (passwordInstance == null)
-            passwordInstance = getInstance(getPasswordClass());
+        if (elapsedTimeInstance == null)
+            elapsedTimeInstance = getInstance(getElapsedTimeClass());
+        if (isInsideInstance == null)
+            isInsideInstance = getInstance(getIsInsideClass());
+        if (passwordListenerInstance == null)
+            passwordListenerInstance = getInstance(getPasswordListenerClass());
+        if (updatePasswordInstance == null)
+            updatePasswordInstance = getInstance(getUpdatePasswordClass());
         // Intialization of controllers
-        if (alarmActivitedControllerInstance == null)
-            alarmActivitedControllerInstance = getInstance(getAlarmActivitedControllerClass());
-        if (changePasswordInstance == null)
-            changePasswordInstance = getInstance(getChangePasswordClass());
-        if (lampSuccessControllerInstance == null)
-            lampSuccessControllerInstance = getInstance(getLampSuccessControllerClass());
-        if (lunchAlarmControllerInstance == null)
-            lunchAlarmControllerInstance = getInstance(getLunchAlarmControllerClass());
+        if (handleNotifierInstance == null)
+            handleNotifierInstance = getInstance(getHandleNotifierClass());
+        if (handlePasswordInstance == null)
+            handlePasswordInstance = getInstance(getHandlePasswordClass());
+        if (handleTimerInstance == null)
+            handleTimerInstance = getInstance(getHandleTimerClass());
         // Deploying contexts
-        deploy(actionValidationInstance);
-        deploy(changingPasswordInstance);
-        deploy(insideContextInstance);
-        deploy(lunchAlarmContextInstance);
-        deploy(passwordInstance);
+        deploy(elapsedTimeInstance);
+        deploy(isInsideInstance);
+        deploy(passwordListenerInstance);
+        deploy(updatePasswordInstance);
         // Deploying controllers
-        deploy(alarmActivitedControllerInstance);
-        deploy(changePasswordInstance);
-        deploy(lampSuccessControllerInstance);
-        deploy(lunchAlarmControllerInstance);
+        deploy(handleNotifierInstance);
+        deploy(handlePasswordInstance);
+        deploy(handleTimerInstance);
     }
     
     @Override
     public void undeployAll() {
         // Undeploying contexts
-        undeploy(actionValidationInstance);
-        undeploy(changingPasswordInstance);
-        undeploy(insideContextInstance);
-        undeploy(lunchAlarmContextInstance);
-        undeploy(passwordInstance);
+        undeploy(elapsedTimeInstance);
+        undeploy(isInsideInstance);
+        undeploy(passwordListenerInstance);
+        undeploy(updatePasswordInstance);
         // Undeploying controllers
-        undeploy(alarmActivitedControllerInstance);
-        undeploy(changePasswordInstance);
-        undeploy(lampSuccessControllerInstance);
-        undeploy(lunchAlarmControllerInstance);
+        undeploy(handleNotifierInstance);
+        undeploy(handlePasswordInstance);
+        undeploy(handleTimerInstance);
     }
     
     // Abstract binding methods for contexts
     /**
-     * Overrides this method to provide the implementation class of the <code>ActionValidation</code> context
-    
-    <pre>
-    context ActionValidation as Boolean {
-     * 	when provided timerTriggered from Timer
-     * 	maybe publish;
-     * 	when provided contact from ContactSensor
-     * 	get timerTriggered from Timer
-     * 	maybe publish;
+     * Overrides this method to provide the implementation class of the <code>ElapsedTime</code> context
+     * <p>
+     * listen for all timers
+     * 
+     * <pre>
+     * context ElapsedTime as AlEirbTimer {
+     * 	when provided timerTriggered from Timer maybe publish; 
      * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractActionValidation} that implements the <code>ActionValidation</code> context
+     * </pre>
+     * @return a class object of a derivation of {@link AbstractElapsedTime} that implements the <code>ElapsedTime</code> context
      */
-    public abstract Class<? extends AbstractActionValidation> getActionValidationClass();
+    public abstract Class<? extends AbstractElapsedTime> getElapsedTimeClass();
     
     /**
-     * Overrides this method to provide the implementation class of the <code>ChangingPassword</code> context
-    
-    <pre>
-    context ChangingPassword as Boolean {
-     *     when provided on from Appliance
-     *     get on from Appliance, contact from ContactSensor
-     *     always publish;
+     * Overrides this method to provide the implementation class of the <code>IsInside</code> context
+     * <p>
+     * ------------------------------------------------------
+     * CONTEXT
+     * ------------------------------------------------------
+     * True: entrance, False: exit
+     * 
+     * <pre>
+     * context IsInside as Boolean {
+     * 	when provided inactivityLevel from InactivitySensor get lastInteraction from InactivitySensor maybe publish; 
      * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractChangingPassword} that implements the <code>ChangingPassword</code> context
+     * </pre>
+     * @return a class object of a derivation of {@link AbstractIsInside} that implements the <code>IsInside</code> context
      */
-    public abstract Class<? extends AbstractChangingPassword> getChangingPasswordClass();
+    public abstract Class<? extends AbstractIsInside> getIsInsideClass();
     
     /**
-     * Overrides this method to provide the implementation class of the <code>InsideContext</code> context
-    <p>
-    ------------------------------------------------------
-    CONTEXT
-    ------------------------------------------------------
-    Permet de savoir si on est INSIDE ou OUTSIDE
-    
-    <pre>
-    context InsideContext as Boolean {
-     *   when provided inactivityLevel from InactivitySensor
-     *   get lastInteraction from InactivitySensor
-     *   maybe publish;
+     * Overrides this method to provide the implementation class of the <code>PasswordListener</code> context
+     * <p>
+     * no more listen after ringing stops
+     * 
+     * <pre>
+     * context PasswordListener as Boolean {
+     * 	when provided IsInside no publish; 
+     * 	when provided on from Light maybe publish; 
+     * 	when provided contact from ContactSensor maybe publish; 
+     * 	when provided ElapsedTime no publish; 
      * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractInsideContext} that implements the <code>InsideContext</code> context
+     * </pre>
+     * @return a class object of a derivation of {@link AbstractPasswordListener} that implements the <code>PasswordListener</code> context
      */
-    public abstract Class<? extends AbstractInsideContext> getInsideContextClass();
+    public abstract Class<? extends AbstractPasswordListener> getPasswordListenerClass();
     
     /**
-     * Overrides this method to provide the implementation class of the <code>LunchAlarmContext</code> context
-    
-    <pre>
-    context LunchAlarmContext as Boolean {
-     *   when provided Password
-     *   always publish;
-     *   when provided timerTriggered from Timer
-     *   get timerTriggered from Timer
-     *   maybe publish;
+     * Overrides this method to provide the implementation class of the <code>UpdatePassword</code> context
+     * <p>
+     * publish update canceling
+     * 
+     * <pre>
+     * context UpdatePassword as PasswordUpdating {
+     * 	when provided contact from ContactSensor maybe publish; 
+     * 	when provided on from Light no publish;
+     * 	when provided ElapsedTime maybe publish; 
      * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractLunchAlarmContext} that implements the <code>LunchAlarmContext</code> context
+     * </pre>
+     * @return a class object of a derivation of {@link AbstractUpdatePassword} that implements the <code>UpdatePassword</code> context
      */
-    public abstract Class<? extends AbstractLunchAlarmContext> getLunchAlarmContextClass();
-    
-    /**
-     * Overrides this method to provide the implementation class of the <code>Password</code> context
-    
-    <pre>
-    context Password as Boolean {
-     *     when provided on from Appliance
-     *     get on from Appliance, contact from ContactSensor
-     *     always publish;
-     * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractPassword} that implements the <code>Password</code> context
-     */
-    public abstract Class<? extends AbstractPassword> getPasswordClass();
+    public abstract Class<? extends AbstractUpdatePassword> getUpdatePasswordClass();
     
     // End of abstract binding methods for contexts
     
     // Abstract binding methods for controllers
     /**
-     * Overrides this method to provide the implementation class of the <code>AlarmActivitedController</code> controller
-    <p>
-    ------------------------------------------------------
-    CONTROLLER
-    ------------------------------------------------------
-    
-    <pre>
-    controller AlarmActivitedController {
-     *   when provided InsideContext
-     *     do ScheduleTimer on Timer,
-     *        SendNonCriticalNotification on Notifier;  
+     * Overrides this method to provide the implementation class of the <code>HandleNotifier</code> controller
+     * <p>
+     * ------------------------------------------------------
+     * CONTROLLER
+     * ------------------------------------------------------
+     * Notify updating steps
+     * 
+     * <pre>
+     * controller HandleNotifier {
+     * 	when provided ElapsedTime do SendNonCriticalNotification on Notifier; 
+     * 	when provided UpdatePassword do SendNonCriticalNotification on Notifier; 
      * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractAlarmActivitedController} that implements the <code>AlarmActivitedController</code> controller
+     * </pre>
+     * @return a class object of a derivation of {@link AbstractHandleNotifier} that implements the <code>HandleNotifier</code> controller
      */
-    public abstract Class<? extends AbstractAlarmActivitedController> getAlarmActivitedControllerClass();
+    public abstract Class<? extends AbstractHandleNotifier> getHandleNotifierClass();
     
     /**
-     * Overrides this method to provide the implementation class of the <code>ChangePassword</code> controller
-    
-    <pre>
-    controller ChangePassword {
-     * 	when provided ChangingPassword
-     * 	do ScheduleTimer on Timer, On on Light;
-     * 	when provided ActionValidation
-     * 		do ScheduleTimer on Timer, On on Light,
-     *     	   SendCriticalNotification on Notifier;
+     * Overrides this method to provide the implementation class of the <code>HandlePassword</code> controller
+     * <p>
+     * if password is updated
+     * 
+     * <pre>
+     * controller HandlePassword {
+     * 	when provided PasswordListener do On on Light, Off on Light; 
+     * 	when provided UpdatePassword do On on Light; 
      * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractChangePassword} that implements the <code>ChangePassword</code> controller
+     * </pre>
+     * @return a class object of a derivation of {@link AbstractHandlePassword} that implements the <code>HandlePassword</code> controller
      */
-    public abstract Class<? extends AbstractChangePassword> getChangePasswordClass();
+    public abstract Class<? extends AbstractHandlePassword> getHandlePasswordClass();
     
     /**
-     * Overrides this method to provide the implementation class of the <code>LampSuccessController</code> controller
-    
-    <pre>
-    controller LampSuccessController{
-     *   when provided LunchAlarmContext
-     *     do On on Light, 
-     *        Off on Light;
+     * Overrides this method to provide the implementation class of the <code>HandleTimer</code> controller
+     * <p>
+     * Alarm-timer: schedule ringing-timer (2)
+     * 
+     * <pre>
+     * controller HandleTimer {
+     * 	when provided IsInside do ScheduleTimer on Timer; 
+     * 	when provided PasswordListener do ScheduleTimer on Timer; 
+     * 	when provided ElapsedTime do ScheduleTimer on Timer; 
      * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractLampSuccessController} that implements the <code>LampSuccessController</code> controller
+     * </pre>
+     * @return a class object of a derivation of {@link AbstractHandleTimer} that implements the <code>HandleTimer</code> controller
      */
-    public abstract Class<? extends AbstractLampSuccessController> getLampSuccessControllerClass();
-    
-    /**
-     * Overrides this method to provide the implementation class of the <code>LunchAlarmController</code> controller
-    
-    <pre>
-    controller LunchAlarmController{
-     *   when provided LunchAlarmContext
-     *     do ScheduleTimer on Timer,
-     *        SendMessage on Messenger,
-     * 	   SendCriticalNotification on Notifier;
-     * }
-    </pre>
-    @return a class object of a derivation of {@link AbstractLunchAlarmController} that implements the <code>LunchAlarmController</code> controller
-     */
-    public abstract Class<? extends AbstractLunchAlarmController> getLunchAlarmControllerClass();
+    public abstract Class<? extends AbstractHandleTimer> getHandleTimerClass();
     
     // End of abstract binding methods for controllers
 }

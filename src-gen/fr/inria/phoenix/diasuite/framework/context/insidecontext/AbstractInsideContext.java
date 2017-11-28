@@ -11,17 +11,17 @@ import fr.inria.phoenix.diasuite.framework.device.inactivitysensor.InactivityLev
 
 /**
  * ------------------------------------------------------
-CONTEXT
-------------------------------------------------------
-Permet de savoir si on est INSIDE ou OUTSIDE
-
-<pre>
-context InsideContext as Boolean {
+ * CONTEXT
+ * ------------------------------------------------------
+ * Permet de savoir si on est INSIDE ou OUTSIDE
+ * 
+ * <pre>
+ * context InsideContext as Boolean {
  *   when provided inactivityLevel from InactivitySensor
  *   get lastInteraction from InactivitySensor
  *   maybe publish;
  * }
-</pre>
+ * </pre>
  */
 @SuppressWarnings("all")
 public abstract class AbstractInsideContext extends Service {
@@ -134,12 +134,12 @@ public abstract class AbstractInsideContext extends Service {
     // Interaction contract implementation
     /**
      * This method is called when a <code>InactivitySensor</code> device on which we have subscribed publish on its <code>inactivityLevel</code> source.
-    
-    <pre>
-    when provided inactivityLevel from InactivitySensor
+     * 
+     * <pre>
+     * when provided inactivityLevel from InactivitySensor
      *   get lastInteraction from InactivitySensor
      *   maybe publish;
-    </pre>
+     * </pre>
      * 
      * @param inactivityLevelFromInactivitySensor the value of the <code>inactivityLevel</code> source and the <code>InactivitySensor</code> device that published the value.
      * @param discover a discover object to get value from devices and contexts
@@ -152,36 +152,36 @@ public abstract class AbstractInsideContext extends Service {
     // Discover part for InactivitySensor devices
     /**
      * Use this object to discover InactivitySensor devices.
-    <p>
-    ------------------------------------------------------------
-    Presence Detector					||
-    ------------------------------------------------------------
-    enumeration Room {
-    ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
-    }
-    
-    device IndoorLocationDetector extends SoftwareSensor {
-    // AR (14/02/17)
-    source currentRoom as Room;
-    action SetLocation;
-    }
-    
-    action SetLocation {
-    setLocation(location as Room);
-    resetLocation();
-    }
-    ------------------------------------------------------------
-    InactivitySensor					||
-    ------------------------------------------------------------
-    AR (01/08/17)
-    
-    <pre>
-    device InactivitySensor extends SoftwareSensor {
+     * <p>
+     * ------------------------------------------------------------
+     * Presence Detector					||
+     * ------------------------------------------------------------
+     * enumeration Room {
+     * ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
+     * }
+     * 
+     * device IndoorLocationDetector extends SoftwareSensor {
+     * // AR (14/02/17)
+     * source currentRoom as Room;
+     * action SetLocation;
+     * }
+     * 
+     * action SetLocation {
+     * setLocation(location as Room);
+     * resetLocation();
+     * }
+     * ------------------------------------------------------------
+     * InactivitySensor					||
+     * ------------------------------------------------------------
+     * AR (01/08/17)
+     * 
+     * <pre>
+     * device InactivitySensor extends SoftwareSensor {
      * 	source inactivityLevel as Float;
      * 	source lastInteraction as Interaction;
      * 	action UpdateInactivityLevel;
      * }
-    </pre>
+     * </pre>
      * 
      * @see InactivitySensorDiscoverer
      */
@@ -189,36 +189,36 @@ public abstract class AbstractInsideContext extends Service {
     
     /**
      * Discover object that will exposes the <code>InactivitySensor</code> devices that can be discovered
-    <p>
-    ------------------------------------------------------------
-    Presence Detector					||
-    ------------------------------------------------------------
-    enumeration Room {
-    ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
-    }
-    
-    device IndoorLocationDetector extends SoftwareSensor {
-    // AR (14/02/17)
-    source currentRoom as Room;
-    action SetLocation;
-    }
-    
-    action SetLocation {
-    setLocation(location as Room);
-    resetLocation();
-    }
-    ------------------------------------------------------------
-    InactivitySensor					||
-    ------------------------------------------------------------
-    AR (01/08/17)
-    
-    <pre>
-    device InactivitySensor extends SoftwareSensor {
+     * <p>
+     * ------------------------------------------------------------
+     * Presence Detector					||
+     * ------------------------------------------------------------
+     * enumeration Room {
+     * ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
+     * }
+     * 
+     * device IndoorLocationDetector extends SoftwareSensor {
+     * // AR (14/02/17)
+     * source currentRoom as Room;
+     * action SetLocation;
+     * }
+     * 
+     * action SetLocation {
+     * setLocation(location as Room);
+     * resetLocation();
+     * }
+     * ------------------------------------------------------------
+     * InactivitySensor					||
+     * ------------------------------------------------------------
+     * AR (01/08/17)
+     * 
+     * <pre>
+     * device InactivitySensor extends SoftwareSensor {
      * 	source inactivityLevel as Float;
      * 	source lastInteraction as Interaction;
      * 	action UpdateInactivityLevel;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class InactivitySensorDiscoverer {
         private Service serviceParent;
@@ -263,36 +263,36 @@ public abstract class AbstractInsideContext extends Service {
     
     /**
      * A composite of several <code>InactivitySensor</code> devices
-    <p>
-    ------------------------------------------------------------
-    Presence Detector					||
-    ------------------------------------------------------------
-    enumeration Room {
-    ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
-    }
-    
-    device IndoorLocationDetector extends SoftwareSensor {
-    // AR (14/02/17)
-    source currentRoom as Room;
-    action SetLocation;
-    }
-    
-    action SetLocation {
-    setLocation(location as Room);
-    resetLocation();
-    }
-    ------------------------------------------------------------
-    InactivitySensor					||
-    ------------------------------------------------------------
-    AR (01/08/17)
-    
-    <pre>
-    device InactivitySensor extends SoftwareSensor {
+     * <p>
+     * ------------------------------------------------------------
+     * Presence Detector					||
+     * ------------------------------------------------------------
+     * enumeration Room {
+     * ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
+     * }
+     * 
+     * device IndoorLocationDetector extends SoftwareSensor {
+     * // AR (14/02/17)
+     * source currentRoom as Room;
+     * action SetLocation;
+     * }
+     * 
+     * action SetLocation {
+     * setLocation(location as Room);
+     * resetLocation();
+     * }
+     * ------------------------------------------------------------
+     * InactivitySensor					||
+     * ------------------------------------------------------------
+     * AR (01/08/17)
+     * 
+     * <pre>
+     * device InactivitySensor extends SoftwareSensor {
      * 	source inactivityLevel as Float;
      * 	source lastInteraction as Interaction;
      * 	action UpdateInactivityLevel;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class InactivitySensorComposite extends fr.inria.diagen.core.service.composite.Composite<InactivitySensorProxy> {
         private InactivitySensorComposite(Service serviceParent) {
@@ -334,36 +334,36 @@ public abstract class AbstractInsideContext extends Service {
     
     /**
      * A proxy to one <code>InactivitySensor</code> device
-    <p>
-    ------------------------------------------------------------
-    Presence Detector					||
-    ------------------------------------------------------------
-    enumeration Room {
-    ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
-    }
-    
-    device IndoorLocationDetector extends SoftwareSensor {
-    // AR (14/02/17)
-    source currentRoom as Room;
-    action SetLocation;
-    }
-    
-    action SetLocation {
-    setLocation(location as Room);
-    resetLocation();
-    }
-    ------------------------------------------------------------
-    InactivitySensor					||
-    ------------------------------------------------------------
-    AR (01/08/17)
-    
-    <pre>
-    device InactivitySensor extends SoftwareSensor {
+     * <p>
+     * ------------------------------------------------------------
+     * Presence Detector					||
+     * ------------------------------------------------------------
+     * enumeration Room {
+     * ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
+     * }
+     * 
+     * device IndoorLocationDetector extends SoftwareSensor {
+     * // AR (14/02/17)
+     * source currentRoom as Room;
+     * action SetLocation;
+     * }
+     * 
+     * action SetLocation {
+     * setLocation(location as Room);
+     * resetLocation();
+     * }
+     * ------------------------------------------------------------
+     * InactivitySensor					||
+     * ------------------------------------------------------------
+     * AR (01/08/17)
+     * 
+     * <pre>
+     * device InactivitySensor extends SoftwareSensor {
      * 	source inactivityLevel as Float;
      * 	source lastInteraction as Interaction;
      * 	action UpdateInactivityLevel;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class InactivitySensorProxy extends Proxy {
         private InactivitySensorProxy(Service service, RemoteServiceInfo remoteServiceInfo) {
@@ -419,36 +419,36 @@ public abstract class AbstractInsideContext extends Service {
     /**
      * Discover object that will exposes the <code>InactivitySensor</code> devices to get their sources for the
      * <code>when provided inactivityLevel from InactivitySensor</code> interaction contract.
-    <p>
-    ------------------------------------------------------------
-    Presence Detector					||
-    ------------------------------------------------------------
-    enumeration Room {
-    ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
-    }
-    
-    device IndoorLocationDetector extends SoftwareSensor {
-    // AR (14/02/17)
-    source currentRoom as Room;
-    action SetLocation;
-    }
-    
-    action SetLocation {
-    setLocation(location as Room);
-    resetLocation();
-    }
-    ------------------------------------------------------------
-    InactivitySensor					||
-    ------------------------------------------------------------
-    AR (01/08/17)
-    
-    <pre>
-    device InactivitySensor extends SoftwareSensor {
+     * <p>
+     * ------------------------------------------------------------
+     * Presence Detector					||
+     * ------------------------------------------------------------
+     * enumeration Room {
+     * ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
+     * }
+     * 
+     * device IndoorLocationDetector extends SoftwareSensor {
+     * // AR (14/02/17)
+     * source currentRoom as Room;
+     * action SetLocation;
+     * }
+     * 
+     * action SetLocation {
+     * setLocation(location as Room);
+     * resetLocation();
+     * }
+     * ------------------------------------------------------------
+     * InactivitySensor					||
+     * ------------------------------------------------------------
+     * AR (01/08/17)
+     * 
+     * <pre>
+     * device InactivitySensor extends SoftwareSensor {
      * 	source inactivityLevel as Float;
      * 	source lastInteraction as Interaction;
      * 	action UpdateInactivityLevel;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class InactivitySensorDiscovererForInactivityLevelFromInactivitySensor {
         private Service serviceParent;
@@ -494,36 +494,36 @@ public abstract class AbstractInsideContext extends Service {
     /**
      * A composite of several <code>InactivitySensor</code> devices to get their sources for the
      * <code>when provided inactivityLevel from InactivitySensor</code> interaction contract.
-    <p>
-    ------------------------------------------------------------
-    Presence Detector					||
-    ------------------------------------------------------------
-    enumeration Room {
-    ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
-    }
-    
-    device IndoorLocationDetector extends SoftwareSensor {
-    // AR (14/02/17)
-    source currentRoom as Room;
-    action SetLocation;
-    }
-    
-    action SetLocation {
-    setLocation(location as Room);
-    resetLocation();
-    }
-    ------------------------------------------------------------
-    InactivitySensor					||
-    ------------------------------------------------------------
-    AR (01/08/17)
-    
-    <pre>
-    device InactivitySensor extends SoftwareSensor {
+     * <p>
+     * ------------------------------------------------------------
+     * Presence Detector					||
+     * ------------------------------------------------------------
+     * enumeration Room {
+     * ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
+     * }
+     * 
+     * device IndoorLocationDetector extends SoftwareSensor {
+     * // AR (14/02/17)
+     * source currentRoom as Room;
+     * action SetLocation;
+     * }
+     * 
+     * action SetLocation {
+     * setLocation(location as Room);
+     * resetLocation();
+     * }
+     * ------------------------------------------------------------
+     * InactivitySensor					||
+     * ------------------------------------------------------------
+     * AR (01/08/17)
+     * 
+     * <pre>
+     * device InactivitySensor extends SoftwareSensor {
      * 	source inactivityLevel as Float;
      * 	source lastInteraction as Interaction;
      * 	action UpdateInactivityLevel;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class InactivitySensorCompositeForInactivityLevelFromInactivitySensor extends fr.inria.diagen.core.service.composite.Composite<InactivitySensorProxyForInactivityLevelFromInactivitySensor> {
         private InactivitySensorCompositeForInactivityLevelFromInactivitySensor(Service serviceParent) {
@@ -550,36 +550,36 @@ public abstract class AbstractInsideContext extends Service {
     /**
      * A proxy to one <code>InactivitySensor</code> device to get its sources for the
      * <code>when provided inactivityLevel from InactivitySensor</code> interaction contract.
-    <p>
-    ------------------------------------------------------------
-    Presence Detector					||
-    ------------------------------------------------------------
-    enumeration Room {
-    ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
-    }
-    
-    device IndoorLocationDetector extends SoftwareSensor {
-    // AR (14/02/17)
-    source currentRoom as Room;
-    action SetLocation;
-    }
-    
-    action SetLocation {
-    setLocation(location as Room);
-    resetLocation();
-    }
-    ------------------------------------------------------------
-    InactivitySensor					||
-    ------------------------------------------------------------
-    AR (01/08/17)
-    
-    <pre>
-    device InactivitySensor extends SoftwareSensor {
+     * <p>
+     * ------------------------------------------------------------
+     * Presence Detector					||
+     * ------------------------------------------------------------
+     * enumeration Room {
+     * ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
+     * }
+     * 
+     * device IndoorLocationDetector extends SoftwareSensor {
+     * // AR (14/02/17)
+     * source currentRoom as Room;
+     * action SetLocation;
+     * }
+     * 
+     * action SetLocation {
+     * setLocation(location as Room);
+     * resetLocation();
+     * }
+     * ------------------------------------------------------------
+     * InactivitySensor					||
+     * ------------------------------------------------------------
+     * AR (01/08/17)
+     * 
+     * <pre>
+     * device InactivitySensor extends SoftwareSensor {
      * 	source inactivityLevel as Float;
      * 	source lastInteraction as Interaction;
      * 	action UpdateInactivityLevel;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class InactivitySensorProxyForInactivityLevelFromInactivitySensor extends Proxy {
         private InactivitySensorProxyForInactivityLevelFromInactivitySensor(Service service, RemoteServiceInfo remoteServiceInfo) {

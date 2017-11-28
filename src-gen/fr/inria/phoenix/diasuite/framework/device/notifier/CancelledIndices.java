@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>cancelled</code> from device <code>Notifier</code>.
-
-<pre>
-source cancelled as Boolean indexed by id as String;
-</pre>
+ * 
+ * <pre>
+ * source cancelled as Boolean indexed by id as String;
+ * </pre>
  */
 public final class CancelledIndices implements Serializable {
     private static final long serialVersionUID = 0;

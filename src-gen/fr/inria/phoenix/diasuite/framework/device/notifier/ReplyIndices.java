@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>reply</code> from device <code>Notifier</code>.
-
-<pre>
-source reply as Integer indexed by id as String;
-</pre>
+ * 
+ * <pre>
+ * source reply as Integer indexed by id as String;
+ * </pre>
  */
 public final class ReplyIndices implements Serializable {
     private static final long serialVersionUID = 0;

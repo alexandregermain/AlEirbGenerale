@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * <pre>
-enumeration Day {
+ * enumeration Day {
  * 	MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
  * }
-</pre>
+ * </pre>
  */
 public enum Day implements Serializable {
     MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY

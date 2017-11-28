@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>sleepPeriodsBetween</code> from device <code>Fitbit</code>.
-
-<pre>
-source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
-</pre>
+ * 
+ * <pre>
+ * source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
+ * </pre>
  */
 public final class SleepPeriodsBetweenIndices implements Serializable {
     private static final long serialVersionUID = 0;

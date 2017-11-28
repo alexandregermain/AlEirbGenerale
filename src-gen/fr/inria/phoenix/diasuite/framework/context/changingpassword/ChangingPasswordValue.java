@@ -6,28 +6,28 @@ import java.io.Serializable;
  * An object to store a value published by the context <code>ChangingPassword</code>.
  *
  * <pre>
- * context ChangingPassword as Boolean {
+ * context ChangingPassword as String {
  *     when provided on from Appliance
  *     get on from Appliance, contact from ContactSensor
- *     always publish;
+ *     maybe publish;
  * }
  * </pre>
  */
 public final class ChangingPasswordValue implements Serializable {
     private static final long serialVersionUID = 0;
     
-    private java.lang.Boolean value;
+    private java.lang.String value;
     
     /**
      * Get the value of the context <code>ChangingPassword</code>
      * 
      * @return the value of the context <code>ChangingPassword</code>
      */
-    public java.lang.Boolean value() {
+    public java.lang.String value() {
         return value;
     }
     
-    public ChangingPasswordValue(java.lang.Boolean value) {
+    public ChangingPasswordValue(java.lang.String value) {
         this.value = value;
     }
     

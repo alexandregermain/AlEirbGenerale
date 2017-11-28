@@ -96,12 +96,12 @@ public final class CookerMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public CookerMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -112,12 +112,12 @@ public final class CookerMock {
     // Code for the attribute location from device PhysicalDevice
     /**
      * Set the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @param newLocationValue the new value of <code>location</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @param newLocationValue the new value of <code>location</code>
+     * @return this for fluent interface
      */
     public CookerMock location(java.lang.String newLocationValue) {
         proxy._updateLocation(newLocationValue);
@@ -128,12 +128,12 @@ public final class CookerMock {
     // Code for the attribute user from device PhysicalDevice
     /**
      * Set the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @param newUserValue the new value of <code>user</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @param newUserValue the new value of <code>user</code>
+     * @return this for fluent interface
      */
     public CookerMock user(java.lang.String newUserValue) {
         proxy._updateUser(newUserValue);
@@ -144,12 +144,12 @@ public final class CookerMock {
     // Code for source consumption from device ElectricMeter
     /**
      * Publish the value of source <code>consumption</code> from device <code>ElectricMeter</code>.
-    
-    <pre>
-    source consumption as Float;
-    </pre>
-    @param newConsumptionValue the new value for the source <code>consumption</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source consumption as Float;
+     * </pre>
+     * @param newConsumptionValue the new value for the source <code>consumption</code>
+     * @return this for fluent interface
      */
     public CookerMock consumption(java.lang.Float newConsumptionValue) {
         proxy._publishConsumption(newConsumptionValue);
@@ -159,12 +159,12 @@ public final class CookerMock {
     private java.lang.Float __consumption = null;
     /**
      * Set the value (without publication) of source <code>consumption</code> from device <code>ElectricMeter</code>.
-    
-    <pre>
-    source consumption as Float;
-    </pre>
-    @param newConsumptionValue the new value for the source <code>consumption</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source consumption as Float;
+     * </pre>
+     * @param newConsumptionValue the new value for the source <code>consumption</code>
+     * @return this for fluent interface
      */
     public CookerMock setConsumption(java.lang.Float newConsumptionValue) {
         __consumption = newConsumptionValue;
@@ -175,12 +175,12 @@ public final class CookerMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public CookerMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -190,12 +190,12 @@ public final class CookerMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public CookerMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -206,12 +206,12 @@ public final class CookerMock {
     // Code for source on from device Appliance
     /**
      * Publish the value of source <code>on</code> from device <code>Appliance</code>.
-    
-    <pre>
-    source on as Boolean;
-    </pre>
-    @param newOnValue the new value for the source <code>on</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source on as Boolean;
+     * </pre>
+     * @param newOnValue the new value for the source <code>on</code>
+     * @return this for fluent interface
      */
     public CookerMock on(java.lang.Boolean newOnValue) {
         proxy._publishOn(newOnValue);
@@ -221,12 +221,12 @@ public final class CookerMock {
     private java.lang.Boolean __on = null;
     /**
      * Set the value (without publication) of source <code>on</code> from device <code>Appliance</code>.
-    
-    <pre>
-    source on as Boolean;
-    </pre>
-    @param newOnValue the new value for the source <code>on</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source on as Boolean;
+     * </pre>
+     * @param newOnValue the new value for the source <code>on</code>
+     * @return this for fluent interface
      */
     public CookerMock setOn(java.lang.Boolean newOnValue) {
         __on = newOnValue;
@@ -240,10 +240,10 @@ public final class CookerMock {
      * Check that the <code>off</code> order from the <code>Off</code> action
      * defined in device Appliance was called.
      * 
-    
-    <pre>
-    off();
-    </pre>    @return true if the action happened with the given parameters
+     * 
+     * <pre>
+     * off();
+     * </pre>    @return true if the action happened with the given parameters
      */
     public boolean expectOff() {
         try {
@@ -268,10 +268,10 @@ public final class CookerMock {
      * Check that the <code>on</code> order from the <code>On</code> action
      * defined in device Appliance was called.
      * 
-    
-    <pre>
-    on();
-    </pre>    @return true if the action happened with the given parameters
+     * 
+     * <pre>
+     * on();
+     * </pre>    @return true if the action happened with the given parameters
      */
     public boolean expectOn() {
         try {

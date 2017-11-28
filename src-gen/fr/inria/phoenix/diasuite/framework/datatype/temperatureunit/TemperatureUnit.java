@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * <pre>
-enumeration TemperatureUnit {
+ * enumeration TemperatureUnit {
  * 	CELSIUS, FAHRENHEIT, KELVIN
  * }
-</pre>
+ * </pre>
  */
 public enum TemperatureUnit implements Serializable {
     CELSIUS,FAHRENHEIT,KELVIN

@@ -7,16 +7,16 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * ------------------------------------------------------------
-Appliances						||
-------------------------------------------------------------
-
-<pre>
-device Appliance extends PhysicalDevice {
+ * Appliances						||
+ * ------------------------------------------------------------
+ * 
+ * <pre>
+ * device Appliance extends PhysicalDevice {
  * 	source on as Boolean;
  * 	action On;
  * 	action Off;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractAppliance extends Service {
     
@@ -85,11 +85,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -100,11 +100,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -116,11 +116,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Set the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @param newLocationValue the new value of <code>location</code>
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @param newLocationValue the new value of <code>location</code>
      */
     protected void updateLocation(java.lang.String newLocationValue) {
         if (_location != newLocationValue) {
@@ -131,11 +131,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Returns the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @return the value of <code>location</code>
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @return the value of <code>location</code>
      */
     public java.lang.String getLocation() {
         return _location;
@@ -147,11 +147,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Set the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @param newUserValue the new value of <code>user</code>
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @param newUserValue the new value of <code>user</code>
      */
     protected void updateUser(java.lang.String newUserValue) {
         if (_user != newUserValue) {
@@ -162,11 +162,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Returns the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @return the value of <code>user</code>
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @return the value of <code>user</code>
      */
     public java.lang.String getUser() {
         return _user;
@@ -178,11 +178,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -191,11 +191,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -207,11 +207,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Publish the value of source <code>on</code> from device <code>Appliance</code>.
-    
-    <pre>
-    source on as Boolean;
-    </pre>
-    @param newOnValue the new value for the source <code>on</code>
+     * 
+     * <pre>
+     * source on as Boolean;
+     * </pre>
+     * @param newOnValue the new value for the source <code>on</code>
      */
     protected void publishOn(java.lang.Boolean newOnValue) {
         _on = newOnValue;
@@ -220,11 +220,11 @@ public abstract class AbstractAppliance extends Service {
     
     /**
      * Returns the value of source <code>on</code> from device <code>Appliance</code>.
-    
-    <pre>
-    source on as Boolean;
-    </pre>
-    @return the value of the source <code>on</code>
+     * 
+     * <pre>
+     * source on as Boolean;
+     * </pre>
+     * @return the value of the source <code>on</code>
      */
     protected java.lang.Boolean getOn() throws Exception {
         return _on;
@@ -235,10 +235,10 @@ public abstract class AbstractAppliance extends Service {
      * Implement this method to define the <code>off</code> order from the <code>Off</code> action
      * defined in device Appliance.
      * 
-    
-    <pre>
-    off();
-    </pre>
+     * 
+     * <pre>
+     * off();
+     * </pre>
      */
     protected abstract void off() throws Exception;
     
@@ -246,10 +246,10 @@ public abstract class AbstractAppliance extends Service {
      * Implement this method to define the <code>on</code> order from the <code>On</code> action
      * defined in device Appliance.
      * 
-    
-    <pre>
-    on();
-    </pre>
+     * 
+     * <pre>
+     * on();
+     * </pre>
      */
     protected abstract void on() throws Exception;
 }

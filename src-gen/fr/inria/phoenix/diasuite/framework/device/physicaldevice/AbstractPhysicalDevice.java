@@ -7,15 +7,15 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * ------------------------------------------------------------
-Physical Devices					||
-------------------------------------------------------------
-
-<pre>
-device PhysicalDevice extends Device {
+ * Physical Devices					||
+ * ------------------------------------------------------------
+ * 
+ * <pre>
+ * device PhysicalDevice extends Device {
  * 	attribute location as String;
  * 	attribute user as String;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractPhysicalDevice extends Service {
     
@@ -73,11 +73,11 @@ public abstract class AbstractPhysicalDevice extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -88,11 +88,11 @@ public abstract class AbstractPhysicalDevice extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -104,11 +104,11 @@ public abstract class AbstractPhysicalDevice extends Service {
     
     /**
      * Set the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @param newLocationValue the new value of <code>location</code>
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @param newLocationValue the new value of <code>location</code>
      */
     protected void updateLocation(java.lang.String newLocationValue) {
         if (_location != newLocationValue) {
@@ -119,11 +119,11 @@ public abstract class AbstractPhysicalDevice extends Service {
     
     /**
      * Returns the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @return the value of <code>location</code>
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @return the value of <code>location</code>
      */
     public java.lang.String getLocation() {
         return _location;
@@ -135,11 +135,11 @@ public abstract class AbstractPhysicalDevice extends Service {
     
     /**
      * Set the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @param newUserValue the new value of <code>user</code>
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @param newUserValue the new value of <code>user</code>
      */
     protected void updateUser(java.lang.String newUserValue) {
         if (_user != newUserValue) {
@@ -150,11 +150,11 @@ public abstract class AbstractPhysicalDevice extends Service {
     
     /**
      * Returns the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @return the value of <code>user</code>
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @return the value of <code>user</code>
      */
     public java.lang.String getUser() {
         return _user;
@@ -166,11 +166,11 @@ public abstract class AbstractPhysicalDevice extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -179,11 +179,11 @@ public abstract class AbstractPhysicalDevice extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;

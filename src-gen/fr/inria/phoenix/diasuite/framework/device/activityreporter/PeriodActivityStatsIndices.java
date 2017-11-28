@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>periodActivityStats</code> from device <code>ActivityReporter</code>.
-
-<pre>
-source periodActivityStats as PeriodActivityStats indexed by activity as PeriodActivityName;
-</pre>
+ * 
+ * <pre>
+ * source periodActivityStats as PeriodActivityStats indexed by activity as PeriodActivityName;
+ * </pre>
  */
 public final class PeriodActivityStatsIndices implements Serializable {
     private static final long serialVersionUID = 0;

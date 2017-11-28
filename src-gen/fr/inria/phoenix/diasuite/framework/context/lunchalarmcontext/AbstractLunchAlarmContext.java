@@ -12,14 +12,14 @@ import fr.inria.phoenix.diasuite.framework.context.password.PasswordValue;
 
 /**
  * <pre>
-context LunchAlarmContext as Boolean {
+ * context LunchAlarmContext as Boolean {
  *   when provided Password
  *   always publish;
  *   when provided timerTriggered from Timer
  *   get timerTriggered from Timer
  *   maybe publish;
  * }
-</pre>
+ * </pre>
  */
 @SuppressWarnings("all")
 public abstract class AbstractLunchAlarmContext extends Service {
@@ -139,11 +139,11 @@ public abstract class AbstractLunchAlarmContext extends Service {
     // Interaction contract implementation
     /**
      * This method is called when the <code>Password</code> context publishes a value.
-    
-    <pre>
-    when provided Password
+     * 
+     * <pre>
+     * when provided Password
      *   always publish;
-    </pre>
+     * </pre>
      * 
      * @param passwordValue the value of the <code>Password</code> context.
      * @return the value to publish
@@ -152,12 +152,12 @@ public abstract class AbstractLunchAlarmContext extends Service {
     
     /**
      * This method is called when a <code>Timer</code> device on which we have subscribed publish on its <code>timerTriggered</code> source.
-    
-    <pre>
-    when provided timerTriggered from Timer
+     * 
+     * <pre>
+     * when provided timerTriggered from Timer
      *   get timerTriggered from Timer
      *   maybe publish;
-    </pre>
+     * </pre>
      * 
      * @param timerTriggeredFromTimer the value of the <code>timerTriggered</code> source and the <code>Timer</code> device that published the value.
      * @param discover a discover object to get value from devices and contexts
@@ -170,17 +170,17 @@ public abstract class AbstractLunchAlarmContext extends Service {
     // Discover part for Timer devices
     /**
      * Use this object to discover Timer devices.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      * 
      * @see TimerDiscoverer
      */
@@ -188,17 +188,17 @@ public abstract class AbstractLunchAlarmContext extends Service {
     
     /**
      * Discover object that will exposes the <code>Timer</code> devices that can be discovered
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerDiscoverer {
         private Service serviceParent;
@@ -243,17 +243,17 @@ public abstract class AbstractLunchAlarmContext extends Service {
     
     /**
      * A composite of several <code>Timer</code> devices
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerComposite extends fr.inria.diagen.core.service.composite.Composite<TimerProxy> {
         private TimerComposite(Service serviceParent) {
@@ -295,17 +295,17 @@ public abstract class AbstractLunchAlarmContext extends Service {
     
     /**
      * A proxy to one <code>Timer</code> device
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerProxy extends Proxy {
         private TimerProxy(Service service, RemoteServiceInfo remoteServiceInfo) {
@@ -361,17 +361,17 @@ public abstract class AbstractLunchAlarmContext extends Service {
     /**
      * Discover object that will exposes the <code>Timer</code> devices to get their sources for the
      * <code>when provided timerTriggered from Timer</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerDiscovererForTimerTriggeredFromTimer {
         private Service serviceParent;
@@ -417,17 +417,17 @@ public abstract class AbstractLunchAlarmContext extends Service {
     /**
      * A composite of several <code>Timer</code> devices to get their sources for the
      * <code>when provided timerTriggered from Timer</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerCompositeForTimerTriggeredFromTimer extends fr.inria.diagen.core.service.composite.Composite<TimerProxyForTimerTriggeredFromTimer> {
         private TimerCompositeForTimerTriggeredFromTimer(Service serviceParent) {
@@ -454,17 +454,17 @@ public abstract class AbstractLunchAlarmContext extends Service {
     /**
      * A proxy to one <code>Timer</code> device to get its sources for the
      * <code>when provided timerTriggered from Timer</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerProxyForTimerTriggeredFromTimer extends Proxy {
         private TimerProxyForTimerTriggeredFromTimer(Service service, RemoteServiceInfo remoteServiceInfo) {

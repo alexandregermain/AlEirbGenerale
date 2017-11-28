@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * <pre>
-enumeration InteractionType {
+ * enumeration InteractionType {
  * 	MOTION, OPENNING, CLOSURE, ELEC_CONSUMPTION, NOTIFICATION_REPLY, RESET_INACTIVITY
  * }
-</pre>
+ * </pre>
  */
 public enum InteractionType implements Serializable {
     MOTION,OPENNING,CLOSURE,ELEC_CONSUMPTION,NOTIFICATION_REPLY,RESET_INACTIVITY

@@ -7,7 +7,7 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * <pre>
-device Android extends Device {
+ * device Android extends Device {
  * 	attribute type as String;
  * 	attribute version as Integer;
  * 	source battery as Battery;
@@ -18,7 +18,7 @@ device Android extends Device {
  * 	action SoundAction;
  * 	action ActivityAction;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractAndroid extends Service {
     
@@ -100,11 +100,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -115,11 +115,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -131,11 +131,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Set the value of the <code>type</code> attribute from device <code>Android</code>.
-    
-    <pre>
-    attribute type as String;
-    </pre>
-    @param newTypeValue the new value of <code>type</code>
+     * 
+     * <pre>
+     * attribute type as String;
+     * </pre>
+     * @param newTypeValue the new value of <code>type</code>
      */
     protected void updateType(java.lang.String newTypeValue) {
         if (_type != newTypeValue) {
@@ -146,11 +146,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Returns the value of the <code>type</code> attribute from device <code>Android</code>.
-    
-    <pre>
-    attribute type as String;
-    </pre>
-    @return the value of <code>type</code>
+     * 
+     * <pre>
+     * attribute type as String;
+     * </pre>
+     * @return the value of <code>type</code>
      */
     public java.lang.String getType() {
         return _type;
@@ -162,11 +162,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Set the value of the <code>version</code> attribute from device <code>Android</code>.
-    
-    <pre>
-    attribute version as Integer;
-    </pre>
-    @param newVersionValue the new value of <code>version</code>
+     * 
+     * <pre>
+     * attribute version as Integer;
+     * </pre>
+     * @param newVersionValue the new value of <code>version</code>
      */
     protected void updateVersion(java.lang.Integer newVersionValue) {
         if (_version != newVersionValue) {
@@ -177,11 +177,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Returns the value of the <code>version</code> attribute from device <code>Android</code>.
-    
-    <pre>
-    attribute version as Integer;
-    </pre>
-    @return the value of <code>version</code>
+     * 
+     * <pre>
+     * attribute version as Integer;
+     * </pre>
+     * @return the value of <code>version</code>
      */
     public java.lang.Integer getVersion() {
         return _version;
@@ -193,11 +193,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Publish the value of source <code>apps</code> from device <code>Android</code>.
-    
-    <pre>
-    source apps as AndroidApp [];
-    </pre>
-    @param newAppsValue the new value for the source <code>apps</code>
+     * 
+     * <pre>
+     * source apps as AndroidApp [];
+     * </pre>
+     * @param newAppsValue the new value for the source <code>apps</code>
      */
     protected void publishApps(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.androidapp.AndroidApp> newAppsValue) {
         _apps = newAppsValue;
@@ -206,11 +206,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Returns the value of source <code>apps</code> from device <code>Android</code>.
-    
-    <pre>
-    source apps as AndroidApp [];
-    </pre>
-    @return the value of the source <code>apps</code>
+     * 
+     * <pre>
+     * source apps as AndroidApp [];
+     * </pre>
+     * @return the value of the source <code>apps</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.androidapp.AndroidApp> getApps() throws Exception {
         return _apps;
@@ -222,11 +222,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Publish the value of source <code>battery</code> from device <code>Android</code>.
-    
-    <pre>
-    source battery as Battery;
-    </pre>
-    @param newBatteryValue the new value for the source <code>battery</code>
+     * 
+     * <pre>
+     * source battery as Battery;
+     * </pre>
+     * @param newBatteryValue the new value for the source <code>battery</code>
      */
     protected void publishBattery(fr.inria.phoenix.diasuite.framework.datatype.battery.Battery newBatteryValue) {
         _battery = newBatteryValue;
@@ -235,11 +235,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Returns the value of source <code>battery</code> from device <code>Android</code>.
-    
-    <pre>
-    source battery as Battery;
-    </pre>
-    @return the value of the source <code>battery</code>
+     * 
+     * <pre>
+     * source battery as Battery;
+     * </pre>
+     * @return the value of the source <code>battery</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.battery.Battery getBattery() throws Exception {
         return _battery;
@@ -251,11 +251,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -264,11 +264,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -280,11 +280,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Publish the value of source <code>screenOn</code> from device <code>Android</code>.
-    
-    <pre>
-    source screenOn as Boolean;
-    </pre>
-    @param newScreenOnValue the new value for the source <code>screenOn</code>
+     * 
+     * <pre>
+     * source screenOn as Boolean;
+     * </pre>
+     * @param newScreenOnValue the new value for the source <code>screenOn</code>
      */
     protected void publishScreenOn(java.lang.Boolean newScreenOnValue) {
         _screenOn = newScreenOnValue;
@@ -293,11 +293,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Returns the value of source <code>screenOn</code> from device <code>Android</code>.
-    
-    <pre>
-    source screenOn as Boolean;
-    </pre>
-    @return the value of the source <code>screenOn</code>
+     * 
+     * <pre>
+     * source screenOn as Boolean;
+     * </pre>
+     * @return the value of the source <code>screenOn</code>
      */
     protected java.lang.Boolean getScreenOn() throws Exception {
         return _screenOn;
@@ -309,11 +309,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Publish the value of source <code>soundLevels</code> from device <code>Android</code>.
-    
-    <pre>
-    source soundLevels as SoundLevel [];
-    </pre>
-    @param newSoundLevelsValue the new value for the source <code>soundLevels</code>
+     * 
+     * <pre>
+     * source soundLevels as SoundLevel [];
+     * </pre>
+     * @param newSoundLevelsValue the new value for the source <code>soundLevels</code>
      */
     protected void publishSoundLevels(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.soundlevel.SoundLevel> newSoundLevelsValue) {
         _soundLevels = newSoundLevelsValue;
@@ -322,11 +322,11 @@ public abstract class AbstractAndroid extends Service {
     
     /**
      * Returns the value of source <code>soundLevels</code> from device <code>Android</code>.
-    
-    <pre>
-    source soundLevels as SoundLevel [];
-    </pre>
-    @return the value of the source <code>soundLevels</code>
+     * 
+     * <pre>
+     * source soundLevels as SoundLevel [];
+     * </pre>
+     * @return the value of the source <code>soundLevels</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.soundlevel.SoundLevel> getSoundLevels() throws Exception {
         return _soundLevels;
@@ -337,10 +337,10 @@ public abstract class AbstractAndroid extends Service {
      * Implement this method to define the <code>setScreenStatus</code> order from the <code>ScreenAction</code> action
      * defined in device Android.
      * 
-    
-    <pre>
-    setScreenStatus(turnOn as Boolean);
-    </pre>
+     * 
+     * <pre>
+     * setScreenStatus(turnOn as Boolean);
+     * </pre>
      * @param turnOn parameter 1 of the order.
      */
     protected abstract void setScreenStatus(java.lang.Boolean turnOn) throws Exception;
@@ -349,10 +349,10 @@ public abstract class AbstractAndroid extends Service {
      * Implement this method to define the <code>setSoundLevel</code> order from the <code>SoundAction</code> action
      * defined in device Android.
      * 
-    
-    <pre>
-    setSoundLevel(level as Integer);
-    </pre>
+     * 
+     * <pre>
+     * setSoundLevel(level as Integer);
+     * </pre>
      * @param level parameter 1 of the order.
      */
     protected abstract void setSoundLevel(java.lang.Integer level) throws Exception;
@@ -361,10 +361,10 @@ public abstract class AbstractAndroid extends Service {
      * Implement this method to define the <code>startActivity</code> order from the <code>ActivityAction</code> action
      * defined in device Android.
      * 
-    
-    <pre>
-    startActivity(intent as AndroidIntent);
-    </pre>
+     * 
+     * <pre>
+     * startActivity(intent as AndroidIntent);
+     * </pre>
      * @param intent parameter 1 of the order.
      */
     protected abstract void startActivity(fr.inria.phoenix.diasuite.framework.datatype.androidintent.AndroidIntent intent) throws Exception;

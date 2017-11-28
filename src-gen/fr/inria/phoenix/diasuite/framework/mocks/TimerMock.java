@@ -94,12 +94,12 @@ public final class TimerMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public TimerMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -110,12 +110,12 @@ public final class TimerMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public TimerMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -125,12 +125,12 @@ public final class TimerMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public TimerMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -141,13 +141,13 @@ public final class TimerMock {
     // Code for source timerTriggered from device Timer
     /**
      * Publish the value of source <code>timerTriggered</code> from device <code>Timer</code>.
-    
-    <pre>
-    source timerTriggered as String indexed by timerId as String;
-    </pre>
-    @param newTimerTriggeredValue the new value for the source <code>timerTriggered</code>
-    @param timerId the value of the index <code>timerId</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source timerTriggered as String indexed by timerId as String;
+     * </pre>
+     * @param newTimerTriggeredValue the new value for the source <code>timerTriggered</code>
+     * @param timerId the value of the index <code>timerId</code>
+     * @return this for fluent interface
      */
     public TimerMock timerTriggered(java.lang.String newTimerTriggeredValue,
             java.lang.String timerId) {
@@ -159,13 +159,13 @@ public final class TimerMock {
     private java.util.HashMap<TimerTriggeredIndices, java.lang.String> __timerTriggered = new java.util.HashMap<TimerTriggeredIndices, java.lang.String>();
     /**
      * Set the value (without publication) of source <code>timerTriggered</code> from device <code>Timer</code>.
-    
-    <pre>
-    source timerTriggered as String indexed by timerId as String;
-    </pre>
-    @param newTimerTriggeredValue the new value for the source <code>timerTriggered</code>
-    @param timerId the value of the index <code>timerId</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source timerTriggered as String indexed by timerId as String;
+     * </pre>
+     * @param newTimerTriggeredValue the new value for the source <code>timerTriggered</code>
+     * @param timerId the value of the index <code>timerId</code>
+     * @return this for fluent interface
      */
     public TimerMock setTimerTriggered(java.lang.String newTimerTriggeredValue,
             java.lang.String timerId) {
@@ -181,10 +181,10 @@ public final class TimerMock {
      * Check that the <code>cancel</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer was called.
      * 
-    
-    <pre>
-    cancel(id as String);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * cancel(id as String);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectCancel() {
         try {
@@ -208,10 +208,10 @@ public final class TimerMock {
      * Check that the <code>cancel</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer was called.
      * 
-    
-    <pre>
-    cancel(id as String);
-    </pre>
+     * 
+     * <pre>
+     * cancel(id as String);
+     * </pre>
      * @param id parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -240,10 +240,10 @@ public final class TimerMock {
      * Check that the <code>periodicSchedule</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer was called.
      * 
-    
-    <pre>
-    periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectPeriodicSchedule() {
         try {
@@ -267,10 +267,10 @@ public final class TimerMock {
      * Check that the <code>periodicSchedule</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer was called.
      * 
-    
-    <pre>
-    periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
-    </pre>
+     * 
+     * <pre>
+     * periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
+     * </pre>
      * @param id parameter 1 of the order.
      *     @return true if the action happened with the given parameters, remaining parameters are ignored
      */
@@ -298,10 +298,10 @@ public final class TimerMock {
      * Check that the <code>periodicSchedule</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer was called.
      * 
-    
-    <pre>
-    periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
-    </pre>
+     * 
+     * <pre>
+     * periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
+     * </pre>
      * @param id parameter 1 of the order.
      * @param delayMs parameter 2 of the order.
      *     @return true if the action happened with the given parameters, remaining parameters are ignored
@@ -333,10 +333,10 @@ public final class TimerMock {
      * Check that the <code>periodicSchedule</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer was called.
      * 
-    
-    <pre>
-    periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
-    </pre>
+     * 
+     * <pre>
+     * periodicSchedule(id as String, delayMs as Integer, periodMs as Integer);
+     * </pre>
      * @param id parameter 1 of the order.
      * @param delayMs parameter 2 of the order.
      * @param periodMs parameter 3 of the order.
@@ -373,10 +373,10 @@ public final class TimerMock {
      * Check that the <code>schedule</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer was called.
      * 
-    
-    <pre>
-    schedule(id as String, delayMs as Integer);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * schedule(id as String, delayMs as Integer);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectSchedule() {
         try {
@@ -400,10 +400,10 @@ public final class TimerMock {
      * Check that the <code>schedule</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer was called.
      * 
-    
-    <pre>
-    schedule(id as String, delayMs as Integer);
-    </pre>
+     * 
+     * <pre>
+     * schedule(id as String, delayMs as Integer);
+     * </pre>
      * @param id parameter 1 of the order.
      *     @return true if the action happened with the given parameters, remaining parameters are ignored
      */
@@ -431,10 +431,10 @@ public final class TimerMock {
      * Check that the <code>schedule</code> order from the <code>ScheduleTimer</code> action
      * defined in device Timer was called.
      * 
-    
-    <pre>
-    schedule(id as String, delayMs as Integer);
-    </pre>
+     * 
+     * <pre>
+     * schedule(id as String, delayMs as Integer);
+     * </pre>
      * @param id parameter 1 of the order.
      * @param delayMs parameter 2 of the order.
      *     @return true if the action happened with the given parameters

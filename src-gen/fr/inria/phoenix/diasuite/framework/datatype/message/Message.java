@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure Message {
+ * structure Message {
  * 	to as Contact;
  * 	title as String;
  * 	content as String;
  * 	attachments as File [];
  * }
-</pre>
+ * </pre>
  */
 public class Message implements Serializable {
     private static final long serialVersionUID = 0;
@@ -20,11 +20,11 @@ public class Message implements Serializable {
     
     /**
      * Returns the value of the to field.
-    
-    <pre>
-    to as Contact
-    </pre>
-    @return the value of to
+     * 
+     * <pre>
+     * to as Contact
+     * </pre>
+     * @return the value of to
      */
     public fr.inria.phoenix.diasuite.framework.datatype.contact.Contact getTo() {
         return to;
@@ -32,11 +32,11 @@ public class Message implements Serializable {
     
     /**
      * Set the value of the to field.
-    
-    <pre>
-    to as Contact
-    </pre>
-    @param to the new value of to
+     * 
+     * <pre>
+     * to as Contact
+     * </pre>
+     * @param to the new value of to
      */
     public void setTo(fr.inria.phoenix.diasuite.framework.datatype.contact.Contact to) {
         this.to = to;
@@ -48,11 +48,11 @@ public class Message implements Serializable {
     
     /**
      * Returns the value of the title field.
-    
-    <pre>
-    title as String
-    </pre>
-    @return the value of title
+     * 
+     * <pre>
+     * title as String
+     * </pre>
+     * @return the value of title
      */
     public java.lang.String getTitle() {
         return title;
@@ -60,11 +60,11 @@ public class Message implements Serializable {
     
     /**
      * Set the value of the title field.
-    
-    <pre>
-    title as String
-    </pre>
-    @param title the new value of title
+     * 
+     * <pre>
+     * title as String
+     * </pre>
+     * @param title the new value of title
      */
     public void setTitle(java.lang.String title) {
         this.title = title;
@@ -76,11 +76,11 @@ public class Message implements Serializable {
     
     /**
      * Returns the value of the content field.
-    
-    <pre>
-    content as String
-    </pre>
-    @return the value of content
+     * 
+     * <pre>
+     * content as String
+     * </pre>
+     * @return the value of content
      */
     public java.lang.String getContent() {
         return content;
@@ -88,11 +88,11 @@ public class Message implements Serializable {
     
     /**
      * Set the value of the content field.
-    
-    <pre>
-    content as String
-    </pre>
-    @param content the new value of content
+     * 
+     * <pre>
+     * content as String
+     * </pre>
+     * @param content the new value of content
      */
     public void setContent(java.lang.String content) {
         this.content = content;
@@ -104,11 +104,11 @@ public class Message implements Serializable {
     
     /**
      * Returns the value of the attachments field.
-    
-    <pre>
-    attachments as File []
-    </pre>
-    @return the value of attachments
+     * 
+     * <pre>
+     * attachments as File []
+     * </pre>
+     * @return the value of attachments
      */
     public java.util.List<fr.inria.phoenix.diasuite.framework.datatype.file.File> getAttachments() {
         return attachments;
@@ -116,11 +116,11 @@ public class Message implements Serializable {
     
     /**
      * Set the value of the attachments field.
-    
-    <pre>
-    attachments as File []
-    </pre>
-    @param attachments the new value of attachments
+     * 
+     * <pre>
+     * attachments as File []
+     * </pre>
+     * @param attachments the new value of attachments
      */
     public void setAttachments(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.file.File> attachments) {
         this.attachments = attachments;

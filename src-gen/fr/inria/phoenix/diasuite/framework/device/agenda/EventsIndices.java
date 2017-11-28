@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>events</code> from device <code>Agenda</code>.
-
-<pre>
-source events as AgendaEvent [] indexed by filter as AgendaEvent;
-</pre>
+ * 
+ * <pre>
+ * source events as AgendaEvent [] indexed by filter as AgendaEvent;
+ * </pre>
  */
 public final class EventsIndices implements Serializable {
     private static final long serialVersionUID = 0;

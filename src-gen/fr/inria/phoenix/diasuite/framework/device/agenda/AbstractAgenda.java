@@ -7,7 +7,7 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * <pre>
-device Agenda extends HomeService {
+ * device Agenda extends HomeService {
  * 	attribute owner as String;
  * 	source currentEvents as AgendaEvent [];
  * 	source nextEvent as AgendaEvent;
@@ -15,7 +15,7 @@ device Agenda extends HomeService {
  * 	source events as AgendaEvent [] indexed by filter as AgendaEvent;
  * 	action AgendaEventAction;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractAgenda extends Service {
     
@@ -92,11 +92,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -107,11 +107,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -123,11 +123,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Set the value of the <code>owner</code> attribute from device <code>Agenda</code>.
-    
-    <pre>
-    attribute owner as String;
-    </pre>
-    @param newOwnerValue the new value of <code>owner</code>
+     * 
+     * <pre>
+     * attribute owner as String;
+     * </pre>
+     * @param newOwnerValue the new value of <code>owner</code>
      */
     protected void updateOwner(java.lang.String newOwnerValue) {
         if (_owner != newOwnerValue) {
@@ -138,11 +138,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Returns the value of the <code>owner</code> attribute from device <code>Agenda</code>.
-    
-    <pre>
-    attribute owner as String;
-    </pre>
-    @return the value of <code>owner</code>
+     * 
+     * <pre>
+     * attribute owner as String;
+     * </pre>
+     * @return the value of <code>owner</code>
      */
     public java.lang.String getOwner() {
         return _owner;
@@ -154,11 +154,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Publish the value of source <code>currentEvents</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source currentEvents as AgendaEvent [];
-    </pre>
-    @param newCurrentEventsValue the new value for the source <code>currentEvents</code>
+     * 
+     * <pre>
+     * source currentEvents as AgendaEvent [];
+     * </pre>
+     * @param newCurrentEventsValue the new value for the source <code>currentEvents</code>
      */
     protected void publishCurrentEvents(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> newCurrentEventsValue) {
         _currentEvents = newCurrentEventsValue;
@@ -167,11 +167,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Returns the value of source <code>currentEvents</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source currentEvents as AgendaEvent [];
-    </pre>
-    @return the value of the source <code>currentEvents</code>
+     * 
+     * <pre>
+     * source currentEvents as AgendaEvent [];
+     * </pre>
+     * @return the value of the source <code>currentEvents</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> getCurrentEvents() throws Exception {
         return _currentEvents;
@@ -183,12 +183,12 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Publish the value of source <code>events</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source events as AgendaEvent [] indexed by filter as AgendaEvent;
-    </pre>
-    @param newEventsValue the new value for the source <code>events</code>
-    @param filter the value of the index <code>filter</code>
+     * 
+     * <pre>
+     * source events as AgendaEvent [] indexed by filter as AgendaEvent;
+     * </pre>
+     * @param newEventsValue the new value for the source <code>events</code>
+     * @param filter the value of the index <code>filter</code>
      */
     protected void publishEvents(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> newEventsValue,
             fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent filter) {
@@ -199,12 +199,12 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Returns the value of source <code>events</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source events as AgendaEvent [] indexed by filter as AgendaEvent;
-    </pre>
-    @param filter the value of the index <code>filter</code>
-    @return the value of the source <code>events</code>
+     * 
+     * <pre>
+     * source events as AgendaEvent [] indexed by filter as AgendaEvent;
+     * </pre>
+     * @param filter the value of the index <code>filter</code>
+     * @return the value of the source <code>events</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> getEvents(fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent filter) throws Exception {
         return _events.get(new EventsIndices(filter));
@@ -216,11 +216,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -229,11 +229,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -245,11 +245,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Publish the value of source <code>nextEvent</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source nextEvent as AgendaEvent;
-    </pre>
-    @param newNextEventValue the new value for the source <code>nextEvent</code>
+     * 
+     * <pre>
+     * source nextEvent as AgendaEvent;
+     * </pre>
+     * @param newNextEventValue the new value for the source <code>nextEvent</code>
      */
     protected void publishNextEvent(fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent newNextEventValue) {
         _nextEvent = newNextEventValue;
@@ -258,11 +258,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Returns the value of source <code>nextEvent</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source nextEvent as AgendaEvent;
-    </pre>
-    @return the value of the source <code>nextEvent</code>
+     * 
+     * <pre>
+     * source nextEvent as AgendaEvent;
+     * </pre>
+     * @return the value of the source <code>nextEvent</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent getNextEvent() throws Exception {
         return _nextEvent;
@@ -274,11 +274,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Publish the value of source <code>nextEvents</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source nextEvents as AgendaEvent [];
-    </pre>
-    @param newNextEventsValue the new value for the source <code>nextEvents</code>
+     * 
+     * <pre>
+     * source nextEvents as AgendaEvent [];
+     * </pre>
+     * @param newNextEventsValue the new value for the source <code>nextEvents</code>
      */
     protected void publishNextEvents(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> newNextEventsValue) {
         _nextEvents = newNextEventsValue;
@@ -287,11 +287,11 @@ public abstract class AbstractAgenda extends Service {
     
     /**
      * Returns the value of source <code>nextEvents</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source nextEvents as AgendaEvent [];
-    </pre>
-    @return the value of the source <code>nextEvents</code>
+     * 
+     * <pre>
+     * source nextEvents as AgendaEvent [];
+     * </pre>
+     * @return the value of the source <code>nextEvents</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> getNextEvents() throws Exception {
         return _nextEvents;
@@ -302,10 +302,10 @@ public abstract class AbstractAgenda extends Service {
      * Implement this method to define the <code>addEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda.
      * 
-    
-    <pre>
-    addEvent(event as AgendaEvent);
-    </pre>
+     * 
+     * <pre>
+     * addEvent(event as AgendaEvent);
+     * </pre>
      * @param event parameter 1 of the order.
      */
     protected abstract void addEvent(fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent event) throws Exception;
@@ -314,10 +314,10 @@ public abstract class AbstractAgenda extends Service {
      * Implement this method to define the <code>removeEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda.
      * 
-    
-    <pre>
-    removeEvent(event as AgendaEvent);
-    </pre>
+     * 
+     * <pre>
+     * removeEvent(event as AgendaEvent);
+     * </pre>
      * @param event parameter 1 of the order.
      */
     protected abstract void removeEvent(fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent event) throws Exception;
@@ -326,10 +326,10 @@ public abstract class AbstractAgenda extends Service {
      * Implement this method to define the <code>replaceEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda.
      * 
-    
-    <pre>
-    replaceEvent(oldEvent as AgendaEvent, newEvent as AgendaEvent);
-    </pre>
+     * 
+     * <pre>
+     * replaceEvent(oldEvent as AgendaEvent, newEvent as AgendaEvent);
+     * </pre>
      * @param oldEvent parameter 1 of the order.
      * @param newEvent parameter 2 of the order.
      */

@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure DailyActivityStats {
+ * structure DailyActivityStats {
  * 	activity as DailyActivityName;
  * 	successes as Integer;
  * 	failures as Integer;
  * 	meanScore as Float;
  * }
-</pre>
+ * </pre>
  */
 public class DailyActivityStats implements Serializable {
     private static final long serialVersionUID = 0;
@@ -20,11 +20,11 @@ public class DailyActivityStats implements Serializable {
     
     /**
      * Returns the value of the activity field.
-    
-    <pre>
-    activity as DailyActivityName
-    </pre>
-    @return the value of activity
+     * 
+     * <pre>
+     * activity as DailyActivityName
+     * </pre>
+     * @return the value of activity
      */
     public fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName getActivity() {
         return activity;
@@ -32,11 +32,11 @@ public class DailyActivityStats implements Serializable {
     
     /**
      * Set the value of the activity field.
-    
-    <pre>
-    activity as DailyActivityName
-    </pre>
-    @param activity the new value of activity
+     * 
+     * <pre>
+     * activity as DailyActivityName
+     * </pre>
+     * @param activity the new value of activity
      */
     public void setActivity(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName activity) {
         this.activity = activity;
@@ -48,11 +48,11 @@ public class DailyActivityStats implements Serializable {
     
     /**
      * Returns the value of the successes field.
-    
-    <pre>
-    successes as Integer
-    </pre>
-    @return the value of successes
+     * 
+     * <pre>
+     * successes as Integer
+     * </pre>
+     * @return the value of successes
      */
     public java.lang.Integer getSuccesses() {
         return successes;
@@ -60,11 +60,11 @@ public class DailyActivityStats implements Serializable {
     
     /**
      * Set the value of the successes field.
-    
-    <pre>
-    successes as Integer
-    </pre>
-    @param successes the new value of successes
+     * 
+     * <pre>
+     * successes as Integer
+     * </pre>
+     * @param successes the new value of successes
      */
     public void setSuccesses(java.lang.Integer successes) {
         this.successes = successes;
@@ -76,11 +76,11 @@ public class DailyActivityStats implements Serializable {
     
     /**
      * Returns the value of the failures field.
-    
-    <pre>
-    failures as Integer
-    </pre>
-    @return the value of failures
+     * 
+     * <pre>
+     * failures as Integer
+     * </pre>
+     * @return the value of failures
      */
     public java.lang.Integer getFailures() {
         return failures;
@@ -88,11 +88,11 @@ public class DailyActivityStats implements Serializable {
     
     /**
      * Set the value of the failures field.
-    
-    <pre>
-    failures as Integer
-    </pre>
-    @param failures the new value of failures
+     * 
+     * <pre>
+     * failures as Integer
+     * </pre>
+     * @param failures the new value of failures
      */
     public void setFailures(java.lang.Integer failures) {
         this.failures = failures;
@@ -104,11 +104,11 @@ public class DailyActivityStats implements Serializable {
     
     /**
      * Returns the value of the meanScore field.
-    
-    <pre>
-    meanScore as Float
-    </pre>
-    @return the value of meanScore
+     * 
+     * <pre>
+     * meanScore as Float
+     * </pre>
+     * @return the value of meanScore
      */
     public java.lang.Float getMeanScore() {
         return meanScore;
@@ -116,11 +116,11 @@ public class DailyActivityStats implements Serializable {
     
     /**
      * Set the value of the meanScore field.
-    
-    <pre>
-    meanScore as Float
-    </pre>
-    @param meanScore the new value of meanScore
+     * 
+     * <pre>
+     * meanScore as Float
+     * </pre>
+     * @param meanScore the new value of meanScore
      */
     public void setMeanScore(java.lang.Float meanScore) {
         this.meanScore = meanScore;

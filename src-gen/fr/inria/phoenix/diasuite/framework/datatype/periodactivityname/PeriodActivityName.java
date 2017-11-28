@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * <pre>
-enumeration PeriodActivityName {
+ * enumeration PeriodActivityName {
  * 	EXIT, TOILET
  * }
-</pre>
+ * </pre>
  */
 public enum PeriodActivityName implements Serializable {
     EXIT,TOILET

@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * <pre>
-enumeration DailyActivityName {
+ * enumeration DailyActivityName {
  * 	WAKEUP, BREAKFAST, LUNCH, DINNER, GOTOBED, SLEEP, SHOWER
  * }
-</pre>
+ * </pre>
  */
 public enum DailyActivityName implements Serializable {
     WAKEUP,BREAKFAST,LUNCH,DINNER,GOTOBED,SLEEP,SHOWER

@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure PulseRecord {
+ * structure PulseRecord {
  * 	pulse as Integer;
  * 	time as Date;
  * }
-</pre>
+ * </pre>
  */
 public class PulseRecord implements Serializable {
     private static final long serialVersionUID = 0;
@@ -18,11 +18,11 @@ public class PulseRecord implements Serializable {
     
     /**
      * Returns the value of the pulse field.
-    
-    <pre>
-    pulse as Integer
-    </pre>
-    @return the value of pulse
+     * 
+     * <pre>
+     * pulse as Integer
+     * </pre>
+     * @return the value of pulse
      */
     public java.lang.Integer getPulse() {
         return pulse;
@@ -30,11 +30,11 @@ public class PulseRecord implements Serializable {
     
     /**
      * Set the value of the pulse field.
-    
-    <pre>
-    pulse as Integer
-    </pre>
-    @param pulse the new value of pulse
+     * 
+     * <pre>
+     * pulse as Integer
+     * </pre>
+     * @param pulse the new value of pulse
      */
     public void setPulse(java.lang.Integer pulse) {
         this.pulse = pulse;
@@ -46,11 +46,11 @@ public class PulseRecord implements Serializable {
     
     /**
      * Returns the value of the time field.
-    
-    <pre>
-    time as Date
-    </pre>
-    @return the value of time
+     * 
+     * <pre>
+     * time as Date
+     * </pre>
+     * @return the value of time
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getTime() {
         return time;
@@ -58,11 +58,11 @@ public class PulseRecord implements Serializable {
     
     /**
      * Set the value of the time field.
-    
-    <pre>
-    time as Date
-    </pre>
-    @param time the new value of time
+     * 
+     * <pre>
+     * time as Date
+     * </pre>
+     * @param time the new value of time
      */
     public void setTime(fr.inria.phoenix.diasuite.framework.datatype.date.Date time) {
         this.time = time;

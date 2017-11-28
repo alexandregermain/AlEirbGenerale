@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure AndroidApp {
+ * structure AndroidApp {
  * 	packageName as String;
  * 	versionCode as Integer;
  * }
-</pre>
+ * </pre>
  */
 public class AndroidApp implements Serializable {
     private static final long serialVersionUID = 0;
@@ -18,11 +18,11 @@ public class AndroidApp implements Serializable {
     
     /**
      * Returns the value of the packageName field.
-    
-    <pre>
-    packageName as String
-    </pre>
-    @return the value of packageName
+     * 
+     * <pre>
+     * packageName as String
+     * </pre>
+     * @return the value of packageName
      */
     public java.lang.String getPackageName() {
         return packageName;
@@ -30,11 +30,11 @@ public class AndroidApp implements Serializable {
     
     /**
      * Set the value of the packageName field.
-    
-    <pre>
-    packageName as String
-    </pre>
-    @param packageName the new value of packageName
+     * 
+     * <pre>
+     * packageName as String
+     * </pre>
+     * @param packageName the new value of packageName
      */
     public void setPackageName(java.lang.String packageName) {
         this.packageName = packageName;
@@ -46,11 +46,11 @@ public class AndroidApp implements Serializable {
     
     /**
      * Returns the value of the versionCode field.
-    
-    <pre>
-    versionCode as Integer
-    </pre>
-    @return the value of versionCode
+     * 
+     * <pre>
+     * versionCode as Integer
+     * </pre>
+     * @return the value of versionCode
      */
     public java.lang.Integer getVersionCode() {
         return versionCode;
@@ -58,11 +58,11 @@ public class AndroidApp implements Serializable {
     
     /**
      * Set the value of the versionCode field.
-    
-    <pre>
-    versionCode as Integer
-    </pre>
-    @param versionCode the new value of versionCode
+     * 
+     * <pre>
+     * versionCode as Integer
+     * </pre>
+     * @param versionCode the new value of versionCode
      */
     public void setVersionCode(java.lang.Integer versionCode) {
         this.versionCode = versionCode;

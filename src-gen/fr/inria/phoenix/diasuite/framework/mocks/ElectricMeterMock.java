@@ -67,12 +67,12 @@ public final class ElectricMeterMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public ElectricMeterMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -83,12 +83,12 @@ public final class ElectricMeterMock {
     // Code for the attribute location from device PhysicalDevice
     /**
      * Set the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @param newLocationValue the new value of <code>location</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @param newLocationValue the new value of <code>location</code>
+     * @return this for fluent interface
      */
     public ElectricMeterMock location(java.lang.String newLocationValue) {
         proxy._updateLocation(newLocationValue);
@@ -99,12 +99,12 @@ public final class ElectricMeterMock {
     // Code for the attribute user from device PhysicalDevice
     /**
      * Set the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @param newUserValue the new value of <code>user</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @param newUserValue the new value of <code>user</code>
+     * @return this for fluent interface
      */
     public ElectricMeterMock user(java.lang.String newUserValue) {
         proxy._updateUser(newUserValue);
@@ -115,12 +115,12 @@ public final class ElectricMeterMock {
     // Code for source consumption from device ElectricMeter
     /**
      * Publish the value of source <code>consumption</code> from device <code>ElectricMeter</code>.
-    
-    <pre>
-    source consumption as Float;
-    </pre>
-    @param newConsumptionValue the new value for the source <code>consumption</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source consumption as Float;
+     * </pre>
+     * @param newConsumptionValue the new value for the source <code>consumption</code>
+     * @return this for fluent interface
      */
     public ElectricMeterMock consumption(java.lang.Float newConsumptionValue) {
         proxy._publishConsumption(newConsumptionValue);
@@ -130,12 +130,12 @@ public final class ElectricMeterMock {
     private java.lang.Float __consumption = null;
     /**
      * Set the value (without publication) of source <code>consumption</code> from device <code>ElectricMeter</code>.
-    
-    <pre>
-    source consumption as Float;
-    </pre>
-    @param newConsumptionValue the new value for the source <code>consumption</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source consumption as Float;
+     * </pre>
+     * @param newConsumptionValue the new value for the source <code>consumption</code>
+     * @return this for fluent interface
      */
     public ElectricMeterMock setConsumption(java.lang.Float newConsumptionValue) {
         __consumption = newConsumptionValue;
@@ -146,12 +146,12 @@ public final class ElectricMeterMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public ElectricMeterMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -161,12 +161,12 @@ public final class ElectricMeterMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public ElectricMeterMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;

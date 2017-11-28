@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 /**
  * AR (19/07/17)
-
-<pre>
-structure AgendaEvent {
+ * 
+ * <pre>
+ * structure AgendaEvent {
  * 	title as String;
  * 	description as String;
  * 	startTime as Date;
@@ -15,7 +15,7 @@ structure AgendaEvent {
  * 	calendar as String;
  * 	remindersInMinutes as Integer []; 
  * }
-</pre>
+ * </pre>
  */
 public class AgendaEvent implements Serializable {
     private static final long serialVersionUID = 0;
@@ -25,11 +25,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Returns the value of the title field.
-    
-    <pre>
-    title as String
-    </pre>
-    @return the value of title
+     * 
+     * <pre>
+     * title as String
+     * </pre>
+     * @return the value of title
      */
     public java.lang.String getTitle() {
         return title;
@@ -37,11 +37,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Set the value of the title field.
-    
-    <pre>
-    title as String
-    </pre>
-    @param title the new value of title
+     * 
+     * <pre>
+     * title as String
+     * </pre>
+     * @param title the new value of title
      */
     public void setTitle(java.lang.String title) {
         this.title = title;
@@ -53,11 +53,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Returns the value of the description field.
-    
-    <pre>
-    description as String
-    </pre>
-    @return the value of description
+     * 
+     * <pre>
+     * description as String
+     * </pre>
+     * @return the value of description
      */
     public java.lang.String getDescription() {
         return description;
@@ -65,11 +65,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Set the value of the description field.
-    
-    <pre>
-    description as String
-    </pre>
-    @param description the new value of description
+     * 
+     * <pre>
+     * description as String
+     * </pre>
+     * @param description the new value of description
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
@@ -81,11 +81,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Returns the value of the startTime field.
-    
-    <pre>
-    startTime as Date
-    </pre>
-    @return the value of startTime
+     * 
+     * <pre>
+     * startTime as Date
+     * </pre>
+     * @return the value of startTime
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getStartTime() {
         return startTime;
@@ -93,11 +93,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Set the value of the startTime field.
-    
-    <pre>
-    startTime as Date
-    </pre>
-    @param startTime the new value of startTime
+     * 
+     * <pre>
+     * startTime as Date
+     * </pre>
+     * @param startTime the new value of startTime
      */
     public void setStartTime(fr.inria.phoenix.diasuite.framework.datatype.date.Date startTime) {
         this.startTime = startTime;
@@ -109,11 +109,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Returns the value of the endTime field.
-    
-    <pre>
-    endTime as Date
-    </pre>
-    @return the value of endTime
+     * 
+     * <pre>
+     * endTime as Date
+     * </pre>
+     * @return the value of endTime
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getEndTime() {
         return endTime;
@@ -121,11 +121,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Set the value of the endTime field.
-    
-    <pre>
-    endTime as Date
-    </pre>
-    @param endTime the new value of endTime
+     * 
+     * <pre>
+     * endTime as Date
+     * </pre>
+     * @param endTime the new value of endTime
      */
     public void setEndTime(fr.inria.phoenix.diasuite.framework.datatype.date.Date endTime) {
         this.endTime = endTime;
@@ -137,11 +137,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Returns the value of the place field.
-    
-    <pre>
-    place as String
-    </pre>
-    @return the value of place
+     * 
+     * <pre>
+     * place as String
+     * </pre>
+     * @return the value of place
      */
     public java.lang.String getPlace() {
         return place;
@@ -149,11 +149,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Set the value of the place field.
-    
-    <pre>
-    place as String
-    </pre>
-    @param place the new value of place
+     * 
+     * <pre>
+     * place as String
+     * </pre>
+     * @param place the new value of place
      */
     public void setPlace(java.lang.String place) {
         this.place = place;
@@ -165,11 +165,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Returns the value of the calendar field.
-    
-    <pre>
-    calendar as String
-    </pre>
-    @return the value of calendar
+     * 
+     * <pre>
+     * calendar as String
+     * </pre>
+     * @return the value of calendar
      */
     public java.lang.String getCalendar() {
         return calendar;
@@ -177,11 +177,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Set the value of the calendar field.
-    
-    <pre>
-    calendar as String
-    </pre>
-    @param calendar the new value of calendar
+     * 
+     * <pre>
+     * calendar as String
+     * </pre>
+     * @param calendar the new value of calendar
      */
     public void setCalendar(java.lang.String calendar) {
         this.calendar = calendar;
@@ -193,11 +193,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Returns the value of the remindersInMinutes field.
-    
-    <pre>
-    remindersInMinutes as Integer []
-    </pre>
-    @return the value of remindersInMinutes
+     * 
+     * <pre>
+     * remindersInMinutes as Integer []
+     * </pre>
+     * @return the value of remindersInMinutes
      */
     public java.util.List<java.lang.Integer> getRemindersInMinutes() {
         return remindersInMinutes;
@@ -205,11 +205,11 @@ public class AgendaEvent implements Serializable {
     
     /**
      * Set the value of the remindersInMinutes field.
-    
-    <pre>
-    remindersInMinutes as Integer []
-    </pre>
-    @param remindersInMinutes the new value of remindersInMinutes
+     * 
+     * <pre>
+     * remindersInMinutes as Integer []
+     * </pre>
+     * @param remindersInMinutes the new value of remindersInMinutes
      */
     public void setRemindersInMinutes(java.util.List<java.lang.Integer> remindersInMinutes) {
         this.remindersInMinutes = remindersInMinutes;

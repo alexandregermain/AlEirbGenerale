@@ -70,12 +70,12 @@ public final class TemperatureSensorMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public TemperatureSensorMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -86,12 +86,12 @@ public final class TemperatureSensorMock {
     // Code for the attribute location from device PhysicalDevice
     /**
      * Set the value of the <code>location</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute location as String;
-    </pre>
-    @param newLocationValue the new value of <code>location</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute location as String;
+     * </pre>
+     * @param newLocationValue the new value of <code>location</code>
+     * @return this for fluent interface
      */
     public TemperatureSensorMock location(java.lang.String newLocationValue) {
         proxy._updateLocation(newLocationValue);
@@ -102,12 +102,12 @@ public final class TemperatureSensorMock {
     // Code for the attribute user from device PhysicalDevice
     /**
      * Set the value of the <code>user</code> attribute from device <code>PhysicalDevice</code>.
-    
-    <pre>
-    attribute user as String;
-    </pre>
-    @param newUserValue the new value of <code>user</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute user as String;
+     * </pre>
+     * @param newUserValue the new value of <code>user</code>
+     * @return this for fluent interface
      */
     public TemperatureSensorMock user(java.lang.String newUserValue) {
         proxy._updateUser(newUserValue);
@@ -118,12 +118,12 @@ public final class TemperatureSensorMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public TemperatureSensorMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -133,12 +133,12 @@ public final class TemperatureSensorMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public TemperatureSensorMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -149,13 +149,13 @@ public final class TemperatureSensorMock {
     // Code for source temperature from device TemperatureSensor
     /**
      * Publish the value of source <code>temperature</code> from device <code>TemperatureSensor</code>.
-    
-    <pre>
-    source temperature as Float indexed by unit as TemperatureUnit;
-    </pre>
-    @param newTemperatureValue the new value for the source <code>temperature</code>
-    @param unit the value of the index <code>unit</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source temperature as Float indexed by unit as TemperatureUnit;
+     * </pre>
+     * @param newTemperatureValue the new value for the source <code>temperature</code>
+     * @param unit the value of the index <code>unit</code>
+     * @return this for fluent interface
      */
     public TemperatureSensorMock temperature(java.lang.Float newTemperatureValue,
             fr.inria.phoenix.diasuite.framework.datatype.temperatureunit.TemperatureUnit unit) {
@@ -167,13 +167,13 @@ public final class TemperatureSensorMock {
     private java.util.HashMap<TemperatureIndices, java.lang.Float> __temperature = new java.util.HashMap<TemperatureIndices, java.lang.Float>();
     /**
      * Set the value (without publication) of source <code>temperature</code> from device <code>TemperatureSensor</code>.
-    
-    <pre>
-    source temperature as Float indexed by unit as TemperatureUnit;
-    </pre>
-    @param newTemperatureValue the new value for the source <code>temperature</code>
-    @param unit the value of the index <code>unit</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source temperature as Float indexed by unit as TemperatureUnit;
+     * </pre>
+     * @param newTemperatureValue the new value for the source <code>temperature</code>
+     * @param unit the value of the index <code>unit</code>
+     * @return this for fluent interface
      */
     public TemperatureSensorMock setTemperature(java.lang.Float newTemperatureValue,
             fr.inria.phoenix.diasuite.framework.datatype.temperatureunit.TemperatureUnit unit) {

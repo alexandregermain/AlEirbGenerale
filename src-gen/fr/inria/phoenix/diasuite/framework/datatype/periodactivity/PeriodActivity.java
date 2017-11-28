@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure PeriodActivity {
+ * structure PeriodActivity {
  * 	name as PeriodActivityName;
  * 	period as Period;
  * }
-</pre>
+ * </pre>
  */
 public class PeriodActivity implements Serializable {
     private static final long serialVersionUID = 0;
@@ -18,11 +18,11 @@ public class PeriodActivity implements Serializable {
     
     /**
      * Returns the value of the name field.
-    
-    <pre>
-    name as PeriodActivityName
-    </pre>
-    @return the value of name
+     * 
+     * <pre>
+     * name as PeriodActivityName
+     * </pre>
+     * @return the value of name
      */
     public fr.inria.phoenix.diasuite.framework.datatype.periodactivityname.PeriodActivityName getName() {
         return name;
@@ -30,11 +30,11 @@ public class PeriodActivity implements Serializable {
     
     /**
      * Set the value of the name field.
-    
-    <pre>
-    name as PeriodActivityName
-    </pre>
-    @param name the new value of name
+     * 
+     * <pre>
+     * name as PeriodActivityName
+     * </pre>
+     * @param name the new value of name
      */
     public void setName(fr.inria.phoenix.diasuite.framework.datatype.periodactivityname.PeriodActivityName name) {
         this.name = name;
@@ -46,11 +46,11 @@ public class PeriodActivity implements Serializable {
     
     /**
      * Returns the value of the period field.
-    
-    <pre>
-    period as Period
-    </pre>
-    @return the value of period
+     * 
+     * <pre>
+     * period as Period
+     * </pre>
+     * @return the value of period
      */
     public fr.inria.phoenix.diasuite.framework.datatype.period.Period getPeriod() {
         return period;
@@ -58,11 +58,11 @@ public class PeriodActivity implements Serializable {
     
     /**
      * Set the value of the period field.
-    
-    <pre>
-    period as Period
-    </pre>
-    @param period the new value of period
+     * 
+     * <pre>
+     * period as Period
+     * </pre>
+     * @param period the new value of period
      */
     public void setPeriod(fr.inria.phoenix.diasuite.framework.datatype.period.Period period) {
         this.period = period;

@@ -219,14 +219,14 @@ public final class WhoCaresMock {
     // Code for the attribute date from device WhoCares
     /**
      * Set the value of the <code>date</code> attribute from device <code>WhoCares</code>.
-    <p>
-    Utils
-    
-    <pre>
-    attribute date as Date;
-    </pre>
-    @param newDateValue the new value of <code>date</code>
-    @return this for fluent interface
+     * <p>
+     * Utils
+     * 
+     * <pre>
+     * attribute date as Date;
+     * </pre>
+     * @param newDateValue the new value of <code>date</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock date(fr.inria.phoenix.diasuite.framework.datatype.date.Date newDateValue) {
         proxy._updateDate(newDateValue);
@@ -237,12 +237,12 @@ public final class WhoCaresMock {
     // Code for the attribute day from device WhoCares
     /**
      * Set the value of the <code>day</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute day as Day;
-    </pre>
-    @param newDayValue the new value of <code>day</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute day as Day;
+     * </pre>
+     * @param newDayValue the new value of <code>day</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock day(fr.inria.phoenix.diasuite.framework.datatype.day.Day newDayValue) {
         proxy._updateDay(newDayValue);
@@ -253,12 +253,12 @@ public final class WhoCaresMock {
     // Code for the attribute fileType from device WhoCares
     /**
      * Set the value of the <code>fileType</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute fileType as FileType;
-    </pre>
-    @param newFileTypeValue the new value of <code>fileType</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute fileType as FileType;
+     * </pre>
+     * @param newFileTypeValue the new value of <code>fileType</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock fileType(fr.inria.phoenix.diasuite.framework.datatype.filetype.FileType newFileTypeValue) {
         proxy._updateFileType(newFileTypeValue);
@@ -269,12 +269,12 @@ public final class WhoCaresMock {
     // Code for the attribute file from device WhoCares
     /**
      * Set the value of the <code>file</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute file as File;
-    </pre>
-    @param newFileValue the new value of <code>file</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute file as File;
+     * </pre>
+     * @param newFileValue the new value of <code>file</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock file(fr.inria.phoenix.diasuite.framework.datatype.file.File newFileValue) {
         proxy._updateFile(newFileValue);
@@ -285,14 +285,14 @@ public final class WhoCaresMock {
     // Code for the attribute contact from device WhoCares
     /**
      * Set the value of the <code>contact</code> attribute from device <code>WhoCares</code>.
-    <p>
-    Messengers
-    
-    <pre>
-    attribute contact as Contact;
-    </pre>
-    @param newContactValue the new value of <code>contact</code>
-    @return this for fluent interface
+     * <p>
+     * Messengers
+     * 
+     * <pre>
+     * attribute contact as Contact;
+     * </pre>
+     * @param newContactValue the new value of <code>contact</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock contact(fr.inria.phoenix.diasuite.framework.datatype.contact.Contact newContactValue) {
         proxy._updateContact(newContactValue);
@@ -303,12 +303,12 @@ public final class WhoCaresMock {
     // Code for the attribute message from device WhoCares
     /**
      * Set the value of the <code>message</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute message as Message;
-    </pre>
-    @param newMessageValue the new value of <code>message</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute message as Message;
+     * </pre>
+     * @param newMessageValue the new value of <code>message</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock message(fr.inria.phoenix.diasuite.framework.datatype.message.Message newMessageValue) {
         proxy._updateMessage(newMessageValue);
@@ -319,14 +319,14 @@ public final class WhoCaresMock {
     // Code for the attribute agendatEvent from device WhoCares
     /**
      * Set the value of the <code>agendatEvent</code> attribute from device <code>WhoCares</code>.
-    <p>
-    Home Service
-    
-    <pre>
-    attribute agendatEvent as AgendaEvent;
-    </pre>
-    @param newAgendatEventValue the new value of <code>agendatEvent</code>
-    @return this for fluent interface
+     * <p>
+     * Home Service
+     * 
+     * <pre>
+     * attribute agendatEvent as AgendaEvent;
+     * </pre>
+     * @param newAgendatEventValue the new value of <code>agendatEvent</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock agendatEvent(fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent newAgendatEventValue) {
         proxy._updateAgendatEvent(newAgendatEventValue);
@@ -337,12 +337,12 @@ public final class WhoCaresMock {
     // Code for the attribute notification from device WhoCares
     /**
      * Set the value of the <code>notification</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute notification as NonCriticalNotification;
-    </pre>
-    @param newNotificationValue the new value of <code>notification</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute notification as NonCriticalNotification;
+     * </pre>
+     * @param newNotificationValue the new value of <code>notification</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock notification(fr.inria.phoenix.diasuite.framework.datatype.noncriticalnotification.NonCriticalNotification newNotificationValue) {
         proxy._updateNotification(newNotificationValue);
@@ -353,12 +353,12 @@ public final class WhoCaresMock {
     // Code for the attribute criticalNotification from device WhoCares
     /**
      * Set the value of the <code>criticalNotification</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute criticalNotification as CriticalNotification;
-    </pre>
-    @param newCriticalNotificationValue the new value of <code>criticalNotification</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute criticalNotification as CriticalNotification;
+     * </pre>
+     * @param newCriticalNotificationValue the new value of <code>criticalNotification</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock criticalNotification(fr.inria.phoenix.diasuite.framework.datatype.criticalnotification.CriticalNotification newCriticalNotificationValue) {
         proxy._updateCriticalNotification(newCriticalNotificationValue);
@@ -369,14 +369,14 @@ public final class WhoCaresMock {
     // Code for the attribute doorState from device WhoCares
     /**
      * Set the value of the <code>doorState</code> attribute from device <code>WhoCares</code>.
-    <p>
-    Sensors
-    
-    <pre>
-    attribute doorState as DoorState;
-    </pre>
-    @param newDoorStateValue the new value of <code>doorState</code>
-    @return this for fluent interface
+     * <p>
+     * Sensors
+     * 
+     * <pre>
+     * attribute doorState as DoorState;
+     * </pre>
+     * @param newDoorStateValue the new value of <code>doorState</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock doorState(fr.inria.phoenix.diasuite.framework.datatype.doorstate.DoorState newDoorStateValue) {
         proxy._updateDoorState(newDoorStateValue);
@@ -387,12 +387,12 @@ public final class WhoCaresMock {
     // Code for the attribute temperatureUnit from device WhoCares
     /**
      * Set the value of the <code>temperatureUnit</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute temperatureUnit as TemperatureUnit;
-    </pre>
-    @param newTemperatureUnitValue the new value of <code>temperatureUnit</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute temperatureUnit as TemperatureUnit;
+     * </pre>
+     * @param newTemperatureUnitValue the new value of <code>temperatureUnit</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock temperatureUnit(fr.inria.phoenix.diasuite.framework.datatype.temperatureunit.TemperatureUnit newTemperatureUnitValue) {
         proxy._updateTemperatureUnit(newTemperatureUnitValue);
@@ -403,14 +403,14 @@ public final class WhoCaresMock {
     // Code for the attribute dailyActivityName from device WhoCares
     /**
      * Set the value of the <code>dailyActivityName</code> attribute from device <code>WhoCares</code>.
-    <p>
-    Activity Notifier
-    
-    <pre>
-    attribute dailyActivityName as DailyActivityName;
-    </pre>
-    @param newDailyActivityNameValue the new value of <code>dailyActivityName</code>
-    @return this for fluent interface
+     * <p>
+     * Activity Notifier
+     * 
+     * <pre>
+     * attribute dailyActivityName as DailyActivityName;
+     * </pre>
+     * @param newDailyActivityNameValue the new value of <code>dailyActivityName</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock dailyActivityName(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName newDailyActivityNameValue) {
         proxy._updateDailyActivityName(newDailyActivityNameValue);
@@ -421,12 +421,12 @@ public final class WhoCaresMock {
     // Code for the attribute periodActivityName from device WhoCares
     /**
      * Set the value of the <code>periodActivityName</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute periodActivityName as PeriodActivityName;
-    </pre>
-    @param newPeriodActivityNameValue the new value of <code>periodActivityName</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute periodActivityName as PeriodActivityName;
+     * </pre>
+     * @param newPeriodActivityNameValue the new value of <code>periodActivityName</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock periodActivityName(fr.inria.phoenix.diasuite.framework.datatype.periodactivityname.PeriodActivityName newPeriodActivityNameValue) {
         proxy._updatePeriodActivityName(newPeriodActivityNameValue);
@@ -437,12 +437,12 @@ public final class WhoCaresMock {
     // Code for the attribute dailyActivity from device WhoCares
     /**
      * Set the value of the <code>dailyActivity</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute dailyActivity as DailyActivity;
-    </pre>
-    @param newDailyActivityValue the new value of <code>dailyActivity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute dailyActivity as DailyActivity;
+     * </pre>
+     * @param newDailyActivityValue the new value of <code>dailyActivity</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock dailyActivity(fr.inria.phoenix.diasuite.framework.datatype.dailyactivity.DailyActivity newDailyActivityValue) {
         proxy._updateDailyActivity(newDailyActivityValue);
@@ -453,12 +453,12 @@ public final class WhoCaresMock {
     // Code for the attribute period from device WhoCares
     /**
      * Set the value of the <code>period</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute period as Period;
-    </pre>
-    @param newPeriodValue the new value of <code>period</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute period as Period;
+     * </pre>
+     * @param newPeriodValue the new value of <code>period</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock period(fr.inria.phoenix.diasuite.framework.datatype.period.Period newPeriodValue) {
         proxy._updatePeriod(newPeriodValue);
@@ -469,12 +469,12 @@ public final class WhoCaresMock {
     // Code for the attribute periodActivity from device WhoCares
     /**
      * Set the value of the <code>periodActivity</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute periodActivity as PeriodActivity;
-    </pre>
-    @param newPeriodActivityValue the new value of <code>periodActivity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute periodActivity as PeriodActivity;
+     * </pre>
+     * @param newPeriodActivityValue the new value of <code>periodActivity</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock periodActivity(fr.inria.phoenix.diasuite.framework.datatype.periodactivity.PeriodActivity newPeriodActivityValue) {
         proxy._updatePeriodActivity(newPeriodActivityValue);
@@ -485,12 +485,12 @@ public final class WhoCaresMock {
     // Code for the attribute dailyReport from device WhoCares
     /**
      * Set the value of the <code>dailyReport</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute dailyReport as DailyReport;
-    </pre>
-    @param newDailyReportValue the new value of <code>dailyReport</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute dailyReport as DailyReport;
+     * </pre>
+     * @param newDailyReportValue the new value of <code>dailyReport</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock dailyReport(fr.inria.phoenix.diasuite.framework.datatype.dailyreport.DailyReport newDailyReportValue) {
         proxy._updateDailyReport(newDailyReportValue);
@@ -501,12 +501,12 @@ public final class WhoCaresMock {
     // Code for the attribute statisticReport from device WhoCares
     /**
      * Set the value of the <code>statisticReport</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute statisticReport as StatisticReport;
-    </pre>
-    @param newStatisticReportValue the new value of <code>statisticReport</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute statisticReport as StatisticReport;
+     * </pre>
+     * @param newStatisticReportValue the new value of <code>statisticReport</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock statisticReport(fr.inria.phoenix.diasuite.framework.datatype.statisticreport.StatisticReport newStatisticReportValue) {
         proxy._updateStatisticReport(newStatisticReportValue);
@@ -517,12 +517,12 @@ public final class WhoCaresMock {
     // Code for the attribute periodActivityStats from device WhoCares
     /**
      * Set the value of the <code>periodActivityStats</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute periodActivityStats as PeriodActivityStats;
-    </pre>
-    @param newPeriodActivityStatsValue the new value of <code>periodActivityStats</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute periodActivityStats as PeriodActivityStats;
+     * </pre>
+     * @param newPeriodActivityStatsValue the new value of <code>periodActivityStats</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock periodActivityStats(fr.inria.phoenix.diasuite.framework.datatype.periodactivitystats.PeriodActivityStats newPeriodActivityStatsValue) {
         proxy._updatePeriodActivityStats(newPeriodActivityStatsValue);
@@ -533,12 +533,12 @@ public final class WhoCaresMock {
     // Code for the attribute dailyActivityStats from device WhoCares
     /**
      * Set the value of the <code>dailyActivityStats</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute dailyActivityStats as DailyActivityStats;
-    </pre>
-    @param newDailyActivityStatsValue the new value of <code>dailyActivityStats</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute dailyActivityStats as DailyActivityStats;
+     * </pre>
+     * @param newDailyActivityStatsValue the new value of <code>dailyActivityStats</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock dailyActivityStats(fr.inria.phoenix.diasuite.framework.datatype.dailyactivitystats.DailyActivityStats newDailyActivityStatsValue) {
         proxy._updateDailyActivityStats(newDailyActivityStatsValue);
@@ -549,16 +549,16 @@ public final class WhoCaresMock {
     // Code for the attribute action from device WhoCares
     /**
      * Set the value of the <code>action</code> attribute from device <code>WhoCares</code>.
-    <p>
-    Presence Detector
-    attribute room as Room;
-    Inactivity Sensor
-    
-    <pre>
-    attribute action as Interaction;
-    </pre>
-    @param newActionValue the new value of <code>action</code>
-    @return this for fluent interface
+     * <p>
+     * Presence Detector
+     * attribute room as Room;
+     * Inactivity Sensor
+     * 
+     * <pre>
+     * attribute action as Interaction;
+     * </pre>
+     * @param newActionValue the new value of <code>action</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock action(fr.inria.phoenix.diasuite.framework.datatype.interaction.Interaction newActionValue) {
         proxy._updateAction(newActionValue);
@@ -569,12 +569,12 @@ public final class WhoCaresMock {
     // Code for the attribute actionType from device WhoCares
     /**
      * Set the value of the <code>actionType</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute actionType as InteractionType;
-    </pre>
-    @param newActionTypeValue the new value of <code>actionType</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute actionType as InteractionType;
+     * </pre>
+     * @param newActionTypeValue the new value of <code>actionType</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock actionType(fr.inria.phoenix.diasuite.framework.datatype.interactiontype.InteractionType newActionTypeValue) {
         proxy._updateActionType(newActionTypeValue);
@@ -585,12 +585,12 @@ public final class WhoCaresMock {
     // Code for the attribute dayTime from device WhoCares
     /**
      * Set the value of the <code>dayTime</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute dayTime as DayTime;
-    </pre>
-    @param newDayTimeValue the new value of <code>dayTime</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute dayTime as DayTime;
+     * </pre>
+     * @param newDayTimeValue the new value of <code>dayTime</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock dayTime(fr.inria.phoenix.diasuite.framework.datatype.daytime.DayTime newDayTimeValue) {
         proxy._updateDayTime(newDayTimeValue);
@@ -601,14 +601,14 @@ public final class WhoCaresMock {
     // Code for the attribute battery from device WhoCares
     /**
      * Set the value of the <code>battery</code> attribute from device <code>WhoCares</code>.
-    <p>
-    Android
-    
-    <pre>
-    attribute battery as Battery;
-    </pre>
-    @param newBatteryValue the new value of <code>battery</code>
-    @return this for fluent interface
+     * <p>
+     * Android
+     * 
+     * <pre>
+     * attribute battery as Battery;
+     * </pre>
+     * @param newBatteryValue the new value of <code>battery</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock battery(fr.inria.phoenix.diasuite.framework.datatype.battery.Battery newBatteryValue) {
         proxy._updateBattery(newBatteryValue);
@@ -619,12 +619,12 @@ public final class WhoCaresMock {
     // Code for the attribute androidApp from device WhoCares
     /**
      * Set the value of the <code>androidApp</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute androidApp as AndroidApp;
-    </pre>
-    @param newAndroidAppValue the new value of <code>androidApp</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute androidApp as AndroidApp;
+     * </pre>
+     * @param newAndroidAppValue the new value of <code>androidApp</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock androidApp(fr.inria.phoenix.diasuite.framework.datatype.androidapp.AndroidApp newAndroidAppValue) {
         proxy._updateAndroidApp(newAndroidAppValue);
@@ -635,12 +635,12 @@ public final class WhoCaresMock {
     // Code for the attribute soundLevel from device WhoCares
     /**
      * Set the value of the <code>soundLevel</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute soundLevel as SoundLevel;
-    </pre>
-    @param newSoundLevelValue the new value of <code>soundLevel</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute soundLevel as SoundLevel;
+     * </pre>
+     * @param newSoundLevelValue the new value of <code>soundLevel</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock soundLevel(fr.inria.phoenix.diasuite.framework.datatype.soundlevel.SoundLevel newSoundLevelValue) {
         proxy._updateSoundLevel(newSoundLevelValue);
@@ -651,12 +651,12 @@ public final class WhoCaresMock {
     // Code for the attribute androidIntent from device WhoCares
     /**
      * Set the value of the <code>androidIntent</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute androidIntent as AndroidIntent;
-    </pre>
-    @param newAndroidIntentValue the new value of <code>androidIntent</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute androidIntent as AndroidIntent;
+     * </pre>
+     * @param newAndroidIntentValue the new value of <code>androidIntent</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock androidIntent(fr.inria.phoenix.diasuite.framework.datatype.androidintent.AndroidIntent newAndroidIntentValue) {
         proxy._updateAndroidIntent(newAndroidIntentValue);
@@ -667,12 +667,12 @@ public final class WhoCaresMock {
     // Code for the attribute androidExtraString from device WhoCares
     /**
      * Set the value of the <code>androidExtraString</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute androidExtraString as AndroidExtraString;
-    </pre>
-    @param newAndroidExtraStringValue the new value of <code>androidExtraString</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute androidExtraString as AndroidExtraString;
+     * </pre>
+     * @param newAndroidExtraStringValue the new value of <code>androidExtraString</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock androidExtraString(fr.inria.phoenix.diasuite.framework.datatype.androidextrastring.AndroidExtraString newAndroidExtraStringValue) {
         proxy._updateAndroidExtraString(newAndroidExtraStringValue);
@@ -683,14 +683,14 @@ public final class WhoCaresMock {
     // Code for the attribute pulseRecord from device WhoCares
     /**
      * Set the value of the <code>pulseRecord</code> attribute from device <code>WhoCares</code>.
-    <p>
-    Fitbit
-    
-    <pre>
-    attribute pulseRecord as PulseRecord;
-    </pre>
-    @param newPulseRecordValue the new value of <code>pulseRecord</code>
-    @return this for fluent interface
+     * <p>
+     * Fitbit
+     * 
+     * <pre>
+     * attribute pulseRecord as PulseRecord;
+     * </pre>
+     * @param newPulseRecordValue the new value of <code>pulseRecord</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock pulseRecord(fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord newPulseRecordValue) {
         proxy._updatePulseRecord(newPulseRecordValue);
@@ -701,12 +701,12 @@ public final class WhoCaresMock {
     // Code for the attribute fitibitActivity from device WhoCares
     /**
      * Set the value of the <code>fitibitActivity</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute fitibitActivity as FitbitActivity;
-    </pre>
-    @param newFitibitActivityValue the new value of <code>fitibitActivity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute fitibitActivity as FitbitActivity;
+     * </pre>
+     * @param newFitibitActivityValue the new value of <code>fitibitActivity</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock fitibitActivity(fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity newFitibitActivityValue) {
         proxy._updateFitibitActivity(newFitibitActivityValue);
@@ -717,12 +717,12 @@ public final class WhoCaresMock {
     // Code for the attribute sleepPeriod from device WhoCares
     /**
      * Set the value of the <code>sleepPeriod</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute sleepPeriod as SleepPeriod;
-    </pre>
-    @param newSleepPeriodValue the new value of <code>sleepPeriod</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute sleepPeriod as SleepPeriod;
+     * </pre>
+     * @param newSleepPeriodValue the new value of <code>sleepPeriod</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock sleepPeriod(fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod newSleepPeriodValue) {
         proxy._updateSleepPeriod(newSleepPeriodValue);
@@ -733,12 +733,12 @@ public final class WhoCaresMock {
     // Code for the attribute fitbitAlarm from device WhoCares
     /**
      * Set the value of the <code>fitbitAlarm</code> attribute from device <code>WhoCares</code>.
-    
-    <pre>
-    attribute fitbitAlarm as FitbitAlarm;
-    </pre>
-    @param newFitbitAlarmValue the new value of <code>fitbitAlarm</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute fitbitAlarm as FitbitAlarm;
+     * </pre>
+     * @param newFitbitAlarmValue the new value of <code>fitbitAlarm</code>
+     * @return this for fluent interface
      */
     public WhoCaresMock fitbitAlarm(fr.inria.phoenix.diasuite.framework.datatype.fitbitalarm.FitbitAlarm newFitbitAlarmValue) {
         proxy._updateFitbitAlarm(newFitbitAlarmValue);

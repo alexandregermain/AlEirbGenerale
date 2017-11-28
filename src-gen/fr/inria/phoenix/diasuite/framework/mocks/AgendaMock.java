@@ -129,12 +129,12 @@ public final class AgendaMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public AgendaMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -145,12 +145,12 @@ public final class AgendaMock {
     // Code for the attribute owner from device Agenda
     /**
      * Set the value of the <code>owner</code> attribute from device <code>Agenda</code>.
-    
-    <pre>
-    attribute owner as String;
-    </pre>
-    @param newOwnerValue the new value of <code>owner</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute owner as String;
+     * </pre>
+     * @param newOwnerValue the new value of <code>owner</code>
+     * @return this for fluent interface
      */
     public AgendaMock owner(java.lang.String newOwnerValue) {
         proxy._updateOwner(newOwnerValue);
@@ -161,12 +161,12 @@ public final class AgendaMock {
     // Code for source currentEvents from device Agenda
     /**
      * Publish the value of source <code>currentEvents</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source currentEvents as AgendaEvent [];
-    </pre>
-    @param newCurrentEventsValue the new value for the source <code>currentEvents</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source currentEvents as AgendaEvent [];
+     * </pre>
+     * @param newCurrentEventsValue the new value for the source <code>currentEvents</code>
+     * @return this for fluent interface
      */
     public AgendaMock currentEvents(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> newCurrentEventsValue) {
         proxy._publishCurrentEvents(newCurrentEventsValue);
@@ -176,12 +176,12 @@ public final class AgendaMock {
     private java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> __currentEvents = null;
     /**
      * Set the value (without publication) of source <code>currentEvents</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source currentEvents as AgendaEvent [];
-    </pre>
-    @param newCurrentEventsValue the new value for the source <code>currentEvents</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source currentEvents as AgendaEvent [];
+     * </pre>
+     * @param newCurrentEventsValue the new value for the source <code>currentEvents</code>
+     * @return this for fluent interface
      */
     public AgendaMock setCurrentEvents(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> newCurrentEventsValue) {
         __currentEvents = newCurrentEventsValue;
@@ -192,13 +192,13 @@ public final class AgendaMock {
     // Code for source events from device Agenda
     /**
      * Publish the value of source <code>events</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source events as AgendaEvent [] indexed by filter as AgendaEvent;
-    </pre>
-    @param newEventsValue the new value for the source <code>events</code>
-    @param filter the value of the index <code>filter</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source events as AgendaEvent [] indexed by filter as AgendaEvent;
+     * </pre>
+     * @param newEventsValue the new value for the source <code>events</code>
+     * @param filter the value of the index <code>filter</code>
+     * @return this for fluent interface
      */
     public AgendaMock events(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> newEventsValue,
             fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent filter) {
@@ -210,13 +210,13 @@ public final class AgendaMock {
     private java.util.HashMap<EventsIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent>> __events = new java.util.HashMap<EventsIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent>>();
     /**
      * Set the value (without publication) of source <code>events</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source events as AgendaEvent [] indexed by filter as AgendaEvent;
-    </pre>
-    @param newEventsValue the new value for the source <code>events</code>
-    @param filter the value of the index <code>filter</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source events as AgendaEvent [] indexed by filter as AgendaEvent;
+     * </pre>
+     * @param newEventsValue the new value for the source <code>events</code>
+     * @param filter the value of the index <code>filter</code>
+     * @return this for fluent interface
      */
     public AgendaMock setEvents(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> newEventsValue,
             fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent filter) {
@@ -229,12 +229,12 @@ public final class AgendaMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public AgendaMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -244,12 +244,12 @@ public final class AgendaMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public AgendaMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -260,12 +260,12 @@ public final class AgendaMock {
     // Code for source nextEvent from device Agenda
     /**
      * Publish the value of source <code>nextEvent</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source nextEvent as AgendaEvent;
-    </pre>
-    @param newNextEventValue the new value for the source <code>nextEvent</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source nextEvent as AgendaEvent;
+     * </pre>
+     * @param newNextEventValue the new value for the source <code>nextEvent</code>
+     * @return this for fluent interface
      */
     public AgendaMock nextEvent(fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent newNextEventValue) {
         proxy._publishNextEvent(newNextEventValue);
@@ -275,12 +275,12 @@ public final class AgendaMock {
     private fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent __nextEvent = null;
     /**
      * Set the value (without publication) of source <code>nextEvent</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source nextEvent as AgendaEvent;
-    </pre>
-    @param newNextEventValue the new value for the source <code>nextEvent</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source nextEvent as AgendaEvent;
+     * </pre>
+     * @param newNextEventValue the new value for the source <code>nextEvent</code>
+     * @return this for fluent interface
      */
     public AgendaMock setNextEvent(fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent newNextEventValue) {
         __nextEvent = newNextEventValue;
@@ -291,12 +291,12 @@ public final class AgendaMock {
     // Code for source nextEvents from device Agenda
     /**
      * Publish the value of source <code>nextEvents</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source nextEvents as AgendaEvent [];
-    </pre>
-    @param newNextEventsValue the new value for the source <code>nextEvents</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source nextEvents as AgendaEvent [];
+     * </pre>
+     * @param newNextEventsValue the new value for the source <code>nextEvents</code>
+     * @return this for fluent interface
      */
     public AgendaMock nextEvents(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> newNextEventsValue) {
         proxy._publishNextEvents(newNextEventsValue);
@@ -306,12 +306,12 @@ public final class AgendaMock {
     private java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> __nextEvents = null;
     /**
      * Set the value (without publication) of source <code>nextEvents</code> from device <code>Agenda</code>.
-    
-    <pre>
-    source nextEvents as AgendaEvent [];
-    </pre>
-    @param newNextEventsValue the new value for the source <code>nextEvents</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source nextEvents as AgendaEvent [];
+     * </pre>
+     * @param newNextEventsValue the new value for the source <code>nextEvents</code>
+     * @return this for fluent interface
      */
     public AgendaMock setNextEvents(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.agendaevent.AgendaEvent> newNextEventsValue) {
         __nextEvents = newNextEventsValue;
@@ -325,10 +325,10 @@ public final class AgendaMock {
      * Check that the <code>addEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda was called.
      * 
-    
-    <pre>
-    addEvent(event as AgendaEvent);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * addEvent(event as AgendaEvent);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectAddEvent() {
         try {
@@ -352,10 +352,10 @@ public final class AgendaMock {
      * Check that the <code>addEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda was called.
      * 
-    
-    <pre>
-    addEvent(event as AgendaEvent);
-    </pre>
+     * 
+     * <pre>
+     * addEvent(event as AgendaEvent);
+     * </pre>
      * @param event parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -384,10 +384,10 @@ public final class AgendaMock {
      * Check that the <code>removeEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda was called.
      * 
-    
-    <pre>
-    removeEvent(event as AgendaEvent);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * removeEvent(event as AgendaEvent);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectRemoveEvent() {
         try {
@@ -411,10 +411,10 @@ public final class AgendaMock {
      * Check that the <code>removeEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda was called.
      * 
-    
-    <pre>
-    removeEvent(event as AgendaEvent);
-    </pre>
+     * 
+     * <pre>
+     * removeEvent(event as AgendaEvent);
+     * </pre>
      * @param event parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -443,10 +443,10 @@ public final class AgendaMock {
      * Check that the <code>replaceEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda was called.
      * 
-    
-    <pre>
-    replaceEvent(oldEvent as AgendaEvent, newEvent as AgendaEvent);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * replaceEvent(oldEvent as AgendaEvent, newEvent as AgendaEvent);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectReplaceEvent() {
         try {
@@ -470,10 +470,10 @@ public final class AgendaMock {
      * Check that the <code>replaceEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda was called.
      * 
-    
-    <pre>
-    replaceEvent(oldEvent as AgendaEvent, newEvent as AgendaEvent);
-    </pre>
+     * 
+     * <pre>
+     * replaceEvent(oldEvent as AgendaEvent, newEvent as AgendaEvent);
+     * </pre>
      * @param oldEvent parameter 1 of the order.
      *     @return true if the action happened with the given parameters, remaining parameters are ignored
      */
@@ -501,10 +501,10 @@ public final class AgendaMock {
      * Check that the <code>replaceEvent</code> order from the <code>AgendaEventAction</code> action
      * defined in device Agenda was called.
      * 
-    
-    <pre>
-    replaceEvent(oldEvent as AgendaEvent, newEvent as AgendaEvent);
-    </pre>
+     * 
+     * <pre>
+     * replaceEvent(oldEvent as AgendaEvent, newEvent as AgendaEvent);
+     * </pre>
      * @param oldEvent parameter 1 of the order.
      * @param newEvent parameter 2 of the order.
      *     @return true if the action happened with the given parameters

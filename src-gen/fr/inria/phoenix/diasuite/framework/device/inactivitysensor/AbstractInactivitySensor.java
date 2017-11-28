@@ -7,34 +7,34 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * ------------------------------------------------------------
-Presence Detector					||
-------------------------------------------------------------
-enumeration Room {
-ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
-}
-
-device IndoorLocationDetector extends SoftwareSensor {
-// AR (14/02/17)
-source currentRoom as Room;
-action SetLocation;
-}
-
-action SetLocation {
-setLocation(location as Room);
-resetLocation();
-}
-------------------------------------------------------------
-InactivitySensor					||
-------------------------------------------------------------
-AR (01/08/17)
-
-<pre>
-device InactivitySensor extends SoftwareSensor {
+ * Presence Detector					||
+ * ------------------------------------------------------------
+ * enumeration Room {
+ * ENTRANCE, BEDROOM, KITCHEN, BATHROOM, LIVING, TOILET
+ * }
+ * 
+ * device IndoorLocationDetector extends SoftwareSensor {
+ * // AR (14/02/17)
+ * source currentRoom as Room;
+ * action SetLocation;
+ * }
+ * 
+ * action SetLocation {
+ * setLocation(location as Room);
+ * resetLocation();
+ * }
+ * ------------------------------------------------------------
+ * InactivitySensor					||
+ * ------------------------------------------------------------
+ * AR (01/08/17)
+ * 
+ * <pre>
+ * device InactivitySensor extends SoftwareSensor {
  * 	source inactivityLevel as Float;
  * 	source lastInteraction as Interaction;
  * 	action UpdateInactivityLevel;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractInactivitySensor extends Service {
     
@@ -94,11 +94,11 @@ public abstract class AbstractInactivitySensor extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -109,11 +109,11 @@ public abstract class AbstractInactivitySensor extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -125,11 +125,11 @@ public abstract class AbstractInactivitySensor extends Service {
     
     /**
      * Publish the value of source <code>inactivityLevel</code> from device <code>InactivitySensor</code>.
-    
-    <pre>
-    source inactivityLevel as Float;
-    </pre>
-    @param newInactivityLevelValue the new value for the source <code>inactivityLevel</code>
+     * 
+     * <pre>
+     * source inactivityLevel as Float;
+     * </pre>
+     * @param newInactivityLevelValue the new value for the source <code>inactivityLevel</code>
      */
     protected void publishInactivityLevel(java.lang.Float newInactivityLevelValue) {
         _inactivityLevel = newInactivityLevelValue;
@@ -138,11 +138,11 @@ public abstract class AbstractInactivitySensor extends Service {
     
     /**
      * Returns the value of source <code>inactivityLevel</code> from device <code>InactivitySensor</code>.
-    
-    <pre>
-    source inactivityLevel as Float;
-    </pre>
-    @return the value of the source <code>inactivityLevel</code>
+     * 
+     * <pre>
+     * source inactivityLevel as Float;
+     * </pre>
+     * @return the value of the source <code>inactivityLevel</code>
      */
     protected java.lang.Float getInactivityLevel() throws Exception {
         return _inactivityLevel;
@@ -154,11 +154,11 @@ public abstract class AbstractInactivitySensor extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -167,11 +167,11 @@ public abstract class AbstractInactivitySensor extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -183,11 +183,11 @@ public abstract class AbstractInactivitySensor extends Service {
     
     /**
      * Publish the value of source <code>lastInteraction</code> from device <code>InactivitySensor</code>.
-    
-    <pre>
-    source lastInteraction as Interaction;
-    </pre>
-    @param newLastInteractionValue the new value for the source <code>lastInteraction</code>
+     * 
+     * <pre>
+     * source lastInteraction as Interaction;
+     * </pre>
+     * @param newLastInteractionValue the new value for the source <code>lastInteraction</code>
      */
     protected void publishLastInteraction(fr.inria.phoenix.diasuite.framework.datatype.interaction.Interaction newLastInteractionValue) {
         _lastInteraction = newLastInteractionValue;
@@ -196,11 +196,11 @@ public abstract class AbstractInactivitySensor extends Service {
     
     /**
      * Returns the value of source <code>lastInteraction</code> from device <code>InactivitySensor</code>.
-    
-    <pre>
-    source lastInteraction as Interaction;
-    </pre>
-    @return the value of the source <code>lastInteraction</code>
+     * 
+     * <pre>
+     * source lastInteraction as Interaction;
+     * </pre>
+     * @return the value of the source <code>lastInteraction</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.interaction.Interaction getLastInteraction() throws Exception {
         return _lastInteraction;
@@ -211,10 +211,10 @@ public abstract class AbstractInactivitySensor extends Service {
      * Implement this method to define the <code>updateInactivityLevel</code> order from the <code>UpdateInactivityLevel</code> action
      * defined in device InactivitySensor.
      * 
-    
-    <pre>
-    updateInactivityLevel(level as Float);
-    </pre>
+     * 
+     * <pre>
+     * updateInactivityLevel(level as Float);
+     * </pre>
      * @param level parameter 1 of the order.
      */
     protected abstract void updateInactivityLevel(java.lang.Float level) throws Exception;
@@ -223,10 +223,10 @@ public abstract class AbstractInactivitySensor extends Service {
      * Implement this method to define the <code>updateLastInteraction</code> order from the <code>UpdateInactivityLevel</code> action
      * defined in device InactivitySensor.
      * 
-    
-    <pre>
-    updateLastInteraction(lastInteraction as Interaction);
-    </pre>
+     * 
+     * <pre>
+     * updateLastInteraction(lastInteraction as Interaction);
+     * </pre>
      * @param lastInteraction parameter 1 of the order.
      */
     protected abstract void updateLastInteraction(fr.inria.phoenix.diasuite.framework.datatype.interaction.Interaction lastInteraction) throws Exception;

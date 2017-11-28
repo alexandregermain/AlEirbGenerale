@@ -11,12 +11,12 @@ import fr.inria.phoenix.diasuite.framework.context.lunchalarmcontext.LunchAlarmC
 
 /**
  * <pre>
-controller LampSuccessController{
+ * controller LampSuccessController{
  *   when provided LunchAlarmContext
  *     do On on Light, 
  *        Off on Light;
  * }
-</pre>
+ * </pre>
  */
 @SuppressWarnings("all")
 public abstract class AbstractLampSuccessController extends Service {
@@ -83,15 +83,15 @@ public abstract class AbstractLampSuccessController extends Service {
     /**
      * Discover object that will exposes the <code>Light</code> devices to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    <p>
-    ------
-    Light
-    ------
-    
-    <pre>
-    device Light extends Appliance {
+     * <p>
+     * ------
+     * Light
+     * ------
+     * 
+     * <pre>
+     * device Light extends Appliance {
      * }
-    </pre>
+     * </pre>
      */
     protected final static class LightDiscovererForLunchAlarmContext {
         private Service serviceParent;
@@ -157,15 +157,15 @@ public abstract class AbstractLampSuccessController extends Service {
     /**
      * A composite of several <code>Light</code> devices to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    <p>
-    ------
-    Light
-    ------
-    
-    <pre>
-    device Light extends Appliance {
+     * <p>
+     * ------
+     * Light
+     * ------
+     * 
+     * <pre>
+     * device Light extends Appliance {
      * }
-    </pre>
+     * </pre>
      */
     protected final static class LightCompositeForLunchAlarmContext extends fr.inria.diagen.core.service.composite.Composite<LightProxyForLunchAlarmContext> {
         private LightCompositeForLunchAlarmContext(Service serviceParent) {
@@ -234,15 +234,15 @@ public abstract class AbstractLampSuccessController extends Service {
     /**
      * A proxy to one <code>Light</code> device to execute action on for the
      * <code>when provided LunchAlarmContext</code> interaction contract.
-    <p>
-    ------
-    Light
-    ------
-    
-    <pre>
-    device Light extends Appliance {
+     * <p>
+     * ------
+     * Light
+     * ------
+     * 
+     * <pre>
+     * device Light extends Appliance {
      * }
-    </pre>
+     * </pre>
      */
     protected final static class LightProxyForLunchAlarmContext extends Proxy {
         private LightProxyForLunchAlarmContext(Service service, RemoteServiceInfo remoteServiceInfo) {

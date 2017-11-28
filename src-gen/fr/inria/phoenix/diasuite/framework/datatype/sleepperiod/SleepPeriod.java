@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure SleepPeriod {
+ * structure SleepPeriod {
  * 	efficiency as Float;
  * 	duration as Integer;
  * 	timeToFallAsleep as Integer;
@@ -13,7 +13,7 @@ structure SleepPeriod {
  * 	timeAfterWakeup as Integer;
  * 	timeInBed as Integer;
  * }
-</pre>
+ * </pre>
  */
 public class SleepPeriod implements Serializable {
     private static final long serialVersionUID = 0;
@@ -23,11 +23,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Returns the value of the efficiency field.
-    
-    <pre>
-    efficiency as Float
-    </pre>
-    @return the value of efficiency
+     * 
+     * <pre>
+     * efficiency as Float
+     * </pre>
+     * @return the value of efficiency
      */
     public java.lang.Float getEfficiency() {
         return efficiency;
@@ -35,11 +35,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Set the value of the efficiency field.
-    
-    <pre>
-    efficiency as Float
-    </pre>
-    @param efficiency the new value of efficiency
+     * 
+     * <pre>
+     * efficiency as Float
+     * </pre>
+     * @param efficiency the new value of efficiency
      */
     public void setEfficiency(java.lang.Float efficiency) {
         this.efficiency = efficiency;
@@ -51,11 +51,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Returns the value of the duration field.
-    
-    <pre>
-    duration as Integer
-    </pre>
-    @return the value of duration
+     * 
+     * <pre>
+     * duration as Integer
+     * </pre>
+     * @return the value of duration
      */
     public java.lang.Integer getDuration() {
         return duration;
@@ -63,11 +63,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Set the value of the duration field.
-    
-    <pre>
-    duration as Integer
-    </pre>
-    @param duration the new value of duration
+     * 
+     * <pre>
+     * duration as Integer
+     * </pre>
+     * @param duration the new value of duration
      */
     public void setDuration(java.lang.Integer duration) {
         this.duration = duration;
@@ -79,11 +79,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Returns the value of the timeToFallAsleep field.
-    
-    <pre>
-    timeToFallAsleep as Integer
-    </pre>
-    @return the value of timeToFallAsleep
+     * 
+     * <pre>
+     * timeToFallAsleep as Integer
+     * </pre>
+     * @return the value of timeToFallAsleep
      */
     public java.lang.Integer getTimeToFallAsleep() {
         return timeToFallAsleep;
@@ -91,11 +91,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Set the value of the timeToFallAsleep field.
-    
-    <pre>
-    timeToFallAsleep as Integer
-    </pre>
-    @param timeToFallAsleep the new value of timeToFallAsleep
+     * 
+     * <pre>
+     * timeToFallAsleep as Integer
+     * </pre>
+     * @param timeToFallAsleep the new value of timeToFallAsleep
      */
     public void setTimeToFallAsleep(java.lang.Integer timeToFallAsleep) {
         this.timeToFallAsleep = timeToFallAsleep;
@@ -107,11 +107,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Returns the value of the timeAsleep field.
-    
-    <pre>
-    timeAsleep as Integer
-    </pre>
-    @return the value of timeAsleep
+     * 
+     * <pre>
+     * timeAsleep as Integer
+     * </pre>
+     * @return the value of timeAsleep
      */
     public java.lang.Integer getTimeAsleep() {
         return timeAsleep;
@@ -119,11 +119,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Set the value of the timeAsleep field.
-    
-    <pre>
-    timeAsleep as Integer
-    </pre>
-    @param timeAsleep the new value of timeAsleep
+     * 
+     * <pre>
+     * timeAsleep as Integer
+     * </pre>
+     * @param timeAsleep the new value of timeAsleep
      */
     public void setTimeAsleep(java.lang.Integer timeAsleep) {
         this.timeAsleep = timeAsleep;
@@ -135,11 +135,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Returns the value of the timeAwake field.
-    
-    <pre>
-    timeAwake as Integer
-    </pre>
-    @return the value of timeAwake
+     * 
+     * <pre>
+     * timeAwake as Integer
+     * </pre>
+     * @return the value of timeAwake
      */
     public java.lang.Integer getTimeAwake() {
         return timeAwake;
@@ -147,11 +147,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Set the value of the timeAwake field.
-    
-    <pre>
-    timeAwake as Integer
-    </pre>
-    @param timeAwake the new value of timeAwake
+     * 
+     * <pre>
+     * timeAwake as Integer
+     * </pre>
+     * @param timeAwake the new value of timeAwake
      */
     public void setTimeAwake(java.lang.Integer timeAwake) {
         this.timeAwake = timeAwake;
@@ -163,11 +163,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Returns the value of the timeAfterWakeup field.
-    
-    <pre>
-    timeAfterWakeup as Integer
-    </pre>
-    @return the value of timeAfterWakeup
+     * 
+     * <pre>
+     * timeAfterWakeup as Integer
+     * </pre>
+     * @return the value of timeAfterWakeup
      */
     public java.lang.Integer getTimeAfterWakeup() {
         return timeAfterWakeup;
@@ -175,11 +175,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Set the value of the timeAfterWakeup field.
-    
-    <pre>
-    timeAfterWakeup as Integer
-    </pre>
-    @param timeAfterWakeup the new value of timeAfterWakeup
+     * 
+     * <pre>
+     * timeAfterWakeup as Integer
+     * </pre>
+     * @param timeAfterWakeup the new value of timeAfterWakeup
      */
     public void setTimeAfterWakeup(java.lang.Integer timeAfterWakeup) {
         this.timeAfterWakeup = timeAfterWakeup;
@@ -191,11 +191,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Returns the value of the timeInBed field.
-    
-    <pre>
-    timeInBed as Integer
-    </pre>
-    @return the value of timeInBed
+     * 
+     * <pre>
+     * timeInBed as Integer
+     * </pre>
+     * @return the value of timeInBed
      */
     public java.lang.Integer getTimeInBed() {
         return timeInBed;
@@ -203,11 +203,11 @@ public class SleepPeriod implements Serializable {
     
     /**
      * Set the value of the timeInBed field.
-    
-    <pre>
-    timeInBed as Integer
-    </pre>
-    @param timeInBed the new value of timeInBed
+     * 
+     * <pre>
+     * timeInBed as Integer
+     * </pre>
+     * @param timeInBed the new value of timeInBed
      */
     public void setTimeInBed(java.lang.Integer timeInBed) {
         this.timeInBed = timeInBed;

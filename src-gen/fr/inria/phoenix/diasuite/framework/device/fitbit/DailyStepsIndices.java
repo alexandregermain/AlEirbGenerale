@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>dailySteps</code> from device <code>Fitbit</code>.
-<p>
-steps
-
-<pre>
-source dailySteps as Integer indexed by day as Date;
-</pre>
+ * <p>
+ * steps
+ * 
+ * <pre>
+ * source dailySteps as Integer indexed by day as Date;
+ * </pre>
  */
 public final class DailyStepsIndices implements Serializable {
     private static final long serialVersionUID = 0;

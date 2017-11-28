@@ -65,12 +65,12 @@ public final class SMSSenderMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public SMSSenderMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -81,12 +81,12 @@ public final class SMSSenderMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public SMSSenderMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -96,12 +96,12 @@ public final class SMSSenderMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public SMSSenderMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -112,12 +112,12 @@ public final class SMSSenderMock {
     // Code for source lastMessage from device Messenger
     /**
      * Publish the value of source <code>lastMessage</code> from device <code>Messenger</code>.
-    
-    <pre>
-    source lastMessage as Message;
-    </pre>
-    @param newLastMessageValue the new value for the source <code>lastMessage</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source lastMessage as Message;
+     * </pre>
+     * @param newLastMessageValue the new value for the source <code>lastMessage</code>
+     * @return this for fluent interface
      */
     public SMSSenderMock lastMessage(fr.inria.phoenix.diasuite.framework.datatype.message.Message newLastMessageValue) {
         proxy._publishLastMessage(newLastMessageValue);
@@ -127,12 +127,12 @@ public final class SMSSenderMock {
     private fr.inria.phoenix.diasuite.framework.datatype.message.Message __lastMessage = null;
     /**
      * Set the value (without publication) of source <code>lastMessage</code> from device <code>Messenger</code>.
-    
-    <pre>
-    source lastMessage as Message;
-    </pre>
-    @param newLastMessageValue the new value for the source <code>lastMessage</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source lastMessage as Message;
+     * </pre>
+     * @param newLastMessageValue the new value for the source <code>lastMessage</code>
+     * @return this for fluent interface
      */
     public SMSSenderMock setLastMessage(fr.inria.phoenix.diasuite.framework.datatype.message.Message newLastMessageValue) {
         __lastMessage = newLastMessageValue;
@@ -146,10 +146,10 @@ public final class SMSSenderMock {
      * Check that the <code>sendMessage</code> order from the <code>SendMessage</code> action
      * defined in device Messenger was called.
      * 
-    
-    <pre>
-    sendMessage(message as Message);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * sendMessage(message as Message);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectSendMessage() {
         try {
@@ -173,10 +173,10 @@ public final class SMSSenderMock {
      * Check that the <code>sendMessage</code> order from the <code>SendMessage</code> action
      * defined in device Messenger was called.
      * 
-    
-    <pre>
-    sendMessage(message as Message);
-    </pre>
+     * 
+     * <pre>
+     * sendMessage(message as Message);
+     * </pre>
      * @param message parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */

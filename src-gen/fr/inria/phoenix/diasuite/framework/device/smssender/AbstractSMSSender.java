@@ -7,9 +7,9 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * <pre>
-device SMSSender extends Messenger {
+ * device SMSSender extends Messenger {
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractSMSSender extends Service {
     
@@ -62,11 +62,11 @@ public abstract class AbstractSMSSender extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -77,11 +77,11 @@ public abstract class AbstractSMSSender extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -93,11 +93,11 @@ public abstract class AbstractSMSSender extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -106,11 +106,11 @@ public abstract class AbstractSMSSender extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -122,11 +122,11 @@ public abstract class AbstractSMSSender extends Service {
     
     /**
      * Publish the value of source <code>lastMessage</code> from device <code>Messenger</code>.
-    
-    <pre>
-    source lastMessage as Message;
-    </pre>
-    @param newLastMessageValue the new value for the source <code>lastMessage</code>
+     * 
+     * <pre>
+     * source lastMessage as Message;
+     * </pre>
+     * @param newLastMessageValue the new value for the source <code>lastMessage</code>
      */
     protected void publishLastMessage(fr.inria.phoenix.diasuite.framework.datatype.message.Message newLastMessageValue) {
         _lastMessage = newLastMessageValue;
@@ -135,11 +135,11 @@ public abstract class AbstractSMSSender extends Service {
     
     /**
      * Returns the value of source <code>lastMessage</code> from device <code>Messenger</code>.
-    
-    <pre>
-    source lastMessage as Message;
-    </pre>
-    @return the value of the source <code>lastMessage</code>
+     * 
+     * <pre>
+     * source lastMessage as Message;
+     * </pre>
+     * @return the value of the source <code>lastMessage</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.message.Message getLastMessage() throws Exception {
         return _lastMessage;
@@ -150,10 +150,10 @@ public abstract class AbstractSMSSender extends Service {
      * Implement this method to define the <code>sendMessage</code> order from the <code>SendMessage</code> action
      * defined in device Messenger.
      * 
-    
-    <pre>
-    sendMessage(message as Message);
-    </pre>
+     * 
+     * <pre>
+     * sendMessage(message as Message);
+     * </pre>
      * @param message parameter 1 of the order.
      */
     protected abstract void sendMessage(fr.inria.phoenix.diasuite.framework.datatype.message.Message message) throws Exception;

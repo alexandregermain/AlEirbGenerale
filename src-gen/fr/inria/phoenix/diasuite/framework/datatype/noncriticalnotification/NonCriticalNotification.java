@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure NonCriticalNotification {
+ * structure NonCriticalNotification {
  * 	id as String;
  * 	title as String;
  * 	text as String;
  * 	answers as String [];
  * 	silent as Boolean;
  * }
-</pre>
+ * </pre>
  */
 public class NonCriticalNotification implements Serializable {
     private static final long serialVersionUID = 0;
@@ -21,11 +21,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Returns the value of the id field.
-    
-    <pre>
-    id as String
-    </pre>
-    @return the value of id
+     * 
+     * <pre>
+     * id as String
+     * </pre>
+     * @return the value of id
      */
     public java.lang.String getId() {
         return id;
@@ -33,11 +33,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Set the value of the id field.
-    
-    <pre>
-    id as String
-    </pre>
-    @param id the new value of id
+     * 
+     * <pre>
+     * id as String
+     * </pre>
+     * @param id the new value of id
      */
     public void setId(java.lang.String id) {
         this.id = id;
@@ -49,11 +49,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Returns the value of the title field.
-    
-    <pre>
-    title as String
-    </pre>
-    @return the value of title
+     * 
+     * <pre>
+     * title as String
+     * </pre>
+     * @return the value of title
      */
     public java.lang.String getTitle() {
         return title;
@@ -61,11 +61,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Set the value of the title field.
-    
-    <pre>
-    title as String
-    </pre>
-    @param title the new value of title
+     * 
+     * <pre>
+     * title as String
+     * </pre>
+     * @param title the new value of title
      */
     public void setTitle(java.lang.String title) {
         this.title = title;
@@ -77,11 +77,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Returns the value of the text field.
-    
-    <pre>
-    text as String
-    </pre>
-    @return the value of text
+     * 
+     * <pre>
+     * text as String
+     * </pre>
+     * @return the value of text
      */
     public java.lang.String getText() {
         return text;
@@ -89,11 +89,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Set the value of the text field.
-    
-    <pre>
-    text as String
-    </pre>
-    @param text the new value of text
+     * 
+     * <pre>
+     * text as String
+     * </pre>
+     * @param text the new value of text
      */
     public void setText(java.lang.String text) {
         this.text = text;
@@ -105,11 +105,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Returns the value of the answers field.
-    
-    <pre>
-    answers as String []
-    </pre>
-    @return the value of answers
+     * 
+     * <pre>
+     * answers as String []
+     * </pre>
+     * @return the value of answers
      */
     public java.util.List<java.lang.String> getAnswers() {
         return answers;
@@ -117,11 +117,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Set the value of the answers field.
-    
-    <pre>
-    answers as String []
-    </pre>
-    @param answers the new value of answers
+     * 
+     * <pre>
+     * answers as String []
+     * </pre>
+     * @param answers the new value of answers
      */
     public void setAnswers(java.util.List<java.lang.String> answers) {
         this.answers = answers;
@@ -133,11 +133,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Returns the value of the silent field.
-    
-    <pre>
-    silent as Boolean
-    </pre>
-    @return the value of silent
+     * 
+     * <pre>
+     * silent as Boolean
+     * </pre>
+     * @return the value of silent
      */
     public java.lang.Boolean getSilent() {
         return silent;
@@ -145,11 +145,11 @@ public class NonCriticalNotification implements Serializable {
     
     /**
      * Set the value of the silent field.
-    
-    <pre>
-    silent as Boolean
-    </pre>
-    @param silent the new value of silent
+     * 
+     * <pre>
+     * silent as Boolean
+     * </pre>
+     * @param silent the new value of silent
      */
     public void setSilent(java.lang.Boolean silent) {
         this.silent = silent;

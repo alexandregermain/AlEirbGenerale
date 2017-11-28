@@ -7,16 +7,16 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * ------------------------------------------------------------
-ActivityNotifier					||
-------------------------------------------------------------
-
-<pre>
-device ActivityNotifier extends SoftwareSensor {
+ * ActivityNotifier					||
+ * ------------------------------------------------------------
+ * 
+ * <pre>
+ * device ActivityNotifier extends SoftwareSensor {
  * 	source dailyActivity as DailyActivity;
  * 	source periodActivity as PeriodActivity;
  * 	action NotifyActivity;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractActivityNotifier extends Service {
     
@@ -76,11 +76,11 @@ public abstract class AbstractActivityNotifier extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -91,11 +91,11 @@ public abstract class AbstractActivityNotifier extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -107,11 +107,11 @@ public abstract class AbstractActivityNotifier extends Service {
     
     /**
      * Publish the value of source <code>dailyActivity</code> from device <code>ActivityNotifier</code>.
-    
-    <pre>
-    source dailyActivity as DailyActivity;
-    </pre>
-    @param newDailyActivityValue the new value for the source <code>dailyActivity</code>
+     * 
+     * <pre>
+     * source dailyActivity as DailyActivity;
+     * </pre>
+     * @param newDailyActivityValue the new value for the source <code>dailyActivity</code>
      */
     protected void publishDailyActivity(fr.inria.phoenix.diasuite.framework.datatype.dailyactivity.DailyActivity newDailyActivityValue) {
         _dailyActivity = newDailyActivityValue;
@@ -120,11 +120,11 @@ public abstract class AbstractActivityNotifier extends Service {
     
     /**
      * Returns the value of source <code>dailyActivity</code> from device <code>ActivityNotifier</code>.
-    
-    <pre>
-    source dailyActivity as DailyActivity;
-    </pre>
-    @return the value of the source <code>dailyActivity</code>
+     * 
+     * <pre>
+     * source dailyActivity as DailyActivity;
+     * </pre>
+     * @return the value of the source <code>dailyActivity</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.dailyactivity.DailyActivity getDailyActivity() throws Exception {
         return _dailyActivity;
@@ -136,11 +136,11 @@ public abstract class AbstractActivityNotifier extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -149,11 +149,11 @@ public abstract class AbstractActivityNotifier extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -165,11 +165,11 @@ public abstract class AbstractActivityNotifier extends Service {
     
     /**
      * Publish the value of source <code>periodActivity</code> from device <code>ActivityNotifier</code>.
-    
-    <pre>
-    source periodActivity as PeriodActivity;
-    </pre>
-    @param newPeriodActivityValue the new value for the source <code>periodActivity</code>
+     * 
+     * <pre>
+     * source periodActivity as PeriodActivity;
+     * </pre>
+     * @param newPeriodActivityValue the new value for the source <code>periodActivity</code>
      */
     protected void publishPeriodActivity(fr.inria.phoenix.diasuite.framework.datatype.periodactivity.PeriodActivity newPeriodActivityValue) {
         _periodActivity = newPeriodActivityValue;
@@ -178,11 +178,11 @@ public abstract class AbstractActivityNotifier extends Service {
     
     /**
      * Returns the value of source <code>periodActivity</code> from device <code>ActivityNotifier</code>.
-    
-    <pre>
-    source periodActivity as PeriodActivity;
-    </pre>
-    @return the value of the source <code>periodActivity</code>
+     * 
+     * <pre>
+     * source periodActivity as PeriodActivity;
+     * </pre>
+     * @return the value of the source <code>periodActivity</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.periodactivity.PeriodActivity getPeriodActivity() throws Exception {
         return _periodActivity;
@@ -193,10 +193,10 @@ public abstract class AbstractActivityNotifier extends Service {
      * Implement this method to define the <code>notifyDailyActivity</code> order from the <code>NotifyActivity</code> action
      * defined in device ActivityNotifier.
      * 
-    
-    <pre>
-    notifyDailyActivity(activity as DailyActivity);
-    </pre>
+     * 
+     * <pre>
+     * notifyDailyActivity(activity as DailyActivity);
+     * </pre>
      * @param activity parameter 1 of the order.
      */
     protected abstract void notifyDailyActivity(fr.inria.phoenix.diasuite.framework.datatype.dailyactivity.DailyActivity activity) throws Exception;
@@ -205,10 +205,10 @@ public abstract class AbstractActivityNotifier extends Service {
      * Implement this method to define the <code>notifyPeriodActivity</code> order from the <code>NotifyActivity</code> action
      * defined in device ActivityNotifier.
      * 
-    
-    <pre>
-    notifyPeriodActivity(activity as PeriodActivity);
-    </pre>
+     * 
+     * <pre>
+     * notifyPeriodActivity(activity as PeriodActivity);
+     * </pre>
      * @param activity parameter 1 of the order.
      */
     protected abstract void notifyPeriodActivity(fr.inria.phoenix.diasuite.framework.datatype.periodactivity.PeriodActivity activity) throws Exception;

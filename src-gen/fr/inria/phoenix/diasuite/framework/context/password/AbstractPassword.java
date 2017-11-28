@@ -11,12 +11,12 @@ import fr.inria.phoenix.diasuite.framework.device.appliance.OnFromAppliance;
 
 /**
  * <pre>
-context Password as Boolean {
+ * context Password as Boolean {
  *     when provided on from Appliance
  *     get on from Appliance, contact from ContactSensor
- *     always publish;
+ *     maybe publish;
  * }
-</pre>
+ * </pre>
  */
 @SuppressWarnings("all")
 public abstract class AbstractPassword extends Service {
@@ -42,7 +42,10 @@ public abstract class AbstractPassword extends Service {
         if (eventName.equals("on") && source.isCompatible("/Device/Device/PhysicalDevice/Appliance/")) {
             OnFromAppliance onFromAppliance = new OnFromAppliance(this, source, (java.lang.Boolean) value);
             
-            setPassword(onOnFromAppliance(onFromAppliance, new DiscoverForOnFromAppliance()));
+            PasswordValuePublishable returnValue = onOnFromAppliance(onFromAppliance, new DiscoverForOnFromAppliance());
+            if(returnValue != null && returnValue.doPublish()) {
+                setPassword(returnValue.getValue());
+            }
         }
     }
     
@@ -72,41 +75,90 @@ public abstract class AbstractPassword extends Service {
     protected final java.lang.Boolean getLastValue() {
         return contextValue;
     }
+    
+    /**
+     * A class that represents a value that might be published for the <code>Password</code> context. It is used by
+     * event methods that might or might not publish values for this context.
+     */
+    protected final static class PasswordValuePublishable {
+        
+        // The value of the context
+        private java.lang.Boolean value;
+        // Whether the value should be published or not
+        private boolean doPublish;
+        
+        public PasswordValuePublishable(java.lang.Boolean value, boolean doPublish) {
+            this.value = value;
+            this.doPublish = doPublish;
+        }
+        
+        /**
+         * @return the value of the context that might be published
+         */
+        public java.lang.Boolean getValue() {
+            return value;
+        }
+        
+        /**
+         * Sets the value that might be published
+         * 
+         * @param value the value that will be published if {@link #doPublish()} returns true
+         */
+        public void setValue(java.lang.Boolean value) {
+            this.value = value;
+        }
+        
+        /**
+         * @return true if the value should be published
+         */
+        public boolean doPublish() {
+            return doPublish;
+        }
+        
+        /**
+         * Set the value to be publishable or not
+         * 
+         * @param doPublish if true, the value will be published
+         */
+        public void setDoPublish(boolean doPublish) {
+            this.doPublish = doPublish;
+        }
+    }
     // End of code relative to the return value of the context
     
     // Interaction contract implementation
     /**
      * This method is called when a <code>Appliance</code> device on which we have subscribed publish on its <code>on</code> source.
-    
-    <pre>
-    when provided on from Appliance
+     * 
+     * <pre>
+     * when provided on from Appliance
      *     get on from Appliance, contact from ContactSensor
-     *     always publish;
-    </pre>
+     *     maybe publish;
+     * </pre>
      * 
      * @param onFromAppliance the value of the <code>on</code> source and the <code>Appliance</code> device that published the value.
      * @param discover a discover object to get value from devices and contexts
-     * @return the value to publish
+     * @return a {@link PasswordValuePublishable} that says if the context should publish a value and which value it should publish
      */
-    protected abstract java.lang.Boolean onOnFromAppliance(OnFromAppliance onFromAppliance, DiscoverForOnFromAppliance discover);
+    protected abstract PasswordValuePublishable onOnFromAppliance(OnFromAppliance onFromAppliance, DiscoverForOnFromAppliance discover);
     
     // End of interaction contract implementation
     
     // Discover part for Appliance devices
     /**
      * Use this object to discover Appliance devices.
-    <p>
-    ------------------------------------------------------------
-    Appliances						||
-    ------------------------------------------------------------
-    
-    <pre>
-    device Appliance extends PhysicalDevice {
+     * <p>
+     * ------------------------------------------------------------
+     * Appliances						||
+     * ------------------------------------------------------------
+     * 
+     * <pre>
+     * device Appliance extends PhysicalDevice {
      * 	source on as Boolean;
      * 	action On;
      * 	action Off;
      * }
-    </pre>
+     * </pre>
      * 
      * @see ApplianceDiscoverer
      */
@@ -114,18 +166,18 @@ public abstract class AbstractPassword extends Service {
     
     /**
      * Discover object that will exposes the <code>Appliance</code> devices that can be discovered
-    <p>
-    ------------------------------------------------------------
-    Appliances						||
-    ------------------------------------------------------------
-    
-    <pre>
-    device Appliance extends PhysicalDevice {
+     * <p>
+     * ------------------------------------------------------------
+     * Appliances						||
+     * ------------------------------------------------------------
+     * 
+     * <pre>
+     * device Appliance extends PhysicalDevice {
      * 	source on as Boolean;
      * 	action On;
      * 	action Off;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ApplianceDiscoverer {
         private Service serviceParent;
@@ -190,18 +242,18 @@ public abstract class AbstractPassword extends Service {
     
     /**
      * A composite of several <code>Appliance</code> devices
-    <p>
-    ------------------------------------------------------------
-    Appliances						||
-    ------------------------------------------------------------
-    
-    <pre>
-    device Appliance extends PhysicalDevice {
+     * <p>
+     * ------------------------------------------------------------
+     * Appliances						||
+     * ------------------------------------------------------------
+     * 
+     * <pre>
+     * device Appliance extends PhysicalDevice {
      * 	source on as Boolean;
      * 	action On;
      * 	action Off;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ApplianceComposite extends fr.inria.diagen.core.service.composite.Composite<ApplianceProxy> {
         private ApplianceComposite(Service serviceParent) {
@@ -265,18 +317,18 @@ public abstract class AbstractPassword extends Service {
     
     /**
      * A proxy to one <code>Appliance</code> device
-    <p>
-    ------------------------------------------------------------
-    Appliances						||
-    ------------------------------------------------------------
-    
-    <pre>
-    device Appliance extends PhysicalDevice {
+     * <p>
+     * ------------------------------------------------------------
+     * Appliances						||
+     * ------------------------------------------------------------
+     * 
+     * <pre>
+     * device Appliance extends PhysicalDevice {
      * 	source on as Boolean;
      * 	action On;
      * 	action Off;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ApplianceProxy extends Proxy {
         private ApplianceProxy(Service service, RemoteServiceInfo remoteServiceInfo) {
@@ -329,7 +381,7 @@ public abstract class AbstractPassword extends Service {
      * <code>
      * when provided on from Appliance
      *     get on from Appliance, contact from ContactSensor
-     *     always publish;
+     *     maybe publish;
      * </code>
      */
     protected final class DiscoverForOnFromAppliance {
@@ -354,18 +406,18 @@ public abstract class AbstractPassword extends Service {
     /**
      * Discover object that will exposes the <code>Appliance</code> devices to get their sources for the
      * <code>when provided on from Appliance</code> interaction contract.
-    <p>
-    ------------------------------------------------------------
-    Appliances						||
-    ------------------------------------------------------------
-    
-    <pre>
-    device Appliance extends PhysicalDevice {
+     * <p>
+     * ------------------------------------------------------------
+     * Appliances						||
+     * ------------------------------------------------------------
+     * 
+     * <pre>
+     * device Appliance extends PhysicalDevice {
      * 	source on as Boolean;
      * 	action On;
      * 	action Off;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ApplianceDiscovererForOnFromAppliance {
         private Service serviceParent;
@@ -431,18 +483,18 @@ public abstract class AbstractPassword extends Service {
     /**
      * A composite of several <code>Appliance</code> devices to get their sources for the
      * <code>when provided on from Appliance</code> interaction contract.
-    <p>
-    ------------------------------------------------------------
-    Appliances						||
-    ------------------------------------------------------------
-    
-    <pre>
-    device Appliance extends PhysicalDevice {
+     * <p>
+     * ------------------------------------------------------------
+     * Appliances						||
+     * ------------------------------------------------------------
+     * 
+     * <pre>
+     * device Appliance extends PhysicalDevice {
      * 	source on as Boolean;
      * 	action On;
      * 	action Off;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ApplianceCompositeForOnFromAppliance extends fr.inria.diagen.core.service.composite.Composite<ApplianceProxyForOnFromAppliance> {
         private ApplianceCompositeForOnFromAppliance(Service serviceParent) {
@@ -491,18 +543,18 @@ public abstract class AbstractPassword extends Service {
     /**
      * A proxy to one <code>Appliance</code> device to get its sources for the
      * <code>when provided on from Appliance</code> interaction contract.
-    <p>
-    ------------------------------------------------------------
-    Appliances						||
-    ------------------------------------------------------------
-    
-    <pre>
-    device Appliance extends PhysicalDevice {
+     * <p>
+     * ------------------------------------------------------------
+     * Appliances						||
+     * ------------------------------------------------------------
+     * 
+     * <pre>
+     * device Appliance extends PhysicalDevice {
      * 	source on as Boolean;
      * 	action On;
      * 	action Off;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ApplianceProxyForOnFromAppliance extends Proxy {
         private ApplianceProxyForOnFromAppliance(Service service, RemoteServiceInfo remoteServiceInfo) {
@@ -543,12 +595,12 @@ public abstract class AbstractPassword extends Service {
     /**
      * Discover object that will exposes the <code>ContactSensor</code> devices to get their sources for the
      * <code>when provided on from Appliance</code> interaction contract.
-    
-    <pre>
-    device ContactSensor extends Sensor {
+     * 
+     * <pre>
+     * device ContactSensor extends Sensor {
      * 	source contact as Boolean;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ContactSensorDiscovererForOnFromAppliance {
         private Service serviceParent;
@@ -614,12 +666,12 @@ public abstract class AbstractPassword extends Service {
     /**
      * A composite of several <code>ContactSensor</code> devices to get their sources for the
      * <code>when provided on from Appliance</code> interaction contract.
-    
-    <pre>
-    device ContactSensor extends Sensor {
+     * 
+     * <pre>
+     * device ContactSensor extends Sensor {
      * 	source contact as Boolean;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ContactSensorCompositeForOnFromAppliance extends fr.inria.diagen.core.service.composite.Composite<ContactSensorProxyForOnFromAppliance> {
         private ContactSensorCompositeForOnFromAppliance(Service serviceParent) {
@@ -668,12 +720,12 @@ public abstract class AbstractPassword extends Service {
     /**
      * A proxy to one <code>ContactSensor</code> device to get its sources for the
      * <code>when provided on from Appliance</code> interaction contract.
-    
-    <pre>
-    device ContactSensor extends Sensor {
+     * 
+     * <pre>
+     * device ContactSensor extends Sensor {
      * 	source contact as Boolean;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ContactSensorProxyForOnFromAppliance extends Proxy {
         private ContactSensorProxyForOnFromAppliance(Service service, RemoteServiceInfo remoteServiceInfo) {

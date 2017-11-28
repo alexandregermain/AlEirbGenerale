@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure File {
+ * structure File {
  * 	name as String;
  * 	type as FileType;
  * 	size as Integer;
  * 	content as Binary;
  * }
-</pre>
+ * </pre>
  */
 public class File implements Serializable {
     private static final long serialVersionUID = 0;
@@ -20,11 +20,11 @@ public class File implements Serializable {
     
     /**
      * Returns the value of the name field.
-    
-    <pre>
-    name as String
-    </pre>
-    @return the value of name
+     * 
+     * <pre>
+     * name as String
+     * </pre>
+     * @return the value of name
      */
     public java.lang.String getName() {
         return name;
@@ -32,11 +32,11 @@ public class File implements Serializable {
     
     /**
      * Set the value of the name field.
-    
-    <pre>
-    name as String
-    </pre>
-    @param name the new value of name
+     * 
+     * <pre>
+     * name as String
+     * </pre>
+     * @param name the new value of name
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -48,11 +48,11 @@ public class File implements Serializable {
     
     /**
      * Returns the value of the type field.
-    
-    <pre>
-    type as FileType
-    </pre>
-    @return the value of type
+     * 
+     * <pre>
+     * type as FileType
+     * </pre>
+     * @return the value of type
      */
     public fr.inria.phoenix.diasuite.framework.datatype.filetype.FileType getType() {
         return type;
@@ -60,11 +60,11 @@ public class File implements Serializable {
     
     /**
      * Set the value of the type field.
-    
-    <pre>
-    type as FileType
-    </pre>
-    @param type the new value of type
+     * 
+     * <pre>
+     * type as FileType
+     * </pre>
+     * @param type the new value of type
      */
     public void setType(fr.inria.phoenix.diasuite.framework.datatype.filetype.FileType type) {
         this.type = type;
@@ -76,11 +76,11 @@ public class File implements Serializable {
     
     /**
      * Returns the value of the size field.
-    
-    <pre>
-    size as Integer
-    </pre>
-    @return the value of size
+     * 
+     * <pre>
+     * size as Integer
+     * </pre>
+     * @return the value of size
      */
     public java.lang.Integer getSize() {
         return size;
@@ -88,11 +88,11 @@ public class File implements Serializable {
     
     /**
      * Set the value of the size field.
-    
-    <pre>
-    size as Integer
-    </pre>
-    @param size the new value of size
+     * 
+     * <pre>
+     * size as Integer
+     * </pre>
+     * @param size the new value of size
      */
     public void setSize(java.lang.Integer size) {
         this.size = size;
@@ -104,11 +104,11 @@ public class File implements Serializable {
     
     /**
      * Returns the value of the content field.
-    
-    <pre>
-    content as Binary
-    </pre>
-    @return the value of content
+     * 
+     * <pre>
+     * content as Binary
+     * </pre>
+     * @return the value of content
      */
     public byte[] getContent() {
         return content;
@@ -116,11 +116,11 @@ public class File implements Serializable {
     
     /**
      * Set the value of the content field.
-    
-    <pre>
-    content as Binary
-    </pre>
-    @param content the new value of content
+     * 
+     * <pre>
+     * content as Binary
+     * </pre>
+     * @param content the new value of content
      */
     public void setContent(byte[] content) {
         this.content = content;

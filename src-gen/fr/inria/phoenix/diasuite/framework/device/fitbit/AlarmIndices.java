@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>alarm</code> from device <code>Fitbit</code>.
-<p>
-alarm
-
-<pre>
-source alarm as FitbitAlarm indexed by alarmId as String;
-</pre>
+ * <p>
+ * alarm
+ * 
+ * <pre>
+ * source alarm as FitbitAlarm indexed by alarmId as String;
+ * </pre>
  */
 public final class AlarmIndices implements Serializable {
     private static final long serialVersionUID = 0;

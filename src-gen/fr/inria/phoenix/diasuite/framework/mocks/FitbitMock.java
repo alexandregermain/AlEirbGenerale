@@ -2,15 +2,15 @@ package fr.inria.phoenix.diasuite.framework.mocks;
 
 import fr.inria.diagen.core.ServiceConfiguration;
 import fr.inria.phoenix.diasuite.framework.device.fitbit.AbstractFitbit;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.ActivitiesBetweenIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyActivitiesIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.StepsBetweenIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyPulsesIndices;
 import fr.inria.phoenix.diasuite.framework.device.fitbit.SleepPeriodsBetweenIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.DailySleepPeriodsIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.AlarmIndices;
 import fr.inria.phoenix.diasuite.framework.device.fitbit.PulsesBetweenIndices;
 import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyStepsIndices;
-import fr.inria.phoenix.diasuite.framework.device.fitbit.AlarmIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.StepsBetweenIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyActivitiesIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.DailyPulsesIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.DailySleepPeriodsIndices;
+import fr.inria.phoenix.diasuite.framework.device.fitbit.ActivitiesBetweenIndices;
 
 // @internal
 public final class FitbitMock {
@@ -202,12 +202,12 @@ public final class FitbitMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public FitbitMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -218,14 +218,14 @@ public final class FitbitMock {
     // Code for source activitiesBetween from device Fitbit
     /**
      * Publish the value of source <code>activitiesBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newActivitiesBetweenValue the new value for the source <code>activitiesBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newActivitiesBetweenValue the new value for the source <code>activitiesBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return this for fluent interface
      */
     public FitbitMock activitiesBetween(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity> newActivitiesBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -239,14 +239,14 @@ public final class FitbitMock {
     private java.util.HashMap<ActivitiesBetweenIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity>> __activitiesBetween = new java.util.HashMap<ActivitiesBetweenIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity>>();
     /**
      * Set the value (without publication) of source <code>activitiesBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newActivitiesBetweenValue the new value for the source <code>activitiesBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newActivitiesBetweenValue the new value for the source <code>activitiesBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return this for fluent interface
      */
     public FitbitMock setActivitiesBetween(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity> newActivitiesBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -260,15 +260,15 @@ public final class FitbitMock {
     // Code for source alarm from device Fitbit
     /**
      * Publish the value of source <code>alarm</code> from device <code>Fitbit</code>.
-    <p>
-    alarm
-    
-    <pre>
-    source alarm as FitbitAlarm indexed by alarmId as String;
-    </pre>
-    @param newAlarmValue the new value for the source <code>alarm</code>
-    @param alarmId the value of the index <code>alarmId</code>
-    @return this for fluent interface
+     * <p>
+     * alarm
+     * 
+     * <pre>
+     * source alarm as FitbitAlarm indexed by alarmId as String;
+     * </pre>
+     * @param newAlarmValue the new value for the source <code>alarm</code>
+     * @param alarmId the value of the index <code>alarmId</code>
+     * @return this for fluent interface
      */
     public FitbitMock alarm(fr.inria.phoenix.diasuite.framework.datatype.fitbitalarm.FitbitAlarm newAlarmValue,
             java.lang.String alarmId) {
@@ -280,15 +280,15 @@ public final class FitbitMock {
     private java.util.HashMap<AlarmIndices, fr.inria.phoenix.diasuite.framework.datatype.fitbitalarm.FitbitAlarm> __alarm = new java.util.HashMap<AlarmIndices, fr.inria.phoenix.diasuite.framework.datatype.fitbitalarm.FitbitAlarm>();
     /**
      * Set the value (without publication) of source <code>alarm</code> from device <code>Fitbit</code>.
-    <p>
-    alarm
-    
-    <pre>
-    source alarm as FitbitAlarm indexed by alarmId as String;
-    </pre>
-    @param newAlarmValue the new value for the source <code>alarm</code>
-    @param alarmId the value of the index <code>alarmId</code>
-    @return this for fluent interface
+     * <p>
+     * alarm
+     * 
+     * <pre>
+     * source alarm as FitbitAlarm indexed by alarmId as String;
+     * </pre>
+     * @param newAlarmValue the new value for the source <code>alarm</code>
+     * @param alarmId the value of the index <code>alarmId</code>
+     * @return this for fluent interface
      */
     public FitbitMock setAlarm(fr.inria.phoenix.diasuite.framework.datatype.fitbitalarm.FitbitAlarm newAlarmValue,
             java.lang.String alarmId) {
@@ -301,15 +301,15 @@ public final class FitbitMock {
     // Code for source dailyActivities from device Fitbit
     /**
      * Publish the value of source <code>dailyActivities</code> from device <code>Fitbit</code>.
-    <p>
-    activities
-    
-    <pre>
-    source dailyActivities as FitbitActivity [] indexed by day as Date;
-    </pre>
-    @param newDailyActivitiesValue the new value for the source <code>dailyActivities</code>
-    @param day the value of the index <code>day</code>
-    @return this for fluent interface
+     * <p>
+     * activities
+     * 
+     * <pre>
+     * source dailyActivities as FitbitActivity [] indexed by day as Date;
+     * </pre>
+     * @param newDailyActivitiesValue the new value for the source <code>dailyActivities</code>
+     * @param day the value of the index <code>day</code>
+     * @return this for fluent interface
      */
     public FitbitMock dailyActivities(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity> newDailyActivitiesValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -321,15 +321,15 @@ public final class FitbitMock {
     private java.util.HashMap<DailyActivitiesIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity>> __dailyActivities = new java.util.HashMap<DailyActivitiesIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity>>();
     /**
      * Set the value (without publication) of source <code>dailyActivities</code> from device <code>Fitbit</code>.
-    <p>
-    activities
-    
-    <pre>
-    source dailyActivities as FitbitActivity [] indexed by day as Date;
-    </pre>
-    @param newDailyActivitiesValue the new value for the source <code>dailyActivities</code>
-    @param day the value of the index <code>day</code>
-    @return this for fluent interface
+     * <p>
+     * activities
+     * 
+     * <pre>
+     * source dailyActivities as FitbitActivity [] indexed by day as Date;
+     * </pre>
+     * @param newDailyActivitiesValue the new value for the source <code>dailyActivities</code>
+     * @param day the value of the index <code>day</code>
+     * @return this for fluent interface
      */
     public FitbitMock setDailyActivities(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity> newDailyActivitiesValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -342,15 +342,15 @@ public final class FitbitMock {
     // Code for source dailyPulses from device Fitbit
     /**
      * Publish the value of source <code>dailyPulses</code> from device <code>Fitbit</code>.
-    <p>
-    pulses
-    
-    <pre>
-    source dailyPulses as PulseRecord [] indexed by day as Date;
-    </pre>
-    @param newDailyPulsesValue the new value for the source <code>dailyPulses</code>
-    @param day the value of the index <code>day</code>
-    @return this for fluent interface
+     * <p>
+     * pulses
+     * 
+     * <pre>
+     * source dailyPulses as PulseRecord [] indexed by day as Date;
+     * </pre>
+     * @param newDailyPulsesValue the new value for the source <code>dailyPulses</code>
+     * @param day the value of the index <code>day</code>
+     * @return this for fluent interface
      */
     public FitbitMock dailyPulses(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord> newDailyPulsesValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -362,15 +362,15 @@ public final class FitbitMock {
     private java.util.HashMap<DailyPulsesIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord>> __dailyPulses = new java.util.HashMap<DailyPulsesIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord>>();
     /**
      * Set the value (without publication) of source <code>dailyPulses</code> from device <code>Fitbit</code>.
-    <p>
-    pulses
-    
-    <pre>
-    source dailyPulses as PulseRecord [] indexed by day as Date;
-    </pre>
-    @param newDailyPulsesValue the new value for the source <code>dailyPulses</code>
-    @param day the value of the index <code>day</code>
-    @return this for fluent interface
+     * <p>
+     * pulses
+     * 
+     * <pre>
+     * source dailyPulses as PulseRecord [] indexed by day as Date;
+     * </pre>
+     * @param newDailyPulsesValue the new value for the source <code>dailyPulses</code>
+     * @param day the value of the index <code>day</code>
+     * @return this for fluent interface
      */
     public FitbitMock setDailyPulses(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord> newDailyPulsesValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -383,15 +383,15 @@ public final class FitbitMock {
     // Code for source dailySleepPeriods from device Fitbit
     /**
      * Publish the value of source <code>dailySleepPeriods</code> from device <code>Fitbit</code>.
-    <p>
-    sleep
-    
-    <pre>
-    source dailySleepPeriods as SleepPeriod [] indexed by day as Date;
-    </pre>
-    @param newDailySleepPeriodsValue the new value for the source <code>dailySleepPeriods</code>
-    @param day the value of the index <code>day</code>
-    @return this for fluent interface
+     * <p>
+     * sleep
+     * 
+     * <pre>
+     * source dailySleepPeriods as SleepPeriod [] indexed by day as Date;
+     * </pre>
+     * @param newDailySleepPeriodsValue the new value for the source <code>dailySleepPeriods</code>
+     * @param day the value of the index <code>day</code>
+     * @return this for fluent interface
      */
     public FitbitMock dailySleepPeriods(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod> newDailySleepPeriodsValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -403,15 +403,15 @@ public final class FitbitMock {
     private java.util.HashMap<DailySleepPeriodsIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod>> __dailySleepPeriods = new java.util.HashMap<DailySleepPeriodsIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod>>();
     /**
      * Set the value (without publication) of source <code>dailySleepPeriods</code> from device <code>Fitbit</code>.
-    <p>
-    sleep
-    
-    <pre>
-    source dailySleepPeriods as SleepPeriod [] indexed by day as Date;
-    </pre>
-    @param newDailySleepPeriodsValue the new value for the source <code>dailySleepPeriods</code>
-    @param day the value of the index <code>day</code>
-    @return this for fluent interface
+     * <p>
+     * sleep
+     * 
+     * <pre>
+     * source dailySleepPeriods as SleepPeriod [] indexed by day as Date;
+     * </pre>
+     * @param newDailySleepPeriodsValue the new value for the source <code>dailySleepPeriods</code>
+     * @param day the value of the index <code>day</code>
+     * @return this for fluent interface
      */
     public FitbitMock setDailySleepPeriods(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod> newDailySleepPeriodsValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -424,15 +424,15 @@ public final class FitbitMock {
     // Code for source dailySteps from device Fitbit
     /**
      * Publish the value of source <code>dailySteps</code> from device <code>Fitbit</code>.
-    <p>
-    steps
-    
-    <pre>
-    source dailySteps as Integer indexed by day as Date;
-    </pre>
-    @param newDailyStepsValue the new value for the source <code>dailySteps</code>
-    @param day the value of the index <code>day</code>
-    @return this for fluent interface
+     * <p>
+     * steps
+     * 
+     * <pre>
+     * source dailySteps as Integer indexed by day as Date;
+     * </pre>
+     * @param newDailyStepsValue the new value for the source <code>dailySteps</code>
+     * @param day the value of the index <code>day</code>
+     * @return this for fluent interface
      */
     public FitbitMock dailySteps(java.lang.Integer newDailyStepsValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -444,15 +444,15 @@ public final class FitbitMock {
     private java.util.HashMap<DailyStepsIndices, java.lang.Integer> __dailySteps = new java.util.HashMap<DailyStepsIndices, java.lang.Integer>();
     /**
      * Set the value (without publication) of source <code>dailySteps</code> from device <code>Fitbit</code>.
-    <p>
-    steps
-    
-    <pre>
-    source dailySteps as Integer indexed by day as Date;
-    </pre>
-    @param newDailyStepsValue the new value for the source <code>dailySteps</code>
-    @param day the value of the index <code>day</code>
-    @return this for fluent interface
+     * <p>
+     * steps
+     * 
+     * <pre>
+     * source dailySteps as Integer indexed by day as Date;
+     * </pre>
+     * @param newDailyStepsValue the new value for the source <code>dailySteps</code>
+     * @param day the value of the index <code>day</code>
+     * @return this for fluent interface
      */
     public FitbitMock setDailySteps(java.lang.Integer newDailyStepsValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -465,12 +465,12 @@ public final class FitbitMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public FitbitMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -480,12 +480,12 @@ public final class FitbitMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public FitbitMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -496,14 +496,14 @@ public final class FitbitMock {
     // Code for source pulsesBetween from device Fitbit
     /**
      * Publish the value of source <code>pulsesBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newPulsesBetweenValue the new value for the source <code>pulsesBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newPulsesBetweenValue the new value for the source <code>pulsesBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return this for fluent interface
      */
     public FitbitMock pulsesBetween(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord> newPulsesBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -517,14 +517,14 @@ public final class FitbitMock {
     private java.util.HashMap<PulsesBetweenIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord>> __pulsesBetween = new java.util.HashMap<PulsesBetweenIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord>>();
     /**
      * Set the value (without publication) of source <code>pulsesBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newPulsesBetweenValue the new value for the source <code>pulsesBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newPulsesBetweenValue the new value for the source <code>pulsesBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return this for fluent interface
      */
     public FitbitMock setPulsesBetween(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord> newPulsesBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -538,14 +538,14 @@ public final class FitbitMock {
     // Code for source sleepPeriodsBetween from device Fitbit
     /**
      * Publish the value of source <code>sleepPeriodsBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newSleepPeriodsBetweenValue the new value for the source <code>sleepPeriodsBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newSleepPeriodsBetweenValue the new value for the source <code>sleepPeriodsBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return this for fluent interface
      */
     public FitbitMock sleepPeriodsBetween(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod> newSleepPeriodsBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -559,14 +559,14 @@ public final class FitbitMock {
     private java.util.HashMap<SleepPeriodsBetweenIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod>> __sleepPeriodsBetween = new java.util.HashMap<SleepPeriodsBetweenIndices, java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod>>();
     /**
      * Set the value (without publication) of source <code>sleepPeriodsBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newSleepPeriodsBetweenValue the new value for the source <code>sleepPeriodsBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newSleepPeriodsBetweenValue the new value for the source <code>sleepPeriodsBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return this for fluent interface
      */
     public FitbitMock setSleepPeriodsBetween(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod> newSleepPeriodsBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -580,14 +580,14 @@ public final class FitbitMock {
     // Code for source stepsBetween from device Fitbit
     /**
      * Publish the value of source <code>stepsBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source stepsBetween as Integer indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newStepsBetweenValue the new value for the source <code>stepsBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source stepsBetween as Integer indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newStepsBetweenValue the new value for the source <code>stepsBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return this for fluent interface
      */
     public FitbitMock stepsBetween(java.lang.Integer newStepsBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -601,14 +601,14 @@ public final class FitbitMock {
     private java.util.HashMap<StepsBetweenIndices, java.lang.Integer> __stepsBetween = new java.util.HashMap<StepsBetweenIndices, java.lang.Integer>();
     /**
      * Set the value (without publication) of source <code>stepsBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source stepsBetween as Integer indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newStepsBetweenValue the new value for the source <code>stepsBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source stepsBetween as Integer indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newStepsBetweenValue the new value for the source <code>stepsBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return this for fluent interface
      */
     public FitbitMock setStepsBetween(java.lang.Integer newStepsBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -625,10 +625,10 @@ public final class FitbitMock {
      * Check that the <code>addAlarm</code> order from the <code>ScheduleAlarm</code> action
      * defined in device Fitbit was called.
      * 
-    
-    <pre>
-    addAlarm(alarm as FitbitAlarm);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * addAlarm(alarm as FitbitAlarm);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectAddAlarm() {
         try {
@@ -652,10 +652,10 @@ public final class FitbitMock {
      * Check that the <code>addAlarm</code> order from the <code>ScheduleAlarm</code> action
      * defined in device Fitbit was called.
      * 
-    
-    <pre>
-    addAlarm(alarm as FitbitAlarm);
-    </pre>
+     * 
+     * <pre>
+     * addAlarm(alarm as FitbitAlarm);
+     * </pre>
      * @param alarm parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -684,10 +684,10 @@ public final class FitbitMock {
      * Check that the <code>removeAlarm</code> order from the <code>ScheduleAlarm</code> action
      * defined in device Fitbit was called.
      * 
-    
-    <pre>
-    removeAlarm(alarmId as String);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * removeAlarm(alarmId as String);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectRemoveAlarm() {
         try {
@@ -711,10 +711,10 @@ public final class FitbitMock {
      * Check that the <code>removeAlarm</code> order from the <code>ScheduleAlarm</code> action
      * defined in device Fitbit was called.
      * 
-    
-    <pre>
-    removeAlarm(alarmId as String);
-    </pre>
+     * 
+     * <pre>
+     * removeAlarm(alarmId as String);
+     * </pre>
      * @param alarmId parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */

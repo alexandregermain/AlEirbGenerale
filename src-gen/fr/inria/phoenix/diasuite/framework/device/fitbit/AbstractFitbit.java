@@ -7,11 +7,11 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * ------------------------------------------------------------
-Fitbit							||
-------------------------------------------------------------
-
-<pre>
-device Fitbit extends Device {
+ * Fitbit							||
+ * ------------------------------------------------------------
+ * 
+ * <pre>
+ * device Fitbit extends Device {
  * 	source dailyPulses as PulseRecord [] indexed by day as Date;
  * 	source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
  * 	source dailySteps as Integer indexed by day as Date;
@@ -23,7 +23,7 @@ device Fitbit extends Device {
  * 	source alarm as FitbitAlarm indexed by alarmId as String;
  * 	action ScheduleAlarm;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractFitbit extends Service {
     
@@ -108,11 +108,11 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -123,11 +123,11 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -139,13 +139,13 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>activitiesBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newActivitiesBetweenValue the new value for the source <code>activitiesBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
+     * 
+     * <pre>
+     * source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newActivitiesBetweenValue the new value for the source <code>activitiesBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
      */
     protected void publishActivitiesBetween(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity> newActivitiesBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -157,13 +157,13 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>activitiesBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return the value of the source <code>activitiesBetween</code>
+     * 
+     * <pre>
+     * source activitiesBetween as FitbitActivity [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return the value of the source <code>activitiesBetween</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity> getActivitiesBetween(fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date endDate) throws Exception {
@@ -176,14 +176,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>alarm</code> from device <code>Fitbit</code>.
-    <p>
-    alarm
-    
-    <pre>
-    source alarm as FitbitAlarm indexed by alarmId as String;
-    </pre>
-    @param newAlarmValue the new value for the source <code>alarm</code>
-    @param alarmId the value of the index <code>alarmId</code>
+     * <p>
+     * alarm
+     * 
+     * <pre>
+     * source alarm as FitbitAlarm indexed by alarmId as String;
+     * </pre>
+     * @param newAlarmValue the new value for the source <code>alarm</code>
+     * @param alarmId the value of the index <code>alarmId</code>
      */
     protected void publishAlarm(fr.inria.phoenix.diasuite.framework.datatype.fitbitalarm.FitbitAlarm newAlarmValue,
             java.lang.String alarmId) {
@@ -194,14 +194,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>alarm</code> from device <code>Fitbit</code>.
-    <p>
-    alarm
-    
-    <pre>
-    source alarm as FitbitAlarm indexed by alarmId as String;
-    </pre>
-    @param alarmId the value of the index <code>alarmId</code>
-    @return the value of the source <code>alarm</code>
+     * <p>
+     * alarm
+     * 
+     * <pre>
+     * source alarm as FitbitAlarm indexed by alarmId as String;
+     * </pre>
+     * @param alarmId the value of the index <code>alarmId</code>
+     * @return the value of the source <code>alarm</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.fitbitalarm.FitbitAlarm getAlarm(java.lang.String alarmId) throws Exception {
         return _alarm.get(new AlarmIndices(alarmId));
@@ -213,14 +213,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>dailyActivities</code> from device <code>Fitbit</code>.
-    <p>
-    activities
-    
-    <pre>
-    source dailyActivities as FitbitActivity [] indexed by day as Date;
-    </pre>
-    @param newDailyActivitiesValue the new value for the source <code>dailyActivities</code>
-    @param day the value of the index <code>day</code>
+     * <p>
+     * activities
+     * 
+     * <pre>
+     * source dailyActivities as FitbitActivity [] indexed by day as Date;
+     * </pre>
+     * @param newDailyActivitiesValue the new value for the source <code>dailyActivities</code>
+     * @param day the value of the index <code>day</code>
      */
     protected void publishDailyActivities(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity> newDailyActivitiesValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -231,14 +231,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>dailyActivities</code> from device <code>Fitbit</code>.
-    <p>
-    activities
-    
-    <pre>
-    source dailyActivities as FitbitActivity [] indexed by day as Date;
-    </pre>
-    @param day the value of the index <code>day</code>
-    @return the value of the source <code>dailyActivities</code>
+     * <p>
+     * activities
+     * 
+     * <pre>
+     * source dailyActivities as FitbitActivity [] indexed by day as Date;
+     * </pre>
+     * @param day the value of the index <code>day</code>
+     * @return the value of the source <code>dailyActivities</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.fitbitactivity.FitbitActivity> getDailyActivities(fr.inria.phoenix.diasuite.framework.datatype.date.Date day) throws Exception {
         return _dailyActivities.get(new DailyActivitiesIndices(day));
@@ -250,14 +250,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>dailyPulses</code> from device <code>Fitbit</code>.
-    <p>
-    pulses
-    
-    <pre>
-    source dailyPulses as PulseRecord [] indexed by day as Date;
-    </pre>
-    @param newDailyPulsesValue the new value for the source <code>dailyPulses</code>
-    @param day the value of the index <code>day</code>
+     * <p>
+     * pulses
+     * 
+     * <pre>
+     * source dailyPulses as PulseRecord [] indexed by day as Date;
+     * </pre>
+     * @param newDailyPulsesValue the new value for the source <code>dailyPulses</code>
+     * @param day the value of the index <code>day</code>
      */
     protected void publishDailyPulses(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord> newDailyPulsesValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -268,14 +268,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>dailyPulses</code> from device <code>Fitbit</code>.
-    <p>
-    pulses
-    
-    <pre>
-    source dailyPulses as PulseRecord [] indexed by day as Date;
-    </pre>
-    @param day the value of the index <code>day</code>
-    @return the value of the source <code>dailyPulses</code>
+     * <p>
+     * pulses
+     * 
+     * <pre>
+     * source dailyPulses as PulseRecord [] indexed by day as Date;
+     * </pre>
+     * @param day the value of the index <code>day</code>
+     * @return the value of the source <code>dailyPulses</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord> getDailyPulses(fr.inria.phoenix.diasuite.framework.datatype.date.Date day) throws Exception {
         return _dailyPulses.get(new DailyPulsesIndices(day));
@@ -287,14 +287,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>dailySleepPeriods</code> from device <code>Fitbit</code>.
-    <p>
-    sleep
-    
-    <pre>
-    source dailySleepPeriods as SleepPeriod [] indexed by day as Date;
-    </pre>
-    @param newDailySleepPeriodsValue the new value for the source <code>dailySleepPeriods</code>
-    @param day the value of the index <code>day</code>
+     * <p>
+     * sleep
+     * 
+     * <pre>
+     * source dailySleepPeriods as SleepPeriod [] indexed by day as Date;
+     * </pre>
+     * @param newDailySleepPeriodsValue the new value for the source <code>dailySleepPeriods</code>
+     * @param day the value of the index <code>day</code>
      */
     protected void publishDailySleepPeriods(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod> newDailySleepPeriodsValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -305,14 +305,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>dailySleepPeriods</code> from device <code>Fitbit</code>.
-    <p>
-    sleep
-    
-    <pre>
-    source dailySleepPeriods as SleepPeriod [] indexed by day as Date;
-    </pre>
-    @param day the value of the index <code>day</code>
-    @return the value of the source <code>dailySleepPeriods</code>
+     * <p>
+     * sleep
+     * 
+     * <pre>
+     * source dailySleepPeriods as SleepPeriod [] indexed by day as Date;
+     * </pre>
+     * @param day the value of the index <code>day</code>
+     * @return the value of the source <code>dailySleepPeriods</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod> getDailySleepPeriods(fr.inria.phoenix.diasuite.framework.datatype.date.Date day) throws Exception {
         return _dailySleepPeriods.get(new DailySleepPeriodsIndices(day));
@@ -324,14 +324,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>dailySteps</code> from device <code>Fitbit</code>.
-    <p>
-    steps
-    
-    <pre>
-    source dailySteps as Integer indexed by day as Date;
-    </pre>
-    @param newDailyStepsValue the new value for the source <code>dailySteps</code>
-    @param day the value of the index <code>day</code>
+     * <p>
+     * steps
+     * 
+     * <pre>
+     * source dailySteps as Integer indexed by day as Date;
+     * </pre>
+     * @param newDailyStepsValue the new value for the source <code>dailySteps</code>
+     * @param day the value of the index <code>day</code>
      */
     protected void publishDailySteps(java.lang.Integer newDailyStepsValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date day) {
@@ -342,14 +342,14 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>dailySteps</code> from device <code>Fitbit</code>.
-    <p>
-    steps
-    
-    <pre>
-    source dailySteps as Integer indexed by day as Date;
-    </pre>
-    @param day the value of the index <code>day</code>
-    @return the value of the source <code>dailySteps</code>
+     * <p>
+     * steps
+     * 
+     * <pre>
+     * source dailySteps as Integer indexed by day as Date;
+     * </pre>
+     * @param day the value of the index <code>day</code>
+     * @return the value of the source <code>dailySteps</code>
      */
     protected java.lang.Integer getDailySteps(fr.inria.phoenix.diasuite.framework.datatype.date.Date day) throws Exception {
         return _dailySteps.get(new DailyStepsIndices(day));
@@ -361,11 +361,11 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -374,11 +374,11 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -390,13 +390,13 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>pulsesBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newPulsesBetweenValue the new value for the source <code>pulsesBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
+     * 
+     * <pre>
+     * source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newPulsesBetweenValue the new value for the source <code>pulsesBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
      */
     protected void publishPulsesBetween(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord> newPulsesBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -408,13 +408,13 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>pulsesBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return the value of the source <code>pulsesBetween</code>
+     * 
+     * <pre>
+     * source pulsesBetween as PulseRecord [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return the value of the source <code>pulsesBetween</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.pulserecord.PulseRecord> getPulsesBetween(fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date endDate) throws Exception {
@@ -427,13 +427,13 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>sleepPeriodsBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newSleepPeriodsBetweenValue the new value for the source <code>sleepPeriodsBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
+     * 
+     * <pre>
+     * source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newSleepPeriodsBetweenValue the new value for the source <code>sleepPeriodsBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
      */
     protected void publishSleepPeriodsBetween(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod> newSleepPeriodsBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -445,13 +445,13 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>sleepPeriodsBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return the value of the source <code>sleepPeriodsBetween</code>
+     * 
+     * <pre>
+     * source sleepPeriodsBetween as SleepPeriod [] indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return the value of the source <code>sleepPeriodsBetween</code>
      */
     protected java.util.List<fr.inria.phoenix.diasuite.framework.datatype.sleepperiod.SleepPeriod> getSleepPeriodsBetween(fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date endDate) throws Exception {
@@ -464,13 +464,13 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Publish the value of source <code>stepsBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source stepsBetween as Integer indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param newStepsBetweenValue the new value for the source <code>stepsBetween</code>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
+     * 
+     * <pre>
+     * source stepsBetween as Integer indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param newStepsBetweenValue the new value for the source <code>stepsBetween</code>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
      */
     protected void publishStepsBetween(java.lang.Integer newStepsBetweenValue,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
@@ -482,13 +482,13 @@ public abstract class AbstractFitbit extends Service {
     
     /**
      * Returns the value of source <code>stepsBetween</code> from device <code>Fitbit</code>.
-    
-    <pre>
-    source stepsBetween as Integer indexed by startDate as Date, endDate as Date;
-    </pre>
-    @param startDate the value of the index <code>startDate</code>
-    @param endDate the value of the index <code>endDate</code>
-    @return the value of the source <code>stepsBetween</code>
+     * 
+     * <pre>
+     * source stepsBetween as Integer indexed by startDate as Date, endDate as Date;
+     * </pre>
+     * @param startDate the value of the index <code>startDate</code>
+     * @param endDate the value of the index <code>endDate</code>
+     * @return the value of the source <code>stepsBetween</code>
      */
     protected java.lang.Integer getStepsBetween(fr.inria.phoenix.diasuite.framework.datatype.date.Date startDate,
             fr.inria.phoenix.diasuite.framework.datatype.date.Date endDate) throws Exception {
@@ -500,10 +500,10 @@ public abstract class AbstractFitbit extends Service {
      * Implement this method to define the <code>addAlarm</code> order from the <code>ScheduleAlarm</code> action
      * defined in device Fitbit.
      * 
-    
-    <pre>
-    addAlarm(alarm as FitbitAlarm);
-    </pre>
+     * 
+     * <pre>
+     * addAlarm(alarm as FitbitAlarm);
+     * </pre>
      * @param alarm parameter 1 of the order.
      */
     protected abstract void addAlarm(fr.inria.phoenix.diasuite.framework.datatype.fitbitalarm.FitbitAlarm alarm) throws Exception;
@@ -512,10 +512,10 @@ public abstract class AbstractFitbit extends Service {
      * Implement this method to define the <code>removeAlarm</code> order from the <code>ScheduleAlarm</code> action
      * defined in device Fitbit.
      * 
-    
-    <pre>
-    removeAlarm(alarmId as String);
-    </pre>
+     * 
+     * <pre>
+     * removeAlarm(alarmId as String);
+     * </pre>
      * @param alarmId parameter 1 of the order.
      */
     protected abstract void removeAlarm(java.lang.String alarmId) throws Exception;

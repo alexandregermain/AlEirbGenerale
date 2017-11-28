@@ -130,12 +130,12 @@ public final class AndroidMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public AndroidMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -146,12 +146,12 @@ public final class AndroidMock {
     // Code for the attribute type from device Android
     /**
      * Set the value of the <code>type</code> attribute from device <code>Android</code>.
-    
-    <pre>
-    attribute type as String;
-    </pre>
-    @param newTypeValue the new value of <code>type</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute type as String;
+     * </pre>
+     * @param newTypeValue the new value of <code>type</code>
+     * @return this for fluent interface
      */
     public AndroidMock type(java.lang.String newTypeValue) {
         proxy._updateType(newTypeValue);
@@ -162,12 +162,12 @@ public final class AndroidMock {
     // Code for the attribute version from device Android
     /**
      * Set the value of the <code>version</code> attribute from device <code>Android</code>.
-    
-    <pre>
-    attribute version as Integer;
-    </pre>
-    @param newVersionValue the new value of <code>version</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute version as Integer;
+     * </pre>
+     * @param newVersionValue the new value of <code>version</code>
+     * @return this for fluent interface
      */
     public AndroidMock version(java.lang.Integer newVersionValue) {
         proxy._updateVersion(newVersionValue);
@@ -178,12 +178,12 @@ public final class AndroidMock {
     // Code for source apps from device Android
     /**
      * Publish the value of source <code>apps</code> from device <code>Android</code>.
-    
-    <pre>
-    source apps as AndroidApp [];
-    </pre>
-    @param newAppsValue the new value for the source <code>apps</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source apps as AndroidApp [];
+     * </pre>
+     * @param newAppsValue the new value for the source <code>apps</code>
+     * @return this for fluent interface
      */
     public AndroidMock apps(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.androidapp.AndroidApp> newAppsValue) {
         proxy._publishApps(newAppsValue);
@@ -193,12 +193,12 @@ public final class AndroidMock {
     private java.util.List<fr.inria.phoenix.diasuite.framework.datatype.androidapp.AndroidApp> __apps = null;
     /**
      * Set the value (without publication) of source <code>apps</code> from device <code>Android</code>.
-    
-    <pre>
-    source apps as AndroidApp [];
-    </pre>
-    @param newAppsValue the new value for the source <code>apps</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source apps as AndroidApp [];
+     * </pre>
+     * @param newAppsValue the new value for the source <code>apps</code>
+     * @return this for fluent interface
      */
     public AndroidMock setApps(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.androidapp.AndroidApp> newAppsValue) {
         __apps = newAppsValue;
@@ -209,12 +209,12 @@ public final class AndroidMock {
     // Code for source battery from device Android
     /**
      * Publish the value of source <code>battery</code> from device <code>Android</code>.
-    
-    <pre>
-    source battery as Battery;
-    </pre>
-    @param newBatteryValue the new value for the source <code>battery</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source battery as Battery;
+     * </pre>
+     * @param newBatteryValue the new value for the source <code>battery</code>
+     * @return this for fluent interface
      */
     public AndroidMock battery(fr.inria.phoenix.diasuite.framework.datatype.battery.Battery newBatteryValue) {
         proxy._publishBattery(newBatteryValue);
@@ -224,12 +224,12 @@ public final class AndroidMock {
     private fr.inria.phoenix.diasuite.framework.datatype.battery.Battery __battery = null;
     /**
      * Set the value (without publication) of source <code>battery</code> from device <code>Android</code>.
-    
-    <pre>
-    source battery as Battery;
-    </pre>
-    @param newBatteryValue the new value for the source <code>battery</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source battery as Battery;
+     * </pre>
+     * @param newBatteryValue the new value for the source <code>battery</code>
+     * @return this for fluent interface
      */
     public AndroidMock setBattery(fr.inria.phoenix.diasuite.framework.datatype.battery.Battery newBatteryValue) {
         __battery = newBatteryValue;
@@ -240,12 +240,12 @@ public final class AndroidMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public AndroidMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -255,12 +255,12 @@ public final class AndroidMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public AndroidMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -271,12 +271,12 @@ public final class AndroidMock {
     // Code for source screenOn from device Android
     /**
      * Publish the value of source <code>screenOn</code> from device <code>Android</code>.
-    
-    <pre>
-    source screenOn as Boolean;
-    </pre>
-    @param newScreenOnValue the new value for the source <code>screenOn</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source screenOn as Boolean;
+     * </pre>
+     * @param newScreenOnValue the new value for the source <code>screenOn</code>
+     * @return this for fluent interface
      */
     public AndroidMock screenOn(java.lang.Boolean newScreenOnValue) {
         proxy._publishScreenOn(newScreenOnValue);
@@ -286,12 +286,12 @@ public final class AndroidMock {
     private java.lang.Boolean __screenOn = null;
     /**
      * Set the value (without publication) of source <code>screenOn</code> from device <code>Android</code>.
-    
-    <pre>
-    source screenOn as Boolean;
-    </pre>
-    @param newScreenOnValue the new value for the source <code>screenOn</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source screenOn as Boolean;
+     * </pre>
+     * @param newScreenOnValue the new value for the source <code>screenOn</code>
+     * @return this for fluent interface
      */
     public AndroidMock setScreenOn(java.lang.Boolean newScreenOnValue) {
         __screenOn = newScreenOnValue;
@@ -302,12 +302,12 @@ public final class AndroidMock {
     // Code for source soundLevels from device Android
     /**
      * Publish the value of source <code>soundLevels</code> from device <code>Android</code>.
-    
-    <pre>
-    source soundLevels as SoundLevel [];
-    </pre>
-    @param newSoundLevelsValue the new value for the source <code>soundLevels</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source soundLevels as SoundLevel [];
+     * </pre>
+     * @param newSoundLevelsValue the new value for the source <code>soundLevels</code>
+     * @return this for fluent interface
      */
     public AndroidMock soundLevels(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.soundlevel.SoundLevel> newSoundLevelsValue) {
         proxy._publishSoundLevels(newSoundLevelsValue);
@@ -317,12 +317,12 @@ public final class AndroidMock {
     private java.util.List<fr.inria.phoenix.diasuite.framework.datatype.soundlevel.SoundLevel> __soundLevels = null;
     /**
      * Set the value (without publication) of source <code>soundLevels</code> from device <code>Android</code>.
-    
-    <pre>
-    source soundLevels as SoundLevel [];
-    </pre>
-    @param newSoundLevelsValue the new value for the source <code>soundLevels</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source soundLevels as SoundLevel [];
+     * </pre>
+     * @param newSoundLevelsValue the new value for the source <code>soundLevels</code>
+     * @return this for fluent interface
      */
     public AndroidMock setSoundLevels(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.soundlevel.SoundLevel> newSoundLevelsValue) {
         __soundLevels = newSoundLevelsValue;
@@ -336,10 +336,10 @@ public final class AndroidMock {
      * Check that the <code>setScreenStatus</code> order from the <code>ScreenAction</code> action
      * defined in device Android was called.
      * 
-    
-    <pre>
-    setScreenStatus(turnOn as Boolean);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * setScreenStatus(turnOn as Boolean);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectSetScreenStatus() {
         try {
@@ -363,10 +363,10 @@ public final class AndroidMock {
      * Check that the <code>setScreenStatus</code> order from the <code>ScreenAction</code> action
      * defined in device Android was called.
      * 
-    
-    <pre>
-    setScreenStatus(turnOn as Boolean);
-    </pre>
+     * 
+     * <pre>
+     * setScreenStatus(turnOn as Boolean);
+     * </pre>
      * @param turnOn parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -395,10 +395,10 @@ public final class AndroidMock {
      * Check that the <code>setSoundLevel</code> order from the <code>SoundAction</code> action
      * defined in device Android was called.
      * 
-    
-    <pre>
-    setSoundLevel(level as Integer);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * setSoundLevel(level as Integer);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectSetSoundLevel() {
         try {
@@ -422,10 +422,10 @@ public final class AndroidMock {
      * Check that the <code>setSoundLevel</code> order from the <code>SoundAction</code> action
      * defined in device Android was called.
      * 
-    
-    <pre>
-    setSoundLevel(level as Integer);
-    </pre>
+     * 
+     * <pre>
+     * setSoundLevel(level as Integer);
+     * </pre>
      * @param level parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -454,10 +454,10 @@ public final class AndroidMock {
      * Check that the <code>startActivity</code> order from the <code>ActivityAction</code> action
      * defined in device Android was called.
      * 
-    
-    <pre>
-    startActivity(intent as AndroidIntent);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * startActivity(intent as AndroidIntent);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectStartActivity() {
         try {
@@ -481,10 +481,10 @@ public final class AndroidMock {
      * Check that the <code>startActivity</code> order from the <code>ActivityAction</code> action
      * defined in device Android was called.
      * 
-    
-    <pre>
-    startActivity(intent as AndroidIntent);
-    </pre>
+     * 
+     * <pre>
+     * startActivity(intent as AndroidIntent);
+     * </pre>
      * @param intent parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */

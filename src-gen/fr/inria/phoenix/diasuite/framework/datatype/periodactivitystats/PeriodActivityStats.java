@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure PeriodActivityStats {
+ * structure PeriodActivityStats {
  * 	activity as PeriodActivityName;
  * 	occurences as Integer;
  * 	dailyMean as Float;
  * 	durationMean as Float;
  * }
-</pre>
+ * </pre>
  */
 public class PeriodActivityStats implements Serializable {
     private static final long serialVersionUID = 0;
@@ -20,11 +20,11 @@ public class PeriodActivityStats implements Serializable {
     
     /**
      * Returns the value of the activity field.
-    
-    <pre>
-    activity as PeriodActivityName
-    </pre>
-    @return the value of activity
+     * 
+     * <pre>
+     * activity as PeriodActivityName
+     * </pre>
+     * @return the value of activity
      */
     public fr.inria.phoenix.diasuite.framework.datatype.periodactivityname.PeriodActivityName getActivity() {
         return activity;
@@ -32,11 +32,11 @@ public class PeriodActivityStats implements Serializable {
     
     /**
      * Set the value of the activity field.
-    
-    <pre>
-    activity as PeriodActivityName
-    </pre>
-    @param activity the new value of activity
+     * 
+     * <pre>
+     * activity as PeriodActivityName
+     * </pre>
+     * @param activity the new value of activity
      */
     public void setActivity(fr.inria.phoenix.diasuite.framework.datatype.periodactivityname.PeriodActivityName activity) {
         this.activity = activity;
@@ -48,11 +48,11 @@ public class PeriodActivityStats implements Serializable {
     
     /**
      * Returns the value of the occurences field.
-    
-    <pre>
-    occurences as Integer
-    </pre>
-    @return the value of occurences
+     * 
+     * <pre>
+     * occurences as Integer
+     * </pre>
+     * @return the value of occurences
      */
     public java.lang.Integer getOccurences() {
         return occurences;
@@ -60,11 +60,11 @@ public class PeriodActivityStats implements Serializable {
     
     /**
      * Set the value of the occurences field.
-    
-    <pre>
-    occurences as Integer
-    </pre>
-    @param occurences the new value of occurences
+     * 
+     * <pre>
+     * occurences as Integer
+     * </pre>
+     * @param occurences the new value of occurences
      */
     public void setOccurences(java.lang.Integer occurences) {
         this.occurences = occurences;
@@ -76,11 +76,11 @@ public class PeriodActivityStats implements Serializable {
     
     /**
      * Returns the value of the dailyMean field.
-    
-    <pre>
-    dailyMean as Float
-    </pre>
-    @return the value of dailyMean
+     * 
+     * <pre>
+     * dailyMean as Float
+     * </pre>
+     * @return the value of dailyMean
      */
     public java.lang.Float getDailyMean() {
         return dailyMean;
@@ -88,11 +88,11 @@ public class PeriodActivityStats implements Serializable {
     
     /**
      * Set the value of the dailyMean field.
-    
-    <pre>
-    dailyMean as Float
-    </pre>
-    @param dailyMean the new value of dailyMean
+     * 
+     * <pre>
+     * dailyMean as Float
+     * </pre>
+     * @param dailyMean the new value of dailyMean
      */
     public void setDailyMean(java.lang.Float dailyMean) {
         this.dailyMean = dailyMean;
@@ -104,11 +104,11 @@ public class PeriodActivityStats implements Serializable {
     
     /**
      * Returns the value of the durationMean field.
-    
-    <pre>
-    durationMean as Float
-    </pre>
-    @return the value of durationMean
+     * 
+     * <pre>
+     * durationMean as Float
+     * </pre>
+     * @return the value of durationMean
      */
     public java.lang.Float getDurationMean() {
         return durationMean;
@@ -116,11 +116,11 @@ public class PeriodActivityStats implements Serializable {
     
     /**
      * Set the value of the durationMean field.
-    
-    <pre>
-    durationMean as Float
-    </pre>
-    @param durationMean the new value of durationMean
+     * 
+     * <pre>
+     * durationMean as Float
+     * </pre>
+     * @param durationMean the new value of durationMean
      */
     public void setDurationMean(java.lang.Float durationMean) {
         this.durationMean = durationMean;

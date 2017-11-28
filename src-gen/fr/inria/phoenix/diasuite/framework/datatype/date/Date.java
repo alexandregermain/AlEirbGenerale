@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 /**
  * ------------------------------------------------------------
-Utils							||
-------------------------------------------------------------
-
-<pre>
-structure Date {
+ * Utils							||
+ * ------------------------------------------------------------
+ * 
+ * <pre>
+ * structure Date {
  * 	day as Integer;
  * 	month as Integer;
  * 	year as Integer;
@@ -16,7 +16,7 @@ structure Date {
  * 	minute as Integer;
  * 	second as Integer;
  * }
-</pre>
+ * </pre>
  */
 public class Date implements Serializable {
     private static final long serialVersionUID = 0;
@@ -26,11 +26,11 @@ public class Date implements Serializable {
     
     /**
      * Returns the value of the day field.
-    
-    <pre>
-    day as Integer
-    </pre>
-    @return the value of day
+     * 
+     * <pre>
+     * day as Integer
+     * </pre>
+     * @return the value of day
      */
     public java.lang.Integer getDay() {
         return day;
@@ -38,11 +38,11 @@ public class Date implements Serializable {
     
     /**
      * Set the value of the day field.
-    
-    <pre>
-    day as Integer
-    </pre>
-    @param day the new value of day
+     * 
+     * <pre>
+     * day as Integer
+     * </pre>
+     * @param day the new value of day
      */
     public void setDay(java.lang.Integer day) {
         this.day = day;
@@ -54,11 +54,11 @@ public class Date implements Serializable {
     
     /**
      * Returns the value of the month field.
-    
-    <pre>
-    month as Integer
-    </pre>
-    @return the value of month
+     * 
+     * <pre>
+     * month as Integer
+     * </pre>
+     * @return the value of month
      */
     public java.lang.Integer getMonth() {
         return month;
@@ -66,11 +66,11 @@ public class Date implements Serializable {
     
     /**
      * Set the value of the month field.
-    
-    <pre>
-    month as Integer
-    </pre>
-    @param month the new value of month
+     * 
+     * <pre>
+     * month as Integer
+     * </pre>
+     * @param month the new value of month
      */
     public void setMonth(java.lang.Integer month) {
         this.month = month;
@@ -82,11 +82,11 @@ public class Date implements Serializable {
     
     /**
      * Returns the value of the year field.
-    
-    <pre>
-    year as Integer
-    </pre>
-    @return the value of year
+     * 
+     * <pre>
+     * year as Integer
+     * </pre>
+     * @return the value of year
      */
     public java.lang.Integer getYear() {
         return year;
@@ -94,11 +94,11 @@ public class Date implements Serializable {
     
     /**
      * Set the value of the year field.
-    
-    <pre>
-    year as Integer
-    </pre>
-    @param year the new value of year
+     * 
+     * <pre>
+     * year as Integer
+     * </pre>
+     * @param year the new value of year
      */
     public void setYear(java.lang.Integer year) {
         this.year = year;
@@ -110,11 +110,11 @@ public class Date implements Serializable {
     
     /**
      * Returns the value of the hour field.
-    
-    <pre>
-    hour as Integer
-    </pre>
-    @return the value of hour
+     * 
+     * <pre>
+     * hour as Integer
+     * </pre>
+     * @return the value of hour
      */
     public java.lang.Integer getHour() {
         return hour;
@@ -122,11 +122,11 @@ public class Date implements Serializable {
     
     /**
      * Set the value of the hour field.
-    
-    <pre>
-    hour as Integer
-    </pre>
-    @param hour the new value of hour
+     * 
+     * <pre>
+     * hour as Integer
+     * </pre>
+     * @param hour the new value of hour
      */
     public void setHour(java.lang.Integer hour) {
         this.hour = hour;
@@ -138,11 +138,11 @@ public class Date implements Serializable {
     
     /**
      * Returns the value of the minute field.
-    
-    <pre>
-    minute as Integer
-    </pre>
-    @return the value of minute
+     * 
+     * <pre>
+     * minute as Integer
+     * </pre>
+     * @return the value of minute
      */
     public java.lang.Integer getMinute() {
         return minute;
@@ -150,11 +150,11 @@ public class Date implements Serializable {
     
     /**
      * Set the value of the minute field.
-    
-    <pre>
-    minute as Integer
-    </pre>
-    @param minute the new value of minute
+     * 
+     * <pre>
+     * minute as Integer
+     * </pre>
+     * @param minute the new value of minute
      */
     public void setMinute(java.lang.Integer minute) {
         this.minute = minute;
@@ -166,11 +166,11 @@ public class Date implements Serializable {
     
     /**
      * Returns the value of the second field.
-    
-    <pre>
-    second as Integer
-    </pre>
-    @return the value of second
+     * 
+     * <pre>
+     * second as Integer
+     * </pre>
+     * @return the value of second
      */
     public java.lang.Integer getSecond() {
         return second;
@@ -178,11 +178,11 @@ public class Date implements Serializable {
     
     /**
      * Set the value of the second field.
-    
-    <pre>
-    second as Integer
-    </pre>
-    @param second the new value of second
+     * 
+     * <pre>
+     * second as Integer
+     * </pre>
+     * @param second the new value of second
      */
     public void setSecond(java.lang.Integer second) {
         this.second = second;

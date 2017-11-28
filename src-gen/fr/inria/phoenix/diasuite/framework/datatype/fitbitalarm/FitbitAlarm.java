@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure FitbitAlarm {
+ * structure FitbitAlarm {
  * 	alarmId as String;
  * 	date as Date;
  * 	recurring as Boolean;
@@ -12,7 +12,7 @@ structure FitbitAlarm {
  * 	remindInterval as Integer;
  * 	weekDays as Day;
  * }
-</pre>
+ * </pre>
  */
 public class FitbitAlarm implements Serializable {
     private static final long serialVersionUID = 0;
@@ -22,11 +22,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Returns the value of the alarmId field.
-    
-    <pre>
-    alarmId as String
-    </pre>
-    @return the value of alarmId
+     * 
+     * <pre>
+     * alarmId as String
+     * </pre>
+     * @return the value of alarmId
      */
     public java.lang.String getAlarmId() {
         return alarmId;
@@ -34,11 +34,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Set the value of the alarmId field.
-    
-    <pre>
-    alarmId as String
-    </pre>
-    @param alarmId the new value of alarmId
+     * 
+     * <pre>
+     * alarmId as String
+     * </pre>
+     * @param alarmId the new value of alarmId
      */
     public void setAlarmId(java.lang.String alarmId) {
         this.alarmId = alarmId;
@@ -50,11 +50,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Returns the value of the date field.
-    
-    <pre>
-    date as Date
-    </pre>
-    @return the value of date
+     * 
+     * <pre>
+     * date as Date
+     * </pre>
+     * @return the value of date
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getDate() {
         return date;
@@ -62,11 +62,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Set the value of the date field.
-    
-    <pre>
-    date as Date
-    </pre>
-    @param date the new value of date
+     * 
+     * <pre>
+     * date as Date
+     * </pre>
+     * @param date the new value of date
      */
     public void setDate(fr.inria.phoenix.diasuite.framework.datatype.date.Date date) {
         this.date = date;
@@ -78,11 +78,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Returns the value of the recurring field.
-    
-    <pre>
-    recurring as Boolean
-    </pre>
-    @return the value of recurring
+     * 
+     * <pre>
+     * recurring as Boolean
+     * </pre>
+     * @return the value of recurring
      */
     public java.lang.Boolean getRecurring() {
         return recurring;
@@ -90,11 +90,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Set the value of the recurring field.
-    
-    <pre>
-    recurring as Boolean
-    </pre>
-    @param recurring the new value of recurring
+     * 
+     * <pre>
+     * recurring as Boolean
+     * </pre>
+     * @param recurring the new value of recurring
      */
     public void setRecurring(java.lang.Boolean recurring) {
         this.recurring = recurring;
@@ -106,11 +106,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Returns the value of the reminders field.
-    
-    <pre>
-    reminders as Integer
-    </pre>
-    @return the value of reminders
+     * 
+     * <pre>
+     * reminders as Integer
+     * </pre>
+     * @return the value of reminders
      */
     public java.lang.Integer getReminders() {
         return reminders;
@@ -118,11 +118,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Set the value of the reminders field.
-    
-    <pre>
-    reminders as Integer
-    </pre>
-    @param reminders the new value of reminders
+     * 
+     * <pre>
+     * reminders as Integer
+     * </pre>
+     * @param reminders the new value of reminders
      */
     public void setReminders(java.lang.Integer reminders) {
         this.reminders = reminders;
@@ -134,11 +134,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Returns the value of the remindInterval field.
-    
-    <pre>
-    remindInterval as Integer
-    </pre>
-    @return the value of remindInterval
+     * 
+     * <pre>
+     * remindInterval as Integer
+     * </pre>
+     * @return the value of remindInterval
      */
     public java.lang.Integer getRemindInterval() {
         return remindInterval;
@@ -146,11 +146,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Set the value of the remindInterval field.
-    
-    <pre>
-    remindInterval as Integer
-    </pre>
-    @param remindInterval the new value of remindInterval
+     * 
+     * <pre>
+     * remindInterval as Integer
+     * </pre>
+     * @param remindInterval the new value of remindInterval
      */
     public void setRemindInterval(java.lang.Integer remindInterval) {
         this.remindInterval = remindInterval;
@@ -162,11 +162,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Returns the value of the weekDays field.
-    
-    <pre>
-    weekDays as Day
-    </pre>
-    @return the value of weekDays
+     * 
+     * <pre>
+     * weekDays as Day
+     * </pre>
+     * @return the value of weekDays
      */
     public fr.inria.phoenix.diasuite.framework.datatype.day.Day getWeekDays() {
         return weekDays;
@@ -174,11 +174,11 @@ public class FitbitAlarm implements Serializable {
     
     /**
      * Set the value of the weekDays field.
-    
-    <pre>
-    weekDays as Day
-    </pre>
-    @param weekDays the new value of weekDays
+     * 
+     * <pre>
+     * weekDays as Day
+     * </pre>
+     * @param weekDays the new value of weekDays
      */
     public void setWeekDays(fr.inria.phoenix.diasuite.framework.datatype.day.Day weekDays) {
         this.weekDays = weekDays;

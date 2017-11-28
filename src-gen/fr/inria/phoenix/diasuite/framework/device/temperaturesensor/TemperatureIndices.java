@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 /**
  * Container for the indices of the source <code>temperature</code> from device <code>TemperatureSensor</code>.
-
-<pre>
-source temperature as Float indexed by unit as TemperatureUnit;
-</pre>
+ * 
+ * <pre>
+ * source temperature as Float indexed by unit as TemperatureUnit;
+ * </pre>
  */
 public final class TemperatureIndices implements Serializable {
     private static final long serialVersionUID = 0;

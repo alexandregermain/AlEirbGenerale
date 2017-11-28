@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 /**
  * <pre>
-structure AndroidIntent {
+ * structure AndroidIntent {
  * 	packageName as String;
  * 	data as String;
  * 	className as String;
  * 	action as String;
  * 	extras as AndroidExtraString [];
  * }
-</pre>
+ * </pre>
  */
 public class AndroidIntent implements Serializable {
     private static final long serialVersionUID = 0;
@@ -21,11 +21,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Returns the value of the packageName field.
-    
-    <pre>
-    packageName as String
-    </pre>
-    @return the value of packageName
+     * 
+     * <pre>
+     * packageName as String
+     * </pre>
+     * @return the value of packageName
      */
     public java.lang.String getPackageName() {
         return packageName;
@@ -33,11 +33,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Set the value of the packageName field.
-    
-    <pre>
-    packageName as String
-    </pre>
-    @param packageName the new value of packageName
+     * 
+     * <pre>
+     * packageName as String
+     * </pre>
+     * @param packageName the new value of packageName
      */
     public void setPackageName(java.lang.String packageName) {
         this.packageName = packageName;
@@ -49,11 +49,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Returns the value of the data field.
-    
-    <pre>
-    data as String
-    </pre>
-    @return the value of data
+     * 
+     * <pre>
+     * data as String
+     * </pre>
+     * @return the value of data
      */
     public java.lang.String getData() {
         return data;
@@ -61,11 +61,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Set the value of the data field.
-    
-    <pre>
-    data as String
-    </pre>
-    @param data the new value of data
+     * 
+     * <pre>
+     * data as String
+     * </pre>
+     * @param data the new value of data
      */
     public void setData(java.lang.String data) {
         this.data = data;
@@ -77,11 +77,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Returns the value of the className field.
-    
-    <pre>
-    className as String
-    </pre>
-    @return the value of className
+     * 
+     * <pre>
+     * className as String
+     * </pre>
+     * @return the value of className
      */
     public java.lang.String getClassName() {
         return className;
@@ -89,11 +89,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Set the value of the className field.
-    
-    <pre>
-    className as String
-    </pre>
-    @param className the new value of className
+     * 
+     * <pre>
+     * className as String
+     * </pre>
+     * @param className the new value of className
      */
     public void setClassName(java.lang.String className) {
         this.className = className;
@@ -105,11 +105,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Returns the value of the action field.
-    
-    <pre>
-    action as String
-    </pre>
-    @return the value of action
+     * 
+     * <pre>
+     * action as String
+     * </pre>
+     * @return the value of action
      */
     public java.lang.String getAction() {
         return action;
@@ -117,11 +117,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Set the value of the action field.
-    
-    <pre>
-    action as String
-    </pre>
-    @param action the new value of action
+     * 
+     * <pre>
+     * action as String
+     * </pre>
+     * @param action the new value of action
      */
     public void setAction(java.lang.String action) {
         this.action = action;
@@ -133,11 +133,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Returns the value of the extras field.
-    
-    <pre>
-    extras as AndroidExtraString []
-    </pre>
-    @return the value of extras
+     * 
+     * <pre>
+     * extras as AndroidExtraString []
+     * </pre>
+     * @return the value of extras
      */
     public java.util.List<fr.inria.phoenix.diasuite.framework.datatype.androidextrastring.AndroidExtraString> getExtras() {
         return extras;
@@ -145,11 +145,11 @@ public class AndroidIntent implements Serializable {
     
     /**
      * Set the value of the extras field.
-    
-    <pre>
-    extras as AndroidExtraString []
-    </pre>
-    @param extras the new value of extras
+     * 
+     * <pre>
+     * extras as AndroidExtraString []
+     * </pre>
+     * @param extras the new value of extras
      */
     public void setExtras(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.androidextrastring.AndroidExtraString> extras) {
         this.extras = extras;

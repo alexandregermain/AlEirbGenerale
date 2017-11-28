@@ -4,17 +4,17 @@ import java.io.Serializable;
 
 /**
  * ------------------------------------------------------------
-ActivityReporter					||
-------------------------------------------------------------
-
-<pre>
-structure DailyReport {
+ * ActivityReporter					||
+ * ------------------------------------------------------------
+ * 
+ * <pre>
+ * structure DailyReport {
  * 	date as Date;
  * 	dailyActivities as DailyActivity [];
  * 	toiletPassings as Period [];
  * 	outdoorPeriods as Period [];
  * }
-</pre>
+ * </pre>
  */
 public class DailyReport implements Serializable {
     private static final long serialVersionUID = 0;
@@ -24,11 +24,11 @@ public class DailyReport implements Serializable {
     
     /**
      * Returns the value of the date field.
-    
-    <pre>
-    date as Date
-    </pre>
-    @return the value of date
+     * 
+     * <pre>
+     * date as Date
+     * </pre>
+     * @return the value of date
      */
     public fr.inria.phoenix.diasuite.framework.datatype.date.Date getDate() {
         return date;
@@ -36,11 +36,11 @@ public class DailyReport implements Serializable {
     
     /**
      * Set the value of the date field.
-    
-    <pre>
-    date as Date
-    </pre>
-    @param date the new value of date
+     * 
+     * <pre>
+     * date as Date
+     * </pre>
+     * @param date the new value of date
      */
     public void setDate(fr.inria.phoenix.diasuite.framework.datatype.date.Date date) {
         this.date = date;
@@ -52,11 +52,11 @@ public class DailyReport implements Serializable {
     
     /**
      * Returns the value of the dailyActivities field.
-    
-    <pre>
-    dailyActivities as DailyActivity []
-    </pre>
-    @return the value of dailyActivities
+     * 
+     * <pre>
+     * dailyActivities as DailyActivity []
+     * </pre>
+     * @return the value of dailyActivities
      */
     public java.util.List<fr.inria.phoenix.diasuite.framework.datatype.dailyactivity.DailyActivity> getDailyActivities() {
         return dailyActivities;
@@ -64,11 +64,11 @@ public class DailyReport implements Serializable {
     
     /**
      * Set the value of the dailyActivities field.
-    
-    <pre>
-    dailyActivities as DailyActivity []
-    </pre>
-    @param dailyActivities the new value of dailyActivities
+     * 
+     * <pre>
+     * dailyActivities as DailyActivity []
+     * </pre>
+     * @param dailyActivities the new value of dailyActivities
      */
     public void setDailyActivities(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.dailyactivity.DailyActivity> dailyActivities) {
         this.dailyActivities = dailyActivities;
@@ -80,11 +80,11 @@ public class DailyReport implements Serializable {
     
     /**
      * Returns the value of the toiletPassings field.
-    
-    <pre>
-    toiletPassings as Period []
-    </pre>
-    @return the value of toiletPassings
+     * 
+     * <pre>
+     * toiletPassings as Period []
+     * </pre>
+     * @return the value of toiletPassings
      */
     public java.util.List<fr.inria.phoenix.diasuite.framework.datatype.period.Period> getToiletPassings() {
         return toiletPassings;
@@ -92,11 +92,11 @@ public class DailyReport implements Serializable {
     
     /**
      * Set the value of the toiletPassings field.
-    
-    <pre>
-    toiletPassings as Period []
-    </pre>
-    @param toiletPassings the new value of toiletPassings
+     * 
+     * <pre>
+     * toiletPassings as Period []
+     * </pre>
+     * @param toiletPassings the new value of toiletPassings
      */
     public void setToiletPassings(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.period.Period> toiletPassings) {
         this.toiletPassings = toiletPassings;
@@ -108,11 +108,11 @@ public class DailyReport implements Serializable {
     
     /**
      * Returns the value of the outdoorPeriods field.
-    
-    <pre>
-    outdoorPeriods as Period []
-    </pre>
-    @return the value of outdoorPeriods
+     * 
+     * <pre>
+     * outdoorPeriods as Period []
+     * </pre>
+     * @return the value of outdoorPeriods
      */
     public java.util.List<fr.inria.phoenix.diasuite.framework.datatype.period.Period> getOutdoorPeriods() {
         return outdoorPeriods;
@@ -120,11 +120,11 @@ public class DailyReport implements Serializable {
     
     /**
      * Set the value of the outdoorPeriods field.
-    
-    <pre>
-    outdoorPeriods as Period []
-    </pre>
-    @param outdoorPeriods the new value of outdoorPeriods
+     * 
+     * <pre>
+     * outdoorPeriods as Period []
+     * </pre>
+     * @param outdoorPeriods the new value of outdoorPeriods
      */
     public void setOutdoorPeriods(java.util.List<fr.inria.phoenix.diasuite.framework.datatype.period.Period> outdoorPeriods) {
         this.outdoorPeriods = outdoorPeriods;

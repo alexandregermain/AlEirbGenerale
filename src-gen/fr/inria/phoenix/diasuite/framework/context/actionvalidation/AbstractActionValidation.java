@@ -12,14 +12,14 @@ import fr.inria.phoenix.diasuite.framework.device.timer.TimerTriggeredFromTimer;
 
 /**
  * <pre>
-context ActionValidation as Boolean {
+ * context ActionValidation as Boolean {
  * 	when provided timerTriggered from Timer
  * 	maybe publish;
  * 	when provided contact from ContactSensor
  * 	get timerTriggered from Timer
  * 	maybe publish;
  * }
-</pre>
+ * </pre>
  */
 @SuppressWarnings("all")
 public abstract class AbstractActionValidation extends Service {
@@ -142,11 +142,11 @@ public abstract class AbstractActionValidation extends Service {
     // Interaction contract implementation
     /**
      * This method is called when a <code>Timer</code> device on which we have subscribed publish on its <code>timerTriggered</code> source.
-    
-    <pre>
-    when provided timerTriggered from Timer
+     * 
+     * <pre>
+     * when provided timerTriggered from Timer
      * 	maybe publish;
-    </pre>
+     * </pre>
      * 
      * @param timerTriggeredFromTimer the value of the <code>timerTriggered</code> source and the <code>Timer</code> device that published the value.
      * @return a {@link ActionValidationValuePublishable} that says if the context should publish a value and which value it should publish
@@ -155,12 +155,12 @@ public abstract class AbstractActionValidation extends Service {
     
     /**
      * This method is called when a <code>ContactSensor</code> device on which we have subscribed publish on its <code>contact</code> source.
-    
-    <pre>
-    when provided contact from ContactSensor
+     * 
+     * <pre>
+     * when provided contact from ContactSensor
      * 	get timerTriggered from Timer
      * 	maybe publish;
-    </pre>
+     * </pre>
      * 
      * @param contactFromContactSensor the value of the <code>contact</code> source and the <code>ContactSensor</code> device that published the value.
      * @param discover a discover object to get value from devices and contexts
@@ -173,17 +173,17 @@ public abstract class AbstractActionValidation extends Service {
     // Discover part for Timer devices
     /**
      * Use this object to discover Timer devices.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      * 
      * @see TimerDiscoverer
      */
@@ -191,17 +191,17 @@ public abstract class AbstractActionValidation extends Service {
     
     /**
      * Discover object that will exposes the <code>Timer</code> devices that can be discovered
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerDiscoverer {
         private Service serviceParent;
@@ -246,17 +246,17 @@ public abstract class AbstractActionValidation extends Service {
     
     /**
      * A composite of several <code>Timer</code> devices
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerComposite extends fr.inria.diagen.core.service.composite.Composite<TimerProxy> {
         private TimerComposite(Service serviceParent) {
@@ -298,17 +298,17 @@ public abstract class AbstractActionValidation extends Service {
     
     /**
      * A proxy to one <code>Timer</code> device
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerProxy extends Proxy {
         private TimerProxy(Service service, RemoteServiceInfo remoteServiceInfo) {
@@ -343,12 +343,12 @@ public abstract class AbstractActionValidation extends Service {
     // Discover part for ContactSensor devices
     /**
      * Use this object to discover ContactSensor devices.
-    
-    <pre>
-    device ContactSensor extends Sensor {
+     * 
+     * <pre>
+     * device ContactSensor extends Sensor {
      * 	source contact as Boolean;
      * }
-    </pre>
+     * </pre>
      * 
      * @see ContactSensorDiscoverer
      */
@@ -356,12 +356,12 @@ public abstract class AbstractActionValidation extends Service {
     
     /**
      * Discover object that will exposes the <code>ContactSensor</code> devices that can be discovered
-    
-    <pre>
-    device ContactSensor extends Sensor {
+     * 
+     * <pre>
+     * device ContactSensor extends Sensor {
      * 	source contact as Boolean;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ContactSensorDiscoverer {
         private Service serviceParent;
@@ -426,12 +426,12 @@ public abstract class AbstractActionValidation extends Service {
     
     /**
      * A composite of several <code>ContactSensor</code> devices
-    
-    <pre>
-    device ContactSensor extends Sensor {
+     * 
+     * <pre>
+     * device ContactSensor extends Sensor {
      * 	source contact as Boolean;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ContactSensorComposite extends fr.inria.diagen.core.service.composite.Composite<ContactSensorProxy> {
         private ContactSensorComposite(Service serviceParent) {
@@ -495,12 +495,12 @@ public abstract class AbstractActionValidation extends Service {
     
     /**
      * A proxy to one <code>ContactSensor</code> device
-    
-    <pre>
-    device ContactSensor extends Sensor {
+     * 
+     * <pre>
+     * device ContactSensor extends Sensor {
      * 	source contact as Boolean;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class ContactSensorProxy extends Proxy {
         private ContactSensorProxy(Service service, RemoteServiceInfo remoteServiceInfo) {
@@ -570,17 +570,17 @@ public abstract class AbstractActionValidation extends Service {
     /**
      * Discover object that will exposes the <code>Timer</code> devices to get their sources for the
      * <code>when provided contact from ContactSensor</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerDiscovererForContactFromContactSensor {
         private Service serviceParent;
@@ -626,17 +626,17 @@ public abstract class AbstractActionValidation extends Service {
     /**
      * A composite of several <code>Timer</code> devices to get their sources for the
      * <code>when provided contact from ContactSensor</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerCompositeForContactFromContactSensor extends fr.inria.diagen.core.service.composite.Composite<TimerProxyForContactFromContactSensor> {
         private TimerCompositeForContactFromContactSensor(Service serviceParent) {
@@ -663,17 +663,17 @@ public abstract class AbstractActionValidation extends Service {
     /**
      * A proxy to one <code>Timer</code> device to get its sources for the
      * <code>when provided contact from ContactSensor</code> interaction contract.
-    <p>
-    ------
-    Timer
-    ------
-    
-    <pre>
-    device Timer extends Service {
+     * <p>
+     * ------
+     * Timer
+     * ------
+     * 
+     * <pre>
+     * device Timer extends Service {
      * 	source timerTriggered as String indexed by timerId as String;
      * 	action ScheduleTimer;
      * }
-    </pre>
+     * </pre>
      */
     protected final static class TimerProxyForContactFromContactSensor extends Proxy {
         private TimerProxyForContactFromContactSensor(Service service, RemoteServiceInfo remoteServiceInfo) {

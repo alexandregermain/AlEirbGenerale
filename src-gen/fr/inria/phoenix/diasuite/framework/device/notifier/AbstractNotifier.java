@@ -7,14 +7,14 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * <pre>
-device Notifier extends HomeService {
+ * device Notifier extends HomeService {
  * 	source cancelled as Boolean indexed by id as String;
  * 	source expired as Boolean indexed by id as String;
  * 	source reply as Integer indexed by id as String;
  * 	action SendCriticalNotification;
  * 	action SendNonCriticalNotification;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractNotifier extends Service {
     
@@ -96,11 +96,11 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -111,11 +111,11 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -127,12 +127,12 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Publish the value of source <code>cancelled</code> from device <code>Notifier</code>.
-    
-    <pre>
-    source cancelled as Boolean indexed by id as String;
-    </pre>
-    @param newCancelledValue the new value for the source <code>cancelled</code>
-    @param id the value of the index <code>id</code>
+     * 
+     * <pre>
+     * source cancelled as Boolean indexed by id as String;
+     * </pre>
+     * @param newCancelledValue the new value for the source <code>cancelled</code>
+     * @param id the value of the index <code>id</code>
      */
     protected void publishCancelled(java.lang.Boolean newCancelledValue,
             java.lang.String id) {
@@ -143,12 +143,12 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Returns the value of source <code>cancelled</code> from device <code>Notifier</code>.
-    
-    <pre>
-    source cancelled as Boolean indexed by id as String;
-    </pre>
-    @param id the value of the index <code>id</code>
-    @return the value of the source <code>cancelled</code>
+     * 
+     * <pre>
+     * source cancelled as Boolean indexed by id as String;
+     * </pre>
+     * @param id the value of the index <code>id</code>
+     * @return the value of the source <code>cancelled</code>
      */
     protected java.lang.Boolean getCancelled(java.lang.String id) throws Exception {
         return _cancelled.get(new CancelledIndices(id));
@@ -160,12 +160,12 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Publish the value of source <code>expired</code> from device <code>Notifier</code>.
-    
-    <pre>
-    source expired as Boolean indexed by id as String;
-    </pre>
-    @param newExpiredValue the new value for the source <code>expired</code>
-    @param id the value of the index <code>id</code>
+     * 
+     * <pre>
+     * source expired as Boolean indexed by id as String;
+     * </pre>
+     * @param newExpiredValue the new value for the source <code>expired</code>
+     * @param id the value of the index <code>id</code>
      */
     protected void publishExpired(java.lang.Boolean newExpiredValue,
             java.lang.String id) {
@@ -176,12 +176,12 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Returns the value of source <code>expired</code> from device <code>Notifier</code>.
-    
-    <pre>
-    source expired as Boolean indexed by id as String;
-    </pre>
-    @param id the value of the index <code>id</code>
-    @return the value of the source <code>expired</code>
+     * 
+     * <pre>
+     * source expired as Boolean indexed by id as String;
+     * </pre>
+     * @param id the value of the index <code>id</code>
+     * @return the value of the source <code>expired</code>
      */
     protected java.lang.Boolean getExpired(java.lang.String id) throws Exception {
         return _expired.get(new ExpiredIndices(id));
@@ -193,11 +193,11 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -206,11 +206,11 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -222,12 +222,12 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Publish the value of source <code>reply</code> from device <code>Notifier</code>.
-    
-    <pre>
-    source reply as Integer indexed by id as String;
-    </pre>
-    @param newReplyValue the new value for the source <code>reply</code>
-    @param id the value of the index <code>id</code>
+     * 
+     * <pre>
+     * source reply as Integer indexed by id as String;
+     * </pre>
+     * @param newReplyValue the new value for the source <code>reply</code>
+     * @param id the value of the index <code>id</code>
      */
     protected void publishReply(java.lang.Integer newReplyValue,
             java.lang.String id) {
@@ -238,12 +238,12 @@ public abstract class AbstractNotifier extends Service {
     
     /**
      * Returns the value of source <code>reply</code> from device <code>Notifier</code>.
-    
-    <pre>
-    source reply as Integer indexed by id as String;
-    </pre>
-    @param id the value of the index <code>id</code>
-    @return the value of the source <code>reply</code>
+     * 
+     * <pre>
+     * source reply as Integer indexed by id as String;
+     * </pre>
+     * @param id the value of the index <code>id</code>
+     * @return the value of the source <code>reply</code>
      */
     protected java.lang.Integer getReply(java.lang.String id) throws Exception {
         return _reply.get(new ReplyIndices(id));
@@ -254,10 +254,10 @@ public abstract class AbstractNotifier extends Service {
      * Implement this method to define the <code>cancelCriticalNotification</code> order from the <code>SendCriticalNotification</code> action
      * defined in device Notifier.
      * 
-    
-    <pre>
-    cancelCriticalNotification(id as String);
-    </pre>
+     * 
+     * <pre>
+     * cancelCriticalNotification(id as String);
+     * </pre>
      * @param id parameter 1 of the order.
      */
     protected abstract void cancelCriticalNotification(java.lang.String id) throws Exception;
@@ -266,10 +266,10 @@ public abstract class AbstractNotifier extends Service {
      * Implement this method to define the <code>cancelNonCriticalNotification</code> order from the <code>SendNonCriticalNotification</code> action
      * defined in device Notifier.
      * 
-    
-    <pre>
-    cancelNonCriticalNotification(id as String);
-    </pre>
+     * 
+     * <pre>
+     * cancelNonCriticalNotification(id as String);
+     * </pre>
      * @param id parameter 1 of the order.
      */
     protected abstract void cancelNonCriticalNotification(java.lang.String id) throws Exception;
@@ -278,10 +278,10 @@ public abstract class AbstractNotifier extends Service {
      * Implement this method to define the <code>registerCriticalNotification</code> order from the <code>SendCriticalNotification</code> action
      * defined in device Notifier.
      * 
-    
-    <pre>
-    registerCriticalNotification(notification as CriticalNotification, displayDate as Date);
-    </pre>
+     * 
+     * <pre>
+     * registerCriticalNotification(notification as CriticalNotification, displayDate as Date);
+     * </pre>
      * @param notification parameter 1 of the order.
      * @param displayDate parameter 2 of the order.
      */
@@ -292,10 +292,10 @@ public abstract class AbstractNotifier extends Service {
      * Implement this method to define the <code>registerNonCriticalNotification</code> order from the <code>SendNonCriticalNotification</code> action
      * defined in device Notifier.
      * 
-    
-    <pre>
-    registerNonCriticalNotification(notification as NonCriticalNotification, displayDate as Date, expirationDate as Date);
-    </pre>
+     * 
+     * <pre>
+     * registerNonCriticalNotification(notification as NonCriticalNotification, displayDate as Date, expirationDate as Date);
+     * </pre>
      * @param notification parameter 1 of the order.
      * @param displayDate parameter 2 of the order.
      * @param expirationDate parameter 3 of the order.
@@ -308,10 +308,10 @@ public abstract class AbstractNotifier extends Service {
      * Implement this method to define the <code>sendCriticalNotification</code> order from the <code>SendCriticalNotification</code> action
      * defined in device Notifier.
      * 
-    
-    <pre>
-    sendCriticalNotification(notification as CriticalNotification);
-    </pre>
+     * 
+     * <pre>
+     * sendCriticalNotification(notification as CriticalNotification);
+     * </pre>
      * @param notification parameter 1 of the order.
      */
     protected abstract void sendCriticalNotification(fr.inria.phoenix.diasuite.framework.datatype.criticalnotification.CriticalNotification notification) throws Exception;
@@ -320,10 +320,10 @@ public abstract class AbstractNotifier extends Service {
      * Implement this method to define the <code>sendNonCriticalNotification</code> order from the <code>SendNonCriticalNotification</code> action
      * defined in device Notifier.
      * 
-    
-    <pre>
-    sendNonCriticalNotification(notification as NonCriticalNotification);
-    </pre>
+     * 
+     * <pre>
+     * sendNonCriticalNotification(notification as NonCriticalNotification);
+     * </pre>
      * @param notification parameter 1 of the order.
      */
     protected abstract void sendNonCriticalNotification(fr.inria.phoenix.diasuite.framework.datatype.noncriticalnotification.NonCriticalNotification notification) throws Exception;

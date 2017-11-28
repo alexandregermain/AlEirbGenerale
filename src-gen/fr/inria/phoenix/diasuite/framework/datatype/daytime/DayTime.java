@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 /**
  * ------------------------------------------------------------
-RoutineScheduler					||
-------------------------------------------------------------
-AR (25/09/17)
-
-<pre>
-enumeration DayTime {
+ * RoutineScheduler					||
+ * ------------------------------------------------------------
+ * AR (25/09/17)
+ * 
+ * <pre>
+ * enumeration DayTime {
  * 	DAY, NIGHT
  * }
-</pre>
+ * </pre>
  */
 public enum DayTime implements Serializable {
     DAY,NIGHT

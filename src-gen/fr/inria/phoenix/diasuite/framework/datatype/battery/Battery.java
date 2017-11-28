@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 /**
  * ------------------------------------------------------------
-Android							||
-------------------------------------------------------------
-
-<pre>
-structure Battery {
+ * Android							||
+ * ------------------------------------------------------------
+ * 
+ * <pre>
+ * structure Battery {
  * 	level as Integer;
  * 	charging as Boolean;
  * }
-</pre>
+ * </pre>
  */
 public class Battery implements Serializable {
     private static final long serialVersionUID = 0;
@@ -22,11 +22,11 @@ public class Battery implements Serializable {
     
     /**
      * Returns the value of the level field.
-    
-    <pre>
-    level as Integer
-    </pre>
-    @return the value of level
+     * 
+     * <pre>
+     * level as Integer
+     * </pre>
+     * @return the value of level
      */
     public java.lang.Integer getLevel() {
         return level;
@@ -34,11 +34,11 @@ public class Battery implements Serializable {
     
     /**
      * Set the value of the level field.
-    
-    <pre>
-    level as Integer
-    </pre>
-    @param level the new value of level
+     * 
+     * <pre>
+     * level as Integer
+     * </pre>
+     * @param level the new value of level
      */
     public void setLevel(java.lang.Integer level) {
         this.level = level;
@@ -50,11 +50,11 @@ public class Battery implements Serializable {
     
     /**
      * Returns the value of the charging field.
-    
-    <pre>
-    charging as Boolean
-    </pre>
-    @return the value of charging
+     * 
+     * <pre>
+     * charging as Boolean
+     * </pre>
+     * @return the value of charging
      */
     public java.lang.Boolean getCharging() {
         return charging;
@@ -62,11 +62,11 @@ public class Battery implements Serializable {
     
     /**
      * Set the value of the charging field.
-    
-    <pre>
-    charging as Boolean
-    </pre>
-    @param charging the new value of charging
+     * 
+     * <pre>
+     * charging as Boolean
+     * </pre>
+     * @param charging the new value of charging
      */
     public void setCharging(java.lang.Boolean charging) {
         this.charging = charging;

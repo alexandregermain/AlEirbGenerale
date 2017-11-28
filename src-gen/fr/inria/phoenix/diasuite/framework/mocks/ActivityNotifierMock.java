@@ -86,12 +86,12 @@ public final class ActivityNotifierMock {
     // Code for the attribute id from device Device
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
+     * @return this for fluent interface
      */
     public ActivityNotifierMock id(java.lang.String newIdValue) {
         proxy._updateId(newIdValue);
@@ -102,12 +102,12 @@ public final class ActivityNotifierMock {
     // Code for source dailyActivity from device ActivityNotifier
     /**
      * Publish the value of source <code>dailyActivity</code> from device <code>ActivityNotifier</code>.
-    
-    <pre>
-    source dailyActivity as DailyActivity;
-    </pre>
-    @param newDailyActivityValue the new value for the source <code>dailyActivity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source dailyActivity as DailyActivity;
+     * </pre>
+     * @param newDailyActivityValue the new value for the source <code>dailyActivity</code>
+     * @return this for fluent interface
      */
     public ActivityNotifierMock dailyActivity(fr.inria.phoenix.diasuite.framework.datatype.dailyactivity.DailyActivity newDailyActivityValue) {
         proxy._publishDailyActivity(newDailyActivityValue);
@@ -117,12 +117,12 @@ public final class ActivityNotifierMock {
     private fr.inria.phoenix.diasuite.framework.datatype.dailyactivity.DailyActivity __dailyActivity = null;
     /**
      * Set the value (without publication) of source <code>dailyActivity</code> from device <code>ActivityNotifier</code>.
-    
-    <pre>
-    source dailyActivity as DailyActivity;
-    </pre>
-    @param newDailyActivityValue the new value for the source <code>dailyActivity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source dailyActivity as DailyActivity;
+     * </pre>
+     * @param newDailyActivityValue the new value for the source <code>dailyActivity</code>
+     * @return this for fluent interface
      */
     public ActivityNotifierMock setDailyActivity(fr.inria.phoenix.diasuite.framework.datatype.dailyactivity.DailyActivity newDailyActivityValue) {
         __dailyActivity = newDailyActivityValue;
@@ -133,12 +133,12 @@ public final class ActivityNotifierMock {
     // Code for source isAlive from device Device
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public ActivityNotifierMock isAlive(java.lang.Boolean newIsAliveValue) {
         proxy._publishIsAlive(newIsAliveValue);
@@ -148,12 +148,12 @@ public final class ActivityNotifierMock {
     private java.lang.Boolean __isAlive = null;
     /**
      * Set the value (without publication) of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * @return this for fluent interface
      */
     public ActivityNotifierMock setIsAlive(java.lang.Boolean newIsAliveValue) {
         __isAlive = newIsAliveValue;
@@ -164,12 +164,12 @@ public final class ActivityNotifierMock {
     // Code for source periodActivity from device ActivityNotifier
     /**
      * Publish the value of source <code>periodActivity</code> from device <code>ActivityNotifier</code>.
-    
-    <pre>
-    source periodActivity as PeriodActivity;
-    </pre>
-    @param newPeriodActivityValue the new value for the source <code>periodActivity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source periodActivity as PeriodActivity;
+     * </pre>
+     * @param newPeriodActivityValue the new value for the source <code>periodActivity</code>
+     * @return this for fluent interface
      */
     public ActivityNotifierMock periodActivity(fr.inria.phoenix.diasuite.framework.datatype.periodactivity.PeriodActivity newPeriodActivityValue) {
         proxy._publishPeriodActivity(newPeriodActivityValue);
@@ -179,12 +179,12 @@ public final class ActivityNotifierMock {
     private fr.inria.phoenix.diasuite.framework.datatype.periodactivity.PeriodActivity __periodActivity = null;
     /**
      * Set the value (without publication) of source <code>periodActivity</code> from device <code>ActivityNotifier</code>.
-    
-    <pre>
-    source periodActivity as PeriodActivity;
-    </pre>
-    @param newPeriodActivityValue the new value for the source <code>periodActivity</code>
-    @return this for fluent interface
+     * 
+     * <pre>
+     * source periodActivity as PeriodActivity;
+     * </pre>
+     * @param newPeriodActivityValue the new value for the source <code>periodActivity</code>
+     * @return this for fluent interface
      */
     public ActivityNotifierMock setPeriodActivity(fr.inria.phoenix.diasuite.framework.datatype.periodactivity.PeriodActivity newPeriodActivityValue) {
         __periodActivity = newPeriodActivityValue;
@@ -198,10 +198,10 @@ public final class ActivityNotifierMock {
      * Check that the <code>notifyDailyActivity</code> order from the <code>NotifyActivity</code> action
      * defined in device ActivityNotifier was called.
      * 
-    
-    <pre>
-    notifyDailyActivity(activity as DailyActivity);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * notifyDailyActivity(activity as DailyActivity);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectNotifyDailyActivity() {
         try {
@@ -225,10 +225,10 @@ public final class ActivityNotifierMock {
      * Check that the <code>notifyDailyActivity</code> order from the <code>NotifyActivity</code> action
      * defined in device ActivityNotifier was called.
      * 
-    
-    <pre>
-    notifyDailyActivity(activity as DailyActivity);
-    </pre>
+     * 
+     * <pre>
+     * notifyDailyActivity(activity as DailyActivity);
+     * </pre>
      * @param activity parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */
@@ -257,10 +257,10 @@ public final class ActivityNotifierMock {
      * Check that the <code>notifyPeriodActivity</code> order from the <code>NotifyActivity</code> action
      * defined in device ActivityNotifier was called.
      * 
-    
-    <pre>
-    notifyPeriodActivity(activity as PeriodActivity);
-    </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
+     * 
+     * <pre>
+     * notifyPeriodActivity(activity as PeriodActivity);
+     * </pre>    @return true if the action happened with the given parameters, remaining parameters are ignored
      */
     public boolean expectNotifyPeriodActivity() {
         try {
@@ -284,10 +284,10 @@ public final class ActivityNotifierMock {
      * Check that the <code>notifyPeriodActivity</code> order from the <code>NotifyActivity</code> action
      * defined in device ActivityNotifier was called.
      * 
-    
-    <pre>
-    notifyPeriodActivity(activity as PeriodActivity);
-    </pre>
+     * 
+     * <pre>
+     * notifyPeriodActivity(activity as PeriodActivity);
+     * </pre>
      * @param activity parameter 1 of the order.
      *     @return true if the action happened with the given parameters
      */

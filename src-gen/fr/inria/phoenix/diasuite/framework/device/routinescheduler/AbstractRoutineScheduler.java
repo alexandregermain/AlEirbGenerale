@@ -7,14 +7,14 @@ import fr.inria.diagen.core.service.local.Service;
 
 /**
  * <pre>
-device RoutineScheduler extends Service {
+ * device RoutineScheduler extends Service {
  * 	source currentTime as DayTime;
  * 	source startMonitoring as DailyActivityName;
  * 	source stopMonitoring as DailyActivityName;
  * 	action UpdateDayTime;
  * 	action UpdateRoutines;
  * }
-</pre>
+ * </pre>
  */
 public abstract class AbstractRoutineScheduler extends Service {
     
@@ -81,11 +81,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Set the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @param newIdValue the new value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @param newIdValue the new value of <code>id</code>
      */
     protected void updateId(java.lang.String newIdValue) {
         if (_id != newIdValue) {
@@ -96,11 +96,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Returns the value of the <code>id</code> attribute from device <code>Device</code>.
-    
-    <pre>
-    attribute id as String;
-    </pre>
-    @return the value of <code>id</code>
+     * 
+     * <pre>
+     * attribute id as String;
+     * </pre>
+     * @return the value of <code>id</code>
      */
     public java.lang.String getId() {
         return _id;
@@ -112,11 +112,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Publish the value of source <code>currentTime</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source currentTime as DayTime;
-    </pre>
-    @param newCurrentTimeValue the new value for the source <code>currentTime</code>
+     * 
+     * <pre>
+     * source currentTime as DayTime;
+     * </pre>
+     * @param newCurrentTimeValue the new value for the source <code>currentTime</code>
      */
     protected void publishCurrentTime(fr.inria.phoenix.diasuite.framework.datatype.daytime.DayTime newCurrentTimeValue) {
         _currentTime = newCurrentTimeValue;
@@ -125,11 +125,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Returns the value of source <code>currentTime</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source currentTime as DayTime;
-    </pre>
-    @return the value of the source <code>currentTime</code>
+     * 
+     * <pre>
+     * source currentTime as DayTime;
+     * </pre>
+     * @return the value of the source <code>currentTime</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.daytime.DayTime getCurrentTime() throws Exception {
         return _currentTime;
@@ -141,11 +141,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Publish the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @param newIsAliveValue the new value for the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @param newIsAliveValue the new value for the source <code>isAlive</code>
      */
     protected void publishIsAlive(java.lang.Boolean newIsAliveValue) {
         _isAlive = newIsAliveValue;
@@ -154,11 +154,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Returns the value of source <code>isAlive</code> from device <code>Device</code>.
-    
-    <pre>
-    source isAlive as Boolean;
-    </pre>
-    @return the value of the source <code>isAlive</code>
+     * 
+     * <pre>
+     * source isAlive as Boolean;
+     * </pre>
+     * @return the value of the source <code>isAlive</code>
      */
     protected java.lang.Boolean getIsAlive() throws Exception {
         return _isAlive;
@@ -170,11 +170,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Publish the value of source <code>startMonitoring</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source startMonitoring as DailyActivityName;
-    </pre>
-    @param newStartMonitoringValue the new value for the source <code>startMonitoring</code>
+     * 
+     * <pre>
+     * source startMonitoring as DailyActivityName;
+     * </pre>
+     * @param newStartMonitoringValue the new value for the source <code>startMonitoring</code>
      */
     protected void publishStartMonitoring(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName newStartMonitoringValue) {
         _startMonitoring = newStartMonitoringValue;
@@ -183,11 +183,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Returns the value of source <code>startMonitoring</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source startMonitoring as DailyActivityName;
-    </pre>
-    @return the value of the source <code>startMonitoring</code>
+     * 
+     * <pre>
+     * source startMonitoring as DailyActivityName;
+     * </pre>
+     * @return the value of the source <code>startMonitoring</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName getStartMonitoring() throws Exception {
         return _startMonitoring;
@@ -199,11 +199,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Publish the value of source <code>stopMonitoring</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source stopMonitoring as DailyActivityName;
-    </pre>
-    @param newStopMonitoringValue the new value for the source <code>stopMonitoring</code>
+     * 
+     * <pre>
+     * source stopMonitoring as DailyActivityName;
+     * </pre>
+     * @param newStopMonitoringValue the new value for the source <code>stopMonitoring</code>
      */
     protected void publishStopMonitoring(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName newStopMonitoringValue) {
         _stopMonitoring = newStopMonitoringValue;
@@ -212,11 +212,11 @@ public abstract class AbstractRoutineScheduler extends Service {
     
     /**
      * Returns the value of source <code>stopMonitoring</code> from device <code>RoutineScheduler</code>.
-    
-    <pre>
-    source stopMonitoring as DailyActivityName;
-    </pre>
-    @return the value of the source <code>stopMonitoring</code>
+     * 
+     * <pre>
+     * source stopMonitoring as DailyActivityName;
+     * </pre>
+     * @return the value of the source <code>stopMonitoring</code>
      */
     protected fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName getStopMonitoring() throws Exception {
         return _stopMonitoring;
@@ -227,10 +227,10 @@ public abstract class AbstractRoutineScheduler extends Service {
      * Implement this method to define the <code>startMonitoring</code> order from the <code>UpdateRoutines</code> action
      * defined in device RoutineScheduler.
      * 
-    
-    <pre>
-    startMonitoring(activity as DailyActivityName);
-    </pre>
+     * 
+     * <pre>
+     * startMonitoring(activity as DailyActivityName);
+     * </pre>
      * @param activity parameter 1 of the order.
      */
     protected abstract void startMonitoring(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName activity) throws Exception;
@@ -239,10 +239,10 @@ public abstract class AbstractRoutineScheduler extends Service {
      * Implement this method to define the <code>stopMonitoring</code> order from the <code>UpdateRoutines</code> action
      * defined in device RoutineScheduler.
      * 
-    
-    <pre>
-    stopMonitoring(activity as DailyActivityName);
-    </pre>
+     * 
+     * <pre>
+     * stopMonitoring(activity as DailyActivityName);
+     * </pre>
      * @param activity parameter 1 of the order.
      */
     protected abstract void stopMonitoring(fr.inria.phoenix.diasuite.framework.datatype.dailyactivityname.DailyActivityName activity) throws Exception;
@@ -251,10 +251,10 @@ public abstract class AbstractRoutineScheduler extends Service {
      * Implement this method to define the <code>updateDayTime</code> order from the <code>UpdateDayTime</code> action
      * defined in device RoutineScheduler.
      * 
-    
-    <pre>
-    updateDayTime(currentTime as DayTime);
-    </pre>
+     * 
+     * <pre>
+     * updateDayTime(currentTime as DayTime);
+     * </pre>
      * @param currentTime parameter 1 of the order.
      */
     protected abstract void updateDayTime(fr.inria.phoenix.diasuite.framework.datatype.daytime.DayTime currentTime) throws Exception;
