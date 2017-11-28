@@ -2,33 +2,29 @@ include "taxonomy.diaspec";
 //------------------------------------------------------
 //                   CONTROLLER
 //------------------------------------------------------
-controller AlarmActivitedController {
-  when provided InsideContext
-    do ScheduleTimer on Timer,
-       SendNonCriticalNotification on Notifier;  
+controller HandleTimer {
+  when provided IsInside
+    do ScheduleTimer on Timer;
+  when provided PasswordListener
+    do ScheduleTimer on Timer; // Password good: stop alarm-timer (1) or ringing-timer (2)
+  when provided UpdatePassword
+    do ScheduleTimer on Timer;
 }
 
-controller LunchAlarmController{
-  when provided LunchAlarmContext
+controller HandleNotifier{
+  when provided UpdatePassword
     do ScheduleTimer on Timer,
        SendMessage on Messenger,
 	   SendCriticalNotification on Notifier;
 }
 
-controller LampSuccessController{
-  when provided LunchAlarmContext
+controller HandlePassword{
+  when provided PasswordListener
     do On on Light, 
        Off on Light;
-}
-
-controller ChangePassword {
-	when provided ChangingPassword
-	do ScheduleTimer on Timer, On on Light;
-		
-	//Si on a bien fait le mot de passe ou si le timer est écoulé
-	when provided ActionValidation
-		do ScheduleTimer on Timer, On on Light,
-    	   SendCriticalNotification on Notifier;
+  when provided UpdatePassword
+    do On on Light, 
+       Off on Light;
 }
 
 
@@ -42,34 +38,35 @@ context IsInside as Boolean {
   maybe publish;
 }
 
-context HandlePassword as Boolean {
-  when provided UpdatePassword
-  always publish;
+context ElapsedTime as AlEirbTimer {
+	when provided timerTriggered from Timer maybe publish; // listen for all timers
 
-  when provided timerTriggered from Timer
-  get timerTriggered from Timer
-  maybe publish;
 }
 
-context UpdatePassword as Boolean {
-    when provided on from Appliance
-    get on from Appliance, contact from ContactSensor
-    always publish;
+context UpdatePassword as PasswordUpdating {
+	when provided contact from ContactSensor maybe publish; // publish if setting sensor, else store id
+	when provided on from Light maybe publish;
+	when provided ElapsedTime maybe publish; // publish update canceling
+}
+
+context PasswordListener as Boolean {
+	when provided IsInside no publish; // Save info about home occupancy - listen if true, no if false
+	when provided on from Light maybe publish; // store and compare
+	when provided contact from ContactSensor maybe publish; // store and compare 
+	when provided ElapsedTime no publish; // no more listen after ringing stops
 }
 
 
-
-context ChangingPassword as Boolean {
-    when provided on from Appliance
-    get on from Appliance, contact from ContactSensor
-    always publish;
+structure PasswordUpdating {
+	step as UpdatingStep;
+	password as String [];
 }
 
-context ActionValidation as Boolean {
-	when provided timerTriggered from Timer
-	maybe publish;
-	
-	when provided contact from ContactSensor
-	get timerTriggered from Timer
-	maybe publish;
+enumeration AlEirbTimer {
+	DELAY_BEFORE_ALERT, TIMER_ACTIVE_ALARM, TIMER_UPDATING_PASSWORD
 }
+
+enumeration UpdatingStep {
+	INIT_UPDATING, VALID_PASS_1, WRONG_PASSWORD, VALID_PASS_2, END_UPDATING, CANCEL_UPDATING
+}
+
