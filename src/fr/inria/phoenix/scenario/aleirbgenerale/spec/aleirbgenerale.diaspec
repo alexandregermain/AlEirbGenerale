@@ -14,8 +14,10 @@ controller HandleTimer {
 controller HandleNotifier{
   when provided UpdatePassword
     do ScheduleTimer on Timer,
-       SendMessage on Messenger,
-	   SendCriticalNotification on Notifier;
+	   SendNonCriticalNotification on Notifier;
+  when provided ElapsedTime
+    do ScheduleTimer on Timer,
+	   SendNonCriticalNotification on Notifier;
 }
 
 controller HandlePassword{
@@ -50,7 +52,6 @@ context UpdatePassword as PasswordUpdating {
 }
 
 context PasswordListener as Boolean {
-	when provided IsInside no publish; // Save info about home occupancy - listen if true, no if false
 	when provided on from Light maybe publish; // store and compare
 	when provided contact from ContactSensor maybe publish; // store and compare 
 	when provided ElapsedTime no publish; // no more listen after ringing stops
@@ -63,7 +64,7 @@ structure PasswordUpdating {
 }
 
 enumeration AlEirbTimer {
-	DELAY_BEFORE_ALERT, TIMER_ACTIVE_ALARM, TIMER_UPDATING_PASSWORD
+	DELAY_BEFORE_ALERT, TIMER_UPDATING_PASSWORD
 }
 
 enumeration UpdatingStep {

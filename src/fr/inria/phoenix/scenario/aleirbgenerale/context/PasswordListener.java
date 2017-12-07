@@ -4,23 +4,22 @@ import java.util.ListIterator;
 
 import fr.inria.diagen.core.ServiceConfiguration;
 import fr.inria.phoenix.diasuite.framework.context.elapsedtime.ElapsedTimeValue;
-import fr.inria.phoenix.diasuite.framework.context.isinside.IsInsideValue;
 import fr.inria.phoenix.diasuite.framework.context.passwordlistener.AbstractPasswordListener;
 import fr.inria.phoenix.diasuite.framework.datatype.aleirbtimer.AlEirbTimer;
-import fr.inria.phoenix.diasuite.framework.datatype.passwordupdating.PasswordUpdating;
-import fr.inria.phoenix.diasuite.framework.datatype.updatingstep.UpdatingStep;
 import fr.inria.phoenix.diasuite.framework.device.contactsensor.ContactFromContactSensor;
 import fr.inria.phoenix.diasuite.framework.device.light.OnFromLight;
 import fr.inria.phoenix.scenario.aleirbgenerale.controller.HandleTimer;
 
 public class PasswordListener extends AbstractPasswordListener {
-	public ListIterator<String> passwordIter =  initPass();
+	public static ListIterator<String> passwordIter =  initPass();
 	private Boolean isInside = true;
 	private Boolean isStillTime = true;
 	
-	private ListIterator<String> initPass(){
+	private static ListIterator<String> initPass(){
 		return UpdatePassword.ActualPassword.listIterator();
 	}
+	
+	@SuppressWarnings("unused")
 	private void resetVariables() {
 		isStillTime = true;
 		passwordIter =  initPass();
@@ -32,14 +31,6 @@ public class PasswordListener extends AbstractPasswordListener {
 	}
 
 	@Override
-	protected void onIsInside(IsInsideValue isInsideValue) {
-		isInside = isInsideValue.value();
-		if(isInside) {
-			resetVariables();
-		}
-	}
-
-	@Override
 	protected PasswordListenerValuePublishable onOnFromLight(OnFromLight onFromLight) {
 		if(isInside && HandleTimer.armed && isStillTime) {
 			if (passwordIter.hasNext()) {
@@ -47,7 +38,8 @@ public class PasswordListener extends AbstractPasswordListener {
 					if(!passwordIter.hasNext()) {
 						return new PasswordListenerValuePublishable(true,true);
 					}
-				}else {
+				}
+				else {
 					passwordIter = initPass();
 				}
 			}else {

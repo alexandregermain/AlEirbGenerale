@@ -14,8 +14,7 @@ import fr.inria.phoenix.diasuite.framework.device.contactsensor.ContactFromConta
 import fr.inria.phoenix.diasuite.framework.device.light.OnFromLight;
 
 public class UpdatePassword extends AbstractUpdatePassword{
-
-	public PasswordUpdating passwordData = new PasswordUpdating();
+	public static PasswordUpdating passwordData = new PasswordUpdating();
 	public int codeChangementMDP = 0; 
 	public long timeChangementMDP = System.currentTimeMillis();
 	public static List<String> ActualPassword = new ArrayList<String>();
@@ -28,8 +27,6 @@ public class UpdatePassword extends AbstractUpdatePassword{
 		 passwordIterator = password.listIterator();
 	}
 	
-	//public int state = 0;//0 etat initial/1 Réinitiolisation validé par le pwd reinitialisation/ 2 
-	
 	public UpdatePassword(ServiceConfiguration serviceConfiguration) {
 		super(serviceConfiguration);
 		// TODO Auto-generated constructor stub
@@ -38,19 +35,22 @@ public class UpdatePassword extends AbstractUpdatePassword{
 	@Override
 	protected UpdatePasswordValuePublishable onContactFromContactSensor(
 			ContactFromContactSensor contactFromContactSensor) {
-		 if (contactFromContactSensor.sender().id().equals("realisation")){//id realisation correspond a lid du tiroir realisation
+	
+		 if (contactFromContactSensor.sender().id().equals("realisation")){ //id realisation correspond a lid du tiroir realisation
 			 	codeChangementMDP++;
+			 	System.out.println(codeChangementMDP);
 			 if(codeChangementMDP == 1) {
 				 passwordData.setStep(UpdatingStep.INIT_UPDATING);
 				 return new UpdatePasswordValuePublishable(passwordData,true);
 			 }
-			
-			 if (codeChangementMDP == 5) {
+			 if (codeChangementMDP<5) {
+			 }else if (codeChangementMDP == 5) {
 				 passwordData.setStep(UpdatingStep.VALID_PASS_1);
 			 }
-			 else if (codeChangementMDP == 7 && !password.isEmpty() ){
+			 else if (codeChangementMDP == 6 && !password.isEmpty() ){
 				 passwordData.setStep(UpdatingStep.VALID_PASS_2);
 				 passwordIterator = password.listIterator();
+			 }else if (codeChangementMDP == 7){
 			 }
 			 else if (codeChangementMDP == 8 ){
 				 if(!passwordIterator.hasNext()){
@@ -64,10 +64,14 @@ public class UpdatePassword extends AbstractUpdatePassword{
 					 resetVariables();
 					 return new UpdatePasswordValuePublishable(passwordData,true);
 				 }
+			 }else {
+				 passwordData.setStep(UpdatingStep.WRONG_PASSWORD);
+				 resetVariables();
+				 return new UpdatePasswordValuePublishable(passwordData,true);
 			 }
-		 }else if(passwordData.getStep().compareTo(UpdatingStep.VALID_PASS_1) == 0){
+		 }else if(passwordData.getStep().compareTo(UpdatingStep.VALID_PASS_1)== 0 && codeChangementMDP == 5 ){
 			 password.add(contactFromContactSensor.sender().id());
-		 }else if(passwordData.getStep().compareTo(UpdatingStep.VALID_PASS_2)==0){
+		 }else if(passwordData.getStep().compareTo(UpdatingStep.VALID_PASS_2)==0 && codeChangementMDP == 7){
 			 if (passwordIterator.hasNext()) {
 				 if (!passwordIterator.next().equals(contactFromContactSensor.sender().id())) {
 					 passwordData.setStep(UpdatingStep.WRONG_PASSWORD);
@@ -79,15 +83,19 @@ public class UpdatePassword extends AbstractUpdatePassword{
 				 resetVariables();
 				 return new UpdatePasswordValuePublishable(passwordData,true);
 			 }
+		 }else {
+			 passwordData.setStep(UpdatingStep.CANCEL_UPDATING);
+			 resetVariables();
+			 return new UpdatePasswordValuePublishable(passwordData,true);
 		 }
 		return null;
 	}
 
 	@Override
 	protected UpdatePasswordValuePublishable onOnFromLight(OnFromLight onFromLight) {
-		if(passwordData.getStep().compareTo(UpdatingStep.VALID_PASS_1) == 0){
+		if(passwordData.getStep().compareTo(UpdatingStep.VALID_PASS_1) == 0 && codeChangementMDP == 5 ){
 			 password.add(onFromLight.sender().id());
-		 }else if(passwordData.getStep().compareTo(UpdatingStep.VALID_PASS_2)==0){
+		 }else if(passwordData.getStep().compareTo(UpdatingStep.VALID_PASS_2)==0 && codeChangementMDP == 7 ){
 			 if (passwordIterator.hasNext()) {
 				 if (!passwordIterator.next().equals(onFromLight.sender().id())) {
 					 passwordData.setStep(UpdatingStep.WRONG_PASSWORD);
@@ -99,6 +107,10 @@ public class UpdatePassword extends AbstractUpdatePassword{
 				 resetVariables();
 				 return new UpdatePasswordValuePublishable(passwordData,true);
 			 }
+		 }else {
+			 passwordData.setStep(UpdatingStep.CANCEL_UPDATING);
+			 resetVariables();
+			 return new UpdatePasswordValuePublishable(passwordData,true);
 		 }
 		return null;
 		

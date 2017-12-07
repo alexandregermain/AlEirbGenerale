@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <DiaGraph>
-	<controller id="AlarmActivitedController" x="195.0" y="222.0"/>
-	<action id="Notifier/SendNonCriticalNotification" x="123.0" y="77.0"/>
+	<controller id="HandleTimer" x="0.0" y="0.0"/>
 	<action id="Timer/ScheduleTimer" x="247.0" y="76.0"/>
-	<context id="InsideContext" x="237.0" y="399.0"/>
+	<context id="UpdatePassword" x="0.0" y="0.0"/>
+	<context id="ElapsedTime" x="0.0" y="0.0"/>
+	<source id="Timer/timerTriggered" x="663.0" y="557.0"/>
+	<source id="Light/on" x="0.0" y="0.0"/>
+	<source id="ContactSensor/contact" x="1023.0" y="557.0"/>
+	<context id="PasswordListener" x="0.0" y="0.0"/>
+	<context id="IsInside" x="0.0" y="0.0"/>
 	<source id="InactivitySensor/inactivityLevel" x="438.0" y="610.0"/>
 	<source id="InactivitySensor/lastInteraction" x="221.0" y="605.0"/>
-	<controller id="LunchAlarmController" x="1114.0" y="262.0"/>
-	<action id="Messenger/SendMessage" x="1023.0" y="77.0"/>
-	<action id="Notifier/SendCriticalNotification" x="843.0" y="77.0"/>
-	<context id="LunchAlarmContext" x="524.0" y="376.0"/>
-	<context id="Password" x="753.0" y="445.0"/>
-	<source id="ContactSensor/contact" x="1023.0" y="557.0"/>
-	<source id="Appliance/on" x="843.0" y="557.0"/>
-	<source id="Timer/timerTriggered" x="663.0" y="557.0"/>
-	<controller id="LampSuccessController" x="382.0" y="228.0"/>
-	<action id="Light/On" x="663.0" y="77.0"/>
+	<controller id="HandleNotifier" x="0.0" y="0.0"/>
+	<action id="Notifier/SendNonCriticalNotification" x="0.0" y="0.0"/>
+	<controller id="HandlePassword" x="0.0" y="0.0"/>
 	<action id="Light/Off" x="483.0" y="77.0"/>
-	<controller id="ChangePassword" x="758.0" y="225.0"/>
-	<context id="ChangingPassword" x="1032.0" y="399.0"/>
-	<context id="ActionValidation" x="605.0" y="284.0"/>
+	<action id="Light/On" x="663.0" y="77.0"/>
 </DiaGraph>

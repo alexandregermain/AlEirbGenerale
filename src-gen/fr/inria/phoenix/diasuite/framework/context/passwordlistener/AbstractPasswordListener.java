@@ -10,14 +10,12 @@ import fr.inria.diagen.core.service.proxy.Proxy;
 import fr.inria.phoenix.diasuite.framework.device.contactsensor.ContactFromContactSensor;
 import fr.inria.phoenix.diasuite.framework.device.light.OnFromLight;
 import fr.inria.phoenix.diasuite.framework.context.elapsedtime.ElapsedTimeValue;
-import fr.inria.phoenix.diasuite.framework.context.isinside.IsInsideValue;
 
 /**
  * no more listen after ringing stops
 
 <pre>
 context PasswordListener as Boolean {
- * 	when provided IsInside no publish; 
  * 	when provided on from Light maybe publish; 
  * 	when provided contact from ContactSensor maybe publish; 
  * 	when provided ElapsedTime no publish; 
@@ -35,7 +33,6 @@ public abstract class AbstractPasswordListener extends Service {
     @Override
     protected final void internalPostInitialize() {
         subscribeValue("elapsedTime", "/Context/ElapsedTime/"); // subscribe to ElapsedTime context
-        subscribeValue("isInside", "/Context/IsInside/"); // subscribe to IsInside context
         postInitialize();
     }
     
@@ -52,11 +49,6 @@ public abstract class AbstractPasswordListener extends Service {
             ElapsedTimeValue elapsedTimeValue = new ElapsedTimeValue((fr.inria.phoenix.diasuite.framework.datatype.aleirbtimer.AlEirbTimer) value);
             
             onElapsedTime(elapsedTimeValue);
-        }
-        if (eventName.equals("isInside") && source.isCompatible("/Context/IsInside/")) {
-            IsInsideValue isInsideValue = new IsInsideValue((java.lang.Boolean) value);
-            
-            onIsInside(isInsideValue);
         }
         if (eventName.equals("contact") && source.isCompatible("/Device/Device/PhysicalDevice/Sensor/ContactSensor/")) {
             ContactFromContactSensor contactFromContactSensor = new ContactFromContactSensor(this, source, (java.lang.Boolean) value);
@@ -155,20 +147,7 @@ public abstract class AbstractPasswordListener extends Service {
     
     // Interaction contract implementation
     /**
-     * This method is called when the <code>IsInside</code> context publishes a value.
-    
-    <pre>
-    when provided IsInside no publish;
-    </pre>
-     * 
-     * @param isInsideValue the value of the <code>IsInside</code> context.
-     */
-    protected abstract void onIsInside(IsInsideValue isInsideValue);
-    
-    /**
      * This method is called when a <code>Light</code> device on which we have subscribed publish on its <code>on</code> source.
-    <p>
-    Save info about home occupancy - listen if true, no if false
     
     <pre>
     when provided on from Light maybe publish;

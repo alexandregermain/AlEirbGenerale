@@ -110,7 +110,6 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     
     <pre>
     context PasswordListener as Boolean {
-     * 	when provided IsInside no publish; 
      * 	when provided on from Light maybe publish; 
      * 	when provided contact from ContactSensor maybe publish; 
      * 	when provided ElapsedTime no publish; 
@@ -146,8 +145,10 @@ public abstract class AppComponentBinder extends AbstractDeploy {
     controller HandleNotifier{
      *   when provided UpdatePassword
      *     do ScheduleTimer on Timer,
-     *        SendMessage on Messenger,
-     * 	   SendCriticalNotification on Notifier;
+     * 	   SendNonCriticalNotification on Notifier;
+     *   when provided ElapsedTime
+     *     do ScheduleTimer on Timer,
+     * 	   SendNonCriticalNotification on Notifier;
      * }
     </pre>
     @return a class object of a derivation of {@link AbstractHandleNotifier} that implements the <code>HandleNotifier</code> controller

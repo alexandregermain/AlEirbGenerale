@@ -18,35 +18,39 @@ public class HandleTimer extends AbstractHandleTimer{
 
 	@Override
 	protected void onIsInside(IsInsideValue isInside, DiscoverForIsInside discover) {
-		TimerCompositeForIsInside timerAlarm = discover.timers().whereId(Configuration.timerActiveAlarm);
-		
-		if(isInside.value()){
-			System.out.println(isInside.value().toString());
+		TimerCompositeForIsInside timerAlarm = discover.timers().whereId(Configuration.delayBeforeAlert);
+
+		//S'il n'y a personne on arme l'alarme
+		if(!isInside.value()){
 			armed = true;
-			timerAlarm.periodicSchedule(Configuration.timerActiveAlarm,0,100);
+			timerAlarm.schedule(Configuration.delayBeforeAlert,Configuration.timeDelay);
 		}
+		//Sinon on la desactive
 		else{
 			armed = false;
-			timerAlarm.cancel(Configuration.timerActiveAlarm);
+			timerAlarm.cancel(Configuration.delayBeforeAlert);
 		}
 	}
 
 	@Override
 	protected void onPasswordListener(PasswordListenerValue passwordListener, DiscoverForPasswordListener discover) {
-		// TODO Auto-generated method stub
 		
+		TimerCompositeForPasswordListener timerAlarm = discover.timers().whereId(Configuration.delayBeforeAlert);
+		if(passwordListener.value()){
+			armed = false;
+			timerAlarm.cancel(Configuration.delayBeforeAlert);
+		}
 	}
 
 	@Override
 	protected void onUpdatePassword(UpdatePasswordValue updatePassword, DiscoverForUpdatePassword discover) {
 		if(updatePassword.value().getStep().equals(UpdatingStep.INIT_UPDATING)) {
-			Integer delayMs = 30000; //30 sec
+			Integer delayMs = Configuration.timeDelay; //30 sec
 			discover.timers().anyOne().schedule("TIMER_UPDATING_PASSWORD", delayMs);
-			//TODO Start alarm TIMER_UPDATING_PASSWORD
 		}else {
 			discover.timers().all().cancel("TIMER_UPDATING_PASSWORD");
-			//TODO STOP alarm TIMER_UPDATING_PASSWORD
 		}
-	}
+		
+	}	
 
 }

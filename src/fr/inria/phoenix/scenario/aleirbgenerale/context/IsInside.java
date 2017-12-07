@@ -1,7 +1,6 @@
 package fr.inria.phoenix.scenario.aleirbgenerale.context;
 
 import fr.inria.diagen.core.ServiceConfiguration;
-import fr.inria.phoenix.diasuite.framework.context.insidecontext.AbstractInsideContext;
 import fr.inria.phoenix.diasuite.framework.context.isinside.AbstractIsInside;
 import fr.inria.phoenix.diasuite.framework.datatype.interaction.Interaction;
 import fr.inria.phoenix.diasuite.framework.datatype.interactiontype.InteractionType;
@@ -27,7 +26,7 @@ public class IsInside extends AbstractIsInside{
 		if(lastInteraction.getActionType().equals(InteractionType.CLOSURE) && inactivityLevel >= 1){
 			return new IsInsideValuePublishable(true, true);
 		}
-		else if(lastInteraction.equals(InteractionType.OPENNING) && inactivityLevel < 1){
+		else if(lastInteraction.getActionType().equals(InteractionType.CLOSURE) && inactivityLevel < 1){
 			return new IsInsideValuePublishable(false, true);
 		}		
 		return new IsInsideValuePublishable(false, false);

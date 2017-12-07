@@ -24,43 +24,36 @@ public class ComponentBinder extends AppComponentBinder {
 
 	@Override
 	public Class<? extends AbstractElapsedTime> getElapsedTimeClass() {
-		// TODO Auto-generated method stub
 		return ElapsedTime.class;
 	}
 
 	@Override
 	public Class<? extends AbstractIsInside> getIsInsideClass() {
-		// TODO Auto-generated method stub
 		return IsInside.class;
 	}
 
 	@Override
 	public Class<? extends AbstractPasswordListener> getPasswordListenerClass() {
-		// TODO Auto-generated method stub
 		return PasswordListener.class;
 	}
 
 	@Override
 	public Class<? extends AbstractUpdatePassword> getUpdatePasswordClass() {
-		// TODO Auto-generated method stub
 		return UpdatePassword.class;
 	}
 
 	@Override
 	public Class<? extends AbstractHandleNotifier> getHandleNotifierClass() {
-		// TODO Auto-generated method stub
 		return HandleNotifier.class;
 	}
 
 	@Override
 	public Class<? extends AbstractHandlePassword> getHandlePasswordClass() {
-		// TODO Auto-generated method stub
 		return HandlePassword.class;
 	}
 
 	@Override
 	public Class<? extends AbstractHandleTimer> getHandleTimerClass() {
-		// TODO Auto-generated method stub
 		return HandleTimer.class;
 	}
 

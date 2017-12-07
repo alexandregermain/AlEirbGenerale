@@ -9,7 +9,6 @@ import java.io.Serializable;
  *
  * <pre>
  * context PasswordListener as Boolean {
- * 	when provided IsInside no publish; 
  * 	when provided on from Light maybe publish; 
  * 	when provided contact from ContactSensor maybe publish; 
  * 	when provided ElapsedTime no publish; 
